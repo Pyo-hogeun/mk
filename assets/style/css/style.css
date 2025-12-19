@@ -166,6 +166,10 @@ body {
   white-space: nowrap;
   font: 700 22px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
 }
+.agent-brand .brand-title .btn-font-size {
+  background-color: transparent;
+  border: 0;
+}
 
 .nav-tabs {
   display: flex;
