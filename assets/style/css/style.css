@@ -1000,3 +1000,39 @@ body {
 .font-size-selector .size-text-xlarge {
   font-size: 20px;
 }
+
+.layer-popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+.layer-popup.is-active {
+  display: flex;
+}
+.layer-popup .layer-popup__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-dark-opacity);
+}
+.layer-popup .layer-popup__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.layer-popup .layer-popup__content {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+body.layer-popup-open {
+  overflow: hidden;
+}
