@@ -452,6 +452,7 @@ body {
 .change-text {
   align-self: stretch;
   margin: auto 0;
+  white-space: nowrap;
 }
 
 .content__title {
