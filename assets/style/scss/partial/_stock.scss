@@ -536,29 +536,3 @@
   font-weight: 600;
   line-height: 150%;
 }
-
-@media (max-width: $mobile) {
-  .content__title {
-    align-items: center;
-    gap: 12px;
-    margin: 24px 0;
-
-    .toggle-switch {
-      display: flex;
-    }
-  }
-
-  .stock-issues {
-    display: none;
-    // flex-direction: column;
-    gap: 12px;
-
-    &.is-active {
-      display: flex;
-    }
-  }
-
-  .stock-issue-card {
-    width: 212px;
-  }
-}

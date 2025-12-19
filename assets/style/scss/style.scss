@@ -5,6 +5,7 @@
 @use 'partial/layout' as *;
 @use 'partial/banner' as *;
 @use 'partial/stock' as *;
+@use 'partial/stock.mobile' as *;
 @use 'partial/toggle_switch' as *;
 @use 'partial/market_briefing' as *;
 @use 'partial/issue_industry' as *;
