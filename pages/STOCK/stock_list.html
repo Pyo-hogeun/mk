@@ -297,12 +297,12 @@
           <div class="market-briefing__section">
             <div class="market-briefing__header">
               <h3 class="market-briefing__title">업종별 주요 이슈</h3>
-              <div class="market-briefing__view-all">
+              <button type="button" class="market-briefing__view-all">
                 <span class="view-all-text">전체보기</span>
                 <svg class="chevron-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.7221 20.0621C10.3292 19.672 10.3281 19.0369 10.7196 18.6454L14.6579 14.7071C15.0484 14.3166 15.0484 13.6834 14.6579 13.2929L10.7196 9.35461C10.3281 8.96311 10.3292 8.32802 10.7221 7.9379L10.9596 7.70212C11.3505 7.31395 11.9817 7.31507 12.3713 7.70461L17.9596 13.2929C18.3501 13.6834 18.3501 14.3166 17.9596 14.7071L12.3713 20.2954C11.9817 20.6849 11.3505 20.6861 10.9596 20.2979L10.7221 20.0621Z" fill="#7B7B7B"/>
                 </svg>
-              </div>
+              </button>
             </div>
 
             <div class="market-briefing__item">
@@ -326,12 +326,12 @@
           <div class="market-briefing__section">
             <div class="market-briefing__header">
               <h3 class="market-briefing__title">종목별 주요 이슈</h3>
-              <div class="market-briefing__view-all">
+              <button type="button" class="market-briefing__view-all">
                 <span class="view-all-text">전체보기</span>
                 <svg class="chevron-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.7221 20.0621C10.3292 19.672 10.3281 19.0369 10.7196 18.6454L14.6579 14.7071C15.0484 14.3166 15.0484 13.6834 14.6579 13.2929L10.7196 9.35461C10.3281 8.96311 10.3292 8.32802 10.7221 7.9379L10.9596 7.70212C11.3505 7.31395 11.9817 7.31507 12.3713 7.70461L17.9596 13.2929C18.3501 13.6834 18.3501 14.3166 17.9596 14.7071L12.3713 20.2954C11.9817 20.6849 11.3505 20.6861 10.9596 20.2979L10.7221 20.0621Z" fill="#7B7B7B"/>
                 </svg>
-              </div>
+              </button>
             </div>
 
             <div class="market-briefing__item">
@@ -351,6 +351,49 @@
           </div>
         </div>
 
+        <!-- 설정된 값이 없는 경우 -->
+        <div class="market-briefing">
+          <div class="market-briefing__section">
+            <div class="market-briefing__header">
+              <h3 class="market-briefing__title">업종별 주요 이슈</h3>
+            </div>
+
+            <div class="market-briefing__item_no-data">
+              <a href="">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z" fill="#2F2F2F"/>
+                  <path d="M28.1666 21.1667H21.1666V28.1667H18.8333V21.1667H11.8333V18.8333H18.8333V11.8333H21.1666V18.8333H28.1666V21.1667Z" fill="#7B7B7B"/>
+                  </svg>
+
+                <span class="message-main">설정된 관심 업종이 없어요.</span>
+                <span class="message-sub">관심 업종을 추가해 주세요.</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="market-briefing__divider"></div>
+
+          <div class="market-briefing__section">
+            <div class="market-briefing__header">
+              <h3 class="market-briefing__title">종목별 주요 이슈</h3>
+            </div>
+            <div class="market-briefing__item_no-data">
+              <a href="">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z" fill="#2F2F2F"/>
+                  <path d="M28.1666 21.1667H21.1666V28.1667H18.8333V21.1667H11.8333V18.8333H18.8333V11.8333H21.1666V18.8333H28.1666V21.1667Z" fill="#7B7B7B"/>
+                  </svg>
+
+                <span class="message-main">설정된 관심 종목이 없어요.</span>
+                <span class="message-sub">관심 종목을 추가해 주세요.</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 설정중인 경우 -->
+
         <div class="content__title">
           <h3>
             <span>주요 이슈 업종</span>
@@ -359,13 +402,175 @@
 
         <div class="issue-industry">
           <div class="issue-industry__tab">
-            <div class="item">IT 서비스</div>
-            <div class="item">2차 전지</div>
-            <div class="item">2차 전지</div>
-            <div class="item">2차 전지</div>
-            <div class="item">2차 전지</div>
-            <div class="item">2차 전지</div>
-            <div class="item">2차 전지</div>
+            <button type="button" class="item-anchor">IT 서비스</button>
+            <button type="button" class="item-anchor">2차 전지</button>
+            <button type="button" class="item-anchor">2차 전지</button>
+            <button type="button" class="item-anchor">2차 전지</button>
+            <button type="button" class="item-anchor">2차 전지</button>
+            <button type="button" class="item-anchor">2차 전지</button>
+            <button type="button" class="item-anchor">2차 전지</button>
+          </div>
+
+          <!-- IT 서비스 -->
+          <div class="industry-detail-card">
+            <div class="industry-detail-card__header">
+              <h3 class="industry-title">IT 서비스</h3>
+            </div>
+
+            <div class="industry-issues-container">
+              <div class="industry-issues-list">
+                <div class="industry-issue-item">
+                  <span class="badge badge-orange-rounded">AI 분석</span>
+                  <p class="issue-text">생성형 AI 서비스 확대와 클라우드 전환 가속화로 수혜</p>
+                </div>
+
+                <div class="issue-divider-line"></div>
+
+                <div class="industry-issue-item">
+                  <span class="badge badge-red-pill">강세지속</span>
+                  <p class="issue-text">기업 클라우드 전환 가속, AI 서비스 구독 매출 확대</p>
+                </div>
+
+                <div class="industry-issue-item">
+                  <span class="badge badge-blue-pill">리스크</span>
+                  <p class="issue-text">빅테크 규제 강화, 광고 경기 둔화 우려</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="key-issue-row">
+              <div class="key-issue-label">핵심 이슈</div>
+              <div class="key-issue-badge">
+                <span>AI 서비스 구독자 급증</span>
+              </div>
+            </div>
+
+            <div class="related-news-section">
+              <div class="related-news-content">
+                <h4 class="section-subtitle">관련 뉴스 3건</h4>
+                <div class="news-list">
+                  <a href="" class="news-item">네이버 AI 검색 광고 매출 전년比 42% 증가</a>
+                  <a href="" class="news-item">카카오톡 AI 챗봇 일 사용자 200만 돌파</a>
+                  <a href="" class="news-item">MS 애저 클라우드 매출 30% 성장세</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-divider"></div>
+
+            <h4 class="section-subtitle">관련 종목</h4>
+
+            <div class="related-stocks-grid">
+              <div class="stock-metric-card">
+                <h5 class="stock-name">네이버</h5>
+                <div class="stock-code">035420</div>
+                <div class="stock-price-row">
+                  <div class="stock-price">235,000</div>
+                  <div class="stock-change-info positive">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                    </svg>
+                    <span class="stock-change-percent">3.5%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stock-metric-card">
+                <h5 class="stock-name">네이버</h5>
+                <div class="stock-code">035420</div>
+                <div class="stock-price-row">
+                  <div class="stock-price">235,000</div>
+                  <div class="stock-change-info positive">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                    </svg>
+                    <span class="stock-change-percent">3.5%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2차전지 -->
+          <div class="industry-detail-card">
+            <div class="industry-detail-card__header">
+              <h3 class="industry-title">2차전지</h3>
+            </div>
+
+            <div class="industry-issues-container">
+              <div class="industry-issues-list">
+                <div class="industry-issue-item">
+                  <span class="badge badge-orange-rounded">AI 분석</span>
+                  <p class="issue-text">생성형 AI 서비스 확대와 클라우드 전환 가속화로 수혜</p>
+                </div>
+
+                <div class="issue-divider-line"></div>
+
+                <div class="industry-issue-item">
+                  <span class="badge badge-red-pill">강세지속</span>
+                  <p class="issue-text">기업 클라우드 전환 가속, AI 서비스 구독 매출 확대</p>
+                </div>
+
+                <div class="industry-issue-item">
+                  <span class="badge badge-blue-pill">리스크</span>
+                  <p class="issue-text">빅테크 규제 강화, 광고 경기 둔화 우려</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="key-issue-row">
+              <div class="key-issue-label">핵심 이슈</div>
+              <div class="key-issue-badge">
+                <span>AI 서비스 구독자 급증</span>
+              </div>
+            </div>
+
+            <div class="related-news-section">
+              <div class="related-news-content">
+                <h4 class="section-subtitle">관련 뉴스 3건</h4>
+                <div class="news-list">
+                  <a href="" class="news-item">네이버 AI 검색 광고 매출 전년比 42% 증가</a>
+                  <a href="" class="news-item">카카오톡 AI 챗봇 일 사용자 200만 돌파</a>
+                  <a href="" class="news-item">MS 애저 클라우드 매출 30% 성장세</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-divider"></div>
+
+            <h4 class="section-subtitle">관련 종목</h4>
+
+            <div class="related-stocks-grid">
+              <div class="stock-metric-card">
+                <h5 class="stock-name">네이버</h5>
+                <div class="stock-code">035420</div>
+                <div class="stock-price-row">
+                  <div class="stock-price">235,000</div>
+                  <div class="stock-change-info positive">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                    </svg>
+                    <span class="stock-change-percent">3.5%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stock-metric-card">
+                <h5 class="stock-name">네이버</h5>
+                <div class="stock-code">035420</div>
+                <div class="stock-price-row">
+                  <div class="stock-price">235,000</div>
+                  <div class="stock-change-info negative">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10.866 15.5C10.4811 16.1667 9.51888 16.1667 9.13397 15.5L3.93782 6.5C3.55292 5.83333 4.03405 5 4.80385 5L15.1962 5C15.966 5 16.4471 5.83333 16.0622 6.5L10.866 15.5Z"
+                        fill="#2175FF" />
+                    </svg>
+                    <span class="stock-change-percent">3.5%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
