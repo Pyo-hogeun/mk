@@ -1178,8 +1178,8 @@ body.layer-popup-open {
   overflow: hidden;
 }
 
-.ai-briefing {
-  display: flex;
+.bottom-sheet {
+  display: none;
   width: 100%;
   max-width: 332px;
   padding: 20px;
@@ -1194,22 +1194,25 @@ body.layer-popup-open {
   transform: translateX(-50%);
   z-index: 1000;
 }
+.bottom-sheet.is-open {
+  display: flex;
+}
 @media (max-width: 480px) {
-  .ai-briefing {
+  .bottom-sheet {
     max-width: 100%;
     padding: 20px 15px;
     border-radius: 16px 16px 0 0;
   }
 }
 
-.ai-briefing__handle {
+.bottom-sheet__handle {
   width: 40px;
   height: 4px;
   border-radius: 999px;
   background: var(--surface-raised);
 }
 
-.ai-briefing__title {
+.bottom-sheet__title {
   align-self: stretch;
   color: var(--text-primary);
   font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
@@ -1220,11 +1223,11 @@ body.layer-popup-open {
   margin: 0;
 }
 
-.ai-briefing__description {
+.bottom-sheet__body {
   align-self: stretch;
 }
 
-.ai-briefing__list {
+.bottom-sheet__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1233,7 +1236,7 @@ body.layer-popup-open {
   gap: 12px;
 }
 
-.ai-briefing__list-item {
+.bottom-sheet__list-item {
   color: var(--text-primary);
   font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 15px;
@@ -1243,14 +1246,14 @@ body.layer-popup-open {
   position: relative;
   padding-left: 12px;
 }
-.ai-briefing__list-item::before {
+.bottom-sheet__list-item::before {
   content: "•";
   position: absolute;
   left: 0;
   color: var(--text-primary);
 }
 
-.ai-briefing__button {
+.bottom-sheet__button {
   display: flex;
   height: 40px;
   padding: 9px 128px;
@@ -1270,9 +1273,13 @@ body.layer-popup-open {
   cursor: pointer;
   transition: opacity 0.2s;
 }
-.ai-briefing__button:hover {
+.bottom-sheet__button:hover {
   opacity: 0.9;
 }
-.ai-briefing__button:active {
+.bottom-sheet__button:active {
   opacity: 0.8;
+}
+
+body.bottom-sheet-open {
+  overflow: hidden;
 }

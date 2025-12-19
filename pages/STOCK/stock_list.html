@@ -867,6 +867,74 @@
         });
       });
     })();
+
+    (function () {
+      const aiBriefTrigger = document.querySelector('.notice__ai-brief');
+      let aiBriefSheet = null;
+      let aiBriefLoaded = false;
+
+      const closeAiBrief = () => {
+        if (!aiBriefSheet) return;
+
+        aiBriefSheet.classList.remove('is-open');
+        aiBriefSheet.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('bottom-sheet-open');
+      };
+
+      const attachSheetHandlers = (sheetElement) => {
+        const dismissButtons = sheetElement.querySelectorAll('[data-bottom-sheet-dismiss]');
+
+        dismissButtons.forEach((button) => {
+          button.addEventListener('click', closeAiBrief);
+        });
+      };
+
+      const loadAiBrief = async () => {
+        if (aiBriefLoaded) return true;
+
+        try {
+          const response = await fetch('../COMPONENTS/ai_briefing.html');
+
+          if (!response.ok) {
+            throw new Error('Failed to load AI briefing content');
+          }
+
+          const htmlText = await response.text();
+          const parsedDocument = new DOMParser().parseFromString(htmlText, 'text/html');
+          const sheetElement = parsedDocument.querySelector('.bottom-sheet');
+
+          if (!sheetElement) {
+            throw new Error('Bottom sheet markup not found');
+          }
+
+          sheetElement.id = 'ai-briefing-sheet';
+          sheetElement.setAttribute('aria-hidden', 'true');
+          attachSheetHandlers(sheetElement);
+          document.body.appendChild(sheetElement);
+
+          aiBriefSheet = sheetElement;
+          aiBriefLoaded = true;
+          return true;
+        } catch (error) {
+          console.error('AI 브리핑을 불러오는 데 실패했습니다.', error);
+          return false;
+        }
+      };
+
+      const openAiBrief = async () => {
+        const isLoaded = await loadAiBrief();
+
+        if (!isLoaded || !aiBriefSheet) return;
+
+        aiBriefSheet.classList.add('is-open');
+        aiBriefSheet.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('bottom-sheet-open');
+      };
+
+      if (aiBriefTrigger) {
+        aiBriefTrigger.addEventListener('click', openAiBrief);
+      }
+    })();
   </script>
 </body>
 </html>

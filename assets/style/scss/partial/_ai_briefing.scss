@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
-.ai-briefing {
-  display: flex;
+.bottom-sheet {
+  display: none;
   width: 100%;
   max-width: 332px;
   padding: 20px;
@@ -16,6 +16,10 @@
   transform: translateX(-50%);
   z-index: 1000;
 
+  &.is-open {
+    display: flex;
+  }
+
   @media (max-width: $mobile) {
     max-width: 100%;
     padding: 20px $mobilePadSide;
@@ -23,14 +27,14 @@
   }
 }
 
-.ai-briefing__handle {
+.bottom-sheet__handle {
   width: 40px;
   height: 4px;
   border-radius: 999px;
   background: var(--surface-raised);
 }
 
-.ai-briefing__title {
+.bottom-sheet__title {
   align-self: stretch;
   color: var(--text-primary);
   font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
@@ -41,11 +45,11 @@
   margin: 0;
 }
 
-.ai-briefing__description {
+.bottom-sheet__body {
   align-self: stretch;
 }
 
-.ai-briefing__list {
+.bottom-sheet__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -54,7 +58,7 @@
   gap: 12px;
 }
 
-.ai-briefing__list-item {
+.bottom-sheet__list-item {
   color: var(--text-primary);
   font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 15px;
@@ -72,7 +76,7 @@
   }
 }
 
-.ai-briefing__button {
+.bottom-sheet__button {
   display: flex;
   height: 40px;
   padding: 9px 128px;
@@ -99,4 +103,8 @@
   &:active {
     opacity: 0.8;
   }
+}
+
+body.bottom-sheet-open {
+  overflow: hidden;
 }
