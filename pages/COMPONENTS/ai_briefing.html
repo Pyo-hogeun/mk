@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 증권 브리핑 - Components</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  
+</head>
+<body>
+  <div class="ai-briefing">
+    <div class="ai-briefing__handle"></div>
+    <h2 class="ai-briefing__title">AI 증권 브리핑</h2>
+    <div class="ai-briefing__description">
+      <ul class="ai-briefing__list">
+        <li class="ai-briefing__list-item">관심 있는 업종과 종목을 직접 설정하면 AI가 해당 분야의 주요 이슈만 골라 맞춤형으로 브리핑해드려요.</li>
+        <li class="ai-briefing__list-item">설정 전에는 정보가 노출되지 않으며, 사용자가 선택한 관심 키워드에 맞춰 개인화된 뉴스 흐름을 분석할 준비를 시작해요.</li>
+        <li class="ai-briefing__list-item">투자 판단에 참고할 수 있는 객관적인 시장 이슈를 선별하여 나만의 최적화된 증권 피드를 구성해 보세요.</li>
+      </ul>
+    </div>
+    <button class="ai-briefing__button" type="button">확인</button>
+  </div>
+
+  <script>
+    const confirmButton = document.querySelector('.ai-briefing__button');
+
+    confirmButton.addEventListener('click', () => {
+      console.log('확인 button clicked');
+    });
+  </script>
+</body>
+</html>
