@@ -1,0 +1,36 @@
+@use 'variables'as *;
+
+.toggle-switch {
+  display: flex;
+  width: 105px;
+  height: var(--height-md, 40px);
+  padding: 4px;
+  align-items: center;
+  gap: 2px;
+  border-radius: 8px;
+  border: 1.078px solid var(--border-default, #464646);
+  background: var(--bg-default, #1D1D1D);
+
+  input {
+    width: 0;
+    height: 0;
+    display: none;
+    &:checked + label{
+      font-weight: 600;
+      background: var(--orange-100, #FF7A00);
+    }
+  }
+
+  label {
+    display: flex;
+    width: 48px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    color: #FFFFFF;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

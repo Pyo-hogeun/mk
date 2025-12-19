@@ -1,4 +1,5 @@
-@use 'variables' as *;
+@use 'variables'as *;
+
 :root {
   --text-primary: #F0F0F0;
   --text-secondary: #7B7B7B;
@@ -19,7 +20,10 @@
   justify-content: start;
   flex-wrap: wrap;
   margin: 24px 0;
+
   @media (max-width: $mobile) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
   }
 }
@@ -41,7 +45,7 @@
     height: 32px;
     background: var(--base-gradation, linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%));
     padding: 0 4px;
-    
+
     img {
       aspect-ratio: 1;
       object-fit: contain;
@@ -65,14 +69,16 @@
   flex-direction: column;
   min-width: 240px;
   min-height: 40px;
-  width: 480px;
+  width: $mobile;
   height: var(--height-md, 40px);
   color: var(--text-secondary, #7B7B7B);
   text-align: center;
   padding: 0 20px;
   font: 600 16px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-  
+
   @media (max-width: $mobile) {
+    grid-column: 1 / 3;
+    width: auto;
     max-width: 100%;
     border-bottom: 1px solid #464646;
   }
@@ -82,6 +88,7 @@
     width: 100%;
     align-items: start;
     justify-content: start;
+
     .nav-tab {
       display: flex;
       justify-content: center;
@@ -90,7 +97,7 @@
       height: 32px;
       flex: 1;
       gap: var(--gap-normal, 8px);
-      
+
       &.active .tab-label {
         color: var(--text-primary, #F0F0F0);
       }
@@ -99,11 +106,14 @@
         color: var(--text-secondary, #7B7B7B);
       }
     }
+
     @media (max-width: $mobile) {
       max-width: 100%;
-      .nav-tab{
+
+      .nav-tab {
         height: 40px;
-        &.active{
+
+        &.active {
           box-shadow: inset 0 -2px 0px var(--orange-200, #E55204);
         }
       }
@@ -118,12 +128,12 @@
   gap: var(--spacing-sm, 8px);
   flex: 1;
   min-width: 240px;
-  
+
   @media (max-width: $mobile) {
     max-width: 100%;
     display: none;
   }
-  
+
   img {
     aspect-ratio: 1;
     object-fit: contain;
@@ -195,4 +205,19 @@
 .change-text {
   align-self: stretch;
   margin: auto 0;
+}
+
+
+.content {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    h3{
+      display: flex;
+      align-items: center;
+    }
+  }
 }
