@@ -223,7 +223,7 @@ function generateIndex(done) {
     
     .meta { color:#6b7280; font-size: 13px; }
     .layout { --list-width: 20%; display: grid; grid-template-columns: minmax(100px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 96vh}
-    .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); } .list-panel{ overflow-y: auto;}
+    .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); } .list-panel{ overflow-y: auto;min-height: 50vh}
     .category { margin-bottom: 18px; }
     .category h2 { margin: 0 0 8px; font-size: 17px; color:#1f2937; }
     ul { margin: 6px 0 12px; padding: 0; }
