@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use 'variables'as *;
 
 .market-briefing {
   display: flex;
@@ -8,9 +8,12 @@
   gap: 16px;
   align-self: stretch;
   border-radius: 12px;
-  border: 1px solid #FF800B;
-  background: #1D1D1D;
-  box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
+  border: 1px solid transparent;
+  // background: #1D1D1D;
+  background:
+    linear-gradient(#1D1D1D, #1D1D1D) padding-box,
+    linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+  // box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
   margin: 24px $mobilePadSide;
 
   &__section {
@@ -30,7 +33,6 @@
   &__title {
     flex: 1 0 0;
     color: rgba(255, 122, 0, 1);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -42,7 +44,7 @@
     width: 136px;
     justify-content: flex-end;
     align-items: center;
-    gap: 7px;
+    // gap: 7px;
     cursor: pointer;
 
     .view-all-text {
@@ -73,10 +75,9 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
-      border-radius: 8px;
-      background: #FF800B;
+      border-radius: var(--radius-md, 8px);
+      background: var(--base-gradation, linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%));
       color: rgba(255, 255, 255, 1);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
       font-size: 13px;
       font-style: normal;
       font-weight: 600;

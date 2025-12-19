@@ -1,0 +1,19 @@
+@use 'variables'as *;
+
+.issue-industry {
+  &__tab {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    .item {
+      display: flex;
+      padding: 4px 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: var(--radius-md, 8px);
+      background: var(--bg-subtle, #2F2F2F);
+      color: var(--text-primary);
+    }
+  }
+}
