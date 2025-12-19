@@ -338,22 +338,19 @@ body {
   border-radius: 12px;
   background: var(--bg-subtle, #2F2F2F);
 }
-
-.stock-header {
+.stock-issue-card__header {
   display: flex;
   align-items: center;
   gap: 4px;
   align-self: stretch;
 }
-
-.stock-name {
+.stock-issue-card__name {
   color: var(--text-primary, #F0F0F0);
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
 }
-
-.stock-code {
+.stock-issue-card__code {
   flex: 1 0 0;
   color: var(--text-secondary, #7B7B7B);
   text-align: right;
@@ -361,60 +358,46 @@ body {
   font-weight: 400;
   line-height: 150%;
 }
-
-.stock-price-info {
+.stock-issue-card__price-info {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-
-.stock-price {
-  color: var(--red, #F00);
+.stock-issue-card__price {
   font-size: 18px;
   font-weight: 700;
   line-height: 140%;
 }
-
-.stock-change {
+.stock-issue-card__change {
   display: flex;
   width: 116px;
   justify-content: flex-end;
   align-items: center;
   gap: 4px;
 }
-.stock-change.positive {
-  color: var(--red, #F00);
-}
-.stock-change.negative {
-  color: var(--blue, #2175FF);
-}
-.stock-change svg {
+.stock-issue-card__change svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
 }
-
-.change-amount,
-.change-percent {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 150%;
+.stock-issue-card.positive .stock-issue-card__price-info {
+  color: var(--red, #F00);
 }
-
-.stock-volume {
+.stock-issue-card.negative .stock-issue-card__price-info {
+  color: var(--blue, #2175FF);
+}
+.stock-issue-card__volume {
   align-self: stretch;
   color: var(--text-secondary, #7B7B7B);
   font-size: 12px;
   font-weight: 500;
   line-height: 150%;
 }
-
-.stock-divider {
+.stock-issue-card__divider {
   width: 180px;
   height: 1px;
 }
-
-.stock-badge {
+.stock-issue-card__badge {
   display: flex;
   height: 20px;
   padding: 0 8px;
@@ -429,12 +412,18 @@ body {
   font-weight: 600;
   line-height: 150%;
 }
-
-.stock-description {
+.stock-issue-card__description {
   align-self: stretch;
   color: var(--text-secondary, #7B7B7B);
   font-size: 12px;
   font-weight: 500;
+  line-height: 150%;
+}
+
+.change-amount,
+.change-percent {
+  font-size: 13px;
+  font-weight: 600;
   line-height: 150%;
 }
 

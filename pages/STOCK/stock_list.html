@@ -127,73 +127,153 @@
 
           </h3>
           <div class="toggle-switch">
-            <input type="radio" name="updown" id="up" checked>
-            <label for="up">상승</label>
-            <input type="radio" name="updown" id="down">
-            <label for="down">하락</label>
+            <input type="radio" name="updown" id="up-side" checked>
+            <label for="up-side">상승</label>
+            <input type="radio" name="updown" id="down-side">
+            <label for="down-side">하락</label>
           </div>
         </div>
 
         <div class="stock-issues up-side">
-          <div class="stock-issue-card">
-            <div class="stock-header">
-              <div class="stock-name">SK하이닉스</div>
-              <div class="stock-code">000660</div>
+          <div class="stock-issue-card positive">
+            <div class="stock-issue-card__header">
+              <div class="stock-issue-card__name">SK하이닉스</div>
+              <div class="stock-issue-card__code">000660</div>
             </div>
-            <div class="stock-price-info">
-              <div class="stock-price">16,000</div>
-              <div class="stock-change positive">
+            <div class="stock-issue-card__price-info">
+              <div class="stock-issue-card__price">16,000</div>
+              <div class="stock-issue-card__change">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                  <path
+                    d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z"
+                    fill="#FF0000" />
                 </svg>
                 <div class="change-amount">1,600</div>
                 <div class="change-percent">(10%)</div>
               </div>
             </div>
-            <div class="stock-volume">전일대비 거래량 +240%</div>
-            <div class="stock-divider"></div>
-            <div class="stock-badge">왜 올랐을까?</div>
-            <div class="stock-description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
+            <div class="stock-issue-card__volume">전일대비 거래량 +240%</div>
+            <div class="stock-issue-card__divider"></div>
+            <div class="stock-issue-card__badge">왜 올랐을까?</div>
+            <div class="stock-issue-card__description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
           </div>
-
-          <div class="stock-issue-card">
-            <div class="stock-header">
-              <div class="stock-name">SK하이닉스</div>
-              <div class="stock-code">000660</div>
+          <div class="stock-issue-card positive">
+            <div class="stock-issue-card__header">
+              <div class="stock-issue-card__name">SK하이닉스</div>
+              <div class="stock-issue-card__code">000660</div>
             </div>
-            <div class="stock-price-info">
-              <div class="stock-price">16,000</div>
-              <div class="stock-change positive">
+            <div class="stock-issue-card__price-info">
+              <div class="stock-issue-card__price">16,000</div>
+              <div class="stock-issue-card__change">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                  <path
+                    d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z"
+                    fill="#FF0000" />
                 </svg>
                 <div class="change-amount">1,600</div>
                 <div class="change-percent">(10%)</div>
               </div>
             </div>
-            <div class="stock-volume">전일대비 거래량 +240%</div>
-            <div class="stock-divider"></div>
-            <div class="stock-badge">왜 올랐을까?</div>
-            <div class="stock-description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
+            <div class="stock-issue-card__volume">전일대비 거래량 +240%</div>
+            <div class="stock-issue-card__divider"></div>
+            <div class="stock-issue-card__badge">왜 올랐을까?</div>
+            <div class="stock-issue-card__description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
           </div>
-
-          <div class="stock-issue-card">
-            <div class="stock-header">
-              <div class="stock-name">SK하이닉스</div>
-              <div class="stock-code">000660</div>
+          <div class="stock-issue-card positive">
+            <div class="stock-issue-card__header">
+              <div class="stock-issue-card__name">SK하이닉스</div>
+              <div class="stock-issue-card__code">000660</div>
             </div>
-            <div class="stock-price-info">
-              <div class="stock-price">16,000</div>
-              <div class="stock-change positive">
+            <div class="stock-issue-card__price-info">
+              <div class="stock-issue-card__price">16,000</div>
+              <div class="stock-issue-card__change">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z"
+                    fill="#FF0000" />
+                </svg>
                 <div class="change-amount">1,600</div>
                 <div class="change-percent">(10%)</div>
               </div>
             </div>
-            <div class="stock-volume">전일대비 거래량 +240%</div>
-            <div class="stock-divider"></div>
-            <div class="stock-badge">왜 올랐을까?</div>
-            <div class="stock-description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
+            <div class="stock-issue-card__volume">전일대비 거래량 +240%</div>
+            <div class="stock-issue-card__divider"></div>
+            <div class="stock-issue-card__badge">왜 올랐을까?</div>
+            <div class="stock-issue-card__description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
           </div>
+
+        </div>
+        <div class="stock-issues down-side">
+          <div class="stock-issue-card negative">
+            <div class="stock-issue-card__header">
+              <div class="stock-issue-card__name">SK하이닉스</div>
+              <div class="stock-issue-card__code">000660</div>
+            </div>
+            <div class="stock-issue-card__price-info">
+              <div class="stock-issue-card__price">16,000</div>
+              <div class="stock-issue-card__change">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.866 15.5C10.4811 16.1667 9.51888 16.1667 9.13397 15.5L3.93782 6.5C3.55292 5.83333 4.03405 5 4.80385 5L15.1962 5C15.966 5 16.4471 5.83333 16.0622 6.5L10.866 15.5Z"
+                    fill="#2175FF" />
+                </svg>
+
+                <div class="change-amount">1,600</div>
+                <div class="change-percent">(10%)</div>
+              </div>
+            </div>
+            <div class="stock-issue-card__volume">전일대비 거래량 +240%</div>
+            <div class="stock-issue-card__divider"></div>
+            <div class="stock-issue-card__badge">왜 올랐을까?</div>
+            <div class="stock-issue-card__description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
+          </div>
+          <div class="stock-issue-card negative">
+            <div class="stock-issue-card__header">
+              <div class="stock-issue-card__name">SK하이닉스</div>
+              <div class="stock-issue-card__code">000660</div>
+            </div>
+            <div class="stock-issue-card__price-info">
+              <div class="stock-issue-card__price">16,000</div>
+              <div class="stock-issue-card__change">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.866 15.5C10.4811 16.1667 9.51888 16.1667 9.13397 15.5L3.93782 6.5C3.55292 5.83333 4.03405 5 4.80385 5L15.1962 5C15.966 5 16.4471 5.83333 16.0622 6.5L10.866 15.5Z"
+                    fill="#2175FF" />
+                </svg>
+
+                <div class="change-amount">1,600</div>
+                <div class="change-percent">(10%)</div>
+              </div>
+            </div>
+            <div class="stock-issue-card__volume">전일대비 거래량 +240%</div>
+            <div class="stock-issue-card__divider"></div>
+            <div class="stock-issue-card__badge">왜 올랐을까?</div>
+            <div class="stock-issue-card__description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
+          </div>
+          <div class="stock-issue-card negative">
+            <div class="stock-issue-card__header">
+              <div class="stock-issue-card__name">SK하이닉스</div>
+              <div class="stock-issue-card__code">000660</div>
+            </div>
+            <div class="stock-issue-card__price-info">
+              <div class="stock-issue-card__price">16,000</div>
+              <div class="stock-issue-card__change">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.866 15.5C10.4811 16.1667 9.51888 16.1667 9.13397 15.5L3.93782 6.5C3.55292 5.83333 4.03405 5 4.80385 5L15.1962 5C15.966 5 16.4471 5.83333 16.0622 6.5L10.866 15.5Z"
+                    fill="#2175FF" />
+                </svg>
+
+                <div class="change-amount">1,600</div>
+                <div class="change-percent">(10%)</div>
+              </div>
+            </div>
+            <div class="stock-issue-card__volume">전일대비 거래량 +240%</div>
+            <div class="stock-issue-card__divider"></div>
+            <div class="stock-issue-card__badge">왜 올랐을까?</div>
+            <div class="stock-issue-card__description">SK하이닉스와 15억 규모 HBM 제조용 장비 공급 계약 체결로 실적 개선 기대.</div>
+          </div>
+
         </div>
       </div>
     </div>
