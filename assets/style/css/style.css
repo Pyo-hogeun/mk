@@ -253,6 +253,9 @@ body {
   overflow-x: auto;
   padding-left: 15px;
 }
+.market-indicators::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
+}
 .market-indicators .market-card {
   border-radius: var(--radius-lg, 12px);
   align-self: stretch;
@@ -340,6 +343,9 @@ body {
   width: 100%;
   overflow-x: auto;
   padding-left: 15px;
+}
+.stock-issues::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
 }
 
 .stock-issue-card {
@@ -821,6 +827,9 @@ body {
   align-items: flex-start;
   gap: 12px;
   overflow-x: auto;
+}
+.related-stocks-grid::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
 }
 
 .stock-metric-card {

@@ -150,6 +150,9 @@
   justify-content: start;
   overflow-x: auto;
   padding-left: $mobilePadSide;
+  &::-webkit-scrollbar {
+    display: none;           /* Chrome / Safari / Edge */
+  }
 
   .market-card {
     border-radius: var(--radius-lg, 12px);
@@ -247,6 +250,9 @@
   width: 100%;
   overflow-x: auto;
   padding-left: $mobilePadSide;
+  &::-webkit-scrollbar {
+    display: none;           /* Chrome / Safari / Edge */
+  }
 }
 
 .stock-issue-card {

@@ -208,6 +208,9 @@
   align-items: flex-start;
   gap: 12px;
   overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;           /* Chrome / Safari / Edge */
+  }
 }
 
 .stock-metric-card {
