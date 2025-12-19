@@ -153,10 +153,8 @@ body {
 }
 .agent-brand .brand-icon img {
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   width: 20px;
 }
 .agent-brand .brand-title {
@@ -237,10 +235,8 @@ body {
 }
 .header-actions img {
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   width: 28px;
 }
 
@@ -294,10 +290,8 @@ body {
 
 .change-icon {
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   width: 20px;
   align-self: stretch;
   flex-shrink: 0;
@@ -321,11 +315,17 @@ body {
   display: flex;
   align-items: center;
 }
+.content__title .toggle-switch {
+  display: none;
+  margin-left: auto;
+}
 
 .stock-issues {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .stock-issue-card {
@@ -427,6 +427,26 @@ body {
   line-height: 150%;
 }
 
+@media (max-width: 480px) {
+  .content__title {
+    align-items: center;
+    gap: 12px;
+  }
+  .content__title .toggle-switch {
+    display: flex;
+  }
+  .stock-issues {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .stock-issues.is-active {
+    display: flex;
+  }
+  .stock-issue-card {
+    width: 100%;
+  }
+}
 .toggle-switch {
   display: flex;
   width: 105px;
@@ -459,3 +479,5 @@ body {
   font-size: 14px;
   font-weight: 500;
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -280,6 +280,37 @@
 
 
   </div>
-</body>
+  <script>
+    (function () {
+      const upInput = document.getElementById('up-side');
+      const downInput = document.getElementById('down-side');
+      const upSection = document.querySelector('.stock-issues.up-side');
+      const downSection = document.querySelector('.stock-issues.down-side');
 
+      if (!upInput || !downInput || !upSection || !downSection) {
+        return;
+      }
+
+      const mobileQuery = window.matchMedia('(max-width: 480px)');
+
+      const updateVisibility = () => {
+        const isMobile = mobileQuery.matches;
+
+        if (isMobile) {
+          upSection.classList.toggle('is-active', upInput.checked);
+          downSection.classList.toggle('is-active', downInput.checked);
+        } else {
+          upSection.classList.remove('is-active');
+          downSection.classList.remove('is-active');
+        }
+      };
+
+      upInput.addEventListener('change', updateVisibility);
+      downInput.addEventListener('change', updateVisibility);
+      mobileQuery.addEventListener('change', updateVisibility);
+
+      updateVisibility();
+    })();
+  </script>
+</body>
 </html>
