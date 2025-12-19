@@ -138,6 +138,7 @@ body {
   align-items: center;
   gap: var(--spacing-sm, 8px);
   width: 175px;
+  padding: 4px 15px;
 }
 .agent-brand .brand-icon {
   display: flex;

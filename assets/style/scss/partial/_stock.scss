@@ -20,7 +20,7 @@
   justify-content: start;
   flex-wrap: wrap;
   margin: 24px 0;
-
+  
   @media (max-width: $mobile) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -33,6 +33,7 @@
   align-items: center;
   gap: var(--spacing-sm, 8px);
   width: 175px;
+  padding: 4px $mobilePadSide;
 
   .brand-icon {
     display: flex;
