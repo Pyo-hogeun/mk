@@ -215,9 +215,129 @@
     font-size: 20px;
     font-weight: 700;
     color: var(--text-primary);
+    margin-bottom: 16px;
     h3{
       display: flex;
       align-items: center;
     }
   }
+}
+
+.stock-issues {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stock-issue-card {
+  display: flex;
+  height: 205px;
+  padding: 12px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--bg-subtle, #2F2F2F);
+}
+
+.stock-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.stock-name {
+  color: var(--text-primary, #F0F0F0);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.stock-code {
+  flex: 1 0 0;
+  color: var(--text-secondary, #7B7B7B);
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.stock-price-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stock-price {
+  color: var(--red, #F00);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.stock-change {
+  display: flex;
+  width: 116px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+
+  &.positive {
+    color: var(--red, #F00);
+  }
+
+  &.negative {
+    color: var(--blue, #2175FF);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+}
+
+.change-amount,
+.change-percent {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.stock-volume {
+  align-self: stretch;
+  color: var(--text-secondary, #7B7B7B);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.stock-divider {
+  width: 180px;
+  height: 1px;
+}
+
+.stock-badge {
+  display: flex;
+  height: 20px;
+  padding: 0 8px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 100px;
+  border: 1px solid #FF800B;
+  background: #1D1D1D;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.stock-description {
+  align-self: stretch;
+  color: var(--text-secondary, #7B7B7B);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
 }
