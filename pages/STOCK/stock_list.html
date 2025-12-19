@@ -915,15 +915,7 @@
         });
 
         if (aiBriefHandle) {
-          aiBriefHandle.addEventListener('pointerdown', (event) => {
-            if (!aiBriefSheet.classList.contains('is-open')) return;
-            isDragging = true;
-            startY = event.clientY;
-            aiBriefSheet.style.transition = 'none';
-            aiBriefHandle.setPointerCapture(event.pointerId);
-          });
-
-          aiBriefHandle.addEventListener('pointermove', (event) => {
+          const handlePointerMove = (event) => {
             if (!isDragging || startY === null) return;
             const deltaY = event.clientY - startY;
 
@@ -934,7 +926,7 @@
 
             const limitedDelta = Math.min(deltaY, MAX_DRAG_DISTANCE);
             aiBriefSheet.style.transform = `translate(-50%, ${limitedDelta}px)`;
-          });
+          };
 
           const endDrag = (event) => {
             if (!isDragging) return;
@@ -947,14 +939,25 @@
                 resetSheetPosition();
               }
             }
+            window.removeEventListener('pointermove', handlePointerMove);
+            window.removeEventListener('pointerup', endDrag);
+            window.removeEventListener('pointercancel', endDrag);
             if (aiBriefHandle && event.pointerId !== undefined && aiBriefHandle.hasPointerCapture(event.pointerId)) {
               aiBriefHandle.releasePointerCapture(event.pointerId);
             }
             startY = null;
           };
 
-          aiBriefHandle.addEventListener('pointerup', endDrag);
-          aiBriefHandle.addEventListener('pointercancel', endDrag);
+          aiBriefHandle.addEventListener('pointerdown', (event) => {
+            if (!aiBriefSheet.classList.contains('is-open')) return;
+            isDragging = true;
+            startY = event.clientY;
+            aiBriefSheet.style.transition = 'none';
+            aiBriefHandle.setPointerCapture(event.pointerId);
+            window.addEventListener('pointermove', handlePointerMove);
+            window.addEventListener('pointerup', endDrag);
+            window.addEventListener('pointercancel', endDrag);
+          });
         }
       };
 
