@@ -503,6 +503,7 @@ body {
   align-self: stretch;
   border-radius: 12px;
   border: 1px solid transparent;
+  box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
   background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   margin: 24px 15px;
 }
@@ -591,6 +592,23 @@ body {
   font-size: 12px;
   font-weight: 500;
   color: var(--text-secondary);
+}
+.market-briefing__item_loading {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--border-default, #464646);
+  background: var(--bg-subtle, #2F2F2F);
+  /* inner shadow */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
+}
+.market-briefing__item_loading p {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 150%; /* 22.5px */
 }
 .market-briefing__divider {
   width: 100%;
