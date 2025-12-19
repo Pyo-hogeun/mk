@@ -148,7 +148,8 @@
   align-self: stretch;
   gap: var(--spacing-sm, 8px);
   justify-content: start;
-  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  overflow-x: auto;
+  padding-left: $mobilePadSide;
 }
 
 .market-card {
@@ -216,6 +217,7 @@
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 16px;
+    padding: 0 $mobilePadSide;
 
     h3 {
       display: flex;
@@ -233,8 +235,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
   width: 100%;
+  overflow-x: auto;
+  padding-left: $mobilePadSide;
 }
 
 .stock-issue-card {
@@ -358,6 +361,7 @@
   .content__title {
     align-items: center;
     gap: 12px;
+    margin: 24px 0;
 
     .toggle-switch {
       display: flex;
@@ -366,7 +370,7 @@
 
   .stock-issues {
     display: none;
-    flex-direction: column;
+    // flex-direction: column;
     gap: 12px;
 
     &.is-active {
@@ -375,7 +379,7 @@
   }
 
   .stock-issue-card {
-    width: 100%;
+    width: 212px;
   }
 }
 
