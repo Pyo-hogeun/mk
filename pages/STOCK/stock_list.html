@@ -733,6 +733,19 @@
     </div>
   </div>
 
+  <div class="bottom-sheet bottom-sheet--ai" id="ai-briefing-sheet" role="dialog" aria-modal="true" aria-label="AI 증권 브리핑" aria-hidden="true">
+    <div class="bottom-sheet__handle"></div>
+    <h2 class="bottom-sheet__title">AI 증권 브리핑</h2>
+    <div class="bottom-sheet__body">
+      <ul class="bottom-sheet__list">
+        <li class="bottom-sheet__list-item">관심 있는 업종과 종목을 직접 설정하면 AI가 해당 분야의 주요 이슈만 골라 맞춤형으로 브리핑해드려요.</li>
+        <li class="bottom-sheet__list-item">설정 전에는 정보가 노출되지 않으며, 사용자가 선택한 관심 키워드에 맞춰 개인화된 뉴스 흐름을 분석할 준비를 시작해요.</li>
+        <li class="bottom-sheet__list-item">투자 판단에 참고할 수 있는 객관적인 시장 이슈를 선별하여 나만의 최적화된 증권 피드를 구성해 보세요.</li>
+      </ul>
+    </div>
+    <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
+  </div>
+
   <script>
     (function () {
       const fontSizeButton = document.querySelector('.btn-font-size');
@@ -870,8 +883,7 @@
 
     (function () {
       const aiBriefTrigger = document.querySelector('.notice__ai-brief');
-      let aiBriefSheet = null;
-      let aiBriefLoaded = false;
+      const aiBriefSheet = document.getElementById('ai-briefing-sheet');
 
       const closeAiBrief = () => {
         if (!aiBriefSheet) return;
@@ -881,57 +893,25 @@
         document.body.classList.remove('bottom-sheet-open');
       };
 
-      const attachSheetHandlers = (sheetElement) => {
-        const dismissButtons = sheetElement.querySelectorAll('[data-bottom-sheet-dismiss]');
+      const attachSheetHandlers = () => {
+        if (!aiBriefSheet) return;
+        const dismissButtons = aiBriefSheet.querySelectorAll('[data-bottom-sheet-dismiss]');
 
         dismissButtons.forEach((button) => {
           button.addEventListener('click', closeAiBrief);
         });
       };
 
-      const loadAiBrief = async () => {
-        if (aiBriefLoaded) return true;
-
-        try {
-          const response = await fetch('../COMPONENTS/ai_briefing.html');
-
-          if (!response.ok) {
-            throw new Error('Failed to load AI briefing content');
-          }
-
-          const htmlText = await response.text();
-          const parsedDocument = new DOMParser().parseFromString(htmlText, 'text/html');
-          const sheetElement = parsedDocument.querySelector('.bottom-sheet');
-
-          if (!sheetElement) {
-            throw new Error('Bottom sheet markup not found');
-          }
-
-          sheetElement.id = 'ai-briefing-sheet';
-          sheetElement.setAttribute('aria-hidden', 'true');
-          attachSheetHandlers(sheetElement);
-          document.body.appendChild(sheetElement);
-
-          aiBriefSheet = sheetElement;
-          aiBriefLoaded = true;
-          return true;
-        } catch (error) {
-          console.error('AI 브리핑을 불러오는 데 실패했습니다.', error);
-          return false;
-        }
-      };
-
-      const openAiBrief = async () => {
-        const isLoaded = await loadAiBrief();
-
-        if (!isLoaded || !aiBriefSheet) return;
+      const openAiBrief = () => {
+        if (!aiBriefSheet) return;
 
         aiBriefSheet.classList.add('is-open');
         aiBriefSheet.setAttribute('aria-hidden', 'false');
         document.body.classList.add('bottom-sheet-open');
       };
 
-      if (aiBriefTrigger) {
+      if (aiBriefTrigger && aiBriefSheet) {
+        attachSheetHandlers();
         aiBriefTrigger.addEventListener('click', openAiBrief);
       }
     })();
