@@ -625,10 +625,96 @@
         </div>
       </div>
     </div>
-
-
   </div>
+
+  <div class="layer-popup" id="font-size-popup" aria-hidden="true">
+    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
+    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="글자크기 설정">
+      <div class="layer-popup__content"></div>
+    </div>
+  </div>
+
   <script>
+    (function () {
+      const fontSizeButton = document.querySelector('.btn-font-size');
+      const popup = document.getElementById('font-size-popup');
+      const popupContent = popup?.querySelector('.layer-popup__content');
+      const popupBackdrop = popup?.querySelector('.layer-popup__backdrop');
+      let selectorLoaded = false;
+
+      const closePopup = () => {
+        if (!popup) return;
+
+        popup.classList.remove('is-active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('layer-popup-open');
+      };
+
+      const attachCloseHandlers = (rootElement) => {
+        const closeButton = rootElement.querySelector('.close-button');
+
+        if (closeButton) {
+          closeButton.addEventListener('click', closePopup);
+        }
+      };
+
+      const loadFontSizeSelector = async () => {
+        if (selectorLoaded || !popupContent) {
+          return selectorLoaded;
+        }
+
+        try {
+          const response = await fetch('../COMPONENTS/font_size_selector.html');
+
+          if (!response.ok) {
+            throw new Error('Failed to load font size selector');
+          }
+
+          const htmlText = await response.text();
+          const parsedDocument = new DOMParser().parseFromString(htmlText, 'text/html');
+          const selectorElement = parsedDocument.querySelector('.font-size-selector');
+
+          if (!selectorElement) {
+            throw new Error('Font size selector markup not found');
+          }
+
+          popupContent.innerHTML = '';
+          popupContent.appendChild(selectorElement);
+          attachCloseHandlers(selectorElement);
+          selectorLoaded = true;
+          return true;
+        } catch (error) {
+          console.error('글자 크기 설정 레이어를 불러오는 데 실패했습니다.', error);
+          return false;
+        }
+      };
+
+      const openPopup = async () => {
+        if (!popup) return;
+        const isLoaded = await loadFontSizeSelector();
+
+        if (!isLoaded) return;
+
+        popup.classList.add('is-active');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('layer-popup-open');
+      };
+
+      if (fontSizeButton) {
+        fontSizeButton.addEventListener('click', openPopup);
+      }
+
+      if (popupBackdrop) {
+        popupBackdrop.addEventListener('click', closePopup);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && popup?.classList.contains('is-active')) {
+          closePopup();
+        }
+      });
+    })();
+
     (function () {
       const upInput = document.getElementById('up-side');
       const downInput = document.getElementById('down-side');
