@@ -228,6 +228,15 @@
       display: none;
       margin-left: auto;
     }
+    .btn-refresh{
+      background-color: transparent;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border: 0;
+      svg{
+        vertical-align: middle;
+      }
+    }
   }
 }
 
