@@ -3,11 +3,11 @@ body{
   background-color: $bgDark;
 }
 .container{
-  width: 1210px;
   margin: 0 auto;
+  width: 100%;
 }
-@media screen and (max-width: 480px){
+@media screen and (min-width: $mobile){
   .container{
-    width: 100%;
+    width: 1210px;
   }
 }

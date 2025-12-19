@@ -1,8 +1,14 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css");
+html {
+  min-width: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Noto Sans", sans-serif;
+  min-width: 100%;
+  height: 100%;
 }
 
 body * {
@@ -44,6 +50,32 @@ svg {
   shape-rendering: geometricPrecision;
 }
 
+/* theme */
+:root {
+  /* dark */
+  /* color */
+  --bg-dark-opacity: #000000b2;
+  --bg-default: #1d1d1d;
+  --bg-subtle: #2f2f2f;
+  --border-default: #464646;
+  --surface-default: #2f2f2f;
+  --surface-raised: #434343;
+  --text-disabled: #a8a8a8;
+  --text-primary: #f0f0f0;
+  --text-secondary: #7b7b7b;
+  /* light */
+  /* color */
+  --bg-dark-opacity: #00000080;
+  --bg-default: #ffffff;
+  --bg-subtle: #f2f2f2;
+  --border-default: #e0e0e0;
+  --surface-default: #f2f2f2;
+  --surface-raised: #ececec;
+  --text-disabled: #a1a1a1;
+  --text-primary: #111111;
+  --text-secondary: #626262;
+}
+
 .fc-black {
   color: #000000;
 }
@@ -53,13 +85,34 @@ body {
 }
 
 .container {
-  width: 1210px;
   margin: 0 auto;
+  width: 100%;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   .container {
-    width: 100%;
+    width: 1210px;
+  }
+}
+.banner {
+  width: 100%;
+  background-color: #2F2F2F;
+  color: #F0F0F0;
+  text-align: center;
+  padding: 4px 8px;
+  color: var(--text-primary, #F0F0F0);
+  /* Caption/SM */
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
+}
+.banner svg {
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 480px) {
+  .banner {
+    min-width: 1210px;
   }
 }
 :root {
@@ -78,6 +131,12 @@ body {
   gap: 36px;
   justify-content: start;
   flex-wrap: wrap;
+  margin: 24px 0;
+}
+@media (max-width: 480px) {
+  .agent-header {
+    gap: 0;
+  }
 }
 
 .agent-brand {
@@ -86,8 +145,7 @@ body {
   gap: var(--spacing-sm, 8px);
   width: 175px;
 }
-
-.brand-icon {
+.agent-brand .brand-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,7 +157,7 @@ body {
   background: var(--base-gradation, linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%));
   padding: 0 4px;
 }
-.brand-icon img {
+.agent-brand .brand-icon img {
   aspect-ratio: 1;
   -o-object-fit: contain;
      object-fit: contain;
@@ -107,10 +165,10 @@ body {
      object-position: center;
   width: 20px;
 }
-
-.brand-title {
+.agent-brand .brand-title {
   color: var(--text-primary, #F0F0F0);
   text-align: center;
+  white-space: nowrap;
   font: 700 22px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
@@ -128,25 +186,23 @@ body {
   padding: 0 20px;
   font: 600 16px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
 }
-@media (max-width: 991px) {
+@media (max-width: 480px) {
   .nav-tabs {
     max-width: 100%;
   }
 }
-
-.nav-tabs-container {
+.nav-tabs .nav-tabs-container {
   display: flex;
   width: 100%;
   align-items: start;
   justify-content: start;
 }
-@media (max-width: 991px) {
-  .nav-tabs-container {
+@media (max-width: 480px) {
+  .nav-tabs .nav-tabs-container {
     max-width: 100%;
   }
 }
-
-.nav-tab {
+.nav-tabs .nav-tabs-container .nav-tab {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,11 +211,10 @@ body {
   flex: 1;
   gap: var(--gap-normal, 8px);
 }
-.nav-tab.active .tab-label {
+.nav-tabs .nav-tabs-container .nav-tab.active .tab-label {
   color: var(--text-primary, #F0F0F0);
 }
-
-.tab-label {
+.nav-tabs .nav-tabs-container .nav-tab .tab-label {
   color: var(--text-secondary, #7B7B7B);
 }
 
@@ -171,9 +226,10 @@ body {
   flex: 1;
   min-width: 240px;
 }
-@media (max-width: 991px) {
+@media (max-width: 480px) {
   .header-actions {
     max-width: 100%;
+    display: none;
   }
 }
 .header-actions img {
