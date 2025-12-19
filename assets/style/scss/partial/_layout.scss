@@ -1,0 +1,13 @@
+@use 'variables' as *;
+body{
+  background-color: $bgDark;
+}
+.container{
+  width: 1210px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 480px){
+  .container{
+    width: 100%;
+  }
+}

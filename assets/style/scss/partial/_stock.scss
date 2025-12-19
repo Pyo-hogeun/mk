@@ -1,0 +1,119 @@
+// CSS Custom Properties
+:root {
+  --text-primary: #F0F0F0;
+  --text-secondary: #7B7B7B;
+  --spacing-sm: 8px;
+  --radius-md: 8px;
+  --height-md: 40px;
+  --gap-normal: 8px;
+  --base-gradation: linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%);
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.agent-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+  width: 175px;
+}
+
+.brand-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-md, 8px);
+  min-height: 32px;
+  width: 32px;
+  height: 32px;
+  background: var(--base-gradation, linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%));
+  padding: 0 4px;
+  
+  img {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 20px;
+  }
+}
+
+.brand-title {
+  color: var(--text-primary, #F0F0F0);
+  text-align: center;
+  font: 700 22px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  min-width: 240px;
+  min-height: 40px;
+  width: 480px;
+  height: var(--height-md, 40px);
+  color: var(--text-secondary, #7B7B7B);
+  text-align: center;
+  padding: 0 20px;
+  font: 600 16px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.nav-tabs-container {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-content: start;
+  
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.nav-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 32px;
+  flex: 1;
+  gap: var(--gap-normal, 8px);
+  
+  &.active .tab-label {
+    color: var(--text-primary, #F0F0F0);
+  }
+}
+
+.tab-label {
+  color: var(--text-secondary, #7B7B7B);
+}
+
+.header-actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+  flex: 1;
+  min-width: 240px;
+  
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+  
+  img {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 28px;
+  }
+}
