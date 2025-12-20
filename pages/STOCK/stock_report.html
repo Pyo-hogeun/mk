@@ -123,10 +123,6 @@
 
             <div class="timeline-chart-wrapper">
               <div class="chart-card">
-                <div class="chart-card__header">
-                  <div class="chart-card__title">Chart.js</div>
-                  <div class="chart-card__subtitle">SVG 데모와 유사한 면적형 라인</div>
-                </div>
                 <canvas id="timelineChartJs" class="timeline-chart" aria-label="Chart.js 주가 라인 차트"></canvas>
               </div>
 
@@ -976,100 +972,6 @@
       });
     })();
 
-    // (function () {
-    //   const aiBriefTrigger = document.querySelector('.notice__ai-brief');
-    //   const aiBriefSheet = document.getElementById('ai-briefing-sheet');
-    //   const aiBriefHandle = aiBriefSheet?.querySelector('.bottom-sheet__handle');
-    //   const SWIPE_CLOSE_THRESHOLD = 60;
-    //   const MAX_DRAG_DISTANCE = 120;
-    //   let startY = null;
-    //   let isDragging = false;
-
-    //   const closeAiBrief = () => {
-    //     if (!aiBriefSheet) return;
-
-    //     aiBriefSheet.classList.remove('is-open');
-    //     aiBriefSheet.setAttribute('aria-hidden', 'true');
-    //     aiBriefSheet.style.transform = '';
-    //     aiBriefSheet.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-    //     document.body.classList.remove('bottom-sheet-open');
-    //   };
-
-    //   const resetSheetPosition = () => {
-    //     if (!aiBriefSheet) return;
-    //     aiBriefSheet.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-    //     aiBriefSheet.style.transform = '';
-    //   };
-
-    //   const attachSheetHandlers = () => {
-    //     if (!aiBriefSheet) return;
-    //     const dismissButtons = aiBriefSheet.querySelectorAll('[data-bottom-sheet-dismiss]');
-
-    //     dismissButtons.forEach((button) => {
-    //       button.addEventListener('click', closeAiBrief);
-    //     });
-
-    //     if (aiBriefHandle) {
-    //       const handlePointerMove = (event) => {
-    //         if (!isDragging || startY === null) return;
-    //         const deltaY = event.clientY - startY;
-
-    //         if (deltaY <= 0) {
-    //           aiBriefSheet.style.transform = 'translate(-50%, 0)';
-    //           return;
-    //         }
-
-    //         const limitedDelta = Math.min(deltaY, MAX_DRAG_DISTANCE);
-    //         aiBriefSheet.style.transform = `translate(-50%, ${limitedDelta}px)`;
-    //       };
-
-    //       const endDrag = (event) => {
-    //         if (!isDragging) return;
-    //         isDragging = false;
-    //         if (startY !== null) {
-    //           const deltaY = event.clientY - startY;
-    //           if (deltaY > SWIPE_CLOSE_THRESHOLD) {
-    //             closeAiBrief();
-    //           } else {
-    //             resetSheetPosition();
-    //           }
-    //         }
-    //         window.removeEventListener('pointermove', handlePointerMove);
-    //         window.removeEventListener('pointerup', endDrag);
-    //         window.removeEventListener('pointercancel', endDrag);
-    //         if (aiBriefHandle && event.pointerId !== undefined && aiBriefHandle.hasPointerCapture(event.pointerId)) {
-    //           aiBriefHandle.releasePointerCapture(event.pointerId);
-    //         }
-    //         startY = null;
-    //       };
-
-    //       aiBriefHandle.addEventListener('pointerdown', (event) => {
-    //         if (!aiBriefSheet.classList.contains('is-open')) return;
-    //         isDragging = true;
-    //         startY = event.clientY;
-    //         aiBriefSheet.style.transition = 'none';
-    //         aiBriefHandle.setPointerCapture(event.pointerId);
-    //         window.addEventListener('pointermove', handlePointerMove);
-    //         window.addEventListener('pointerup', endDrag);
-    //         window.addEventListener('pointercancel', endDrag);
-    //       });
-    //     }
-    //   };
-
-    //   const openAiBrief = () => {
-    //     if (!aiBriefSheet) return;
-    //     resetSheetPosition();
-
-    //     aiBriefSheet.classList.add('is-open');
-    //     aiBriefSheet.setAttribute('aria-hidden', 'false');
-    //     document.body.classList.add('bottom-sheet-open');
-    //   };
-
-    //   if (aiBriefTrigger && aiBriefSheet) {
-    //     attachSheetHandlers();
-    //     aiBriefTrigger.addEventListener('click', openAiBrief);
-    //   }
-    // })();
   </script>
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>

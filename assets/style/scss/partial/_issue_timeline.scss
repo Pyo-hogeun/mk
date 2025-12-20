@@ -62,38 +62,7 @@
   gap: 12px;
 
   .chart-card {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
     padding: 12px;
-    border-radius: 10px;
-    border: 1px solid var(--border-default, #464646);
-    background: rgba(255, 255, 255, 0.02);
-
-    .chart-card__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
-    }
-
-    .chart-card__title {
-      color: var(--text-primary, #F0F0F0);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 150%;
-    }
-
-    .chart-card__subtitle {
-      color: var(--text-secondary, #9CA3AF);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 150%;
-      text-align: right;
-      flex: 1;
-    }
   }
 
   .timeline-chart {
