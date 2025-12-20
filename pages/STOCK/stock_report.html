@@ -320,6 +320,54 @@
     </div>
   </div>
 
+  <div class="layer-popup" id="set-period-popup" aria-hidden="true">
+    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
+    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="기간 설정">
+      <div class="layer-popup__content">
+        <div class="set-period">
+          <div class="set-period__header">
+            <h2 class="set-period__title">기간 설정</h2>
+            <button class="set-period__close" type="button" aria-label="닫기">
+              <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/790e0da663b2008147003f5a47ca2e193b2067e6?placeholderIfAbsent=true" alt="" class="set-period__close-icon" />
+            </button>
+          </div>
+
+          <div class="set-period__section">
+            <h3 class="set-period__section-title">빠른 선택</h3>
+            <div class="set-period__quick-buttons">
+              <button class="quick-button quick-button--active" type="button">오늘</button>
+              <button class="quick-button" type="button">최근 1주일</button>
+              <button class="quick-button" type="button">최근 1개월</button>
+              <button class="quick-button" type="button">최근 3개월</button>
+              <button class="quick-button" type="button">직접 선택</button>
+            </div>
+          </div>
+
+          <div class="set-period__section">
+            <h3 class="set-period__section-title">시작일</h3>
+            <button class="date-picker" type="button">
+              <span class="date-picker__text">2025년 12월 15일</span>
+              <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/23406555efdbe9ab48bff28caa24d18d64abd990?placeholderIfAbsent=true" alt="" class="date-picker__icon" />
+            </button>
+          </div>
+
+          <div class="set-period__section">
+            <h3 class="set-period__section-title">종료일</h3>
+            <button class="date-picker" type="button">
+              <span class="date-picker__text">2025년 12월 15일</span>
+              <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/23406555efdbe9ab48bff28caa24d18d64abd990?placeholderIfAbsent=true" alt="" class="date-picker__icon" />
+            </button>
+          </div>
+
+          <div class="set-period__actions">
+            <button class="action-button action-button--cancel" type="button">취소</button>
+            <button class="action-button action-button--save" type="button">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="layer-popup" id="font-size-popup" aria-hidden="true">
     <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
     <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="글자크기 설정">
@@ -341,6 +389,68 @@
   </div>
 
   <script>
+    (function () {
+      const setPeriodButton = document.querySelector('.btn-set-period');
+      const popup = document.getElementById('set-period-popup');
+      const popupBackdrop = popup?.querySelector('.layer-popup__backdrop');
+      const closeButton = popup?.querySelector('.set-period__close');
+      const cancelButton = popup?.querySelector('.action-button--cancel');
+      const saveButton = popup?.querySelector('.action-button--save');
+      const quickButtons = popup?.querySelectorAll('.quick-button');
+
+      const closePopup = () => {
+        if (!popup) return;
+        popup.classList.remove('is-active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('layer-popup-open');
+      };
+
+      const openPopup = () => {
+        if (!popup) return;
+        popup.classList.add('is-active');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('layer-popup-open');
+      };
+
+      const bindQuickButtonHandlers = () => {
+        if (!quickButtons) return;
+        quickButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            quickButtons.forEach((btn) => btn.classList.remove('quick-button--active'));
+            button.classList.add('quick-button--active');
+          });
+        });
+      };
+
+      if (setPeriodButton) {
+        setPeriodButton.addEventListener('click', openPopup);
+      }
+
+      if (popupBackdrop) {
+        popupBackdrop.addEventListener('click', closePopup);
+      }
+
+      if (closeButton) {
+        closeButton.addEventListener('click', closePopup);
+      }
+
+      if (cancelButton) {
+        cancelButton.addEventListener('click', closePopup);
+      }
+
+      if (saveButton) {
+        saveButton.addEventListener('click', closePopup);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && popup?.classList.contains('is-active')) {
+          closePopup();
+        }
+      });
+
+      bindQuickButtonHandlers();
+    })();
+
     (function () {
       const fontSizeButton = document.querySelector('.btn-font-size');
       const popup = document.getElementById('font-size-popup');
