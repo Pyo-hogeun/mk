@@ -237,7 +237,7 @@
     })();
     // 보관함 저장
     (function () {
-      const saveStorageButton = document.querySelector('.save-storage');
+      const saveStorageButtons = document.querySelectorAll('.save-storage');
       const toast = document.querySelector('.toast-tooltip');
       const toastMessage = toast?.querySelector('.toast-tooltip__message');
       const TOAST_DURATION = 2500;
@@ -260,25 +260,26 @@
         }, TOAST_DURATION);
       };
 
-      const updateButtonState = (isSaved) => {
-        if (!saveStorageButton) return;
+      const updateButtonState = (button, isSaved) => {
+        if (!button) return;
 
-        saveStorageButton.classList.toggle('is-saved', isSaved);
-        saveStorageButton.setAttribute('aria-pressed', String(isSaved));
-        saveStorageButton.setAttribute('aria-label', isSaved ? '보관함에서 제거' : '보관함에 추가');
+        button.classList.toggle('is-saved', isSaved);
+        button.setAttribute('aria-pressed', String(isSaved));
+        button.setAttribute('aria-label', isSaved ? '보관함에서 제거' : '보관함에 추가');
       };
 
-      const toggleSave = () => {
-        if (!saveStorageButton) return;
-        const isSaved = !saveStorageButton.classList.contains('is-saved');
-        updateButtonState(isSaved);
+      const toggleSave = (event) => {
+        const button = event.currentTarget;
+        if (!button) return;
+        const isSaved = !button.classList.contains('is-saved');
+        updateButtonState(button, isSaved);
         showToast(isSaved ? '보관함에 추가되었습니다.' : '보관함에서 제거되었습니다.');
       };
 
-      if (saveStorageButton) {
-        updateButtonState(false);
-        saveStorageButton.addEventListener('click', toggleSave);
-      }
+      saveStorageButtons.forEach((button) => {
+        updateButtonState(button, false);
+        button.addEventListener('click', toggleSave);
+      });
     })();
   </script>
 
