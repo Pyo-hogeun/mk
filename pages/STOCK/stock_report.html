@@ -122,22 +122,12 @@
             </div>
 
             <div class="timeline-chart-wrapper">
-              <div class="timeline-chart-grid">
-                <div class="chart-card">
-                  <div class="chart-card__header">
-                    <div class="chart-card__title">Chart.js</div>
-                    <div class="chart-card__subtitle">SVG 데모와 유사한 면적형 라인</div>
-                  </div>
-                  <canvas id="timelineChartJs" class="timeline-chart" aria-label="Chart.js 주가 라인 차트"></canvas>
+              <div class="chart-card">
+                <div class="chart-card__header">
+                  <div class="chart-card__title">Chart.js</div>
+                  <div class="chart-card__subtitle">SVG 데모와 유사한 면적형 라인</div>
                 </div>
-
-                <div class="chart-card">
-                  <div class="chart-card__header">
-                    <div class="chart-card__title">ApexCharts</div>
-                    <div class="chart-card__subtitle">곡률과 마커 스타일 비교</div>
-                  </div>
-                  <div id="apexTimelineChart" class="timeline-chart" role="img" aria-label="ApexCharts 주가 라인 차트"></div>
-                </div>
+                <canvas id="timelineChartJs" class="timeline-chart" aria-label="Chart.js 주가 라인 차트"></canvas>
               </div>
 
               <div class="timeline-legend">
@@ -535,9 +525,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1"></script>
   <script>
-    // 이슈 타임라인 차트 (Chart.js & ApexCharts)
+    // 이슈 타임라인 차트 (Chart.js)
     (function () {
       const labels = ['1.15', '2.01', '2.14', '3.01', '3.15', '4.01', '4.15', '5.01'];
       const prices = [62000, 68000, 76000, 91000, 98000, 113000, 118500, 120000];
@@ -631,83 +620,6 @@
             },
           },
         });
-      }
-
-      // ApexCharts
-      const apexContainer = document.getElementById('apexTimelineChart');
-      if (apexContainer && window.ApexCharts) {
-        const apexOptions = {
-          chart: {
-            type: 'area',
-            height: 251,
-            toolbar: { show: false },
-          },
-          series: [
-            {
-              name: '주가',
-              data: prices.map((price, index) => ({
-                x: labels[index],
-                y: price,
-              })),
-            },
-          ],
-          stroke: {
-            curve: 'smooth',
-            width: 2,
-            colors: ['#FF7A00'],
-          },
-          fill: {
-            type: 'gradient',
-            gradient: {
-              shadeIntensity: 1,
-              opacityFrom: 0.3,
-              opacityTo: 0,
-              stops: [0, 95],
-            },
-          },
-          markers: {
-            size: 0,
-            discrete: eventMarkers.map((marker) => ({
-              seriesIndex: 0,
-              dataPointIndex: labels.indexOf(marker.label),
-              fillColor: colorMap[marker.type].fill,
-              strokeColor: colorMap[marker.type].border,
-              size: 6,
-            })),
-          },
-          dataLabels: { enabled: false },
-          colors: ['#FF7A00'],
-          xaxis: {
-            categories: labels,
-            axisBorder: { show: false },
-            axisTicks: { show: false },
-            labels: {
-              style: { colors: '#F0F0F0', fontSize: '12px' },
-            },
-          },
-          yaxis: {
-            min: 60000,
-            max: 120000,
-            tickAmount: 4,
-            labels: {
-              formatter: (value) => Math.round(value).toLocaleString('ko-KR'),
-              style: { colors: '#F0F0F0', fontSize: '11px' },
-            },
-          },
-          grid: {
-            borderColor: '#464646',
-            strokeDashArray: 3,
-          },
-          tooltip: {
-            x: { show: true },
-            y: {
-              formatter: (value) => `${Math.round(value).toLocaleString('ko-KR')}원`,
-            },
-          },
-        };
-
-        const apexChart = new ApexCharts(apexContainer, apexOptions);
-        apexChart.render();
       }
     })();
     // 보관함 저장

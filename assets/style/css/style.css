@@ -3016,16 +3016,6 @@ body.bottom-sheet-open {
   flex-direction: column;
   gap: 12px;
 }
-.timeline-chart-wrapper .timeline-chart-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-@media (min-width: 768px) {
-  .timeline-chart-wrapper .timeline-chart-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 .timeline-chart-wrapper .chart-card {
   display: flex;
   flex-direction: column;
