@@ -183,6 +183,56 @@
     }
   }
 
+  .interest-stocks-add{
+    width: $pcContainerSub;
+    .search-input{
+      background-color: var(--bg-default);
+    }
+    .recent-search{
+      &__title{
+        display: flex;
+        justify-content: space-between;
+        margin: 21px 0;
+        padding-top: 21px;
+        border-top: 1px solid var(--border-default, #464646);
+        h3{
+          color: var(--text-primary, #F0F0F0);
+
+          /* Body/SM_B */
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 150%; /* 22.5px */
+        }
+        .btn-clear{
+          background-color: transparent;
+          border: 0;
+          color: var(--text-secondary, #7B7B7B);
+
+          /* Caption/SM */
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 150%; /* 18px */
+        }
+      }
+    }
+    .section-bar{
+      margin-top: 21px;
+    }
+    .rate-filter{
+      margin: 21px 0;
+    }
+    .update-date{
+      margin-top: 12px;
+      color: var(--border-default, #464646);
+
+      /* Body/SM_B */
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%; /* 22.5px */
+    }
+  }
+
   .stock-briefing-item {
     display: none;
   }

@@ -347,6 +347,16 @@
           }
         }
       }
+      .update-date{
+        margin-top: 12px;
+        color: var(--border-default, #464646);
+  
+        /* Body/SM_B */
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%; /* 22.5px */
+      }
     }
   }
   .interest-stocks-list{
@@ -366,6 +376,11 @@
     }
     .rate-filter{
       margin: 24px 0;
+    }
+    .recent-search{
+      &__title{
+        display: none;
+      }
     }
   }
 }

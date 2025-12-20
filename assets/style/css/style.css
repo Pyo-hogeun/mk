@@ -3263,6 +3263,50 @@ body.bottom-sheet-open {
   .interest-stocks-list .content-wrapper .filter-buttons.col-2 .filter-btn {
     flex: 1 1 50%;
   }
+  .interest-stocks-add {
+    width: 700px;
+  }
+  .interest-stocks-add .search-input {
+    background-color: var(--bg-default);
+  }
+  .interest-stocks-add .recent-search__title {
+    display: flex;
+    justify-content: space-between;
+    margin: 21px 0;
+    padding-top: 21px;
+    border-top: 1px solid var(--border-default, #464646);
+  }
+  .interest-stocks-add .recent-search__title h3 {
+    color: var(--text-primary, #F0F0F0);
+    /* Body/SM_B */
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%; /* 22.5px */
+  }
+  .interest-stocks-add .recent-search__title .btn-clear {
+    background-color: transparent;
+    border: 0;
+    color: var(--text-secondary, #7B7B7B);
+    /* Caption/SM */
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
+  }
+  .interest-stocks-add .section-bar {
+    margin-top: 21px;
+  }
+  .interest-stocks-add .rate-filter {
+    margin: 21px 0;
+  }
+  .interest-stocks-add .update-date {
+    margin-top: 12px;
+    color: var(--border-default, #464646);
+    /* Body/SM_B */
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 22.5px */
+  }
   .stock-briefing-item {
     display: none;
   }
@@ -3762,6 +3806,15 @@ body.bottom-sheet-open {
   .interest-stocks-list .content-wrapper .filter-buttons.col-2 .filter-btn, .interest-stocks-add .content-wrapper .filter-buttons.col-2 .filter-btn {
     flex: 1 1 50%;
   }
+  .interest-stocks-list .content-wrapper .update-date, .interest-stocks-add .content-wrapper .update-date {
+    margin-top: 12px;
+    color: var(--border-default, #464646);
+    /* Body/SM_B */
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 22.5px */
+  }
   .interest-stocks-list .selected-stock-tags {
     display: none;
   }
@@ -3776,6 +3829,9 @@ body.bottom-sheet-open {
   }
   .interest-stocks-add .rate-filter {
     margin: 24px 0;
+  }
+  .interest-stocks-add .recent-search__title {
+    display: none;
   }
 }
 .search-input {
@@ -4058,4 +4114,42 @@ body.bottom-sheet-open {
   display: flex;
   gap: 12px;
   flex-direction: column;
+}
+
+.empty-search-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 40px 20px;
+}
+.empty-search-state__icon-wrapper {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--bg-subtle);
+}
+.empty-search-state__icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.empty-search-state__primary-text {
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+.empty-search-state__secondary-text {
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
 }
