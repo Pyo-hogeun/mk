@@ -1,0 +1,328 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css" />
+</head>
+
+<body>
+  <div class="banner">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M7.33301 10.6666C7.33301 10.2985 7.63148 9.99998 7.99967 9.99998C8.36786 9.99998 8.66634 10.2985 8.66634 10.6666C8.66634 11.0348 8.36786 11.3333 7.99967 11.3333C7.63148 11.3333 7.33301 11.0348 7.33301 10.6666ZM7.33301 5.33331C7.33301 4.96512 7.63148 4.66665 7.99967 4.66665C8.36786 4.66665 8.66634 4.96512 8.66634 5.33331V7.99998C8.66634 8.36817 8.36786 8.66665 7.99967 8.66665C7.63148 8.66665 7.33301 8.36817 7.33301 7.99998V5.33331ZM7.99967 1.33331C4.31301 1.33331 1.33301 4.33331 1.33301 7.99998C1.33301 9.76809 2.03539 11.4638 3.28563 12.714C3.90469 13.3331 4.63961 13.8241 5.44845 14.1592C6.25729 14.4942 7.1242 14.6666 7.99967 14.6666C9.76778 14.6666 11.4635 13.9643 12.7137 12.714C13.964 11.4638 14.6663 9.76809 14.6663 7.99998C14.6663 7.1245 14.4939 6.25759 14.1589 5.44876C13.8238 4.63992 13.3328 3.90499 12.7137 3.28593C12.0947 2.66688 11.3597 2.17581 10.5509 1.84078C9.74206 1.50575 8.87515 1.33331 7.99967 1.33331ZM7.99967 13.3333C6.58519 13.3333 5.22863 12.7714 4.22844 11.7712C3.22824 10.771 2.66634 9.41447 2.66634 7.99998C2.66634 6.58549 3.22824 5.22894 4.22844 4.22874C5.22863 3.22855 6.58519 2.66665 7.99967 2.66665C9.41416 2.66665 10.7707 3.22855 11.7709 4.22874C12.7711 5.22894 13.333 6.58549 13.333 7.99998C13.333 9.41447 12.7711 10.771 11.7709 11.7712C10.7707 12.7714 9.41416 13.3333 7.99967 13.3333Z"
+        fill="#F0F0F0" />
+    </svg>
+    본 서비스는 데이터 분석 및 현황 요약을 제공하며, 투자 조언이 아닙니다.
+  </div>
+
+  <div class="container stock-timeline">
+    <div class="container__header">
+      <button type="button" class="btn-back" aria-label="뒤로가기">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.1467 12.8333C22.699 12.8333 23.1467 13.2811 23.1467 13.8333V14.1667C23.1467 14.719 22.699 15.1667 22.1467 15.1667H9.14675L14.8563 20.8762C15.2468 21.2668 15.2468 21.8999 14.8563 22.2904L14.6139 22.5329C14.2233 22.9234 13.5902 22.9234 13.1996 22.5329L5.37386 14.7071C4.98333 14.3166 4.98333 13.6834 5.37385 13.2929L13.1996 5.46712C13.5902 5.07659 14.2233 5.07659 14.6139 5.46712L14.8563 5.70957C15.2468 6.10009 15.2468 6.73326 14.8563 7.12378L9.14675 12.8333H22.1467Z" fill="white"/>
+        </svg>
+      </button>
+      <h2 class="title">
+        전체 타임라인
+      </h2>
+      <div class="flex-end"></div>
+
+
+    </div>
+
+    <div class="report-body content-wrapper">
+      <div class="report-body__summary">
+        <div class="industry-issues-container">
+          <div class="industry-issues-list">
+            <div class="industry-issue-item">
+              <span class="badge badge-orange-rounded">AI 분석</span>
+              <p class="issue-text">생성형 AI 서비스 확대와 클라우드 전환 가속화로 수혜</p>
+            </div>
+  
+            <div class="issue-divider-line"></div>
+  
+            <div class="industry-issue-item">
+              <span class="badge badge-red-pill">강세지속</span>
+              <p class="issue-text">기업 클라우드 전환 가속, AI 서비스 구독 매출 확대</p>
+            </div>
+  
+            <div class="industry-issue-item">
+              <span class="badge badge-blue-pill">리스크</span>
+              <p class="issue-text">빅테크 규제 강화, 광고 경기 둔화 우려</p>
+            </div>
+          </div>
+        </div>
+
+        <h4>이슈 타임라인</h4>
+        <h4>뉴스 타임라인
+          <button type="button" class="btn-set-period">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1812_267)">
+              <path d="M3.50024 2.99979V0.999988C3.50024 0.723845 3.72391 0.500183 4.00005 0.500183C4.27619 0.500183 4.49985 0.723845 4.49985 0.999988V2.99979C4.49985 3.27593 4.27619 3.50018 4.00005 3.50018C3.72391 3.50018 3.50024 3.27593 3.50024 2.99979Z" fill="#7B7B7B"/>
+              <path d="M7.50024 2.99979V0.999988C7.50024 0.723845 7.72391 0.500183 8.00005 0.500183C8.27619 0.500183 8.49985 0.723845 8.49985 0.999988V2.99979C8.49985 3.27593 8.27619 3.50018 8.00005 3.50018C7.72391 3.50018 7.50024 3.27593 7.50024 2.99979Z" fill="#7B7B7B"/>
+              <path d="M10.0002 3.00018C10.0002 2.72404 9.776 2.49979 9.49986 2.49979H2.50024C2.2241 2.49979 1.99985 2.72404 1.99985 3.00018V9.99979C1.99985 10.2759 2.2241 10.5002 2.50024 10.5002H9.49986C9.776 10.5002 10.0002 10.2759 10.0002 9.99979V3.00018ZM10.9999 9.99979C10.9999 10.8282 10.3283 11.4998 9.49986 11.4998H2.50024C1.67182 11.4998 1.00024 10.8282 1.00024 9.99979V3.00018C1.00024 2.17176 1.67182 1.50018 2.50024 1.50018H9.49986C10.3283 1.50018 10.9999 2.17176 10.9999 3.00018V9.99979Z" fill="#7B7B7B"/>
+              <path d="M10.5001 4.50018C10.7762 4.50018 10.9999 4.72385 10.9999 4.99999C10.9999 5.27613 10.7762 5.49979 10.5001 5.49979H1.50005C1.22391 5.49979 1.00024 5.27613 1.00024 4.99999C1.00024 4.72385 1.22391 4.50018 1.50005 4.50018H10.5001Z" fill="#7B7B7B"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_1812_267">
+              <rect width="12" height="12" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+
+             기간설정</button>
+        </h4>
+        <div class="news-timeline">
+          <div class="news-timeline__container">
+            <div class="timeline-item">
+              <div class="timeline-item__header">
+                <span class="timeline-date">11.25</span>
+                <span class="timeline-time">19:40</span>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-news-card">
+                <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/1cb0eb1bf4ee96192d222311774811c592f0900e?placeholderIfAbsent=true" alt="News thumbnail" class="news-card__image">
+                <div class="news-card__content">
+                  <p class="news-card__title">[매일경제 오디오 뉴스] 11월 25일 저녁 주요뉴스</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-item__header">
+                <span class="timeline-date">11.25</span>
+                <span class="timeline-time">14:40</span>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-news-card">
+                <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/1cb0eb1bf4ee96192d222311774811c592f0900e?placeholderIfAbsent=true" alt="News thumbnail" class="news-card__image">
+                <div class="news-card__content">
+                  <p class="news-card__title">[매일경제 오디오 뉴스] 11월 25일 저녁 주요뉴스</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-item__header">
+                <span class="timeline-date">11.25</span>
+                <span class="timeline-time">19:40</span>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-news-card">
+                <div class="news-card__content news-card__content--full">
+                  <p class="news-card__title">[매일경제 오디오 뉴스] 11월 25일 저녁 주요뉴스</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="source-info">
+          <ul class="source-info__thumbnail">
+            <li>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"/>
+                </svg>                
+            </li>
+            <li>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"/>
+                </svg>                
+            </li>
+            <li>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"/>
+                </svg>                
+            </li>
+          </ul>
+          전체 출처 <span class="source-info__badge">3개</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-popup" id="set-period-popup" aria-hidden="true">
+    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
+    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="기간 설정">
+      <div class="layer-popup__content">
+        <div class="set-period">
+          <div class="set-period__header">
+            <h2 class="set-period__title">기간 설정</h2>
+            <button class="set-period__close" type="button" aria-label="닫기">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="set-period__close-icon">
+                <path d="M16.4105 13.2929C16.02 13.6834 16.02 14.3166 16.4105 14.7071L21.8738 20.1704C22.0613 20.358 22.1667 20.6123 22.1667 20.8775V21.1666C22.1667 21.7189 21.719 22.1666 21.1667 22.1666H20.8776C20.6124 22.1666 20.358 22.0613 20.1705 21.8738L14.7071 16.4104C14.3166 16.0199 13.6835 16.0199 13.2929 16.4104L7.8296 21.8738C7.64206 22.0613 7.38771 22.1666 7.12249 22.1666H6.83337C6.28109 22.1666 5.83337 21.7189 5.83337 21.1666V20.8775C5.83337 20.6123 5.93873 20.358 6.12627 20.1704L11.5896 14.7071C11.9801 14.3166 11.9801 13.6834 11.5896 13.2929L6.12627 7.82954C5.93873 7.642 5.83337 7.38765 5.83337 7.12243V6.83331C5.83337 6.28103 6.28109 5.83331 6.83337 5.83331H7.12249C7.38771 5.83331 7.64206 5.93867 7.8296 6.12621L13.2929 11.5895C13.6835 11.9801 14.3166 11.9801 14.7071 11.5895L20.1705 6.12621C20.358 5.93867 20.6124 5.83331 20.8776 5.83331H21.1667C21.719 5.83331 22.1667 6.28103 22.1667 6.83331V7.12243C22.1667 7.38765 22.0613 7.642 21.8738 7.82954L16.4105 13.2929Z" fill="#F0F0F0"/>
+                </svg>
+                
+            </button>
+          </div>
+
+          <div class="set-period__section">
+            <h3 class="set-period__section-title">빠른 선택</h3>
+            <div class="set-period__quick-buttons">
+              <button class="quick-button quick-button--active" type="button">오늘</button>
+              <button class="quick-button" type="button">최근 1주일</button>
+              <button class="quick-button" type="button">최근 1개월</button>
+              <button class="quick-button" type="button">최근 3개월</button>
+              <button class="quick-button" type="button">직접 선택</button>
+            </div>
+          </div>
+
+          <div class="set-period__section">
+            <h3 class="set-period__section-title">시작일</h3>
+            <button class="date-picker" type="button">
+              <span class="date-picker__text">2025년 12월 15일</span>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="date-picker__icon">
+                <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
+                </svg>
+                
+            </button>
+          </div>
+
+          <div class="set-period__section">
+            <h3 class="set-period__section-title">종료일</h3>
+            <button class="date-picker" type="button">
+              <span class="date-picker__text">2025년 12월 15일</span>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="date-picker__icon">
+                <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
+                </svg>
+            </button>
+          </div>
+
+          <div class="set-period__actions">
+            <button class="action-button action-button--cancel" type="button">취소</button>
+            <button class="action-button action-button--save" type="button">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    (function () {
+      const setPeriodButton = document.querySelector('.btn-set-period');
+      const popup = document.getElementById('set-period-popup');
+      const popupBackdrop = popup?.querySelector('.layer-popup__backdrop');
+      const closeButton = popup?.querySelector('.set-period__close');
+      const cancelButton = popup?.querySelector('.action-button--cancel');
+      const saveButton = popup?.querySelector('.action-button--save');
+      const quickButtons = popup?.querySelectorAll('.quick-button');
+
+      const closePopup = () => {
+        if (!popup) return;
+        popup.classList.remove('is-active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('layer-popup-open');
+      };
+
+      const openPopup = () => {
+        if (!popup) return;
+        popup.classList.add('is-active');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('layer-popup-open');
+      };
+
+      const bindQuickButtonHandlers = () => {
+        if (!quickButtons) return;
+        quickButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            quickButtons.forEach((btn) => btn.classList.remove('quick-button--active'));
+            button.classList.add('quick-button--active');
+          });
+        });
+      };
+
+      if (setPeriodButton) {
+        setPeriodButton.addEventListener('click', openPopup);
+      }
+
+      if (popupBackdrop) {
+        popupBackdrop.addEventListener('click', closePopup);
+      }
+
+      if (closeButton) {
+        closeButton.addEventListener('click', closePopup);
+      }
+
+      if (cancelButton) {
+        cancelButton.addEventListener('click', closePopup);
+      }
+
+      if (saveButton) {
+        saveButton.addEventListener('click', closePopup);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && popup?.classList.contains('is-active')) {
+          closePopup();
+        }
+      });
+
+      bindQuickButtonHandlers();
+    })();
+
+
+    (function () {
+      const upInput = document.getElementById('up-side');
+      const downInput = document.getElementById('down-side');
+      const upSection = document.querySelector('.stock-issues.up-side');
+      const downSection = document.querySelector('.stock-issues.down-side');
+
+      if (!upInput || !downInput || !upSection || !downSection) {
+        return;
+      }
+
+      const mobileQuery = window.matchMedia('(max-width: 480px)');
+
+      const updateVisibility = () => {
+        const isMobile = mobileQuery.matches;
+
+        if (isMobile) {
+          upSection.classList.toggle('is-active', upInput.checked);
+          downSection.classList.toggle('is-active', downInput.checked);
+        } else {
+          upSection.classList.remove('is-active');
+          downSection.classList.remove('is-active');
+        }
+      };
+
+      upInput.addEventListener('change', updateVisibility);
+      downInput.addEventListener('change', updateVisibility);
+      mobileQuery.addEventListener('change', updateVisibility);
+
+      updateVisibility();
+
+      const tabs = document.querySelectorAll('.nav-tab');
+      const sections = document.querySelectorAll('.content-section');
+
+      const resetTabs = () => {
+        tabs.forEach((tab) => tab.classList.remove('active'));
+        sections.forEach((section) => section.classList.remove('is-active'));
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-target');
+          const content = target
+            ? document.querySelector(`.${target}`)
+            : null;
+
+          if (!content) return;
+
+          resetTabs();
+          tab.classList.add('active');
+          content.classList.add('is-active');
+        });
+      });
+    })();
+
+  </script>
+</body>
+</html>

@@ -99,6 +99,35 @@ body {
   width: 100%;
   padding-bottom: 10vh;
 }
+.container__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-primary);
+  color: var(--text-primary, #F0F0F0);
+  margin: 24px 0;
+}
+.container__header h2 {
+  /* Heading/H2 */
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 140%; /* 30.8px */
+}
+.container__header .btn-back {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.container__header .btn-back svg {
+  width: 28px;
+  height: 28px;
+}
+.container__header .flex-end {
+  min-width: 28px;
+}
 
 @media screen and (min-width: 480px) {
   .container {
