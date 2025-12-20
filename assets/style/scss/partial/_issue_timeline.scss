@@ -98,7 +98,9 @@
 
   .timeline-chart {
     height: 251px;
+    max-height: 251px;
     width: 100%;
+    display: block;
   }
 }
 

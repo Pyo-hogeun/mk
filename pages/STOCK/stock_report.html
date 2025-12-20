@@ -548,8 +548,16 @@
       // Chart.js
       const chartCanvas = document.getElementById('timelineChartJs');
       if (chartCanvas && window.Chart) {
+        const existing = Chart.getChart(chartCanvas);
+        if (existing) {
+          existing.destroy();
+        }
+
+        chartCanvas.height = 251;
+        chartCanvas.style.height = '251px';
+
         const ctx = chartCanvas.getContext('2d');
-        const gradientHeight = chartCanvas.height || chartCanvas.clientHeight || 251;
+        const gradientHeight = chartCanvas.getBoundingClientRect().height || 251;
         const gradient = ctx.createLinearGradient(0, 0, 0, gradientHeight);
         gradient.addColorStop(0, 'rgba(255, 122, 0, 0.3)');
         gradient.addColorStop(1, 'rgba(255, 122, 0, 0)');
