@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+.date-picker {
+  --datepicker-radius: 12px;
+}
+
+.date-picker__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+}
+
+.flatpickr-calendar {
+  background: var(--surface-default);
+  border: 1px solid var(--border-default);
+  border-radius: var(--datepicker-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  color: var(--text-primary);
+
+  &.arrowTop:before,
+  &.arrowTop:after {
+    border-bottom-color: var(--border-default);
+  }
+
+  &.arrowBottom:before,
+  &.arrowBottom:after {
+    border-top-color: var(--border-default);
+  }
+}
+
+.flatpickr-months,
+.flatpickr-weekdays {
+  background: var(--bg-default);
+  color: var(--text-secondary);
+}
+
+.flatpickr-current-month {
+  color: var(--text-primary);
+
+  .flatpickr-monthDropdown-months,
+  input.cur-year {
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  .numInputWrapper {
+    span {
+      border-color: var(--text-secondary);
+    }
+
+    &:hover {
+      background: var(--surface-default);
+    }
+  }
+}
+
+.flatpickr-weekday {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.flatpickr-day {
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-weight: 600;
+
+  &.today {
+    border-color: var(--orange-100);
+  }
+
+  &:hover {
+    background: var(--surface-raised);
+    border-color: var(--surface-raised);
+  }
+
+  &.selected,
+  &.startRange,
+  &.endRange,
+  &.selected:hover,
+  &.startRange:hover,
+  &.endRange:hover {
+    background: var(--orange-100);
+    border-color: var(--orange-100);
+    color: var(--white);
+  }
+}
+
+@media (max-width: $mobile) {
+  .flatpickr-calendar {
+    width: calc(100vw - 32px);
+    max-width: 420px;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .flatpickr-days,
+  .dayContainer {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .flatpickr-day {
+    height: 42px;
+    line-height: 42px;
+  }
+
+  .flatpickr-months .flatpickr-month {
+    padding: 12px;
+  }
+}
