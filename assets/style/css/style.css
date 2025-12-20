@@ -3298,6 +3298,9 @@ body.bottom-sheet-open {
   .interest-stocks-add .rate-filter {
     margin: 21px 0;
   }
+  .interest-stocks-add .ranking {
+    margin-top: 21px;
+  }
   .interest-stocks-add .update-date {
     margin-top: 12px;
     color: var(--border-default, #464646);
@@ -3306,6 +3309,22 @@ body.bottom-sheet-open {
     font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 22.5px */
+  }
+  .interest-stocks-add .btn-all-view {
+    margin-top: 12px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: var(--text-primary, #F0F0F0);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+  }
+  .interest-stocks-add .btn-all-view__wrapper {
+    display: block;
+    text-align: right;
   }
   .stock-briefing-item {
     display: none;
@@ -3815,6 +3834,25 @@ body.bottom-sheet-open {
     font-weight: 600;
     line-height: 150%; /* 22.5px */
   }
+  .interest-stocks-list .content-wrapper .ranking, .interest-stocks-add .content-wrapper .ranking {
+    margin-top: 24px;
+  }
+  .interest-stocks-list .content-wrapper .btn-all-view, .interest-stocks-add .content-wrapper .btn-all-view {
+    margin-top: 12px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: var(--text-primary, #F0F0F0);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+  }
+  .interest-stocks-list .content-wrapper .btn-all-view__wrapper, .interest-stocks-add .content-wrapper .btn-all-view__wrapper {
+    display: block;
+    text-align: right;
+  }
   .interest-stocks-list .selected-stock-tags {
     display: none;
   }
@@ -4057,6 +4095,12 @@ body.bottom-sheet-open {
   font-weight: 600;
   line-height: 150%;
 }
+.stock-list-item__industry {
+  color: var(--text-secondary, #7B7B7B);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%; /* 22.5px */
+}
 .stock-list-item__change {
   display: flex;
   align-items: center;
@@ -4152,4 +4196,13 @@ body.bottom-sheet-open {
   font-size: 12px;
   font-weight: 500;
   line-height: 150%;
+}
+.empty-search-state .link-to-all-view {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-primary, #F0F0F0);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
 }

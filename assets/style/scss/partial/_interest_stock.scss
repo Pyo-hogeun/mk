@@ -221,6 +221,9 @@
     .rate-filter{
       margin: 21px 0;
     }
+    .ranking{
+      margin-top: 21px;
+    }
     .update-date{
       margin-top: 12px;
       color: var(--border-default, #464646);
@@ -230,6 +233,22 @@
       font-style: normal;
       font-weight: 600;
       line-height: 150%; /* 22.5px */
+    }
+    .btn-all-view{
+      margin-top: 12px;
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: transparent;
+      border: 0;
+      color: var(--text-primary, #F0F0F0);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 150%; /* 22.5px */
+      &__wrapper{
+        display: block;
+        text-align: right;
+      }
     }
   }
 

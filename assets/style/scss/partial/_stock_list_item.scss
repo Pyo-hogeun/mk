@@ -42,6 +42,12 @@
     font-weight: 600;
     line-height: 150%;
   }
+  &__industry{
+    color: var(--text-secondary, #7B7B7B);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+  }
 
   &__change {
     display: flex;
