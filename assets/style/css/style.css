@@ -539,10 +539,8 @@ body {
 }
 .agent-brand .brand-icon img {
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   width: 20px;
 }
 .agent-brand .brand-title {
@@ -766,10 +764,8 @@ body {
 }
 .header-actions img {
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   width: 28px;
 }
 
@@ -823,10 +819,8 @@ body {
 
 .change-icon {
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   width: 20px;
   align-self: stretch;
   flex-shrink: 0;
@@ -2182,10 +2176,8 @@ body.bottom-sheet-open {
   }
   .news-timeline .news-card__image {
     aspect-ratio: 1;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: center;
-       object-position: center;
+    object-fit: contain;
+    object-position: center;
     width: 48px;
     align-self: stretch;
     flex-shrink: 0;
@@ -2319,10 +2311,8 @@ body.bottom-sheet-open {
   }
   .news-timeline .news-card__image {
     aspect-ratio: 1;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: center;
-       object-position: center;
+    object-fit: contain;
+    object-position: center;
     width: 48px;
     align-self: stretch;
     flex-shrink: 0;
@@ -2509,10 +2499,8 @@ body.bottom-sheet-open {
   width: 28px;
   height: 28px;
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
 }
 .set-period__section {
   margin-bottom: 24px;
@@ -2602,10 +2590,8 @@ body.bottom-sheet-open {
   width: 28px;
   height: 28px;
   aspect-ratio: 1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   flex-shrink: 0;
 }
 
@@ -2640,3 +2626,103 @@ body.bottom-sheet-open {
   background: var(--orange-100);
   color: var(--white);
 }
+
+#mui-date-picker-root {
+  position: relative;
+  z-index: 1300;
+}
+
+.mui-date-picker-portal {
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--text-primary);
+}
+.mui-date-picker-portal .MuiModal-root {
+  z-index: 1400;
+}
+.mui-date-picker-portal .MuiPaper-root {
+  background: var(--bg-default);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.45);
+}
+.mui-date-picker-portal .MuiPickersToolbar-root {
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border-default);
+  color: var(--text-primary);
+  padding: 16px 20px;
+  gap: 4px;
+}
+.mui-date-picker-portal .MuiPickersToolbar-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+.mui-date-picker-portal .MuiPickersCalendarHeader-root {
+  padding: 12px 16px 8px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-default);
+}
+.mui-date-picker-portal .MuiPickersArrowSwitcher-button,
+.mui-date-picker-portal .MuiPickersCalendarHeader-switchViewButton {
+  color: var(--text-primary);
+}
+.mui-date-picker-portal .MuiPickersSlideTransition-root {
+  padding-inline: 8px;
+}
+.mui-date-picker-portal .MuiDayCalendar-weekDayLabel {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.mui-date-picker-portal .MuiPickersDay-root {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.mui-date-picker-portal .MuiPickersDay-root:not(.Mui-selected):hover {
+  background: var(--surface-default);
+}
+.mui-date-picker-portal .MuiPickersDay-root.MuiPickersDay-today:not(.Mui-selected) {
+  border-color: var(--orange-100);
+}
+.mui-date-picker-portal .MuiPickersDay-root.Mui-selected {
+  background: var(--orange-100);
+  color: var(--white);
+}
+.mui-date-picker-portal .MuiPickersDay-root.Mui-selected:hover, .mui-date-picker-portal .MuiPickersDay-root.Mui-selected:focus-visible {
+  background: var(--orange-100);
+}
+.mui-date-picker-portal .MuiPickersYear-yearButton,
+.mui-date-picker-portal .MuiPickersMonth-monthButton {
+  color: var(--text-primary);
+}
+.mui-date-picker-portal .MuiPickersYear-yearButton.Mui-selected,
+.mui-date-picker-portal .MuiPickersMonth-monthButton.Mui-selected {
+  background: var(--orange-100-60);
+  color: var(--white);
+}
+.mui-date-picker-portal .MuiPickersActionBar-root {
+  border-top: 1px solid var(--border-default);
+  padding: 12px 16px;
+}
+.mui-date-picker-portal .MuiPickersActionBar-root .MuiButton-textPrimary {
+  color: var(--orange-100);
+  font-weight: 700;
+}
+.mui-date-picker-portal .MuiPickersActionBar-root .MuiButton-textSecondary {
+  color: var(--text-secondary);
+}
+.mui-date-picker-portal .MuiIconButton-root {
+  color: var(--text-primary);
+}
+.mui-date-picker-portal .MuiButtonBase-root:focus-visible {
+  outline: 2px solid var(--orange-100);
+  outline-offset: 2px;
+}
+
+.date-picker--active {
+  box-shadow: 0 0 0 1px var(--orange-100);
+}
+.date-picker:focus-visible {
+  outline: 2px solid var(--orange-100);
+  outline-offset: 2px;
+}
+
+/*# sourceMappingURL=style.css.map */

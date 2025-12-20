@@ -1,0 +1,122 @@
+@use 'variables' as *;
+
+#mui-date-picker-root {
+  position: relative;
+  z-index: 1300;
+}
+
+.mui-date-picker-portal {
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--text-primary);
+
+  .MuiModal-root {
+    z-index: 1400;
+  }
+
+  .MuiPaper-root {
+    background: var(--bg-default);
+    color: var(--text-primary);
+    border: 1px solid var(--border-default);
+    box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.45);
+  }
+
+  .MuiPickersToolbar-root {
+    background: var(--surface-raised);
+    border-bottom: 1px solid var(--border-default);
+    color: var(--text-primary);
+    padding: 16px 20px;
+    gap: 4px;
+  }
+
+  .MuiPickersToolbar-title {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .MuiPickersCalendarHeader-root {
+    padding: 12px 16px 8px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .MuiPickersArrowSwitcher-button,
+  .MuiPickersCalendarHeader-switchViewButton {
+    color: var(--text-primary);
+  }
+
+  .MuiPickersSlideTransition-root {
+    padding-inline: 8px;
+  }
+
+  .MuiDayCalendar-weekDayLabel {
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .MuiPickersDay-root {
+    color: var(--text-primary);
+    font-weight: 600;
+
+    &:not(.Mui-selected):hover {
+      background: var(--surface-default);
+    }
+
+    &.MuiPickersDay-today:not(.Mui-selected) {
+      border-color: var(--orange-100);
+    }
+
+    &.Mui-selected {
+      background: var(--orange-100);
+      color: var(--white);
+
+      &:hover,
+      &:focus-visible {
+        background: var(--orange-100);
+      }
+    }
+  }
+
+  .MuiPickersYear-yearButton,
+  .MuiPickersMonth-monthButton {
+    color: var(--text-primary);
+
+    &.Mui-selected {
+      background: var(--orange-100-60);
+      color: var(--white);
+    }
+  }
+
+  .MuiPickersActionBar-root {
+    border-top: 1px solid var(--border-default);
+    padding: 12px 16px;
+
+    .MuiButton-textPrimary {
+      color: var(--orange-100);
+      font-weight: 700;
+    }
+
+    .MuiButton-textSecondary {
+      color: var(--text-secondary);
+    }
+  }
+
+  .MuiIconButton-root {
+    color: var(--text-primary);
+  }
+
+  .MuiButtonBase-root:focus-visible {
+    outline: 2px solid var(--orange-100);
+    outline-offset: 2px;
+  }
+}
+
+.date-picker {
+  &--active {
+    box-shadow: 0 0 0 1px var(--orange-100);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--orange-100);
+    outline-offset: 2px;
+  }
+}

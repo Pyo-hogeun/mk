@@ -348,7 +348,7 @@
 
           <div class="set-period__section">
             <h3 class="set-period__section-title">시작일</h3>
-            <button class="date-picker" type="button">
+            <button class="date-picker" type="button" data-date-field="start" data-default-date="2025-12-15">
               <span class="date-picker__text">2025년 12월 15일</span>
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="date-picker__icon">
                 <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
@@ -359,7 +359,7 @@
 
           <div class="set-period__section">
             <h3 class="set-period__section-title">종료일</h3>
-            <button class="date-picker" type="button">
+            <button class="date-picker" type="button" data-date-field="end" data-default-date="2025-12-15">
               <span class="date-picker__text">2025년 12월 15일</span>
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="date-picker__icon">
                 <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
@@ -395,8 +395,194 @@
     </div>
     <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
   </div>
+  <div id="mui-date-picker-root" aria-hidden="true"></div>
 
   <script>
+    (function () {
+      const DATE_DISPLAY_FORMAT = 'YYYY년 M월 D일';
+      const DATE_VALUE_FORMAT = 'YYYY-MM-DD';
+      const CDN_URLS = {
+        react: 'https://unpkg.com/react@18/umd/react.production.min.js',
+        reactDom: 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
+        dayjs: 'https://unpkg.com/dayjs@1.11.10/dayjs.min.js',
+        dayjsLocaleKo: 'https://unpkg.com/dayjs@1.11.10/locale/ko.js',
+        mui: 'https://unpkg.com/@mui/material@5.15.14/umd/material-ui.production.min.js',
+        xDatePickers: 'https://unpkg.com/@mui/x-date-pickers@7.11.1/umd/x-date-pickers.production.min.js',
+        xDatePickersAdapterDayjs:
+          'https://unpkg.com/@mui/x-date-pickers@7.11.1/umd/x-date-pickersAdapterDayjs.production.min.js',
+      };
+      const datePickerButtons = Array.from(document.querySelectorAll('.date-picker'));
+
+      if (!datePickerButtons.length) {
+        return;
+      }
+
+      const resolvePickers = () => window.MaterialUI?.XDatePickers || window.MuiXDatePickers || null;
+      const resolveAdapter = () =>
+        window.MaterialUI?.XDatePickersAdapterDayjs?.AdapterDayjs ||
+        window.MaterialUI?.AdapterDayjs ||
+        window.MuiXDatePickersAdapterDayjs?.AdapterDayjs ||
+        null;
+
+      const getRootContainer = () => {
+        const existing = document.getElementById('mui-date-picker-root');
+        if (existing) return existing;
+
+        const container = document.createElement('div');
+        container.id = 'mui-date-picker-root';
+        container.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(container);
+        return container;
+      };
+
+      const datePickerRoot = getRootContainer();
+
+      const loadScript = (src, isLoaded) =>
+        new Promise((resolve, reject) => {
+          if (isLoaded()) {
+            resolve(true);
+            return;
+          }
+
+          const existing = document.querySelector(`script[src="${src}"]`);
+          if (existing) {
+            existing.addEventListener('load', () => resolve(true), { once: true });
+            existing.addEventListener('error', () => reject(new Error(`Failed to load: ${src}`)), { once: true });
+            return;
+          }
+
+          const script = document.createElement('script');
+          script.src = src;
+          script.async = true;
+          script.crossOrigin = 'anonymous';
+          script.onload = () => resolve(true);
+          script.onerror = () => reject(new Error(`Failed to load: ${src}`));
+          document.head.appendChild(script);
+        });
+
+      const loadDependencies = async () => {
+        await loadScript(CDN_URLS.react, () => !!window.React);
+        await loadScript(CDN_URLS.reactDom, () => !!window.ReactDOM);
+        await loadScript(CDN_URLS.dayjs, () => !!window.dayjs);
+        await loadScript(CDN_URLS.dayjsLocaleKo, () => !!(window.dayjs && window.dayjs.Ls?.ko));
+        await loadScript(CDN_URLS.mui, () => !!window.MaterialUI);
+        await loadScript(CDN_URLS.xDatePickers, () => !!resolvePickers());
+        await loadScript(CDN_URLS.xDatePickersAdapterDayjs, () => !!resolveAdapter());
+      };
+
+      const parseDateFromButton = (button) => {
+        const rawValue = button.getAttribute('data-selected-date') || button.getAttribute('data-default-date');
+        if (rawValue && window.dayjs) {
+          const parsedByAttr = window.dayjs(rawValue, DATE_VALUE_FORMAT);
+          if (parsedByAttr.isValid()) {
+            return parsedByAttr;
+          }
+        }
+
+        const label = button.querySelector('.date-picker__text')?.textContent || '';
+        const match = label.match(/(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일/);
+        if (match && window.dayjs) {
+          const fallback = window.dayjs(`${match[1]}-${match[2]}-${match[3]}`, DATE_VALUE_FORMAT);
+          if (fallback.isValid()) {
+            return fallback;
+          }
+        }
+
+        return window.dayjs ? window.dayjs() : null;
+      };
+
+      const updateButtonDate = (button, dateValue) => {
+        if (!dateValue || !window.dayjs) return;
+
+        const textElement = button.querySelector('.date-picker__text');
+        const formattedDisplay = dateValue.format(DATE_DISPLAY_FORMAT);
+        const formattedValue = dateValue.format(DATE_VALUE_FORMAT);
+
+        button.setAttribute('data-selected-date', formattedValue);
+        button.setAttribute('aria-label', `${button.getAttribute('data-date-field') || '날짜'} ${formattedDisplay} 선택`);
+        if (textElement) {
+          textElement.textContent = formattedDisplay;
+        }
+      };
+
+      const openDatePicker = (targetButton) => {
+        const pickers = resolvePickers();
+        const AdapterDayjs = resolveAdapter();
+
+        if (!pickers || !AdapterDayjs || !window.React || !window.ReactDOM || !window.dayjs) {
+          console.error('MUI 날짜 선택기 로딩에 실패했습니다.');
+          return;
+        }
+
+        const { LocalizationProvider, MobileDatePicker } = pickers;
+        const initialValue = parseDateFromButton(targetButton) || window.dayjs();
+        const reactRoot = window.ReactDOM.createRoot(datePickerRoot);
+
+        const handleClose = () => {
+          targetButton.classList.remove('date-picker--active');
+          reactRoot.unmount();
+          datePickerRoot.setAttribute('aria-hidden', 'true');
+        };
+
+        const handleAccept = (newValue) => {
+          if (newValue) {
+            updateButtonDate(targetButton, newValue);
+          }
+          handleClose();
+        };
+
+        const DatePickerApp = () => {
+          const [value, setValue] = window.React.useState(initialValue);
+
+          return window.React.createElement(
+            'div',
+            { className: 'mui-date-picker-portal' },
+            window.React.createElement(
+              LocalizationProvider,
+              { dateAdapter: AdapterDayjs, adapterLocale: 'ko' },
+              window.React.createElement(MobileDatePicker, {
+                className: 'mui-mobile-date-picker',
+                value,
+                format: DATE_DISPLAY_FORMAT,
+                onChange: (nextValue) => setValue(nextValue),
+                onAccept: handleAccept,
+                onClose: handleClose,
+                open: true,
+                slotProps: {
+                  textField: { sx: { display: 'none' } },
+                  actionBar: { actions: ['cancel', 'accept'] },
+                  mobilePaper: { className: 'mui-mobile-date-picker__paper' },
+                  toolbar: { className: 'mui-mobile-date-picker__toolbar' },
+                },
+              })
+            )
+          );
+        };
+
+        datePickerRoot.setAttribute('aria-hidden', 'false');
+        targetButton.classList.add('date-picker--active');
+        reactRoot.render(window.React.createElement(DatePickerApp));
+      };
+
+      const init = async () => {
+        try {
+          await loadDependencies();
+          if (window.dayjs) {
+            window.dayjs.locale('ko');
+          }
+
+          datePickerButtons.forEach((button) => {
+            button.setAttribute('aria-haspopup', 'dialog');
+            button.addEventListener('click', () => openDatePicker(button));
+          });
+        } catch (error) {
+          console.error('모바일 날짜 선택기 초기화에 실패했습니다.', error);
+        }
+      };
+
+      init();
+    })();
+
     (function () {
       const setPeriodButton = document.querySelector('.btn-set-period');
       const popup = document.getElementById('set-period-popup');
