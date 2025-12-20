@@ -3016,6 +3016,47 @@ body.bottom-sheet-open {
   flex-direction: column;
   gap: 12px;
 }
+.timeline-chart-wrapper .timeline-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .timeline-chart-wrapper .timeline-chart-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.timeline-chart-wrapper .chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-default, #464646);
+  background: rgba(255, 255, 255, 0.02);
+}
+.timeline-chart-wrapper .chart-card .chart-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.timeline-chart-wrapper .chart-card .chart-card__title {
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%;
+}
+.timeline-chart-wrapper .chart-card .chart-card__subtitle {
+  color: var(--text-secondary, #9CA3AF);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
+  text-align: right;
+  flex: 1;
+}
 .timeline-chart-wrapper .timeline-chart {
   height: 251px;
   width: 100%;
