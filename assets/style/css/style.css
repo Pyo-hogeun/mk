@@ -245,6 +245,18 @@ body {
     width: 28px;
     height: 28px;
   }
+  .report-header .save-storage__icon {
+    display: none;
+  }
+  .report-header .save-storage .save-storage__icon--default {
+    display: block;
+  }
+  .report-header .save-storage.is-saved .save-storage__icon--default {
+    display: none;
+  }
+  .report-header .save-storage.is-saved .save-storage__icon--saved {
+    display: block;
+  }
   .report-body {
     width: 700px;
     margin-left: auto;
