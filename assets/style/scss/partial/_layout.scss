@@ -41,6 +41,10 @@ body{
 @media screen and (min-width: $mobile){
   .container{
     width: 1210px;
-    
+    &__header{
+      width: $pcContainerSub;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

@@ -133,6 +133,11 @@ body {
   .container {
     width: 1210px;
   }
+  .container__header {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .banner {
   width: 100%;
@@ -140,6 +145,8 @@ body {
   color: #F0F0F0;
   text-align: center;
   padding: 4px 8px;
+  white-space: nowrap;
+  overflow: hidden;
   color: var(--text-primary, #F0F0F0);
   /* Caption/SM */
   font-size: 12px;
@@ -244,6 +251,18 @@ body {
   .report-header .btn-action svg {
     width: 28px;
     height: 28px;
+  }
+  .report-header .save-storage .save-storage__icon--default {
+    display: block;
+  }
+  .report-header .save-storage .save-storage__icon--saved {
+    display: none;
+  }
+  .report-header .save-storage.is-saved .save-storage__icon--default {
+    display: none;
+  }
+  .report-header .save-storage.is-saved .save-storage__icon--saved {
+    display: block;
   }
   .report-body {
     width: 700px;

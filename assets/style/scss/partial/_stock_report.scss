@@ -106,6 +106,22 @@
         height: 28px;
       }
     }
+    .save-storage{
+      .save-storage__icon--default{
+        display: block;
+      }
+      .save-storage__icon--saved{
+        display: none;
+      }
+      &.is-saved{
+        .save-storage__icon--default{
+          display: none;
+        }
+        .save-storage__icon--saved{
+          display: block;
+        }
+      }
+    }
   }
 
   .report-body {
