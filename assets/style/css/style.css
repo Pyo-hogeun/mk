@@ -2224,6 +2224,20 @@ body.bottom-sheet-open {
   overflow: hidden;
 }
 
+.bottom-sheet-dim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+.bottom-sheet-dim.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (min-width: 480px) {
   .news-timeline {
     padding: 0 4px;
