@@ -1970,7 +1970,6 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 260px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
