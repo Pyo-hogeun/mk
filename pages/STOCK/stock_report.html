@@ -454,7 +454,6 @@
           const script = document.createElement('script');
           script.src = src;
           script.async = true;
-          script.crossOrigin = 'anonymous';
           script.onload = () => resolve(true);
           script.onerror = () => reject(new Error(`Failed to load: ${src}`));
           document.head.appendChild(script);
