@@ -1,5 +1,6 @@
-@use 'variables' as *;
-@use 'mixin' as *;
+@use 'variables'as *;
+@use 'mixin'as *;
+
 
 @media screen and (min-width: $mobile) {
 
@@ -74,9 +75,9 @@
       display: flex;
       gap: 12px;
       width: calc(100% + 11px);
-
       overflow-x: auto;
-      @include scrollX_mobile;
+      padding-bottom: 5px;
+      @include scrollbarPc;
     }
 
     &__empty {
@@ -123,226 +124,255 @@
       }
     }
 
-    .stock-briefing-item{
-      flex: 0 0 250px;
-      width: 250px;
-    }
+    // .stock-briefing-item{
+    //   flex: 0 0 250px;
+    //   width: 250px;
+    // }
+  }
+
+  // .interest-stocks-list{
+  //   .content-wrapper{
+  //     padding: 0 $mobilePadSide;
+  //     .search-input{
+  //       margin-bottom: 20px;
+  //     }
+  //     .stock-briefing-item{
+  //       margin-bottom: 20px;
+  //     }
+  //     .filter-buttons{
+  //       width: calc(100% + $mobilePadSide*2);
+  //       margin-left: -$mobilePadSide;
+  //       margin-bottom: 20px;
+  //       padding: 0 $mobilePadSide;
+  //       @include scrollX_mobile;
+  //       &.col-2{
+  //         overflow-x: hidden;
+  //         width: 100%;
+  //         margin-left: 0;
+  //         padding: 0;
+  //         .filter-btn{
+  //           flex: 1 1 50%;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  .stock-briefing-item {
+    display: none;
   }
 
   .stock-briefing-item {
-    display: flex;
-    flex: 1 1 auto;
-    width: 100%;
-    padding: 12px 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    border-radius: 12px;
-    border: 1px solid var(--border-default, #464646);
-    background: var(--bg-default, #1D1D1D);
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
-
-    &__header {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      width: 100%;
-    }
-
-    &__price {
+    &__for-pc{
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-    }
-
-    &__stats {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      width: 100%;
-    }
-
-    &__divider {
-      width: 100%;
-      height: 1px;
-      background: var(--border-default, #464646);
-    }
-
-    .stock-info {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      flex: 1 0 0;
-    }
-
-    .stock-name {
-      color: var(--text-primary, #F0F0F0);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 140%;
-      margin: 0;
-    }
-
-    .stock-code {
-      color: var(--text-secondary, #7B7B7B);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 150%;
-      margin: 0;
-    }
-
-    .bookmark-btn {
-      width: 28px;
-      height: 28px;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-
-      svg {
+      width: 560px;
+      flex: 0 0 560px;
+      padding: 12px 16px;
+      gap: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border-default, #464646);
+      background: var(--bg-default, #1D1D1D);
+      &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+    
+      &__metrics {
+        display: flex;
+        padding: 8px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        border-radius: 8px;
+        background: var(--bg-subtle, #2F2F2F);
+    
+        .metric-column {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          flex: 1 0 0;
+        }
+    
+        .metric-label {
+          color: var(--text-secondary, #7B7B7B);
+          font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 150%;
+          margin: 0;
+        }
+    
+        .metric-value {
+          color: var(--text-primary, #F0F0F0);
+          font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 140%;
+          margin: 0;
+        }
+    
+        .metric-change-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          width: 100%;
+        }
+    
+        .metric-change-amount {
+          color: var(--red, #FF0000);
+          font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 150%;
+          margin: 0;
+        }
+    
+        .metric-change-percent {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+    
+          .change-icon {
+            width: 20px;
+            height: 20px;
+          }
+    
+          .metric-percent {
+            color: var(--red, #FF0000);
+            font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 150%;
+          }
+        }
+    
+        .metric-value-volume {
+          color: var(--text-primary, #F0F0F0);
+          font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 150%;
+          margin: 0;
+        }
+      }
+    
+      &__footer {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+      }
+      .stock-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1 0 0;
+      }
+    
+      .stock-name {
+        color: var(--text-primary, #F0F0F0);
+        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 140%;
+        margin: 0;
+      }
+    
+      .stock-code {
+        color: var(--text-secondary, #7B7B7B);
+        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 150%;
+        margin: 0;
+      }
+    
+      .bookmark-btn {
         width: 28px;
         height: 28px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    
+        svg {
+          width: 28px;
+          height: 28px;
+        }
       }
-    }
-
-    .current-price {
-      color: var(--text-primary, #F0F0F0);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 150%;
-    }
-
-    .price-change-info {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex: 1 0 0;
-    }
-
-    .price-change {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .change-icon {
-      width: 20px;
-      height: 20px;
-    }
-
-    .change-amount {
-      color: var(--red, #FF0000);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 150%;
-      white-space: nowrap;
-    }
-
-    .change-percent {
-      color: var(--red, #FF0000);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 150%;
-    }
-
-    .volume-info {
-      display: inline-flex;
-      text-align: right;
-      flex: 1 0 0;
-    }
-
-    .volume-text {
-      color: var(--text-secondary, #7B7B7B);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 150%;
-    }
-
-    .ai-badge {
-      display: flex;
-      height: 20px;
-      padding: 0 8px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 100px;
-      border: 1px solid var(--orange-100, #FF800B);
-      background: var(--bg-default, #1D1D1D);
-    }
-
-    .ai-badge-text {
-      color: var(--white, #FFFFFF);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 150%;
-    }
-
-    .ai-summary {
-      width: 100%;
-    }
-
-    .ai-summary-text {
-      color: var(--text-secondary, #7B7B7B);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 150%;
-      margin: 0;
-    }
-
-    .detail-analysis-btn {
-      display: flex;
-      height: 32px;
-      padding: 9px 0;
-      justify-content: center;
-      align-items: center;
-      gap: 4px;
-      width: 100%;
-      border-radius: 8px;
-      background: var(--orange-100, #FF7A00);
-      border: 0;
-      cursor: pointer;
-
-      .btn-text {
+    
+      .ai-section {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        flex: 1 0 0;
+      }
+    
+      .ai-badge {
+        display: flex;
+        height: 20px;
+        padding: 0 8px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        border: 1px solid var(--orange-100, #FF800B);
+        background: var(--bg-default, #1D1D1D);
+      }
+    
+      .ai-badge-text {
         color: var(--white, #FFFFFF);
         font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 600;
-        line-height: 140%;
+        line-height: 150%;
       }
-    }
-  }
-  .interest-stocks-list{
-    .content-wrapper{
-      padding: 0 $mobilePadSide;
-      .search-input{
-        margin-bottom: 20px;
+    
+      .ai-summary {
+        flex: 1 0 0;
       }
-      .stock-briefing-item{
-        margin-bottom: 20px;
+    
+      .ai-summary-text {
+        color: var(--text-secondary, #7B7B7B);
+        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 150%;
+        margin: 0;
       }
-      .filter-buttons{
-        width: calc(100% + $mobilePadSide*2);
-        margin-left: -$mobilePadSide;
-        margin-bottom: 20px;
-        padding: 0 $mobilePadSide;
-        @include scrollX_mobile;
-        &.col-2{
-          overflow-x: hidden;
-          width: 100%;
-          margin-left: 0;
-          padding: 0;
-          .filter-btn{
-            flex: 1 1 50%;
-          }
+    
+      .detail-analysis-btn {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    
+        .btn-text {
+          color: var(--orange-100, #FF7A00);
+          font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 140%;
+        }
+    
+        .btn-icon {
+          width: 28px;
+          height: 28px;
         }
       }
     }
+  
+  
   }
+  
 }

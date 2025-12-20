@@ -656,6 +656,7 @@ body {
 }
 .nav-tabs .nav-tabs-container .nav-tab .tab-label {
   color: var(--text-secondary, #7B7B7B);
+  cursor: pointer;
 }
 @media (max-width: 480px) {
   .nav-tabs .nav-tabs-container {
@@ -3160,10 +3161,19 @@ body.bottom-sheet-open {
     gap: 12px;
     width: calc(100% + 11px);
     overflow-x: auto;
-    overflow-x: auto;
+    padding-bottom: 5px;
   }
   .interest-stock-card__list::-webkit-scrollbar {
-    display: none; /* Chrome / Safari / Edge */
+    height: 8px;
+    /* Chrome / Safari / Edge */
+  }
+  .interest-stock-card__list::-webkit-scrollbar-track {
+    background: #5f5f5f;
+    border-radius: 8px;
+  }
+  .interest-stock-card__list::-webkit-scrollbar-thumb {
+    background: #464646;
+    border-radius: 8px;
   }
   .interest-stock-card__empty {
     display: flex;
@@ -3204,60 +3214,46 @@ body.bottom-sheet-open {
     font-weight: 500;
     line-height: 150%;
   }
-  .interest-stock-card .stock-briefing-item {
-    flex: 0 0 250px;
-    width: 250px;
-  }
   .stock-briefing-item {
+    display: none;
+  }
+  .stock-briefing-item__for-pc {
     display: flex;
-    flex: 1 1 auto;
-    width: 100%;
-    padding: 12px 16px;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    width: 560px;
+    flex: 0 0 560px;
+    padding: 12px 16px;
+    gap: 24px;
     border-radius: 12px;
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-default, #1D1D1D);
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   }
-  .stock-briefing-item__header {
+  .stock-briefing-item__for-pc__header {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    width: 100%;
-  }
-  .stock-briefing-item__price {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .stock-briefing-item__stats {
-    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 12px;
     width: 100%;
   }
-  .stock-briefing-item__divider {
+  .stock-briefing-item__for-pc__metrics {
+    display: flex;
+    padding: 8px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     width: 100%;
-    height: 1px;
-    background: var(--border-default, #464646);
+    border-radius: 8px;
+    background: var(--bg-subtle, #2F2F2F);
   }
-  .stock-briefing-item .stock-info {
+  .stock-briefing-item__for-pc__metrics .metric-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
     flex: 1 0 0;
   }
-  .stock-briefing-item .stock-name {
-    color: var(--text-primary, #F0F0F0);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 140%;
-    margin: 0;
-  }
-  .stock-briefing-item .stock-code {
+  .stock-briefing-item__for-pc__metrics .metric-label {
     color: var(--text-secondary, #7B7B7B);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 14px;
@@ -3265,7 +3261,82 @@ body.bottom-sheet-open {
     line-height: 150%;
     margin: 0;
   }
-  .stock-briefing-item .bookmark-btn {
+  .stock-briefing-item__for-pc__metrics .metric-value {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0;
+  }
+  .stock-briefing-item__for-pc__metrics .metric-change-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+  .stock-briefing-item__for-pc__metrics .metric-change-amount {
+    color: var(--red, #FF0000);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+  }
+  .stock-briefing-item__for-pc__metrics .metric-change-percent {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .stock-briefing-item__for-pc__metrics .metric-change-percent .change-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .stock-briefing-item__for-pc__metrics .metric-change-percent .metric-percent {
+    color: var(--red, #FF0000);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .stock-briefing-item__for-pc__metrics .metric-value-volume {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+  }
+  .stock-briefing-item__for-pc__footer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+  .stock-briefing-item__for-pc .stock-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 0 0;
+  }
+  .stock-briefing-item__for-pc .stock-name {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0;
+  }
+  .stock-briefing-item__for-pc .stock-code {
+    color: var(--text-secondary, #7B7B7B);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+  }
+  .stock-briefing-item__for-pc .bookmark-btn {
     width: 28px;
     height: 28px;
     padding: 0;
@@ -3273,60 +3344,17 @@ body.bottom-sheet-open {
     background: transparent;
     cursor: pointer;
   }
-  .stock-briefing-item .bookmark-btn svg {
+  .stock-briefing-item__for-pc .bookmark-btn svg {
     width: 28px;
     height: 28px;
   }
-  .stock-briefing-item .current-price {
-    color: var(--text-primary, #F0F0F0);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 150%;
-  }
-  .stock-briefing-item .price-change-info {
+  .stock-briefing-item__for-pc .ai-section {
     display: flex;
-    align-items: center;
-    gap: 4px;
+    align-items: flex-start;
+    gap: 12px;
     flex: 1 0 0;
   }
-  .stock-briefing-item .price-change {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .stock-briefing-item .change-icon {
-    width: 20px;
-    height: 20px;
-  }
-  .stock-briefing-item .change-amount {
-    color: var(--red, #FF0000);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 150%;
-    white-space: nowrap;
-  }
-  .stock-briefing-item .change-percent {
-    color: var(--red, #FF0000);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 150%;
-  }
-  .stock-briefing-item .volume-info {
-    display: inline-flex;
-    text-align: right;
-    flex: 1 0 0;
-  }
-  .stock-briefing-item .volume-text {
-    color: var(--text-secondary, #7B7B7B);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 150%;
-  }
-  .stock-briefing-item .ai-badge {
+  .stock-briefing-item__for-pc .ai-badge {
     display: flex;
     height: 20px;
     padding: 0 8px;
@@ -3336,17 +3364,17 @@ body.bottom-sheet-open {
     border: 1px solid var(--orange-100, #FF800B);
     background: var(--bg-default, #1D1D1D);
   }
-  .stock-briefing-item .ai-badge-text {
+  .stock-briefing-item__for-pc .ai-badge-text {
     color: var(--white, #FFFFFF);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 13px;
     font-weight: 600;
     line-height: 150%;
   }
-  .stock-briefing-item .ai-summary {
-    width: 100%;
+  .stock-briefing-item__for-pc .ai-summary {
+    flex: 1 0 0;
   }
-  .stock-briefing-item .ai-summary-text {
+  .stock-briefing-item__for-pc .ai-summary-text {
     color: var(--text-secondary, #7B7B7B);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 12px;
@@ -3354,53 +3382,25 @@ body.bottom-sheet-open {
     line-height: 150%;
     margin: 0;
   }
-  .stock-briefing-item .detail-analysis-btn {
+  .stock-briefing-item__for-pc .detail-analysis-btn {
     display: flex;
-    height: 32px;
-    padding: 9px 0;
-    justify-content: center;
     align-items: center;
     gap: 4px;
-    width: 100%;
-    border-radius: 8px;
-    background: var(--orange-100, #FF7A00);
+    padding: 0;
     border: 0;
+    background: transparent;
     cursor: pointer;
   }
-  .stock-briefing-item .detail-analysis-btn .btn-text {
-    color: var(--white, #FFFFFF);
+  .stock-briefing-item__for-pc .detail-analysis-btn .btn-text {
+    color: var(--orange-100, #FF7A00);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     line-height: 140%;
   }
-  .interest-stocks-list .content-wrapper {
-    padding: 0 15px;
-  }
-  .interest-stocks-list .content-wrapper .search-input {
-    margin-bottom: 20px;
-  }
-  .interest-stocks-list .content-wrapper .stock-briefing-item {
-    margin-bottom: 20px;
-  }
-  .interest-stocks-list .content-wrapper .filter-buttons {
-    width: calc(100% + 30px);
-    margin-left: -15px;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    overflow-x: auto;
-  }
-  .interest-stocks-list .content-wrapper .filter-buttons::-webkit-scrollbar {
-    display: none; /* Chrome / Safari / Edge */
-  }
-  .interest-stocks-list .content-wrapper .filter-buttons.col-2 {
-    overflow-x: hidden;
-    width: 100%;
-    margin-left: 0;
-    padding: 0;
-  }
-  .interest-stocks-list .content-wrapper .filter-buttons.col-2 .filter-btn {
-    flex: 1 1 50%;
+  .stock-briefing-item__for-pc .detail-analysis-btn .btn-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3681,6 +3681,9 @@ body.bottom-sheet-open {
     font-size: 16px;
     font-weight: 600;
     line-height: 140%;
+  }
+  .stock-briefing-item__for-pc {
+    display: none;
   }
   .interest-stocks-list .content-wrapper {
     padding: 0 15px;

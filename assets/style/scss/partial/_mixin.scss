@@ -4,3 +4,21 @@
     display: none;           /* Chrome / Safari / Edge */
   }
 }
+@mixin scrollbarPc{
+  &::-webkit-scrollbar {
+    height: 8px;
+    /* Chrome / Safari / Edge */
+  }
+
+  // /* 트랙(배경) */
+  &::-webkit-scrollbar-track {
+    background: #5f5f5f;
+    border-radius: 8px;
+  }
+
+  // /* 드래그 핸들 */
+  &::-webkit-scrollbar-thumb {
+    background: #464646;
+    border-radius: 8px;
+  }
+}
