@@ -2108,15 +2108,15 @@ body.bottom-sheet-open {
     width: 100%;
     padding: 8px 0 0 16px;
   }
-  .timeline-item {
+  .news-timeline .timeline-item {
     position: relative;
     width: 100%;
     max-width: calc(100% - 30px);
   }
-  .timeline-item:not(:first-child) {
+  .news-timeline .timeline-item:not(:first-child) {
     margin-top: 12px;
   }
-  .timeline-item__header {
+  .news-timeline .timeline-item__header {
     position: relative;
     z-index: 0;
     display: flex;
@@ -2125,12 +2125,12 @@ body.bottom-sheet-open {
     gap: 8px;
     justify-content: start;
   }
-  .timeline-date {
+  .news-timeline .timeline-date {
     color: var(--orange-100, #FF7A00);
     align-self: stretch;
     margin: auto 0;
   }
-  .timeline-time {
+  .news-timeline .timeline-time {
     color: var(--text-secondary, #7B7B7B);
     align-self: stretch;
     flex: 1;
@@ -2138,7 +2138,7 @@ body.bottom-sheet-open {
     flex-basis: 0%;
     margin: auto 0;
   }
-  .timeline-marker {
+  .news-timeline .timeline-marker {
     border-radius: var(--radius-pill, 999px);
     border: 1.078px solid var(--border-default, #464646);
     position: absolute;
@@ -2151,7 +2151,7 @@ body.bottom-sheet-open {
     top: 4px;
     background-color: var(--orange-100, #FF7A00);
   }
-  .timeline-news-card {
+  .news-timeline .timeline-news-card {
     display: flex;
     align-items: center;
     border-radius: var(--radius-lg, 12px);
@@ -2166,7 +2166,7 @@ body.bottom-sheet-open {
     background-color: var(--bg-subtle, #2F2F2F);
     padding: 12px;
   }
-  .news-card__image {
+  .news-timeline .news-card__image {
     aspect-ratio: 1;
     -o-object-fit: contain;
        object-fit: contain;
@@ -2177,7 +2177,7 @@ body.bottom-sheet-open {
     flex-shrink: 0;
     margin: auto 0;
   }
-  .news-card__content {
+  .news-timeline .news-card__content {
     align-self: stretch;
     flex: 1;
     flex-shrink: 1;
@@ -2185,11 +2185,11 @@ body.bottom-sheet-open {
     gap: var(--radius-md, 8px);
     margin: auto 0;
   }
-  .news-card__content--full {
+  .news-timeline .news-card__content--full {
     min-width: 240px;
     width: 100%;
   }
-  .news-card__title {
+  .news-timeline .news-card__title {
     color: var(--text-primary, #F0F0F0);
   }
 }
