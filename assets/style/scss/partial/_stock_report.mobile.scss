@@ -1,6 +1,6 @@
 @use 'variables'as *;
 @use 'mixin' as *;
-@media (max-width: 480px) {
+@media (max-width: $mobile) {
   .report-header {
     display: flex;
     padding: 12px 15px 16px;
