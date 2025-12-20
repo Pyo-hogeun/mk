@@ -527,12 +527,12 @@
       const labels = ['1.15', '2.01', '2.14', '3.01', '3.15', '4.01', '4.15', '5.01'];
       const prices = [62000, 68000, 76000, 91000, 98000, 113000, 118500, 120000];
       const eventMarkers = [
-        { label: '1.15', price: 62000, type: 'positive' },
-        { label: '3.01', price: 91000, type: 'positive' },
-        { label: '3.15', price: 98000, type: 'neutral' },
-        { label: '4.01', price: 113000, type: 'negative' },
-        { label: '4.15', price: 118500, type: 'positive' },
-        { label: '5.01', price: 120000, type: 'neutral' },
+        { label: '1.15', price: 62000, type: 'positive', note: 'AI 반도체 수요 급증 기대감' },
+        { label: '3.01', price: 91000, type: 'positive', note: 'AI 데이터센터 고객사 발주 확대' },
+        { label: '3.15', price: 98000, type: 'neutral', note: 'HBM 증설 계획 발표' },
+        { label: '4.01', price: 113000, type: 'negative', note: '미국 규제 이슈 재부각' },
+        { label: '4.15', price: 118500, type: 'positive', note: '고객사와 장기 공급 계약 체결' },
+        { label: '5.01', price: 120000, type: 'neutral', note: '수급 개선 전망 상향' },
       ];
 
       const colorMap = {
@@ -552,11 +552,71 @@
         chartCanvas.height = 251;
         chartCanvas.style.height = '251px';
 
+        const chartCard = chartCanvas.closest('.chart-card');
+        if (chartCard) {
+          chartCard.style.position = 'relative';
+        }
+
         const ctx = chartCanvas.getContext('2d');
         const gradientHeight = chartCanvas.getBoundingClientRect().height || 251;
         const gradient = ctx.createLinearGradient(0, 0, 0, gradientHeight);
         gradient.addColorStop(0, 'rgba(255, 122, 0, 0.3)');
         gradient.addColorStop(1, 'rgba(255, 122, 0, 0)');
+
+        const getOrCreateTooltip = (chart) => {
+          let tooltipEl = chart.canvas.parentNode.querySelector('.chart-tooltip');
+
+          if (!tooltipEl) {
+            tooltipEl = document.createElement('div');
+            tooltipEl.classList.add('chart-tooltip');
+            tooltipEl.setAttribute('role', 'status');
+            tooltipEl.style.position = 'absolute';
+            tooltipEl.style.pointerEvents = 'none';
+            tooltipEl.style.transform = 'translate(-50%, -100%)';
+            tooltipEl.style.transition = 'opacity 0.12s ease, transform 0.12s ease';
+
+            tooltipEl.innerHTML = `
+              <div class="chart-tooltip__date"></div>
+              <div class="chart-tooltip__value"></div>
+              <div class="chart-tooltip__note"></div>
+            `;
+
+            chart.canvas.parentNode.appendChild(tooltipEl);
+          }
+
+          return tooltipEl;
+        };
+
+        const externalTooltipHandler = (context) => {
+          const { chart, tooltip } = context;
+          const tooltipEl = getOrCreateTooltip(chart);
+
+          if (tooltip.opacity === 0) {
+            tooltipEl.style.opacity = 0;
+            tooltipEl.style.transform = 'translate(-50%, -120%)';
+            return;
+          }
+
+          const dataPoint = tooltip.dataPoints?.[0];
+          const date = tooltip.title?.[0] ?? '';
+          const value = dataPoint?.parsed?.y ?? 0;
+          const isEventPoint = dataPoint?.datasetIndex === 1;
+          const markerNote = isEventPoint ? eventMarkers[dataPoint.dataIndex]?.note : '주가 추세';
+
+          const dateEl = tooltipEl.querySelector('.chart-tooltip__date');
+          const valueEl = tooltipEl.querySelector('.chart-tooltip__value');
+          const noteEl = tooltipEl.querySelector('.chart-tooltip__note');
+
+          if (dateEl) dateEl.textContent = date;
+          if (valueEl) valueEl.textContent = `${value.toLocaleString('ko-KR')}원`;
+          if (noteEl) noteEl.textContent = markerNote;
+
+          const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+          tooltipEl.style.opacity = 0.95;
+          tooltipEl.style.left = `${positionX + tooltip.caretX}px`;
+          tooltipEl.style.top = `${positionY + tooltip.caretY - 12}px`;
+          tooltipEl.style.transform = 'translate(-50%, -100%)';
+        };
 
         new Chart(ctx, {
           type: 'line',
@@ -592,12 +652,9 @@
             plugins: {
               legend: { display: false },
               tooltip: {
-                callbacks: {
-                  label(context) {
-                    const value = context.parsed.y;
-                    return `${context.dataset.label}: ${value.toLocaleString('ko-KR')}원`;
-                  },
-                },
+                enabled: false,
+                position: 'nearest',
+                external: externalTooltipHandler,
               },
             },
             scales: {
