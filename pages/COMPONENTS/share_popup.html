@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>기사공유 - Components</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  
+</head>
+<body>
+  <div class="share-popup">
+    <div class="share-popup__header">
+      <div class="share-popup__title">기사공유</div>
+      <button class="close-button" type="button" aria-label="닫기">
+        <svg class="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.9239 9.29291C11.5333 9.68344 11.5333 10.3166 11.9239 10.7071L15.5814 14.3647C15.7428 14.526 15.8334 14.7449 15.8334 14.973C15.8334 15.4482 15.4482 15.8334 14.9731 15.8334C14.7449 15.8334 14.5261 15.7427 14.3648 15.5814L10.7072 11.9238C10.3167 11.5333 9.6835 11.5333 9.29298 11.9238L5.6354 15.5814C5.47406 15.7427 5.25523 15.8334 5.02706 15.8334C4.55192 15.8334 4.16675 15.4482 4.16675 14.973C4.16675 14.7449 4.25739 14.526 4.41873 14.3647L8.07631 10.7071C8.46683 10.3166 8.46683 9.68344 8.07631 9.29291L4.41873 5.63533C4.25739 5.47399 4.16675 5.25517 4.16675 5.027C4.16675 4.55186 4.55192 4.16669 5.02706 4.16669C5.25523 4.16669 5.47405 4.25733 5.63539 4.41867L9.29297 8.07625C9.6835 8.46677 10.3167 8.46677 10.7072 8.07625L14.3648 4.41867C14.5261 4.25733 14.7449 4.16669 14.9731 4.16669C15.4482 4.16669 15.8334 4.55186 15.8334 5.027C15.8334 5.25517 15.7428 5.47399 15.5814 5.63533L11.9239 9.29291Z" fill="#7B7B7B"/>
+        </svg>
+      </button>
+    </div>
+    <div class="share-popup__link">
+      <button class="share-btn size-option-small" type="button" aria-label="공유 버튼">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_1178_18434)">
+          <path d="M13.117 26.4814C11.7063 25.0707 11.7063 22.7773 13.117 21.3666L16.4168 18.0668L14.8494 16.4994L11.5496 19.7992C10.4556 20.8932 9.84105 22.3769 9.84105 23.924C9.84105 25.4711 10.4556 26.9548 11.5496 28.0488C12.6436 29.1427 14.1273 29.7573 15.6744 29.7573C17.2215 29.7573 18.7052 29.1427 19.7992 28.0488L23.099 24.7489L21.5316 23.1815L18.2318 26.4814C16.8211 27.892 14.5277 27.892 13.117 26.4814ZM17.3243 23.924L23.924 17.3243L22.274 15.6744L15.6744 22.2741L17.3243 23.924ZM19.7992 11.5496L16.4993 14.8495L18.0668 16.4169L21.3666 13.117C22.7773 11.7064 25.0707 11.7064 26.4813 13.117C27.892 14.5277 27.892 16.8211 26.4813 18.2318L23.1815 21.5316L24.7489 23.099L28.0488 19.7992C29.1427 18.7052 29.7573 17.2215 29.7573 15.6744C29.7573 14.1273 29.1427 12.6436 28.0488 11.5496C26.9548 10.4557 25.4711 9.84108 23.924 9.84108C22.3769 9.84108 20.8931 10.4557 19.7992 11.5496Z" fill="#F0F0F0"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_1178_18434">
+          <rect width="28" height="28" fill="white" transform="translate(0 19.799) rotate(-45)"/>
+          </clipPath>
+          </defs>
+          </svg>
+          
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const closeButton = document.querySelector('.close-button');
+    const sizeOptions = document.querySelectorAll('.size-option');
+
+    closeButton.addEventListener('click', () => {
+      console.log('Close button clicked');
+    });
+
+    sizeOptions.forEach((option, index) => {
+      option.addEventListener('click', () => {
+        console.log(`Font size option ${index + 1} selected`);
+      });
+    });
+  </script>
+</body>
+</html>
