@@ -1,6 +1,6 @@
 @use 'variables'as *;
 
-@media (max-width: $mobile) {
+@media (min-width: $mobile) {
   .ai-question-suggestion {
     display: flex;
     flex-direction: column;

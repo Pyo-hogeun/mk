@@ -1,25 +1,28 @@
 
 @use 'variables' as *;
+@use 'mixin' as *;
 @media (min-width: 480px) {
   .report-header {
     display: flex;
-    padding: 20px;
-    padding-bottom: 16px;
+    padding: 12px 15px 16px;
     background: #FF7A00;
     flex-wrap: wrap;
-    
+    width: $pcContainerSub;
+    margin-left: auto;
+    margin-right: auto;
+
     .header-content {
       display: flex;
       flex-direction: column;
       flex: 1 0 0;
     }
-    
+
     .header-top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    
+
     .btn-back {
       width: 28px;
       height: 28px;
@@ -27,32 +30,32 @@
       border: 0;
       padding: 0;
       cursor: pointer;
-      
+
       svg {
         width: 28px;
         height: 28px;
       }
     }
-    
+
     .header-logo {
       svg {
         width: 85px;
         height: 20px;
       }
     }
-    
+
     .header-help-icon {
       width: 24px;
       height: 24px;
     }
-    
+
     .header-body {
       display: flex;
       flex-direction: column;
       gap: 24px;
       margin-top: 12px;
     }
-    
+
     .report-title {
       color: #FFFFFF;
       font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
@@ -60,13 +63,13 @@
       font-weight: 700;
       line-height: 140%;
     }
-    
+
     .report-meta {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
-    
+
     .report-date {
       color: #FFFFFF;
       font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
@@ -74,14 +77,14 @@
       font-weight: 500;
       line-height: 150%;
     }
-    
+
     .header-actions-container {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 12px;
     }
-    
+
     .action-buttons {
       display: flex;
       justify-content: flex-end;
@@ -89,7 +92,7 @@
       gap: 8px;
       flex: 1 0 0;
     }
-    
+
     .btn-action {
       width: 28px;
       height: 28px;
@@ -97,10 +100,122 @@
       border: 0;
       padding: 0;
       cursor: pointer;
-      
+
       svg {
         width: 28px;
         height: 28px;
+      }
+    }
+  }
+
+  .report-body {
+    width: $pcContainerSub;
+    margin-left: auto;
+    margin-right: auto;
+    .report-body__summary {
+      padding: 0 $mobilePadSide;
+    }
+
+    h4 {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      color: var(--orange-100, #FF7A00);
+      text-overflow: ellipsis;
+
+      /* Heading/H4 */
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 140%;
+      /* 25.2px */
+
+      .btn-set-period{
+        background-color: transparent;
+        border: 0;
+        color: var(--text-secondary);
+        color: var(--text-secondary, #7B7B7B);
+        /* Caption/SM */
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 150%; /* 18px */
+      }
+    }
+    
+  }
+  
+  .analysis-trend{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
+    p {
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+    &__source{
+      display: flex;
+      padding: 4px 14px;
+      justify-content: center;
+      align-items: center;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-default, #464646);
+      background: var(--bg-subtle, #2F2F2F);
+      color: var(--text-primary, #F0F0F0);
+  
+      /* Caption/SM */
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 150%; /* 18px */
+    }
+  }
+  
+  .related-stocks{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+  
+    width: 100%;
+    overflow: auto;
+    
+    &__item{
+      display: flex;
+      width: 88px;
+      height: 100px;
+      padding: 12px 16px 12px 15.998px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+  
+      border-radius: var(--radius-lg, 12px);
+      border: 1px solid var(--border-default, #464646);
+      background: var(--bg-default, #1D1D1D);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
+  
+  
+      font-size: 15px;
+      font-weight: 400;
+      white-space: nowrap;
+      color: var(--text-primary);
+      &.positive {
+        .percent{
+          color: var(--red, #F00);
+        }
+      }
+      
+      &.negative {
+        .percent{
+          color: var(--blue, #2175FF);
+        }
       }
     }
   }
