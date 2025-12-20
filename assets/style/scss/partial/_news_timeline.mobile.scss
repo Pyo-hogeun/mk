@@ -1,0 +1,107 @@
+@use 'variables'as *;
+@media (max-width: 480px) {
+  .news-timeline {
+    padding: 0 4px;
+    font: 400 14px Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .news-timeline__container {
+    border-left: 1.078px solid var(--border-default, #464646);
+    min-height: 345px;
+    width: 100%;
+    padding: 8px 0 0 16px;
+  }
+  
+  .timeline-item {
+    position: relative;
+    width: 100%;
+    max-width: calc(100% - 30px);
+  
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+  }
+  
+  .timeline-item__header {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+    justify-content: start;
+  }
+  
+  .timeline-date {
+    color: var(--orange-100, #FF7A00);
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .timeline-time {
+    color: var(--text-secondary, #7B7B7B);
+    align-self: stretch;
+    flex: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    margin: auto 0;
+  }
+  
+  .timeline-marker {
+    border-radius: var(--radius-pill, 999px);
+    border: 1.078px solid var(--border-default, #464646);
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    min-height: 12px;
+    width: 12px;
+    height: 12px;
+    left: -22px;
+    top: 4px;
+    background-color: var(--orange-100, #FF7A00);
+  }
+  
+  .timeline-news-card {
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-default, #464646);
+    margin-top: 12px;
+    width: 100%;
+    gap: 10px;
+    overflow: hidden;
+    color: var(--text-primary, #F0F0F0);
+    line-height: 21px;
+    justify-content: start;
+    background-color: var(--bg-subtle, #2F2F2F);
+    padding: 12px;
+  }
+  
+  .news-card__image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 48px;
+    align-self: stretch;
+    flex-shrink: 0;
+    margin: auto 0;
+  }
+  
+  .news-card__content {
+    align-self: stretch;
+    flex: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    gap: var(--radius-md, 8px);
+    margin: auto 0;
+  
+    &--full {
+      min-width: 240px;
+      width: 100%;
+    }
+  }
+  
+  .news-card__title {
+    color: var(--text-primary, #F0F0F0);
+  }
+}

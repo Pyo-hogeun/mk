@@ -1,0 +1,6 @@
+@mixin scrollX_mobile{
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;           /* Chrome / Safari / Edge */
+  }
+}
