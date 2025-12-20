@@ -3774,6 +3774,9 @@ body.bottom-sheet-open {
     background: var(--border-default, #464646);
     margin: 24px 0;
   }
+  .interest-stocks-add .rate-filter {
+    margin: 24px 0;
+  }
 }
 .search-input {
   display: flex;
@@ -3927,4 +3930,132 @@ body.bottom-sheet-open {
 }
 .section-bar__tab.active .section-bar__indicator {
   background: var(--text-primary, #F0F0F0);
+}
+
+.rate-filter {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.rate-filter__btn {
+  display: flex;
+  padding: 4px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--bg-subtle, #2F2F2F);
+  border: 0;
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.rate-filter__btn.active {
+  background: var(--orange-100, #FF7A00);
+  color: var(--white, #FFFFFF);
+}
+.rate-filter__btn:hover {
+  opacity: 0.9;
+}
+
+.stock-list-item {
+  display: flex;
+  padding: 12px 0;
+  align-items: center;
+  border-bottom: 1px solid var(--border-default, #464646);
+}
+.stock-list-item__container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+}
+.stock-list-item__rank {
+  color: var(--border-default, #464646);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+.stock-list-item__name {
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.stock-list-item__price-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stock-list-item__price {
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+.stock-list-item__change {
+  display: flex;
+  align-items: center;
+}
+.stock-list-item__change-icon {
+  width: 20px;
+  height: 20px;
+}
+.stock-list-item__change-text {
+  color: var(--blue, #2175FF);
+  text-align: right;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.stock-list-item .btn-action {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.stock-list-item .btn-action svg {
+  width: 28px;
+  height: 28px;
+}
+.stock-list-item .save-storage .save-storage__icon--default {
+  display: block;
+}
+.stock-list-item .save-storage .save-storage__icon--saved {
+  display: none;
+}
+.stock-list-item .save-storage.is-saved .save-storage__icon--default {
+  display: none;
+}
+.stock-list-item .save-storage.is-saved .save-storage__icon--saved {
+  display: block;
+}
+.stock-list-item.negative .stock-list-item__change-text {
+  color: var(--blue, #2175FF);
+}
+.stock-list-item.positive .stock-list-item__change-text {
+  color: var(--red, #FF0000);
+}
+.stock-list-item.positive .stock-list-item__change-icon path {
+  fill: var(--red, #FF0000);
+}
+.stock-list-item.negative .stock-list-item__change-icon path {
+  fill: var(--blue, #2175FF);
+}
+
+.ranking {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
 }

@@ -1,0 +1,129 @@
+@use 'variables' as *;
+
+.stock-list-item {
+  display: flex;
+  padding: 12px 0;
+  align-items: center;
+  border-bottom: 1px solid var(--border-default, #464646);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+  }
+
+  &__rank {
+    color: var(--border-default, #464646);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__name {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__price-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__price {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__change {
+    display: flex;
+    align-items: center;
+  }
+
+  &__change-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__change-text {
+    color: var(--blue, #2175FF);
+    text-align: right;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  // &__bookmark-btn {
+  //   width: 28px;
+  //   height: 28px;
+  //   flex-shrink: 0;
+  //   padding: 0;
+  //   border: 0;
+  //   background: transparent;
+  //   cursor: pointer;
+
+  //   svg {
+  //     width: 28px;
+  //     height: 28px;
+  //   }
+  // }
+  .btn-action {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .save-storage{
+    .save-storage__icon--default{
+      display: block;
+    }
+    .save-storage__icon--saved{
+      display: none;
+    }
+    &.is-saved{
+      .save-storage__icon--default{
+        display: none;
+      }
+      .save-storage__icon--saved{
+        display: block;
+      }
+    }
+  }
+
+  &.negative &__change-text {
+    color: var(--blue, #2175FF);
+  }
+
+  &.positive &__change-text {
+    color: var(--red, #FF0000);
+  }
+
+  &.positive &__change-icon path {
+    fill: var(--red, #FF0000);
+  }
+
+  &.negative &__change-icon path {
+    fill: var(--blue, #2175FF);
+  }
+}
+.ranking{
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}

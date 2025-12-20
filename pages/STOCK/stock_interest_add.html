@@ -76,8 +76,111 @@
         </div>
       </div>
 
+      <div class="rate-filter">
+        <button type="button" class="rate-filter__btn active" data-filter="rising">
+          상승률
+        </button>
+        <button type="button" class="rate-filter__btn" data-filter="falling">
+          하락률
+        </button>
+      </div>
+
+      <div class="ranking">
+        <div class="stock-list-item negative">
+          <div class="stock-list-item__container">
+            <div class="stock-list-item__rank">1</div>
+            <div class="stock-list-item__name">S-Oil</div>
+            <div class="stock-list-item__price-info">
+              <div class="stock-list-item__price">82,400</div>
+              <div class="stock-list-item__change">
+                <svg class="stock-list-item__change-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.866 15.5C10.4811 16.1667 9.51887 16.1667 9.13397 15.5L3.93782 6.5C3.55292 5.83333 4.03405 5 4.80385 5L15.1962 5C15.966 5 16.4471 5.83333 16.0622 6.5L10.866 15.5Z" fill="#2175FF"/>
+                </svg>
+                <div class="stock-list-item__change-text">8,240(10%)</div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-action save-storage" aria-label="보관함에 추가" aria-pressed="false">
+            <!-- 추가 전 -->
+            <svg class="save-storage__icon save-storage__icon--default" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.8334 21L14 18.4567L8.16671 21V5.83333H19.8334M19.8334 3.5H8.16671C7.54787 3.5 6.95438 3.74583 6.51679 4.18342C6.07921 4.621 5.83337 5.21449 5.83337 5.83333V22.9835C5.83337 23.7014 6.56742 24.1854 7.22729 23.9026L14 21L20.7728 23.9026C21.4327 24.1854 22.1667 23.7014 22.1667 22.9835V5.83333C22.1667 4.53833 21.1167 3.5 19.8334 3.5Z" fill="white"/>
+            </svg>
+
+            <!-- 추가 후 -->
+            <svg class="save-storage__icon save-storage__icon--saved" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.8335 3.5H8.16683C7.54799 3.5 6.9545 3.74583 6.51691 4.18342C6.07933 4.621 5.8335 5.21449 5.8335 5.83333V22.9835C5.8335 23.7014 6.56755 24.1854 7.22742 23.9026L14.0002 21L20.7729 23.9026C21.4328 24.1854 22.1668 23.7014 22.1668 22.9835V5.83333C22.1668 4.53833 21.1168 3.5 19.8335 3.5Z" fill="#F0F0F0"/>
+              </svg>
+              
+          </button>
+        </div>
+        <div class="stock-list-item negative">
+          <div class="stock-list-item__container">
+            <div class="stock-list-item__rank">2</div>
+            <div class="stock-list-item__name">S-Oil</div>
+            <div class="stock-list-item__price-info">
+              <div class="stock-list-item__price">82,400</div>
+              <div class="stock-list-item__change">
+                <svg class="stock-list-item__change-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.866 15.5C10.4811 16.1667 9.51887 16.1667 9.13397 15.5L3.93782 6.5C3.55292 5.83333 4.03405 5 4.80385 5L15.1962 5C15.966 5 16.4471 5.83333 16.0622 6.5L10.866 15.5Z" fill="#2175FF"/>
+                </svg>
+                <div class="stock-list-item__change-text">8,240(10%)</div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-action save-storage" aria-label="보관함에 추가" aria-pressed="false">
+            <!-- 추가 전 -->
+            <svg class="save-storage__icon save-storage__icon--default" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.8334 21L14 18.4567L8.16671 21V5.83333H19.8334M19.8334 3.5H8.16671C7.54787 3.5 6.95438 3.74583 6.51679 4.18342C6.07921 4.621 5.83337 5.21449 5.83337 5.83333V22.9835C5.83337 23.7014 6.56742 24.1854 7.22729 23.9026L14 21L20.7728 23.9026C21.4327 24.1854 22.1667 23.7014 22.1667 22.9835V5.83333C22.1667 4.53833 21.1167 3.5 19.8334 3.5Z" fill="white"/>
+            </svg>
+
+            <!-- 추가 후 -->
+            <svg class="save-storage__icon save-storage__icon--saved" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.8335 3.5H8.16683C7.54799 3.5 6.9545 3.74583 6.51691 4.18342C6.07933 4.621 5.8335 5.21449 5.8335 5.83333V22.9835C5.8335 23.7014 6.56755 24.1854 7.22742 23.9026L14.0002 21L20.7729 23.9026C21.4328 24.1854 22.1668 23.7014 22.1668 22.9835V5.83333C22.1668 4.53833 21.1168 3.5 19.8335 3.5Z" fill="#F0F0F0"/>
+              </svg>
+              
+          </button>
+        </div>
+        <div class="stock-list-item negative">
+          <div class="stock-list-item__container">
+            <div class="stock-list-item__rank">3</div>
+            <div class="stock-list-item__name">S-Oil</div>
+            <div class="stock-list-item__price-info">
+              <div class="stock-list-item__price">82,400</div>
+              <div class="stock-list-item__change">
+                <svg class="stock-list-item__change-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.866 15.5C10.4811 16.1667 9.51887 16.1667 9.13397 15.5L3.93782 6.5C3.55292 5.83333 4.03405 5 4.80385 5L15.1962 5C15.966 5 16.4471 5.83333 16.0622 6.5L10.866 15.5Z" fill="#2175FF"/>
+                </svg>
+                <div class="stock-list-item__change-text">8,240(10%)</div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-action save-storage" aria-label="보관함에 추가" aria-pressed="false">
+            <!-- 추가 전 -->
+            <svg class="save-storage__icon save-storage__icon--default" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.8334 21L14 18.4567L8.16671 21V5.83333H19.8334M19.8334 3.5H8.16671C7.54787 3.5 6.95438 3.74583 6.51679 4.18342C6.07921 4.621 5.83337 5.21449 5.83337 5.83333V22.9835C5.83337 23.7014 6.56742 24.1854 7.22729 23.9026L14 21L20.7728 23.9026C21.4327 24.1854 22.1667 23.7014 22.1667 22.9835V5.83333C22.1667 4.53833 21.1167 3.5 19.8334 3.5Z" fill="white"/>
+            </svg>
+
+            <!-- 추가 후 -->
+            <svg class="save-storage__icon save-storage__icon--saved" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.8335 3.5H8.16683C7.54799 3.5 6.9545 3.74583 6.51691 4.18342C6.07933 4.621 5.8335 5.21449 5.8335 5.83333V22.9835C5.8335 23.7014 6.56755 24.1854 7.22742 23.9026L14.0002 21L20.7729 23.9026C21.4328 24.1854 22.1668 23.7014 22.1668 22.9835V5.83333C22.1668 4.53833 21.1168 3.5 19.8335 3.5Z" fill="#F0F0F0"/>
+              </svg>
+              
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <div class="toast-tooltip" role="status" aria-live="polite" aria-hidden="true">
+    <div class="toast-tooltip__content">
+      <svg class="toast-tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.99984 1.6665C5.4165 1.6665 1.6665 5.4165 1.6665 9.99984C1.6665 14.5832 5.4165 18.3332 9.99984 18.3332C14.5832 18.3332 18.3332 14.5832 18.3332 9.99984C18.3332 5.4165 14.5832 1.6665 9.99984 1.6665ZM9.99984 16.6665C6.32484 16.6665 3.33317 13.6748 3.33317 9.99984C3.33317 6.32484 6.32484 3.33317 9.99984 3.33317C13.6748 3.33317 16.6665 6.32484 16.6665 9.99984C16.6665 13.6748 13.6748 16.6665 9.99984 16.6665ZM14.4144 6.91026C14.0891 6.58268 13.5596 6.58174 13.2332 6.90817L8.33317 11.8082L6.7629 10.244C6.43794 9.92026 5.91224 9.92076 5.5879 10.2451C5.26312 10.5699 5.26312 11.0965 5.5879 11.4212L7.62606 13.4594C8.01659 13.8499 8.64975 13.8499 9.04028 13.4594L14.4123 8.08734C14.7371 7.76253 14.7381 7.23621 14.4144 6.91026Z" fill="#FF7A00"/>
+      </svg>
+      <div class="toast-tooltip__message">보관함에 추가되었습니다.</div>
+    </div>
+  </div>
+  
 
   <script>
     (function () {
@@ -122,6 +225,60 @@
           tab.classList.add('active');
         });
       });
+
+      const rateFilterButtons = document.querySelectorAll('.rate-filter__btn');
+
+      rateFilterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          rateFilterButtons.forEach((btn) => btn.classList.remove('active'));
+          button.classList.add('active');
+        });
+      });
+    })();
+    // 보관함 저장
+    (function () {
+      const saveStorageButton = document.querySelector('.save-storage');
+      const toast = document.querySelector('.toast-tooltip');
+      const toastMessage = toast?.querySelector('.toast-tooltip__message');
+      const TOAST_DURATION = 2500;
+      let toastTimer = null;
+
+      const showToast = (message) => {
+        if (!toast || !toastMessage) return;
+
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        toast.setAttribute('aria-hidden', 'false');
+
+        if (toastTimer) {
+          clearTimeout(toastTimer);
+        }
+
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
+          toast.setAttribute('aria-hidden', 'true');
+        }, TOAST_DURATION);
+      };
+
+      const updateButtonState = (isSaved) => {
+        if (!saveStorageButton) return;
+
+        saveStorageButton.classList.toggle('is-saved', isSaved);
+        saveStorageButton.setAttribute('aria-pressed', String(isSaved));
+        saveStorageButton.setAttribute('aria-label', isSaved ? '보관함에서 제거' : '보관함에 추가');
+      };
+
+      const toggleSave = () => {
+        if (!saveStorageButton) return;
+        const isSaved = !saveStorageButton.classList.contains('is-saved');
+        updateButtonState(isSaved);
+        showToast(isSaved ? '보관함에 추가되었습니다.' : '보관함에서 제거되었습니다.');
+      };
+
+      if (saveStorageButton) {
+        updateButtonState(false);
+        saveStorageButton.addEventListener('click', toggleSave);
+      }
     })();
   </script>
 
