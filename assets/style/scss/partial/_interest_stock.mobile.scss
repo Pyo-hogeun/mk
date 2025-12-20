@@ -321,15 +321,13 @@
   .stock-briefing-item__for-pc{
     display: none;
   }
-  .interest-stocks-list{
+  .interest-stocks-list, .interest-stocks-add{
     .content-wrapper{
       padding: 0 $mobilePadSide;
       .search-input{
         margin-bottom: 20px;
       }
-      .divider-line {
-        display: none;
-      }
+      
       .stock-briefing-item{
         margin-bottom: 20px;
       }
@@ -350,8 +348,21 @@
         }
       }
     }
+  }
+  .interest-stocks-list{
     .selected-stock-tags {
       display: none;
+    }
+    .divider-line {
+      display: none;
+    }
+  }
+  .interest-stocks-add{
+    .divider-line {
+      width: 100%;
+      height: 1px;
+      background: var(--border-default, #464646);
+      margin: 24px 0;
     }
   }
 }

@@ -103,7 +103,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--text-primary);
   color: var(--text-primary, #F0F0F0);
   margin: 24px 0;
   padding: 0 15px;
@@ -3735,39 +3734,45 @@ body.bottom-sheet-open {
   .stock-briefing-item__for-pc {
     display: none;
   }
-  .interest-stocks-list .content-wrapper {
+  .interest-stocks-list .content-wrapper, .interest-stocks-add .content-wrapper {
     padding: 0 15px;
   }
-  .interest-stocks-list .content-wrapper .search-input {
+  .interest-stocks-list .content-wrapper .search-input, .interest-stocks-add .content-wrapper .search-input {
     margin-bottom: 20px;
   }
-  .interest-stocks-list .content-wrapper .divider-line {
-    display: none;
-  }
-  .interest-stocks-list .content-wrapper .stock-briefing-item {
+  .interest-stocks-list .content-wrapper .stock-briefing-item, .interest-stocks-add .content-wrapper .stock-briefing-item {
     margin-bottom: 20px;
   }
-  .interest-stocks-list .content-wrapper .filter-buttons {
+  .interest-stocks-list .content-wrapper .filter-buttons, .interest-stocks-add .content-wrapper .filter-buttons {
     width: calc(100% + 30px);
     margin-left: -15px;
     margin-bottom: 20px;
     padding: 0 15px;
     overflow-x: auto;
   }
-  .interest-stocks-list .content-wrapper .filter-buttons::-webkit-scrollbar {
+  .interest-stocks-list .content-wrapper .filter-buttons::-webkit-scrollbar, .interest-stocks-add .content-wrapper .filter-buttons::-webkit-scrollbar {
     display: none; /* Chrome / Safari / Edge */
   }
-  .interest-stocks-list .content-wrapper .filter-buttons.col-2 {
+  .interest-stocks-list .content-wrapper .filter-buttons.col-2, .interest-stocks-add .content-wrapper .filter-buttons.col-2 {
     overflow-x: hidden;
     width: 100%;
     margin-left: 0;
     padding: 0;
   }
-  .interest-stocks-list .content-wrapper .filter-buttons.col-2 .filter-btn {
+  .interest-stocks-list .content-wrapper .filter-buttons.col-2 .filter-btn, .interest-stocks-add .content-wrapper .filter-buttons.col-2 .filter-btn {
     flex: 1 1 50%;
   }
   .interest-stocks-list .selected-stock-tags {
     display: none;
+  }
+  .interest-stocks-list .divider-line {
+    display: none;
+  }
+  .interest-stocks-add .divider-line {
+    width: 100%;
+    height: 1px;
+    background: var(--border-default, #464646);
+    margin: 24px 0;
   }
 }
 .search-input {
