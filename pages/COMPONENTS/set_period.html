@@ -3,48 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>글자크기 설정 - Components</title>
+  <title>기간 설정 - Components</title>
   <link rel="stylesheet" href="../../assets/style/css/style.css">
   
 </head>
 <body>
   <div class="set-period">
-    <div class="font-size-selector__header">
-      <div class="font-size-selector__title">글자크기 설정</div>
-      <button class="close-button" type="button" aria-label="닫기">
-        <svg class="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.9239 9.29291C11.5333 9.68344 11.5333 10.3166 11.9239 10.7071L15.5814 14.3647C15.7428 14.526 15.8334 14.7449 15.8334 14.973C15.8334 15.4482 15.4482 15.8334 14.9731 15.8334C14.7449 15.8334 14.5261 15.7427 14.3648 15.5814L10.7072 11.9238C10.3167 11.5333 9.6835 11.5333 9.29298 11.9238L5.6354 15.5814C5.47406 15.7427 5.25523 15.8334 5.02706 15.8334C4.55192 15.8334 4.16675 15.4482 4.16675 14.973C4.16675 14.7449 4.25739 14.526 4.41873 14.3647L8.07631 10.7071C8.46683 10.3166 8.46683 9.68344 8.07631 9.29291L4.41873 5.63533C4.25739 5.47399 4.16675 5.25517 4.16675 5.027C4.16675 4.55186 4.55192 4.16669 5.02706 4.16669C5.25523 4.16669 5.47405 4.25733 5.63539 4.41867L9.29297 8.07625C9.6835 8.46677 10.3167 8.46677 10.7072 8.07625L14.3648 4.41867C14.5261 4.25733 14.7449 4.16669 14.9731 4.16669C15.4482 4.16669 15.8334 4.55186 15.8334 5.027C15.8334 5.25517 15.7428 5.47399 15.5814 5.63533L11.9239 9.29291Z" fill="#7B7B7B"/>
-        </svg>
+    <div class="set-period__header">
+      <h2 class="set-period__title">기간 설정</h2>
+      <button class="set-period__close" type="button" aria-label="닫기">
+        <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/790e0da663b2008147003f5a47ca2e193b2067e6?placeholderIfAbsent=true" alt="" class="set-period__close-icon" />
       </button>
     </div>
-    <div class="font-size-selector__size-options">
-      <button class="size-option size-option-small" type="button" aria-label="작은 글자 크기">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.5" y="0.5" width="23" height="23" stroke="#464646"/>
-          <path d="M17.2107 3V10.3296H20V11.6659H17.2107V21H15.6998V3H17.2107ZM12.7554 4.94376C12.7554 10.0461 10.4697 14.6828 4.8523 17.5782L4 16.3228C8.45521 14.0045 10.8765 10.5422 11.2252 6.28009H4.79419V4.94376H12.7554Z" fill="#F0F0F0"/>
-        </svg>
+
+    <div class="set-period__section">
+      <h3 class="set-period__section-title">빠른 선택</h3>
+      <div class="set-period__quick-buttons">
+        <button class="quick-button quick-button--active" type="button">오늘</button>
+        <button class="quick-button" type="button">최근 1주일</button>
+        <button class="quick-button" type="button">최근 1개월</button>
+        <button class="quick-button" type="button">최근 3개월</button>
+        <button class="quick-button" type="button">직접 선택</button>
+      </div>
+    </div>
+
+    <div class="set-period__section">
+      <h3 class="set-period__section-title">시작일</h3>
+      <button class="date-picker" type="button">
+        <span class="date-picker__text">2025년 12월 15일</span>
+        <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/23406555efdbe9ab48bff28caa24d18d64abd990?placeholderIfAbsent=true" alt="" class="date-picker__icon" />
       </button>
-      <button class="size-option size-option-medium" type="button" aria-label="보통 글자 크기">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.5" y="0.5" width="27" height="27" stroke="#464646"/>
-          <path d="M20.6877 3V11.5512H24V13.1102H20.6877V24H18.8935V3H20.6877ZM15.3971 5.26772C15.3971 11.2205 12.6828 16.6299 6.01211 20.0079L5 18.5433C10.2906 15.8386 13.1659 11.7992 13.5799 6.82677H5.9431V5.26772H15.3971Z" fill="#F0F0F0"/>
-        </svg>
+    </div>
+
+    <div class="set-period__section">
+      <h3 class="set-period__section-title">종료일</h3>
+      <button class="date-picker" type="button">
+        <span class="date-picker__text">2025년 12월 15일</span>
+        <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/23406555efdbe9ab48bff28caa24d18d64abd990?placeholderIfAbsent=true" alt="" class="date-picker__icon" />
       </button>
-      <button class="size-option size-option-large" type="button" aria-label="큰 글자 크기">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.5" y="0.5" width="31" height="31" stroke="#464646"/>
-          <path d="M23.1646 4V13.7728H27V15.5546H23.1646V28H21.0872V4H23.1646ZM17.0387 6.59168C17.0387 13.3948 13.8959 19.5771 6.17191 23.4376L5 21.7638C11.1259 18.6727 14.4552 14.0562 14.9346 8.37345H6.09201V6.59168H17.0387Z" fill="#F0F0F0"/>
-        </svg>
-      </button>
-      <button class="size-option size-option-xlarge" type="button" aria-label="아주 큰 글자 크기">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.5" y="0.5" width="35" height="35" stroke="#464646"/>
-          <path d="M25.1646 6V15.7728H29V17.5546H25.1646V30H23.0872V6H25.1646ZM19.0387 8.59168C19.0387 15.3948 15.8959 21.5771 8.17191 25.4376L7 23.7638C13.1259 20.6727 16.4552 16.0562 16.9346 10.3735H8.09201V8.59168H19.0387Z" fill="#F0F0F0"/>
-        </svg>
-      </button>
+    </div>
+
+    <div class="set-period__actions">
+      <button class="action-button action-button--cancel" type="button">취소</button>
+      <button class="action-button action-button--save" type="button">저장</button>
     </div>
   </div>
 
-  
+  <script>
+    const closeButton = document.querySelector('.set-period__close');
+    const quickButtons = document.querySelectorAll('.quick-button');
+    const datePickers = document.querySelectorAll('.date-picker');
+    const cancelButton = document.querySelector('.action-button--cancel');
+    const saveButton = document.querySelector('.action-button--save');
+
+    closeButton.addEventListener('click', () => {
+      console.log('Close button clicked');
+    });
+
+    quickButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        quickButtons.forEach(btn => btn.classList.remove('quick-button--active'));
+        button.classList.add('quick-button--active');
+        console.log('Quick button clicked:', button.textContent);
+      });
+    });
+
+    datePickers.forEach((picker) => {
+      picker.addEventListener('click', () => {
+        console.log('Date picker clicked');
+      });
+    });
+
+    cancelButton.addEventListener('click', () => {
+      console.log('Cancel button clicked');
+    });
+
+    saveButton.addEventListener('click', () => {
+      console.log('Save button clicked');
+    });
+  </script>
 </body>
 </html>
