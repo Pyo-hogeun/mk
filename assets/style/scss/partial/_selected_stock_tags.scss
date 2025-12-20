@@ -1,0 +1,43 @@
+.selected-stock-tags {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.stock-tag {
+  display: flex;
+  height: 40px;
+  padding: 8px 24px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &__text {
+    color: var(--text-primary);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

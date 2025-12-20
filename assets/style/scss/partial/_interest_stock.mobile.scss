@@ -327,6 +327,9 @@
       .search-input{
         margin-bottom: 20px;
       }
+      .divider-line {
+        display: none;
+      }
       .stock-briefing-item{
         margin-bottom: 20px;
       }
@@ -346,6 +349,9 @@
           }
         }
       }
+    }
+    .selected-stock-tags {
+      display: none;
     }
   }
 }

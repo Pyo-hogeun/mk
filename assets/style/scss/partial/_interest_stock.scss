@@ -130,33 +130,58 @@
     // }
   }
 
-  // .interest-stocks-list{
-  //   .content-wrapper{
-  //     padding: 0 $mobilePadSide;
-  //     .search-input{
-  //       margin-bottom: 20px;
-  //     }
-  //     .stock-briefing-item{
-  //       margin-bottom: 20px;
-  //     }
-  //     .filter-buttons{
-  //       width: calc(100% + $mobilePadSide*2);
-  //       margin-left: -$mobilePadSide;
-  //       margin-bottom: 20px;
-  //       padding: 0 $mobilePadSide;
-  //       @include scrollX_mobile;
-  //       &.col-2{
-  //         overflow-x: hidden;
-  //         width: 100%;
-  //         margin-left: 0;
-  //         padding: 0;
-  //         .filter-btn{
-  //           flex: 1 1 50%;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  .interest-stocks-list{
+    .container{
+      &__header{
+        width: $pcContainerSub;
+      }
+    }
+    .content-wrapper{
+      width: $pcContainerSub;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 $mobilePadSide;
+      .search-input{
+        margin-bottom: 20px;
+        background: var(--bg-default, #1D1D1D);
+      }
+      .divider-line {
+        width: 100%;
+        height: 1px;
+        background: var(--border-default, #464646);
+        margin-bottom: 20px;
+      }
+      .selected-stock-tags {
+        margin-bottom: 21px;
+      }
+      .stock-briefing-item{
+        margin-bottom: 20px;
+      }
+      .stock-briefing-item__for-pc{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .filter-buttons{
+        justify-content: space-between;
+        width: 100%;
+        // gap: 20px;
+        margin-bottom: 20px;
+        @include scrollX_mobile;
+        .filter-btn{
+          flex: 1 1 auto;
+        }
+        &.col-2{
+          overflow-x: hidden;
+          width: 100%;
+          margin-left: 0;
+          padding: 0;
+          .filter-btn{
+            flex: 1 1 50%;
+          }
+        }
+      }
+    }
+  }
 
   .stock-briefing-item {
     display: none;
