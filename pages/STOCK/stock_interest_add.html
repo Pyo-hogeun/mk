@@ -63,6 +63,18 @@
 
       <div class="divider-line"></div>
 
+      <div class="section-bar">
+        <div class="section-bar__container">
+          <button type="button" class="section-bar__tab active" data-section="kospi">
+            <div class="section-bar__label">코스피</div>
+            <div class="section-bar__indicator"></div>
+          </button>
+          <button type="button" class="section-bar__tab" data-section="kosdaq">
+            <div class="section-bar__label">코스닥</div>
+            <div class="section-bar__indicator"></div>
+          </button>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -99,6 +111,15 @@
         button.addEventListener('click', () => {
           filterButtons.forEach((btn) => btn.classList.remove('active'));
           button.classList.add('active');
+        });
+      });
+
+      const sectionTabs = document.querySelectorAll('.section-bar__tab');
+
+      sectionTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          sectionTabs.forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
         });
       });
     })();
