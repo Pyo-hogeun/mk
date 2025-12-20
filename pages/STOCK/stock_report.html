@@ -601,7 +601,10 @@
           const date = tooltip.title?.[0] ?? '';
           const value = dataPoint?.parsed?.y ?? 0;
           const isEventPoint = dataPoint?.datasetIndex === 1;
-          const markerNote = isEventPoint ? eventMarkers[dataPoint.dataIndex]?.note : '주가 추세';
+          const matchedMarker = eventMarkers.find((marker) => marker.label === date);
+          const markerNote = isEventPoint
+            ? eventMarkers[dataPoint.dataIndex]?.note
+            : matchedMarker?.note ?? '주가 추세';
 
           const dateEl = tooltipEl.querySelector('.chart-tooltip__date');
           const valueEl = tooltipEl.querySelector('.chart-tooltip__value');
