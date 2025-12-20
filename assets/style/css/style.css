@@ -106,6 +106,7 @@ body {
   color: var(--text-primary);
   color: var(--text-primary, #F0F0F0);
   margin: 24px 0;
+  padding: 0 15px;
 }
 .container__header h2 {
   /* Heading/H2 */
