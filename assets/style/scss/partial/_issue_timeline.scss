@@ -60,11 +60,42 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.timeline-charts {
+  display: grid;
+  gap: 12px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.chart-card {
+  padding: 12px;
+  border: 1px solid var(--border-default, #464646);
+  border-radius: 12px;
+  background: #1f1f1f;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__title {
+    color: var(--text-secondary, #bdbdbd);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 150%;
+  }
 
   .timeline-chart {
     height: 251px;
     width: 100%;
   }
+}
+
+.chart-card--apex {
+  background: linear-gradient(180deg, rgba(54, 54, 54, 0.8) 0%, #1f1f1f 100%);
 }
 
 .timeline-legend {
