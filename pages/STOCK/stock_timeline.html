@@ -57,6 +57,39 @@
         </div>
 
         <h4>이슈 타임라인</h4>
+
+        <div class="issue-timeline">
+          <div class="stock-timeline-card">
+            <div class="stock-timeline-header">
+              <div class="company-name">SK하이닉스</div>
+              <div class="price-info">
+                <div class="current-price">168,500원</div>
+                <div class="price-change">▲ 5,200 (3.2%)</div>
+              </div>
+            </div>
+
+            <div class="timeline-chart-wrapper">
+              <div class="chart-card">
+                <canvas id="timelineChartJs" class="timeline-chart" aria-label="Chart.js 주가 라인 차트"></canvas>
+              </div>
+
+              <div class="timeline-legend">
+                <div class="legend-item">
+                  <div class="legend-marker legend-marker--positive"></div>
+                  <div class="legend-label">호재성 이슈</div>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-marker legend-marker--negative"></div>
+                  <div class="legend-label">악재성 이슈</div>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-marker legend-marker--neutral"></div>
+                  <div class="legend-label">일반 이슈</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <h4>뉴스 타임라인
           <button type="button" class="btn-set-period">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -204,8 +237,9 @@
   </div>
 
 
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script>
+    // 기간설정
     (function () {
       const setPeriodButton = document.querySelector('.btn-set-period');
       const popup = document.getElementById('set-period-popup');
@@ -269,60 +303,170 @@
     })();
 
 
+    // 이슈 타임라인 차트 (Chart.js)
     (function () {
-      const upInput = document.getElementById('up-side');
-      const downInput = document.getElementById('down-side');
-      const upSection = document.querySelector('.stock-issues.up-side');
-      const downSection = document.querySelector('.stock-issues.down-side');
+      const labels = ['1.15', '2.01', '2.14', '3.01', '3.15', '4.01', '4.15', '5.01'];
+      const prices = [62000, 68000, 76000, 91000, 98000, 113000, 118500, 120000];
+      const eventMarkers = [
+        { label: '1.15', price: 62000, type: 'positive', note: 'AI 반도체 수요 급증 기대감' },
+        { label: '3.01', price: 91000, type: 'positive', note: 'AI 데이터센터 고객사 발주 확대' },
+        { label: '3.15', price: 98000, type: 'neutral', note: 'HBM 증설 계획 발표' },
+        { label: '4.01', price: 113000, type: 'negative', note: '미국 규제 이슈 재부각' },
+        { label: '4.15', price: 118500, type: 'positive', note: '고객사와 장기 공급 계약 체결' },
+        { label: '5.01', price: 120000, type: 'neutral', note: '수급 개선 전망 상향' },
+      ];
 
-      if (!upInput || !downInput || !upSection || !downSection) {
-        return;
-      }
+      const colorMap = {
+        positive: { fill: '#EF4444', border: '#F0F0F0' },
+        negative: { fill: '#2175FF', border: '#F0F0F0' },
+        neutral: { fill: '#9CA3AF', border: '#CCCCCC' },
+      };
 
-      const mobileQuery = window.matchMedia('(max-width: 480px)');
-
-      const updateVisibility = () => {
-        const isMobile = mobileQuery.matches;
-
-        if (isMobile) {
-          upSection.classList.toggle('is-active', upInput.checked);
-          downSection.classList.toggle('is-active', downInput.checked);
-        } else {
-          upSection.classList.remove('is-active');
-          downSection.classList.remove('is-active');
+      // Chart.js
+      const chartCanvas = document.getElementById('timelineChartJs');
+      if (chartCanvas && window.Chart) {
+        const existing = Chart.getChart(chartCanvas);
+        if (existing) {
+          existing.destroy();
         }
-      };
 
-      upInput.addEventListener('change', updateVisibility);
-      downInput.addEventListener('change', updateVisibility);
-      mobileQuery.addEventListener('change', updateVisibility);
+        chartCanvas.height = 251;
+        chartCanvas.style.height = '251px';
 
-      updateVisibility();
+        const chartCard = chartCanvas.closest('.chart-card');
+        if (chartCard) {
+          chartCard.style.position = 'relative';
+        }
 
-      const tabs = document.querySelectorAll('.nav-tab');
-      const sections = document.querySelectorAll('.content-section');
+        const ctx = chartCanvas.getContext('2d');
+        const gradientHeight = chartCanvas.getBoundingClientRect().height || 251;
+        const gradient = ctx.createLinearGradient(0, 0, 0, gradientHeight);
+        gradient.addColorStop(0, 'rgba(255, 122, 0, 0.3)');
+        gradient.addColorStop(1, 'rgba(255, 122, 0, 0)');
 
-      const resetTabs = () => {
-        tabs.forEach((tab) => tab.classList.remove('active'));
-        sections.forEach((section) => section.classList.remove('is-active'));
-      };
+        const getOrCreateTooltip = (chart) => {
+          let tooltipEl = chart.canvas.parentNode.querySelector('.chart-tooltip');
 
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          const target = tab.getAttribute('data-target');
-          const content = target
-            ? document.querySelector(`.${target}`)
-            : null;
+          if (!tooltipEl) {
+            tooltipEl = document.createElement('div');
+            tooltipEl.classList.add('chart-tooltip');
+            tooltipEl.setAttribute('role', 'status');
+            tooltipEl.style.position = 'absolute';
+            tooltipEl.style.pointerEvents = 'none';
+            tooltipEl.style.transform = 'translate(-50%, -100%)';
+            tooltipEl.style.transition = 'opacity 0.12s ease, transform 0.12s ease';
 
-          if (!content) return;
+            tooltipEl.innerHTML = `
+              <div class="chart-tooltip__date"></div>
+              <div class="chart-tooltip__value"></div>
+              <div class="chart-tooltip__note"></div>
+            `;
 
-          resetTabs();
-          tab.classList.add('active');
-          content.classList.add('is-active');
+            chart.canvas.parentNode.appendChild(tooltipEl);
+          }
+
+          return tooltipEl;
+        };
+
+        const externalTooltipHandler = (context) => {
+          const { chart, tooltip } = context;
+          const tooltipEl = getOrCreateTooltip(chart);
+
+          if (tooltip.opacity === 0) {
+            tooltipEl.style.opacity = 0;
+            tooltipEl.style.transform = 'translate(-50%, -120%)';
+            return;
+          }
+
+          const dataPoint = tooltip.dataPoints?.[0];
+          const date = tooltip.title?.[0] ?? '';
+          const value = dataPoint?.parsed?.y ?? 0;
+          const isEventPoint = dataPoint?.datasetIndex === 1;
+          const matchedMarker = eventMarkers.find((marker) => marker.label === date);
+          const markerNote = isEventPoint
+            ? eventMarkers[dataPoint.dataIndex]?.note
+            : matchedMarker?.note ?? '주가 추세';
+
+          const dateEl = tooltipEl.querySelector('.chart-tooltip__date');
+          const valueEl = tooltipEl.querySelector('.chart-tooltip__value');
+          const noteEl = tooltipEl.querySelector('.chart-tooltip__note');
+
+          if (dateEl) dateEl.textContent = date;
+          if (valueEl) valueEl.textContent = `${value.toLocaleString('ko-KR')}원`;
+          if (noteEl) noteEl.textContent = markerNote;
+
+          const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+          tooltipEl.style.opacity = 0.95;
+          tooltipEl.style.left = `${positionX + tooltip.caretX}px`;
+          tooltipEl.style.top = `${positionY + tooltip.caretY - 12}px`;
+          tooltipEl.style.transform = 'translate(-50%, -100%)';
+        };
+
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [
+              {
+                label: '주가',
+                data: prices,
+                borderColor: '#FF7A00',
+                backgroundColor: gradient,
+                borderWidth: 2,
+                fill: true,
+                tension: 0.35,
+                pointRadius: 0,
+                pointHitRadius: 8,
+              },
+              {
+                label: '이슈 포인트',
+                type: 'scatter',
+                data: eventMarkers.map((marker) => ({ x: marker.label, y: marker.price })),
+                backgroundColor: eventMarkers.map((marker) => colorMap[marker.type].fill),
+                borderColor: eventMarkers.map((marker) => colorMap[marker.type].border),
+                borderWidth: 2,
+                pointRadius: 5,
+                hoverRadius: 6,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                enabled: false,
+                position: 'nearest',
+                external: externalTooltipHandler,
+              },
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                ticks: {
+                  color: '#F0F0F0',
+                  font: { size: 12 },
+                },
+              },
+              y: {
+                min: 60000,
+                max: 120000,
+                ticks: {
+                  color: '#F0F0F0',
+                  font: { size: 11 },
+                  callback: (value) => value.toLocaleString('ko-KR'),
+                },
+                grid: {
+                  color: '#464646',
+                  borderDash: [3, 3],
+                },
+              },
+            },
+          },
         });
-      });
+      }
     })();
-
   </script>
 </body>
 </html>

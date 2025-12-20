@@ -269,9 +269,6 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  .report-body .report-body__summary {
-    padding: 0 15px;
-  }
   .report-body h4 {
     display: flex;
     justify-content: space-between;
