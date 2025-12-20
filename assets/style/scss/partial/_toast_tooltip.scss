@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+.toast-tooltip {
+  display: inline-flex;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-default);
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.toast-tooltip__content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.toast-tooltip__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.toast-tooltip__message {
+  color: var(--text-primary);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}

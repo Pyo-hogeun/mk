@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>토스트 툴팁 - Components</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  
+</head>
+<body>
+  <div class="toast-tooltip" role="status" aria-live="polite">
+    <div class="toast-tooltip__content">
+      <svg class="toast-tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.99984 1.6665C5.4165 1.6665 1.6665 5.4165 1.6665 9.99984C1.6665 14.5832 5.4165 18.3332 9.99984 18.3332C14.5832 18.3332 18.3332 14.5832 18.3332 9.99984C18.3332 5.4165 14.5832 1.6665 9.99984 1.6665ZM9.99984 16.6665C6.32484 16.6665 3.33317 13.6748 3.33317 9.99984C3.33317 6.32484 6.32484 3.33317 9.99984 3.33317C13.6748 3.33317 16.6665 6.32484 16.6665 9.99984C16.6665 13.6748 13.6748 16.6665 9.99984 16.6665ZM14.4144 6.91026C14.0891 6.58268 13.5596 6.58174 13.2332 6.90817L8.33317 11.8082L6.7629 10.244C6.43794 9.92026 5.91224 9.92076 5.5879 10.2451C5.26312 10.5699 5.26312 11.0965 5.5879 11.4212L7.62606 13.4594C8.01659 13.8499 8.64975 13.8499 9.04028 13.4594L14.4123 8.08734C14.7371 7.76253 14.7381 7.23621 14.4144 6.91026Z" fill="#FF7A00"/>
+      </svg>
+      <div class="toast-tooltip__message">링크가 복사되었습니다</div>
+    </div>
+  </div>
+
+  <script>
+    const toast = document.querySelector('.toast-tooltip');
+    
+    setTimeout(() => {
+      toast.classList.add('show');
+    }, 500);
+
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3500);
+  </script>
+</body>
+</html>
