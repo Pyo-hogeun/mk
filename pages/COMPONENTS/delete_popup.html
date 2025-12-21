@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>삭제 팝업 - Components</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  
+</head>
+<body class="dark">
+  <div class="layer-popup is-active">
+    <div class="layer-popup__backdrop"></div>
+    <div class="layer-popup__dialog">
+      <div class="layer-popup__content">
+        <div class="delete-popup">
+          <div class="delete-popup__header">
+            <h2 class="delete-popup__title">관심 종목 삭제</h2>
+            <p class="delete-popup__description">이 종목을 보관함에서 삭제하시겠어요?</p>
+          </div>
+          <div class="delete-popup__actions">
+            <button class="btn-cancel" type="button">취소</button>
+            <button class="btn-delete" type="button">삭제</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const backdrop = document.querySelector('.layer-popup__backdrop');
+    const cancelButton = document.querySelector('.btn-cancel');
+    const deleteButton = document.querySelector('.btn-delete');
+    const popup = document.querySelector('.layer-popup');
+
+    backdrop.addEventListener('click', () => {
+      popup.classList.remove('is-active');
+      console.log('Popup closed');
+    });
+
+    cancelButton.addEventListener('click', () => {
+      popup.classList.remove('is-active');
+      console.log('Cancel button clicked');
+    });
+
+    deleteButton.addEventListener('click', () => {
+      console.log('Delete button clicked');
+      popup.classList.remove('is-active');
+    });
+  </script>
+</body>
+</html>
