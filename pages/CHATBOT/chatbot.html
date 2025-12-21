@@ -1452,9 +1452,20 @@
       const chatbotMenu = chatbot?.querySelector('.chatbot__menu');
       const chatbotMenuOpenButton = chatbot?.querySelector('.btn-menu');
       const chatbotMenuCloseButton = chatbotMenu?.querySelector('.chatbot__menu-close');
+      const chatbotMenuSearchInput = chatbotMenu?.querySelector('.search-input__field');
+
+      const toggleChatbotMenuSearchFocus = (isFocused) => {
+        if (!chatbotMenu) return;
+
+        chatbotMenu.classList.toggle('is-search-focused', isFocused);
+      };
 
       const toggleChatbotMenu = (shouldOpen) => {
         if (!chatbotMenu) return;
+
+        if (!shouldOpen) {
+          toggleChatbotMenuSearchFocus(false);
+        }
 
         chatbotMenu.classList.toggle('is-open', shouldOpen);
         chatbotMenu.setAttribute('aria-hidden', String(!shouldOpen));
@@ -1466,6 +1477,16 @@
         if (event.target === chatbotMenu) {
           toggleChatbotMenu(false);
         }
+      });
+
+      chatbotMenuSearchInput?.addEventListener('focus', () => {
+        if (chatbotMenu?.classList.contains('is-open')) {
+          toggleChatbotMenuSearchFocus(true);
+        }
+      });
+
+      chatbotMenuSearchInput?.addEventListener('blur', () => {
+        toggleChatbotMenuSearchFocus(false);
       });
 
       const toggleChatbot = (shouldOpen) => {

@@ -232,6 +232,12 @@
           transform: translateX(0);
         }
       }
+
+      &.is-search-focused {
+        .chatbot__menu-panel {
+          width: 100vw;
+        }
+      }
     }
 
     &__body {

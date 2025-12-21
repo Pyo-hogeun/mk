@@ -4970,6 +4970,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__menu.is-open .chatbot__menu-panel {
     transform: translateX(0);
   }
+  .chatbot__menu.is-search-focused .chatbot__menu-panel {
+    width: 100vw;
+  }
   .chatbot__body {
     flex: 1 1 0;
     overflow-y: auto;
