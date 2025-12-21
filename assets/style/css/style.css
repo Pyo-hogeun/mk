@@ -4226,6 +4226,8 @@ body.bottom-sheet-open {
 
 @media screen and (min-width: 480px) {
   .broadcast__wrapper {
+    display: flex;
+    gap: 20px;
     padding: 0 15px;
   }
   .broadcast-section {
@@ -4292,7 +4294,9 @@ body.bottom-sheet-open {
     background: var(--bg-default, #1D1D1D);
   }
   .broadcast-item__thumbnail {
-    flex: 1 0 0;
+    height: 68px;
+    width: 128px;
+    flex: 0 0 128px;
     align-self: stretch;
     border-radius: 4px;
     -o-object-fit: cover;
@@ -4309,7 +4313,6 @@ body.bottom-sheet-open {
     gap: 4px;
   }
   .broadcast-item__badges .badge {
-    flex: 1 1 auto;
     display: inline-flex;
     height: 26px;
     padding: 0 14px;
