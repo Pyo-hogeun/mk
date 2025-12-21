@@ -2,14 +2,15 @@
 
 @media screen and (max-width: $mobile) {
   .chatbot {
-    position: fixed;
+    position: absolute;
     overflow-y: auto;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    max-height: 100vh;
     // background-color: var(--bg-default);
-    background-color: rgba(0, 125, 60, 0.8);
+    background-color: rgba(80, 125, 60, 0.9);
     z-index: 2;
 
     &__header {
@@ -52,6 +53,122 @@
     }
 
     &__body {}
+
+    &__footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      width: 100vw;
+      align-items: center;
+      gap: 14px;
+      margin: 0 auto;
+      padding: 5px $mobilePadSide 20px;
+
+      .search-input-wrapper {
+        display: flex;
+        flex: 1 0 0;
+      }
+
+      .search-input-container {
+        display: flex;
+        height: 50px;
+        padding: 3px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1 0 0;
+        border-radius: 100px;
+        border: 1px solid var(--border-default, #464646);
+        background: var(--bg-default, #1D1D1D);
+        position: relative;
+      }
+
+      .input-icon-left {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20) inset;
+        flex-shrink: 0;
+      }
+
+      .search-input {
+        flex: 1;
+        color: var(--text-secondary, #7B7B7B);
+        text-align: center;
+        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        background: transparent;
+        border: 0;
+        outline: none;
+
+        &::placeholder {
+          color: var(--text-secondary, #7B7B7B);
+        }
+      }
+
+      .btn-send {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 22px;
+        border: 1px solid var(--border-default, #464646);
+        background: var(--bg-default, #1D1D1D);
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+
+      .btn-voice {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
 
     .recommand-tags {
       display: flex;
