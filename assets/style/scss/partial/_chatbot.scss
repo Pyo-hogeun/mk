@@ -29,6 +29,7 @@
         color: var(--text-primary);
         background-color: transparent;
         border: 0;
+        padding: 0;
       }
 
       h2.title {
@@ -276,7 +277,7 @@
         }
       }
 
-      .btn-voice {
+      .btn-record {
         display: flex;
         width: 30px;
         height: 30px;
@@ -287,6 +288,7 @@
         cursor: pointer;
         transition: all 0.2s ease;
         flex-shrink: 0;
+        color: var(--text-primary);
 
         svg {
           width: 30px;

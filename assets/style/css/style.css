@@ -4786,6 +4786,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     color: var(--text-primary);
     background-color: transparent;
     border: 0;
+    padding: 0;
   }
   .chatbot__header h2.title {
     text-align: center;
@@ -4855,14 +4856,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background-color: transparent;
     border: 0;
   }
-  .btn-voice .mute {
+  .chatbot__body .chat-row .chat__topper button.btn-voice .mute {
     display: none;
-  }
-  .btn-voice.is-muted .sound-on {
-    display: none;
-  }
-  .btn-voice.is-muted .mute {
-    display: inline;
   }
   .chatbot__body .chat-row.bot {
     margin-bottom: 8px;
@@ -5020,7 +5015,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__footer .btn-send:active {
     transform: scale(0.95);
   }
-  .chatbot__footer .btn-voice {
+  .chatbot__footer .btn-record {
     display: flex;
     width: 30px;
     height: 30px;
@@ -5031,15 +5026,16 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     cursor: pointer;
     transition: all 0.2s ease;
     flex-shrink: 0;
+    color: var(--text-primary);
   }
-  .chatbot__footer .btn-voice svg {
+  .chatbot__footer .btn-record svg {
     width: 30px;
     height: 30px;
   }
-  .chatbot__footer .btn-voice:hover {
+  .chatbot__footer .btn-record:hover {
     opacity: 0.8;
   }
-  .chatbot__footer .btn-voice:active {
+  .chatbot__footer .btn-record:active {
     transform: scale(0.95);
   }
   .chatbot .timestamp {
