@@ -238,7 +238,7 @@ function generateIndex(done) {
     .divider { position: sticky; top: 50%; width: 10px; cursor: col-resize; border-radius: 12px; background: linear-gradient(180deg, #e5e7eb 0%, #cbd5e1 100%); border:1px solid #d1d5db; box-shadow: inset 0 1px 1px rgba(255,255,255,0.6); transition: background 0.2s, border-color 0.2s; height: 50px;}
     .layout.dragging .divider { background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 100%); border-color:#9ca3af; }
     .preview-panel { position: sticky; top: 12px; }
-    .preview-panel h2 { margin: 0 0 10px; font-size: 18px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .preview-panel h2 { margin: 0 0 10px; font-size: 18px; display:flex; align-items:center; gap:10px; }
     .width-toggle { border:1px solid #d1d5db; background:#f8fafc; color:#111827; border-radius: 999px; padding:6px 12px; cursor:pointer; font-size: 13px; transition: background 0.2s, border-color 0.2s, color 0.2s; display:inline-flex; align-items:center; gap: 6px; }
     .width-toggle:hover { background:#eff6ff; border-color:#bfdbfe; color:#1d4ed8; }
     .width-toggle[aria-pressed="true"] { background:#1d4ed8; color:#fff; border-color:#1d4ed8; box-shadow: 0 4px 10px rgba(37,99,235,0.25); }

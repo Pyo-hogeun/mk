@@ -132,6 +132,7 @@ body {
 @media screen and (min-width: 480px) {
   .container {
     width: 1210px;
+    padding: 0 10px;
   }
   .container__header {
     width: 700px;
@@ -1164,7 +1165,7 @@ body {
     margin: 24px 0;
   }
   .market-briefing__section {
-    flex: 1 0 50%;
+    flex: 1 1 50%;
     display: flex;
     flex-direction: column;
     gap: 16px;
