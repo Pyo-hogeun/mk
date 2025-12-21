@@ -1472,7 +1472,10 @@
       };
 
       chatbotMenuOpenButton?.addEventListener('click', () => toggleChatbotMenu(true));
-      chatbotMenuCloseButton?.addEventListener('click', () => toggleChatbotMenu(false));
+      chatbotMenuCloseButton?.addEventListener('click', () => {
+        toggleChatbotMenu(false);
+        toggleChatbotMenuSearchFocus(false);
+      });
       chatbotMenu?.addEventListener('click', (event) => {
         if (event.target === chatbotMenu) {
           toggleChatbotMenu(false);
@@ -1483,10 +1486,6 @@
         if (chatbotMenu?.classList.contains('is-open')) {
           toggleChatbotMenuSearchFocus(true);
         }
-      });
-
-      chatbotMenuSearchInput?.addEventListener('blur', () => {
-        toggleChatbotMenuSearchFocus(false);
       });
 
       const toggleChatbot = (shouldOpen) => {

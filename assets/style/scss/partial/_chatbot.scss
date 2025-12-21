@@ -84,10 +84,9 @@
         // max-width: 360px;
         height: 100%;
         overflow-y: auto;
-        padding: 20px 20px 32px;
+        padding: 0 $mobilePadSide 32px;
         display: flex;
         flex-direction: column;
-        gap: 16px;
         // background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.70));
         background: rgba(5, 5, 5, 1);
         box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
@@ -99,9 +98,17 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
+        // gap: 12px;
         position: sticky;
         top: 0;
+        // padding-top: 24px;
+
+
+        margin-left: -$mobilePadSide;
+        padding: 24px $mobilePadSide 24px;
+        width: calc(100% + $mobilePadSide*2);
+        background: rgba(5, 5, 5, 1);
+
         h3 {
           margin: 0;
           color: var(--text-primary, #F0F0F0);
@@ -112,14 +119,17 @@
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 32px;
           height: 32px;
-          border-radius: 50%;
           border: 0;
-          background: var(--bg-subtle, #2F2F2F);
+          background: transparent;
           color: var(--text-primary, #F0F0F0);
+          width: 0;
+          opacity: 0;
+          padding: 0;
+          transition: all 0.2s ease;
         }
         .search-input{
+          flex: 1 1 auto;
           &__field{
             flex: 1 1 auto;
             width: 100%;
@@ -144,13 +154,16 @@
           font-size: 16px;
           font-weight: 600;
           line-height: 140%; /* 22.4px */
+          transition: all 0.2s ease;
         }
         .recent-search{
-
-          padding: 24px 0;
-          margin: 24px 0;
+          opacity: 0;
+          height: 0;
+          padding: 0;
+          margin: 0;
           border: 1px solid var(--border-default, #464646);
           border-width: 1px 0 1px 0;
+          transition: all 0.2s ease;
           &__title{
             display: flex;
             justify-content: space-between;
@@ -236,6 +249,29 @@
       &.is-search-focused {
         .chatbot__menu-panel {
           width: 100vw;
+          background: var(--bg-default, #1D1D1D);
+          .chatbot__menu-header{
+            background: var(--bg-default);
+          }
+
+          .chatbot__menu-close{
+            width: 32px;
+            margin-right: 12px;
+            opacity: 1;
+          }
+          .btn-create{
+            height: 0;
+            opacity: 0;
+            padding: 0;
+            margin: 0;
+          }
+        }
+        .recent-search{
+          display: block;
+          height: auto;
+          opacity: 1;
+          padding: 24px 0;
+          margin: 0 0 24px 0;
         }
       }
     }
