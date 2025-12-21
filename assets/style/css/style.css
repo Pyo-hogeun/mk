@@ -1975,6 +1975,7 @@ body.dark {
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  color: var(--text-primary);
 }
 .font-size-selector .font-size-selector__size-options .size-option:hover {
   border-color: var(--text-secondary);
@@ -2075,6 +2076,7 @@ body.dark {
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  color: var(--text-primary);
 }
 .share-popup .share-popup__link .share-btn:hover {
   border-color: var(--text-secondary);
