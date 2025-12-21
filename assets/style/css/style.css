@@ -4806,7 +4806,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__body .chat-row {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm, 8px);
     flex: 1 0 0;
     margin: 24px 0;
     color: var(--text-primary, #F0F0F0);
@@ -4819,6 +4818,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .chatbot__body .chat-row .chat__text {
     display: inline-block;
+    width: 250px;
     padding: 8px 12px;
     border-radius: var(--radius-lg, 12px);
     border: 1px solid var(--border-default, #464646);
@@ -4827,12 +4827,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
-  }
-  .chatbot__body .chat-row .chat__timestamp {
-    color: var(--text-secondary, #7B7B7B);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 150%; /* 18px */
   }
   .chatbot__body .chat-row .chat__topper {
     display: flex;
@@ -4857,7 +4851,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__body .chat-row.bot .chat__text {
     font-weight: 600;
   }
-  .chatbot__body .chat-result p {
+  .chatbot__body .chat-result .message, .chatbot__body .chat-result .description {
     margin: 8px 0;
     color: var(--text-primary, #F0F0F0);
     font-size: 15px;
@@ -4904,6 +4898,23 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 14px;
     font-weight: 400;
     line-height: 150%; /* 21px */
+  }
+  .chatbot__body .chat-result .source {
+    margin: 8px 0;
+  }
+  .chatbot__body .chat-result .source__badge {
+    display: inline-flex;
+    height: 26px;
+    padding: 0 14px;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
+    color: var(--text-primary, #F0F0F0);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
   }
   .chatbot__footer {
     position: sticky;
@@ -5012,6 +5023,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__footer .btn-voice:active {
     transform: scale(0.95);
   }
+  .chatbot .timestamp {
+    display: block;
+    color: var(--text-secondary, #7B7B7B);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
+    margin-top: 8px;
+  }
   .chatbot .recommand-tags {
     display: flex;
     align-items: flex-start;
@@ -5056,17 +5075,17 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot .recommand-tags .tag:active {
     transform: scale(0.98);
   }
+  .chatbot .recommand-q {
+    margin: 24px 0;
+  }
   .chatbot .recommand-q__card {
     display: flex;
-    width: 280px;
-    flex: 0 0 280px;
-    padding: 12px 20px;
+    padding: 24px 12px;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: var(--radius-lg, 12px);
+    border-radius: var(--radius-md, 8px);
     border: 1px solid var(--border-default, #464646);
-    background: var(--bg-subtle, #2F2F2F);
+    background: var(--bg-default, #1D1D1D);
+    gap: var(--spacing-xs, 4px);
   }
   .chatbot .recommand-q__card__topper .badge {
     display: inline-flex;
@@ -5077,11 +5096,27 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-radius: 100px;
     background: var(--orange-200, #E55204);
   }
+  .chatbot .recommand-q__card__topper .ai-badge {
+    display: inline-flex;
+    height: 20px;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+  }
+  .chatbot .recommand-q__card__topper .ai-badge .ai-badge-text {
+    color: var(--white, #FFFFFF);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 150%;
+  }
   .chatbot .recommand-q__card__title {
     color: var(--text-primary, #F0F0F0);
     font-size: 18px;
-    font-weight: 700;
-    line-height: 140%; /* 25.2px */
+    font-weight: 400;
+    line-height: 150%; /* 27px */
   }
   .chatbot .recommand-q__card__sub {
     overflow: hidden;
