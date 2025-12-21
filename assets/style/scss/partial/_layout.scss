@@ -55,7 +55,7 @@ body{
 }
 @media screen and (min-width: $mobile){
   .container{
-    width: 1210px;
+    width: $pc;
     padding-left:10px;
     padding-right:10px;
     &__header{
