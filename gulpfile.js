@@ -238,7 +238,11 @@ function generateIndex(done) {
     .divider { position: sticky; top: 50%; width: 10px; cursor: col-resize; border-radius: 12px; background: linear-gradient(180deg, #e5e7eb 0%, #cbd5e1 100%); border:1px solid #d1d5db; box-shadow: inset 0 1px 1px rgba(255,255,255,0.6); transition: background 0.2s, border-color 0.2s; height: 50px;}
     .layout.dragging .divider { background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 100%); border-color:#9ca3af; }
     .preview-panel { position: sticky; top: 12px; }
-    .preview-panel h2 { margin: 0 0 10px; font-size: 18px; }
+    .preview-panel h2 { margin: 0 0 10px; font-size: 18px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .width-toggle { border:1px solid #d1d5db; background:#f8fafc; color:#111827; border-radius: 999px; padding:6px 12px; cursor:pointer; font-size: 13px; transition: background 0.2s, border-color 0.2s, color 0.2s; display:inline-flex; align-items:center; gap: 6px; }
+    .width-toggle:hover { background:#eff6ff; border-color:#bfdbfe; color:#1d4ed8; }
+    .width-toggle[aria-pressed="true"] { background:#1d4ed8; color:#fff; border-color:#1d4ed8; box-shadow: 0 4px 10px rgba(37,99,235,0.25); }
+    .width-toggle span { font-weight:600; }
     .preview-status { color:#6b7280; font-size: 13px; margin-bottom: 10px; word-break: break-all; }
     #previewFrame { width: 100%; height: 87vh; border:1px solid #e5e7eb; border-radius: 12px; background:#fff; }
     @media (max-width: 900px) {
@@ -275,15 +279,38 @@ function generateIndex(done) {
   html += `    </section>
     <div class="divider" role="separator" aria-orientation="vertical" aria-label="목록과 미리보기 사이 조절 막대"></div>
     <section class="preview-panel" aria-live="polite">
-      <h2>미리보기</h2>
+      <h2>미리보기 <button type="button" id="widthToggle" class="width-toggle" aria-pressed="false"><span>100%</span> / 390px</button></h2>
       <div id="previewStatus" class="preview-status">왼쪽 목록의 '미리보기' 버튼을 클릭하면 이 영역에서 바로 확인할 수 있어요.</div>
       <iframe id="previewFrame" title="파일 미리보기" sandbox="allow-same-origin allow-forms allow-scripts allow-popups"></iframe>
     </section>
   </main>
   <script>
     const previewFrame = document.getElementById('previewFrame');
+    const widthToggle = document.getElementById('widthToggle');
     const previewStatus = document.getElementById('previewStatus');
     const fileItems = Array.from(document.querySelectorAll('.file-item'));
+    let isFixedWidth = false;
+
+    const applyPreviewWidth = () => {
+      if (isFixedWidth) {
+        previewFrame.style.width = '390px';
+        previewFrame.style.maxWidth = '100%';
+        widthToggle.setAttribute('aria-pressed', 'true');
+        widthToggle.innerHTML = '<span>390px</span> / 100%';
+      } else {
+        previewFrame.style.width = '100%';
+        previewFrame.style.maxWidth = '100%';
+        widthToggle.setAttribute('aria-pressed', 'false');
+        widthToggle.innerHTML = '<span>100%</span> / 390px';
+      }
+    };
+
+    widthToggle.addEventListener('click', () => {
+      isFixedWidth = !isFixedWidth;
+      applyPreviewWidth();
+    });
+
+    applyPreviewWidth();
 
     const setActiveItem = (element) => {
       fileItems.forEach((item) => item.classList.remove('active'));
