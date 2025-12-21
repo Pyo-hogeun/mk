@@ -1450,6 +1450,7 @@
       });
 
       // 챗봇 레이어 토글
+      const DESKTOP_BREAKPOINT = 480; // breakpoint for desktop-style behavior
       const chatbot = document.querySelector('.chatbot');
       const chatbotOpenButton = document.querySelector('.chatbot-button');
       const chatbotCloseButton = chatbot?.querySelector('.btn-close');
@@ -1473,6 +1474,10 @@
 
         chatbotMenu.classList.toggle('is-open', shouldOpen);
         chatbotMenu.setAttribute('aria-hidden', String(!shouldOpen));
+        if (window.innerWidth >= DESKTOP_BREAKPOINT && chatbot) {
+          chatbot.classList.add('is-open');
+          chatbot.setAttribute('aria-hidden', 'false');
+        }
       };
 
       chatbotMenuOpenButton?.addEventListener('click', () => toggleChatbotMenu(true));
@@ -1494,19 +1499,22 @@
 
       const toggleChatbot = (shouldOpen) => {
         if (!chatbot) return;
-        if (!shouldOpen) {
+        const forceOpen = window.innerWidth >= DESKTOP_BREAKPOINT;
+
+        if (!shouldOpen && !forceOpen) {
           toggleChatbotMenu(false);
         }
 
-        chatbot.classList.toggle('is-open', shouldOpen);
-        chatbot.setAttribute('aria-hidden', String(!shouldOpen));
-        document.body.style.overflow = shouldOpen ? 'hidden' : '';
+        const nextOpenState = shouldOpen || forceOpen;
+        chatbot.classList.toggle('is-open', nextOpenState);
+        chatbot.setAttribute('aria-hidden', String(!nextOpenState));
+        document.body.style.overflow = nextOpenState && !forceOpen ? 'hidden' : '';
       };
 
       chatbotOpenButton?.addEventListener('click', () => {
         toggleChatbot(true);
 
-        if (window.innerWidth >= 480 && chatbotMenu) {
+        if (window.innerWidth >= DESKTOP_BREAKPOINT && chatbotMenu) {
           chatbotMenu.setAttribute('aria-hidden', 'false');
         }
       });
