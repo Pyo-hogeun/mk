@@ -101,6 +101,9 @@
               color: var(--text-primary);
               background-color: transparent;
               border: 0;
+              .mute{
+                display: none;
+              }
             }
           }
         }
