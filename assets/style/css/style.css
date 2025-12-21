@@ -606,8 +606,10 @@ body.dark {
 }
 .agent-brand .brand-icon img {
   aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
   width: 20px;
 }
 .agent-brand .brand-title {
@@ -832,8 +834,10 @@ body.dark {
 }
 .header-actions img {
   aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
   width: 28px;
 }
 
@@ -887,8 +891,10 @@ body.dark {
 
 .change-icon {
   aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
   width: 20px;
   align-self: stretch;
   flex-shrink: 0;
@@ -2411,8 +2417,10 @@ body.bottom-sheet-open {
   }
   .news-timeline .news-card__image {
     aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
     width: 48px;
     align-self: stretch;
     flex-shrink: 0;
@@ -2551,8 +2559,10 @@ body.bottom-sheet-open {
   }
   .news-timeline .news-card__image {
     aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
     width: 48px;
     align-self: stretch;
     flex-shrink: 0;
@@ -2750,8 +2760,10 @@ body.bottom-sheet-open {
   width: 28px;
   height: 28px;
   aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 .set-period__section {
   margin-bottom: 24px;
@@ -2841,8 +2853,10 @@ body.bottom-sheet-open {
   width: 28px;
   height: 28px;
   aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
   flex-shrink: 0;
 }
 
@@ -2931,7 +2945,6 @@ body.bottom-sheet-open {
   padding: 0;
   line-height: 1;
   height: 34px;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   color: var(--gray-dark);
 }
@@ -3995,6 +4008,9 @@ body.bottom-sheet-open {
   line-height: 150%;
   outline: none;
 }
+.search-input__field::-moz-placeholder {
+  color: var(--text-secondary);
+}
 .search-input__field::placeholder {
   color: var(--text-secondary);
 }
@@ -4377,7 +4393,8 @@ body.bottom-sheet-open {
     flex: 0 0 128px;
     align-self: stretch;
     border-radius: 4px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .broadcast-item__content {
     display: flex;
@@ -4440,6 +4457,7 @@ body.bottom-sheet-open {
     align-items: center;
     border-radius: 100px;
     border: 1px solid transparent;
+    width: -moz-fit-content;
     width: fit-content;
     border: 1px solid transparent;
     background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
@@ -4547,7 +4565,8 @@ body.bottom-sheet-open {
     flex: 1 0 0;
     align-self: stretch;
     border-radius: 4px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .broadcast-item__content {
     display: flex;
@@ -4611,6 +4630,7 @@ body.bottom-sheet-open {
     align-items: center;
     border-radius: 100px;
     border: 1px solid transparent;
+    width: -moz-fit-content;
     width: fit-content;
     border: 1px solid transparent;
     background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
@@ -5056,6 +5076,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border: 0;
     outline: none;
   }
+  .chatbot__footer .search-input::-moz-placeholder {
+    color: var(--text-secondary, #7B7B7B);
+  }
   .chatbot__footer .search-input::placeholder {
     color: var(--text-secondary, #7B7B7B);
   }
@@ -5220,5 +5243,3 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 150%; /* 21px */
   }
 }
-
-/*# sourceMappingURL=style.css.map */
