@@ -4871,6 +4871,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__body .chat-row .chat__topper button.btn-voice .mute {
     display: none;
   }
+  .chatbot__body .chat-row .chat__topper button.btn-voice.is-muted .sound-on {
+    display: none;
+  }
+  .chatbot__body .chat-row .chat__topper button.btn-voice.is-muted .mute {
+    display: inline;
+  }
   .chatbot__body .chat-row.bot {
     margin-bottom: 8px;
   }
