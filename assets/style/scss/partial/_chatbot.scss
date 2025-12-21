@@ -489,11 +489,9 @@
         flex-shrink: 0;
         cursor: pointer;
         transition: all 0.2s ease;
+        // color: var(--text-primary);
+        color: red;
 
-        svg {
-          width: 20px;
-          height: 20px;
-        }
 
         &:hover {
           opacity: 0.8;
@@ -517,10 +515,6 @@
         flex-shrink: 0;
         color: var(--text-primary);
 
-        svg {
-          width: 30px;
-          height: 30px;
-        }
 
         &:hover {
           opacity: 0.8;
