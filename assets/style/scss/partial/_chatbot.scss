@@ -67,6 +67,86 @@
       }
     }
 
+    &__menu {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: flex-start;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+
+      &-panel {
+        width: 70vw;
+        max-width: 360px;
+        height: 100%;
+        padding: 20px 20px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background: var(--bg-default, #1D1D1D);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        h3 {
+          margin: 0;
+          color: var(--text-primary, #F0F0F0);
+          font-size: 18px;
+          font-weight: 700;
+        }
+        .chatbot__menu-close {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 0;
+          background: var(--bg-subtle, #2F2F2F);
+          color: var(--text-primary, #F0F0F0);
+        }
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      &-link {
+        width: 100%;
+        text-align: left;
+        padding: 14px 12px;
+        border-radius: var(--radius-md, 8px);
+        border: 1px solid var(--border-default, #464646);
+        background: var(--bg-subtle, #2F2F2F);
+        color: var(--text-primary, #F0F0F0);
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      &.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        .chatbot__menu-panel {
+          transform: translateX(0);
+        }
+      }
+    }
+
     &__body {
       flex: 1 1 0;
       overflow-y: auto;

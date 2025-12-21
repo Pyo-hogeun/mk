@@ -763,6 +763,24 @@
       <p class="sub-message">AI가 검색 결과에 대한 대화형 응답을 제공합니다.<br>
         하단에는 관련 뉴스 기사가 임베드 되어 있습니다.</p>
     </div>
+    <div class="chatbot__menu" aria-hidden="true">
+      <div class="chatbot__menu-panel">
+        <div class="chatbot__menu-header">
+          <h3>MAI 메뉴</h3>
+          <button type="button" class="chatbot__menu-close" aria-label="메뉴 닫기">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5892 13.41C14.9145 13.0847 14.9145 12.5552 14.5892 12.2299L12.3593 9.99998L14.5892 7.77007C14.9145 7.44479 14.9145 6.91525 14.5892 6.58996L13.4101 5.41084C13.0848 5.08555 12.5553 5.08555 12.23 5.41084L10.0001 7.64075L7.77018 5.41084C7.44489 5.08555 6.91535 5.08555 6.59007 5.41084L5.41095 6.58996C5.08566 6.91525 5.08566 7.44479 5.41095 7.77007L7.64086 9.99998L5.41095 12.2299C5.08566 12.5552 5.08566 13.0847 5.41095 13.41L6.59007 14.5891C6.91535 14.9144 7.44489 14.9144 7.77018 14.5891L10.0001 12.3592L12.23 14.5891C12.5553 14.9144 13.0848 14.9144 13.4101 14.5891L14.5892 13.41Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="chatbot__menu-list">
+          <li><button type="button" class="chatbot__menu-link">마켓 브리핑</button></li>
+          <li><button type="button" class="chatbot__menu-link">관심 종목</button></li>
+          <li><button type="button" class="chatbot__menu-link">증권 방송</button></li>
+          <li><button type="button" class="chatbot__menu-link">설정</button></li>
+        </ul>
+      </div>
+    </div>
     <div class="chatbot__body">
       <!-- 추천 검색어 -->
       <div class="recommand-tags">
@@ -1081,9 +1099,30 @@
       const chatbot = document.querySelector('.chatbot');
       const chatbotOpenButton = document.querySelector('.chatbot-button');
       const chatbotCloseButton = chatbot?.querySelector('.btn-close');
+      const chatbotMenu = chatbot?.querySelector('.chatbot__menu');
+      const chatbotMenuOpenButton = chatbot?.querySelector('.btn-menu');
+      const chatbotMenuCloseButton = chatbotMenu?.querySelector('.chatbot__menu-close');
+
+      const toggleChatbotMenu = (shouldOpen) => {
+        if (!chatbotMenu) return;
+
+        chatbotMenu.classList.toggle('is-open', shouldOpen);
+        chatbotMenu.setAttribute('aria-hidden', String(!shouldOpen));
+      };
+
+      chatbotMenuOpenButton?.addEventListener('click', () => toggleChatbotMenu(true));
+      chatbotMenuCloseButton?.addEventListener('click', () => toggleChatbotMenu(false));
+      chatbotMenu?.addEventListener('click', (event) => {
+        if (event.target === chatbotMenu) {
+          toggleChatbotMenu(false);
+        }
+      });
 
       const toggleChatbot = (shouldOpen) => {
         if (!chatbot) return;
+        if (!shouldOpen) {
+          toggleChatbotMenu(false);
+        }
 
         chatbot.classList.toggle('is-open', shouldOpen);
         chatbot.setAttribute('aria-hidden', String(!shouldOpen));
