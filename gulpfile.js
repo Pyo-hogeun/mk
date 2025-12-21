@@ -279,7 +279,7 @@ function generateIndex(done) {
   html += `    </section>
     <div class="divider" role="separator" aria-orientation="vertical" aria-label="목록과 미리보기 사이 조절 막대"></div>
     <section class="preview-panel" aria-live="polite">
-      <h2>미리보기 <button type="button" id="widthToggle" class="width-toggle" aria-pressed="false"><span>100%</span> / 390px</button></h2>
+      <h2>미리보기 <button type="button" id="widthToggle" class="width-toggle" aria-pressed="false"><span>모바일보기390px</span></button></h2>
       <div id="previewStatus" class="preview-status">왼쪽 목록의 '미리보기' 버튼을 클릭하면 이 영역에서 바로 확인할 수 있어요.</div>
       <iframe id="previewFrame" title="파일 미리보기" sandbox="allow-same-origin allow-forms allow-scripts allow-popups"></iframe>
     </section>
@@ -296,12 +296,12 @@ function generateIndex(done) {
         previewFrame.style.width = '390px';
         previewFrame.style.maxWidth = '100%';
         widthToggle.setAttribute('aria-pressed', 'true');
-        widthToggle.innerHTML = '<span>390px</span> / 100%';
+        widthToggle.innerHTML = '<span>모바일보기390px</span>';
       } else {
         previewFrame.style.width = '100%';
         previewFrame.style.maxWidth = '100%';
         widthToggle.setAttribute('aria-pressed', 'false');
-        widthToggle.innerHTML = '<span>100%</span> / 390px';
+        widthToggle.innerHTML = '<span>모바일보기390px</span>';
       }
     };
 
