@@ -1487,9 +1487,7 @@
       });
 
       chatbotMenuSearchInput?.addEventListener('focus', () => {
-        if (chatbotMenu?.classList.contains('is-open')) {
-          toggleChatbotMenuSearchFocus(true);
-        }
+        toggleChatbotMenuSearchFocus(true);
       });
 
       const toggleChatbot = (shouldOpen) => {
