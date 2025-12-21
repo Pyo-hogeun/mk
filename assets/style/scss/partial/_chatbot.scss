@@ -72,23 +72,25 @@
       inset: 0;
       display: flex;
       justify-content: flex-start;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(2px);
+      background: rgba(0, 0, 0, 0.3);
+      // backdrop-filter: blur(2px);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
       z-index: 3;
 
       &-panel {
-        width: 70vw;
-        max-width: 360px;
+        width: 80vw;
+        // max-width: 360px;
         height: 100%;
+        overflow-y: auto;
         padding: 20px 20px 32px;
         display: flex;
         flex-direction: column;
         gap: 16px;
-        background: var(--bg-default, #1D1D1D);
-        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+        // background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.70));
+        background: rgba(5, 5, 5, 1);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
         transform: translateX(-100%);
         transition: transform 0.3s ease;
       }
@@ -114,6 +116,61 @@
           border: 0;
           background: var(--bg-subtle, #2F2F2F);
           color: var(--text-primary, #F0F0F0);
+        }
+        .search-input{
+          &__field{
+            flex: 1 1 auto;
+            width: 100%;
+          }
+        }
+      }
+      &-body{
+        .btn-create{
+          display: flex;
+          width: 100%;
+          height: var(--height-md, 40px);
+          padding: 9px 0;
+          justify-content: center;
+          align-items: center;
+          gap: var(--gap-tight, 4px);
+          flex-shrink: 0;
+          align-self: stretch;
+          border: 0;
+          border-radius: var(--radius-md, 8px);
+          background: var(--orange-100, #FF7A00);
+          color: var(--white, #FFF);
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 140%; /* 22.4px */
+        }
+        .history{
+          margin-top: 24px;
+          &__title{
+            color: #F0F0F0;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 150%; /* 22.5px */
+            margin-bottom: 8px;
+          }
+          &__list{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            .history__item{
+              display: flex;
+              gap: 8px;
+              a.keyword{
+                flex: 1 1 auto;
+                color: var(--text-primary);
+              }
+              .btn-remove{
+                background-color: transparent;
+                border: 0;
+              }
+            }
+          }
         }
       }
 
