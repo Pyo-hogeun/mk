@@ -100,6 +100,8 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
+        position: sticky;
+        top: 0;
         h3 {
           margin: 0;
           color: var(--text-primary, #F0F0F0);
@@ -142,6 +144,34 @@
           font-size: 16px;
           font-weight: 600;
           line-height: 140%; /* 22.4px */
+        }
+        .recent-search{
+
+          padding: 24px 0;
+          margin: 24px 0;
+          border: 1px solid var(--border-default, #464646);
+          border-width: 1px 0 1px 0;
+          &__title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            color: var(--text-primary, #F0F0F0);
+            margin-bottom: 24px;
+
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 150%; /* 22.5px */
+            .btn-clear{
+              border: 0;
+              background-color: transparent;
+              color: var(--text-secondary, #7B7B7B);
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 150%; /* 18px */
+            }
+
+          }
         }
         .history{
           margin-top: 24px;

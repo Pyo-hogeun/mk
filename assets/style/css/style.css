@@ -4072,7 +4072,6 @@ body.bottom-sheet-open {
 }
 .stock-tag__text {
   color: var(--text-primary);
-  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 140%;
@@ -4849,6 +4848,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    position: sticky;
+    top: 0;
   }
   .chatbot__menu-header h3 {
     margin: 0;
@@ -4888,6 +4889,31 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 16px;
     font-weight: 600;
     line-height: 140%; /* 22.4px */
+  }
+  .chatbot__menu-body .recent-search {
+    padding: 24px 0;
+    margin: 24px 0;
+    border: 1px solid var(--border-default, #464646);
+    border-width: 1px 0 1px 0;
+  }
+  .chatbot__menu-body .recent-search__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    color: var(--text-primary, #F0F0F0);
+    margin-bottom: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%; /* 22.5px */
+  }
+  .chatbot__menu-body .recent-search__title .btn-clear {
+    border: 0;
+    background-color: transparent;
+    color: var(--text-secondary, #7B7B7B);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
   }
   .chatbot__menu-body .history {
     margin-top: 24px;
