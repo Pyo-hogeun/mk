@@ -5,7 +5,7 @@
   .issue-industry {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(3, 390px);
+    grid-template-columns: repeat(3, minmax(0, 390px));
     padding: 0;
     gap: 20px;
   
