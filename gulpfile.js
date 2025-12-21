@@ -104,7 +104,7 @@ function generateImageGallery(done) {
     .empty { padding: 24px; border:1px dashed #d1d5db; border-radius: 12px; text-align:center; background:#fff; color:#6b7280; }
   </style>
 </head>
-<body>
+<body class="dark">
   <header>
     <h1>이미지 자산 모음</h1>
     <p class="meta">/assets/images 안의 모든 이미지 파일을 한눈에 확인하세요.</p>
@@ -252,7 +252,7 @@ function generateIndex(done) {
     }
   </style>
 </head>
-<body>
+<body class="dark">
 <main class="layout">
 <section class="list-panel">
   <div class="page-header">
