@@ -1503,7 +1503,13 @@
         document.body.style.overflow = shouldOpen ? 'hidden' : '';
       };
 
-      chatbotOpenButton?.addEventListener('click', () => toggleChatbot(true));
+      chatbotOpenButton?.addEventListener('click', () => {
+        toggleChatbot(true);
+
+        if (window.innerWidth >= 480 && chatbotMenu) {
+          chatbotMenu.setAttribute('aria-hidden', 'false');
+        }
+      });
       chatbotCloseButton?.addEventListener('click', () => toggleChatbot(false));
     })();
 
