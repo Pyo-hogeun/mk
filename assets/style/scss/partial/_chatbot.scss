@@ -11,8 +11,19 @@
     height: 100dvh;
     max-height: 100dvh;
     background-color: var(--bg-default);
-    // background-color: rgba(80, 125, 60, 0.9);
     z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(16px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s;
+    }
 
     &__header {
       position: sticky;
