@@ -4664,7 +4664,7 @@ body.bottom-sheet-open {
   flex-direction: column;
   align-items: flex-end;
   gap: 4px;
-  z-index: 1000;
+  z-index: 1;
 }
 .chatbot-floating .chatbot-bubble {
   display: flex;
@@ -4747,4 +4747,93 @@ body.bottom-sheet-open {
 
 body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   color: var(--text-primary);
+}
+
+@media screen and (max-width: 480px) {
+  .chatbot {
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 125, 60, 0.8);
+    z-index: 2;
+  }
+  .chatbot__header {
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: 24px 1fr 24px;
+    padding: 24px 15px;
+  }
+  .chatbot__header .btn-menu,
+  .chatbot__header .btn-close {
+    color: var(--text-primary);
+    background-color: transparent;
+    border: 0;
+  }
+  .chatbot__header h2.title {
+    text-align: center;
+    color: var(--text-primary, #F0F0F0);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 140%;
+    /* 30.8px */
+  }
+  .chatbot__header p.sub-message {
+    grid-column: 1/4;
+    color: var(--text-secondary, #7B7B7B);
+    text-align: center;
+    /* Caption/SM */
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 18px */
+  }
+  .chatbot .recommand-tags {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    flex-wrap: wrap;
+  }
+  .chatbot .recommand-tags .tag {
+    display: flex;
+    height: 40px;
+    height: var(--height-md, 40px);
+    padding: 8px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid var(--border-default);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .chatbot .recommand-tags .tag__text {
+    color: var(--text-primary, #F0F0F0);
+    text-align: center;
+    /* Body/SM */
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 22.5px */
+  }
+  .chatbot .recommand-tags .tag__close {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .chatbot .recommand-tags .tag:hover {
+    opacity: 0.8;
+  }
+  .chatbot .recommand-tags .tag:active {
+    transform: scale(0.98);
+  }
 }
