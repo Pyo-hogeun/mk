@@ -9,7 +9,8 @@
     overflow: hidden;
     height: 100dvh;
     max-height: 100dvh;
-    background-color: rgba(80, 125, 60, 0.9);
+    background-color: var(--bg-default);
+    // background-color: rgba(80, 125, 60, 0.9);
     z-index: 2;
 
     &__header {
@@ -106,8 +107,8 @@
 
       .search-input {
         flex: 1;
-        color: var(--text-secondary, #7B7B7B);
-        text-align: center;
+        color: var(--text-primary);
+        text-align: left;
         font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
         font-size: 14px;
         font-style: normal;
