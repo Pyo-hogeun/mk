@@ -1,0 +1,110 @@
+@use 'variables' as *;
+
+.chatbot-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  z-index: 1000;
+
+  .chatbot-bubble {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
+    position: relative;
+
+    .bubble-container {
+      position: relative;
+      height: 39px;
+    }
+
+    .bubble-background {
+      height: 32px;
+      border-radius: 999px;
+      background: var(--gray-dark);
+      border: 1px solid #FF800B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+    }
+
+    .bubble-tail {
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid var(--gray-dark);
+    }
+
+    .bubble-tail::before {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      left: -7px;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid #FF800B;
+    }
+
+    .bubble-text {
+      color: var(--text-primary);
+      text-align: center;
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .chatbot-button {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    border: 1px solid #FF800B;
+    background: linear-gradient(0deg, #FF800B 14.9%, #E44F00 88.94%);
+    box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .chatbot-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+body.dark {
+  .chatbot-floating {
+    .chatbot-bubble {
+      .bubble-text {
+        color: var(--text-primary);
+      }
+    }
+  }
+}
