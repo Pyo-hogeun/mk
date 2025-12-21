@@ -1057,6 +1057,29 @@
           content.classList.add('is-active');
         });
       });
+
+      // 음소거 토글
+      const voiceButtons = document.querySelectorAll('.btn-voice');
+
+      const updateVoiceIcon = (button) => {
+        const isMuted = button.classList.contains('is-muted');
+        const soundOn = button.querySelector('.sound-on');
+        const mute = button.querySelector('.mute');
+
+        if (!soundOn || !mute) return;
+
+        soundOn.setAttribute('aria-hidden', isMuted);
+        mute.setAttribute('aria-hidden', !isMuted);
+      };
+
+      voiceButtons.forEach((button) => {
+        updateVoiceIcon(button);
+
+        button.addEventListener('click', () => {
+          button.classList.toggle('is-muted');
+          updateVoiceIcon(button);
+        });
+      });
     })();
 
     

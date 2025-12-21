@@ -4855,8 +4855,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background-color: transparent;
     border: 0;
   }
-  .chatbot__body .chat-row .chat__topper button.btn-voice .mute {
+  .btn-voice .mute {
     display: none;
+  }
+  .btn-voice.is-muted .sound-on {
+    display: none;
+  }
+  .btn-voice.is-muted .mute {
+    display: inline;
   }
   .chatbot__body .chat-row.bot {
     margin-bottom: 8px;
