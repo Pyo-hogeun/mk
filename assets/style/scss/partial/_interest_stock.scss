@@ -417,8 +417,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 100px;
-        border: 1px solid var(--orange-100, #FF800B);
-        background: var(--bg-default, #1D1D1D);
+        @include GradientBorder;
       }
     
       .ai-badge-text {

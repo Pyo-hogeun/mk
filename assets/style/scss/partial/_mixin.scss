@@ -22,3 +22,7 @@
     border-radius: 8px;
   }
 }
+@mixin GradientBorder {
+  border: 1px solid transparent;
+  background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+}

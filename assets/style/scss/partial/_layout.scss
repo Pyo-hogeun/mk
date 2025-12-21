@@ -41,7 +41,8 @@ body{
 @media screen and (min-width: $mobile){
   .container{
     width: 1210px;
-    padding: 0 10px;
+    padding-left:10px;
+    padding-right:10px;
     &__header{
       width: $pcContainerSub;
       margin-left: auto;
