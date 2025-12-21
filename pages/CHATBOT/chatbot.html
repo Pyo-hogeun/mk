@@ -1468,13 +1468,16 @@
       const toggleChatbotMenu = (shouldOpen) => {
         if (!chatbotMenu) return;
 
+        const isDesktop = window.innerWidth >= DESKTOP_BREAKPOINT;
+
         if (!shouldOpen) {
           toggleChatbotMenuSearchFocus(false);
         }
 
-        chatbotMenu.classList.toggle('is-open', shouldOpen);
-        chatbotMenu.setAttribute('aria-hidden', String(!shouldOpen));
-        if (window.innerWidth >= DESKTOP_BREAKPOINT && chatbot) {
+        const nextMenuOpen = shouldOpen || isDesktop;
+        chatbotMenu.classList.toggle('is-open', nextMenuOpen);
+        chatbotMenu.setAttribute('aria-hidden', String(!nextMenuOpen));
+        if (isDesktop && chatbot) {
           chatbot.classList.add('is-open');
           chatbot.setAttribute('aria-hidden', 'false');
         }
