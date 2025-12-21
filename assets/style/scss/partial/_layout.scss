@@ -1,6 +1,21 @@
 @use 'variables' as *;
 body{
-  background-color: $bgDark;
+  background: var(--bg-default, #FFFFFF);
+  &.dark{
+    /* dark */
+    /* color */
+    --bg-dark-opacity: #000000b2;
+    --bg-default: #1d1d1d;
+    --bg-subtle: #2f2f2f;
+    --bg-gray: #2f2f2f;
+    --border-default: #464646;
+    --surface-default: #2f2f2f;
+    --surface-raised: #434343;
+    --text-disabled: #a8a8a8;
+    --text-primary: #f0f0f0;
+    --text-secondary: #7b7b7b;
+    --text-opposite: #f0f0f0;
+  }
 }
 .container{
   margin: 0 auto;
@@ -10,7 +25,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     margin: 24px 0;
     padding: 0 $mobilePadSide;
     h2{

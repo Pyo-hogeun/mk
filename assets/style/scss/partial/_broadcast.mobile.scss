@@ -1,6 +1,6 @@
 @use 'variables' as *;
 @use 'mixin' as *;
-@media screen and (min-width: $mobile){
+@media screen and (max-width: $mobile){
   .broadcast{
     &__wrapper{
       padding: 0 $mobilePadSide;

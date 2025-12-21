@@ -1,18 +1,4 @@
 @use 'variables'as *;
-
-:root {
-  --text-primary: #F0F0F0;
-  --text-secondary: #7B7B7B;
-  --spacing-sm: 8px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --height-md: 40px;
-  --gap-normal: 8px;
-  --red: #F00;
-  --blue: #2175FF;
-  --base-gradation: linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%);
-}
-
 .agent-header {
   display: flex;
   align-items: center;
@@ -55,7 +41,7 @@
   }
 
   .brand-title {
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     text-align: center;
     white-space: nowrap;
     font: 700 22px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
@@ -104,7 +90,7 @@
       gap: var(--gap-normal, 8px);
 
       &.active .tab-label {
-        color: var(--text-primary, #F0F0F0);
+        color: var(--text-primary, #111111);
       }
 
       .tab-label {
@@ -159,7 +145,7 @@
   }
 
   &__name {
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     font-size: 16px;
     font-weight: 700;
   }
@@ -187,7 +173,7 @@
   }
 
   &__price {
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     font-size: 24px;
     font-weight: 800;
   }
@@ -220,7 +206,7 @@
   flex-wrap: wrap;
 
   &__label {
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     font-size: 15px;
     font-weight: 700;
   }
@@ -264,7 +250,7 @@
   }
 
   &__title {
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     font-size: 16px;
     font-weight: 700;
   }
@@ -279,7 +265,7 @@
     border-radius: 10px;
     border: 1px solid #3D3D3D;
     background: #1D1D1D;
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
@@ -336,7 +322,7 @@
     }
 
     .market-value {
-      color: var(--text-primary, #F0F0F0);
+      color: var(--text-primary, #111111);
       font-size: 22px;
       font-weight: 700;
       line-height: 1.4;
@@ -497,7 +483,7 @@
   }
 
   &__name {
-    color: var(--text-primary, #F0F0F0);
+    color: var(--text-primary, #111111);
     font-size: 15px;
     font-weight: 600;
     line-height: 150%;
