@@ -2443,6 +2443,7 @@ body.bottom-sheet-open {
   }
   .source-info {
     display: flex;
+    align-items: center;
     margin-top: 24px;
     gap: 8px;
     color: var(--text-primary, #111111);
@@ -2453,6 +2454,10 @@ body.bottom-sheet-open {
   }
   .source-info__thumbnail {
     display: flex;
+  }
+  .source-info__thumbnail li {
+    display: inline-flex;
+    align-items: center;
   }
   .source-info__thumbnail li:not(:first-child) {
     margin-left: -3px;
@@ -2580,6 +2585,7 @@ body.bottom-sheet-open {
   }
   .source-info {
     display: flex;
+    align-items: center;
     margin-top: 24px;
     gap: 8px;
     color: var(--text-primary, #111111);
@@ -2590,6 +2596,10 @@ body.bottom-sheet-open {
   }
   .source-info__thumbnail {
     display: flex;
+  }
+  .source-info__thumbnail li {
+    display: inline-flex;
+    align-items: center;
   }
   .source-info__thumbnail li:not(:first-child) {
     margin-left: -3px;
@@ -5039,6 +5049,16 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-self: stretch;
     flex-wrap: wrap;
     margin: 24px 0;
+  }
+  .chatbot .recommand-tags.scroll {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .chatbot .recommand-tags.scroll::-webkit-scrollbar {
+    display: none; /* Chrome / Safari / Edge */
+  }
+  .chatbot .recommand-tags.scroll .tag {
+    white-space: nowrap;
   }
   .chatbot .recommand-tags .tag {
     display: flex;

@@ -317,6 +317,13 @@
       align-self: stretch;
       flex-wrap: wrap;
       margin: 24px 0;
+      &.scroll{
+        flex-wrap: nowrap;
+        @include scrollX_mobile;
+        .tag{
+          white-space: nowrap;
+        }
+      }
 
       .tag {
         display: flex;

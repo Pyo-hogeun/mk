@@ -127,6 +127,7 @@
   }
   .source-info{
     display: flex;
+    align-items: center;
     margin-top: 24px;
     gap: 8px;
     color: var(--text-primary, #111111);
@@ -137,6 +138,10 @@
     line-height: 150%; /* 18px */
     &__thumbnail{
       display: flex;
+      li{
+        display: inline-flex;
+        align-items: center;
+      }
       li:not(:first-child){
         margin-left: -3px;
       }
