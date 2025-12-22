@@ -4943,6 +4943,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 0;
     padding: 0;
     margin: 0;
+    visibility: hidden;
     border: 1px solid var(--border-default, #464646);
     border-width: 1px 0 1px 0;
     transition: all 0.2s ease;
