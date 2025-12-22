@@ -105,7 +105,7 @@
         </div>
 
         <div class="reading-card__wrapper">
-          <div class="reading-card">
+          <div class="reading-card playing">
             <div class="reading-card__header">
               <div class="reading-card__category-badge">경제</div>
               <div class="reading-card__time">0:00</div>
@@ -123,7 +123,52 @@
             </div>
             <button class="reading-card__source-button" type="button">매일경제 +3</button>
           </div>
+          <div class="reading-card">
+            <div class="reading-card__header">
+              <div class="reading-card__category-badge">경제</div>
+              <div class="reading-card__time">0:00</div>
+              <div class="reading-card__playing-status">
+              </div>
+            </div>
+            <div class="reading-card__content">
+              <div class="reading-card__text">도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에 공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.<br>AI 반도체 시장 급성장과 부동산 정책 변화, K-컬처 수출 확대 등 11월 한 달간의 주요 경제·기업·문화 트렌드를 종합 분석</div>
+            </div>
+            <button class="reading-card__source-button" type="button">매일경제 +3</button>
+          </div>
+          <div class="reading-card">
+            <div class="reading-card__header">
+              <div class="reading-card__category-badge">경제</div>
+              <div class="reading-card__time">0:00</div>
+              <div class="reading-card__playing-status">
+              </div>
+            </div>
+            <div class="reading-card__content">
+              <div class="reading-card__text">도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에 공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.<br>AI 반도체 시장 급성장과 부동산 정책 변화, K-컬처 수출 확대 등 11월 한 달간의 주요 경제·기업·문화 트렌드를 종합 분석</div>
+            </div>
+            <button class="reading-card__source-button" type="button">매일경제 +3</button>
+          </div>
+          <div class="source-info">
+            <ul class="source-info__thumbnail">
+              <li>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"></circle>
+                  </svg>                
+              </li>
+              <li>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"></circle>
+                  </svg>                
+              </li>
+              <li>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"></circle>
+                  </svg>                
+              </li>
+            </ul>
+            전체 출처 <span class="source-info__badge">3개</span>
+          </div>
         </div>
+
 
 
       </div>
@@ -132,6 +177,35 @@
 
 
       
+    </div>
+
+    <!-- Player Control Component -->
+    <div class="player-control">
+      <div class="player-control__progress-bar-top">
+        <span class="bar" style="width: 30%"></span>
+      </div>
+
+      <div class="player-control__content">
+        <div class="player-control__main">
+          <div class="player-control__info">
+            <div class="player-control__title">11월 13일(목) 오후 주요뉴스</div>
+            <div class="player-control__time">
+              <span class="current-time">0:00</span>  |  3:00
+            </div>
+          </div>
+
+          <button class="player-control__btn-stop" type="button" aria-label="정지">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 30H10V10H30V30Z" fill="white"/>
+            </svg>
+          </button>
+
+          <button class="player-control__speed-selector" type="button" aria-label="재생 속도">
+            <span class="player-control__speed-text">1.0x</span>
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 

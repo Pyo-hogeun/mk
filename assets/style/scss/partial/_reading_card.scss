@@ -9,8 +9,12 @@
     align-items: flex-start;
     gap: 16px;
     border-radius: var(--radius-lg, 12px);
-    border: 1px solid var(--orange-100, #FF800B);
+    border: 1px solid var(--bg-subtle, #2F2F2F);
     background: var(--bg-subtle, #2F2F2F);
+    &.playing{
+      border: 1px solid var(--orange-100, #FF800B);
+      
+    }
   
     &__header {
       display: flex;
