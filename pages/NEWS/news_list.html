@@ -526,6 +526,13 @@
       const settingsSheet = document.querySelector('.bottom-sheet.news-briefing-settings');
       if (!settingsButton || !settingsSheet) return;
 
+      let sheetDim = document.querySelector('.bottom-sheet-dim');
+      if (!sheetDim) {
+        sheetDim = document.createElement('div');
+        sheetDim.className = 'bottom-sheet-dim';
+        document.body.appendChild(sheetDim);
+      }
+
       const closeButtons = settingsSheet.querySelectorAll('.btn-close, .btn-cancel, .btn-save');
       const comboboxDim = settingsSheet.querySelector('.combobox-dim');
       const dropdownButtons = Array.from(settingsSheet.querySelectorAll('.dropdown-btn'));
@@ -538,6 +545,14 @@
       const notificationToggle = settingsSheet.querySelector('.toggle-circle');
       let openedCombobox = null;
       let isTimeSelectorOpen = false;
+
+      const toggleSheetDim = (shouldShow) => {
+        if (!sheetDim) return;
+        const hasAnyOpenSheet = document.querySelectorAll('.bottom-sheet.is-open').length > 0;
+        const isVisible = shouldShow || hasAnyOpenSheet;
+        sheetDim.classList.toggle('is-visible', isVisible);
+        document.body.classList.toggle('bottom-sheet-open', isVisible);
+      };
 
       const closeCombobox = () => {
         if (openedCombobox) {
@@ -555,6 +570,7 @@
       const setSheetVisibility = (isOpen) => {
         settingsSheet.classList.toggle('is-open', isOpen);
         settingsSheet.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        toggleSheetDim(isOpen);
         if (!isOpen) closeCombobox();
       };
 
@@ -567,6 +583,11 @@
       settingsButton.addEventListener('click', () => setSheetVisibility(true));
       closeButtons.forEach((btn) => btn.addEventListener('click', () => setSheetVisibility(false)));
       comboboxDim?.addEventListener('click', closeCombobox);
+      sheetDim?.addEventListener('click', () => {
+        if (settingsSheet.classList.contains('is-open')) {
+          setSheetVisibility(false);
+        }
+      });
 
       pillBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
