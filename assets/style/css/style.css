@@ -7491,6 +7491,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     opacity: 0.9;
   }
 }
+.customized-detail .play-button-wrapper .btn-play .is-hidden {
+  display: none;
+}
 @media screen and (max-width: 480px) {
   .customized-detail .play-button-wrapper .btn-play {
     display: inline-flex;
