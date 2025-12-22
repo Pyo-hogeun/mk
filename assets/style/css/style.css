@@ -7356,7 +7356,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   width: 50px;
   height: 152px;
   overflow: hidden;
-  touch-action: pan-y;
+  touch-action: none;
 }
 .time-selector .dial .dial__track {
   position: absolute;

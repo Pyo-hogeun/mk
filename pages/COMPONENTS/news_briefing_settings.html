@@ -331,6 +331,7 @@
 
       const onPointerMove = (event) => {
         if (!isPointerDown) return;
+        event.preventDefault();
         const delta = event.clientY - startY;
         const nextTranslate = startTranslate + delta;
         applyTransform(config, nextTranslate, false);
@@ -347,6 +348,7 @@
       };
 
       config.element.addEventListener('pointerdown', (event) => {
+        event.preventDefault();
         isPointerDown = true;
         startY = event.clientY;
         startTranslate = config.translateY ?? config.centerOffset ?? 0;
@@ -355,9 +357,10 @@
         config.element.setPointerCapture(event.pointerId);
       });
 
-      config.element.addEventListener('pointermove', onPointerMove);
+      config.element.addEventListener('pointermove', onPointerMove, { passive: false });
       config.element.addEventListener('pointerup', onPointerUp);
       config.element.addEventListener('pointercancel', onPointerUp);
+      config.element.addEventListener('pointerleave', onPointerUp);
     };
 
     const buildDial = (config) => {
