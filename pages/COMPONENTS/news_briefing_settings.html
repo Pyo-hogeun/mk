@@ -73,9 +73,15 @@
           <div class="time-selector__wrapper" aria-hidden="true">
             <div class="time-selector" role="dialog" aria-label="예약 업데이트 시간">
               <div class="select-bar"></div>
-              <div class="dial ampm" data-dial="ampm"></div>
-              <div class="dial hour" data-dial="hour"></div>
-              <div class="dial minute" data-dial="minute"></div>
+              <div class="dial ampm" data-dial="ampm">
+                <div class="dial__track"></div>
+              </div>
+              <div class="dial hour" data-dial="hour">
+                <div class="dial__track"></div>
+              </div>
+              <div class="dial minute" data-dial="minute">
+                <div class="dial__track"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -253,17 +259,20 @@
       ampm: {
         key: 'ampm',
         values: ['AM', 'PM'],
-        element: document.querySelector('.dial.ampm')
+        element: document.querySelector('.dial.ampm'),
+        track: document.querySelector('.dial.ampm .dial__track')
       },
       hour: {
         key: 'hour',
         values: Array.from({ length: 12 }, (_, index) => String(index + 1).padStart(2, '0')),
-        element: document.querySelector('.dial.hour')
+        element: document.querySelector('.dial.hour'),
+        track: document.querySelector('.dial.hour .dial__track')
       },
       minute: {
         key: 'minute',
         values: Array.from({ length: 12 }, (_, index) => String(index * 5).padStart(2, '0')),
-        element: document.querySelector('.dial.minute')
+        element: document.querySelector('.dial.minute'),
+        track: document.querySelector('.dial.minute .dial__track')
       }
     };
 
@@ -283,61 +292,91 @@
       timeDropdownLabel.textContent = formatTimeLabel(state);
     };
 
-    const updateSelection = (config, index, withAnimation = false) => {
-      if (!config?.element) return;
+    const applyTransform = (config, value, animated = false) => {
+      if (!config?.track) return;
+      config.track.style.transition = animated ? 'transform 0.18s ease-out' : 'none';
+      config.track.style.transform = `translateY(${value}px)`;
+      config.translateY = value;
+    };
 
-      const slots = Array.from(config.element.querySelectorAll('.slot'));
+    const updateSelection = (config, index, animated = false) => {
+      if (!config?.track) return;
+
+      const slots = Array.from(config.track.querySelectorAll('.slot'));
       slots.forEach((slot, slotIndex) => {
         slot.classList.toggle('selected', slotIndex === index);
       });
 
       selectionState[config.key] = config.values[index];
-      const topOffset = (config.paddingTop ?? 0) + (config.slotHeight ?? 0) * index;
-      config.element.scrollTo({
-        top: topOffset,
-        behavior: withAnimation ? 'smooth' : 'auto'
-      });
+      const targetTranslate = (config.centerOffset ?? 0) - (config.slotHeight ?? 0) * index;
+      applyTransform(config, targetTranslate, animated);
       setTimeLabel(selectionState);
     };
 
-    const snapToNearestSlot = (config) => {
-      if (!config?.element || !config.values.length) return;
+    const snapToNearestSlot = (config, animated = true) => {
+      if (!config?.track || !config.values.length) return;
       const slotHeight = config.slotHeight || 1;
-      const paddingTop = config.paddingTop || 0;
-      const rawIndex = Math.round((config.element.scrollTop - paddingTop) / slotHeight);
+      const centerOffset = config.centerOffset || 0;
+      const rawIndex = Math.round((centerOffset - (config.translateY ?? 0)) / slotHeight);
       const boundedIndex = Math.min(Math.max(rawIndex, 0), config.values.length - 1);
-      updateSelection(config, boundedIndex, true);
+      updateSelection(config, boundedIndex, animated);
     };
 
     const attachDialHandlers = (config) => {
-      if (!config?.element) return;
+      if (!config?.element || !config.track) return;
 
-      let scrollTimeout = null;
-      config.element.addEventListener('scroll', () => {
-        if (scrollTimeout) {
-          clearTimeout(scrollTimeout);
+      let isPointerDown = false;
+      let startY = 0;
+      let startTranslate = 0;
+
+      const onPointerMove = (event) => {
+        if (!isPointerDown) return;
+        const delta = event.clientY - startY;
+        const nextTranslate = startTranslate + delta;
+        applyTransform(config, nextTranslate, false);
+      };
+
+      const onPointerUp = () => {
+        if (!isPointerDown) return;
+        isPointerDown = false;
+        snapToNearestSlot(config, true);
+        if (config.pointerId != null) {
+          config.element.releasePointerCapture(config.pointerId);
+          config.pointerId = null;
         }
-        scrollTimeout = setTimeout(() => snapToNearestSlot(config), 80);
-      }, { passive: true });
+      };
 
-      config.element.addEventListener('wheel', (event) => {
-        event.preventDefault();
-      }, { passive: false });
+      config.element.addEventListener('pointerdown', (event) => {
+        isPointerDown = true;
+        startY = event.clientY;
+        startTranslate = config.translateY ?? config.centerOffset ?? 0;
+        config.pointerId = event.pointerId;
+        config.track.style.transition = 'none';
+        config.element.setPointerCapture(event.pointerId);
+      });
+
+      config.element.addEventListener('pointermove', onPointerMove);
+      config.element.addEventListener('pointerup', onPointerUp);
+      config.element.addEventListener('pointercancel', onPointerUp);
     };
 
     const buildDial = (config) => {
-      if (!config?.element) return;
-      config.element.innerHTML = '';
+      if (!config?.track) return;
+      config.track.innerHTML = '';
       config.values.forEach((value, index) => {
         const slot = document.createElement('div');
         slot.className = 'slot';
         slot.textContent = value;
         slot.dataset.index = index;
         slot.addEventListener('click', () => updateSelection(config, index, true));
-        config.element.appendChild(slot);
+        config.track.appendChild(slot);
       });
-      config.slotHeight = config.element.querySelector('.slot')?.offsetHeight || 40;
-      config.paddingTop = parseFloat(getComputedStyle(config.element).paddingTop) || 0;
+      const slotSample = config.track.querySelector('.slot');
+      const slotHeightFromStyle = slotSample ? parseFloat(getComputedStyle(slotSample).height) : 0;
+      config.slotHeight = slotSample?.offsetHeight || slotHeightFromStyle || 40;
+      const dialHeightStyle = parseFloat(getComputedStyle(config.element).height) || 0;
+      const dialHeight = config.element.clientHeight || dialHeightStyle || 152;
+      config.centerOffset = dialHeight / 2 - config.slotHeight / 2;
       attachDialHandlers(config);
     };
 
@@ -346,7 +385,7 @@
         buildDial(config);
         const initialIndex = config.values.indexOf(selectionState[config.key]);
         const safeIndex = initialIndex >= 0 ? initialIndex : 0;
-        updateSelection(config, safeIndex);
+        updateSelection(config, safeIndex, false);
       });
     };
 
