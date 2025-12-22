@@ -252,13 +252,12 @@
 
     const timeDropdownBtn = document.querySelector('.dropdown-btn[data-target="time-selector"]');
     const timeDropdownLabel = timeDropdownBtn?.querySelector('.dropdown-label');
-    const timeSelectorWrapper = document.querySelector('.time-selector__wrapper');
     const timeSelector = document.querySelector('.time-selector');
 
     const dialConfigs = {
       ampm: {
         key: 'ampm',
-        values: ['AM', 'PM'],
+        values: ['오전', '오후'],
         element: document.querySelector('.dial.ampm'),
         track: document.querySelector('.dial.ampm .dial__track')
       },
@@ -270,7 +269,7 @@
       },
       minute: {
         key: 'minute',
-        values: Array.from({ length: 12 }, (_, index) => String(index * 5).padStart(2, '0')),
+        values: Array.from({ length: 6 }, (_, index) => String(index * 10).padStart(2, '0')),
         element: document.querySelector('.dial.minute'),
         track: document.querySelector('.dial.minute .dial__track')
       }
@@ -280,12 +279,12 @@
     initialTime.setHours(19, 30, 0, 0);
 
     const selectionState = {
-      ampm: initialTime.getHours() >= 12 ? 'PM' : 'AM',
+      ampm: initialTime.getHours() >= 12 ? '오전' : '오후',
       hour: String(initialTime.getHours() % 12 || 12).padStart(2, '0'),
       minute: String(Math.round(initialTime.getMinutes() / 5) * 5).padStart(2, '0').padStart(2, '0')
     };
 
-    const formatTimeLabel = (state) => `${state.ampm}:${state.hour}:${state.minute}`;
+    const formatTimeLabel = (state) => `${state.ampm} ${state.hour}시 ${state.minute}분`;
 
     const setTimeLabel = (state) => {
       if (!timeDropdownLabel) return;
