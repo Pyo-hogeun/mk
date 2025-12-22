@@ -4889,9 +4889,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    margin-left: -15px;
-    padding: 24px 15px 24px;
-    width: calc(100% + 30px);
+    padding: 24px 0 24px;
+    width: 100%;
     background: rgb(5, 5, 5);
   }
   .chatbot__menu-header h3 {
@@ -5015,12 +5014,16 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 600;
   }
+  .chatbot__menu.is-search-focused {
+    width: 640px;
+  }
   .chatbot__menu.is-search-focused .chatbot__menu-panel {
     width: 100vw;
-    background: var(--bg-default, #1D1D1D);
+    background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.7));
   }
   .chatbot__menu.is-search-focused .chatbot__menu-panel .chatbot__menu-header {
-    background: var(--bg-default);
+    padding-bottom: 10px;
+    background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.7));
   }
   .chatbot__menu.is-search-focused .chatbot__menu-panel .chatbot__menu-close {
     width: 32px;
@@ -5035,10 +5038,44 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .chatbot__menu.is-search-focused .recent-search {
     display: block;
+    display: flex;
     height: auto;
     opacity: 1;
-    padding: 24px 0;
-    margin: 0 0 24px 0;
+    padding: 32px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
+    /* drop shadow */
+    box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .chatbot__menu.is-search-focused .recent-search__title {
+    margin-bottom: 0;
+  }
+  .chatbot__menu.is-search-focused .recent-search__body {
+    width: 100%;
+  }
+  .chatbot__menu.is-search-focused .recent-search .selected-stock-tags {
+    flex-direction: column;
+  }
+  .chatbot__menu.is-search-focused .recent-search .selected-stock-tags .stock-tag {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: var(--radius-md, 8px);
+    border: 0;
+    padding: 12px;
+  }
+  .chatbot__menu.is-search-focused .recent-search .selected-stock-tags .stock-tag:hover {
+    background: var(--bg-default, #1D1D1D);
+  }
+  .chatbot__menu.is-search-focused .recent-search .selected-stock-tags .stock-tag i {
+    vertical-align: middle;
+    margin-right: 2px;
+  }
+  .chatbot__menu.is-search-focused ~ .chatbot__header, .chatbot__menu.is-search-focused ~ .chatbot__body, .chatbot__menu.is-search-focused ~ .chatbot__footer {
+    width: 546px;
   }
   .chatbot__body {
     width: 914px;
@@ -5487,9 +5524,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    margin-left: -15px;
-    padding: 24px 15px 24px;
-    width: calc(100% + 30px);
+    padding: 24px 0 24px;
+    width: 100%;
     background: rgb(5, 5, 5);
   }
   .chatbot__menu-header h3 {
@@ -5564,6 +5600,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 12px;
     font-weight: 500;
     line-height: 150%; /* 18px */
+  }
+  .chatbot__menu-body .recent-search__body .stock-tag i {
+    display: none;
   }
   .chatbot__menu-body .history {
     margin-top: 24px;

@@ -118,15 +118,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // gap: 12px;
         position: sticky;
         top: 0;
-        // padding-top: 24px;
-
-
-        margin-left: -$mobilePadSide;
-        padding: 24px $mobilePadSide 24px;
-        width: calc(100% + $mobilePadSide*2);
+        // margin-left: -$mobilePadSide;
+        padding: 24px 0 24px;
+        width: 100%;
         background: rgba(5, 5, 5, 1);
 
         h3 {
@@ -261,11 +257,15 @@
       
 
       &.is-search-focused {
+        width: 640px;
         .chatbot__menu-panel {
           width: 100vw;
-          background: var(--bg-default, #1D1D1D);
+          // background: var(--bg-default, #1D1D1D);
+          background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.70));
           .chatbot__menu-header{
-            background: var(--bg-default);
+            // background: var(--bg-default);
+            padding-bottom: 10px;
+            background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.70));
           }
 
           .chatbot__menu-close{
@@ -282,10 +282,47 @@
         }
         .recent-search{
           display: block;
+          display: flex;
           height: auto;
           opacity: 1;
-          padding: 24px 0;
-          margin: 0 0 24px 0;
+          padding: 32px 40px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+          border-radius: var(--radius-lg, 12px);
+          border: 1px solid var(--border-default, #464646);
+          background: var(--bg-subtle, #2F2F2F);
+
+          /* drop shadow */
+          box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
+          &__title{
+            margin-bottom: 0;
+          }
+          &__body{
+            width: 100%;
+          }
+          .selected-stock-tags{
+            flex-direction: column;
+            .stock-tag{
+              width: 100%;
+              justify-content: space-between;
+              border-radius: var(--radius-md, 8px);
+              border: 0;
+              padding: 12px;
+              &:hover{
+                background: var(--bg-default, #1D1D1D);
+              }
+              i{
+                vertical-align: middle;
+                margin-right: 2px;
+              }
+            }
+          }
+        }
+        & ~ .chatbot__header,
+        & ~ .chatbot__body,
+        & ~ .chatbot__footer{
+          width: 546px;
         }
       }
     }
