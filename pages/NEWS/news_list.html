@@ -82,6 +82,7 @@
             설정한 시간에 맞춰 나만의 뉴스 브리핑을 자동으로 받아보세요.
           </div>
 
+          <!-- pc용 레이아웃 -->
           <div class="for-pc">
             <div class="news-briefing-layout">
               <div class="news-briefing-main">
@@ -161,34 +162,37 @@
                 </div>
               </div>
             </div>
-
           </div>
 
-          <div class="ai-news-briefing__settings">
-            <div class="ai-news-briefing__tags">
-              <span class="briefing-tag">경제</span>
-              <span class="briefing-tag">사회</span>
-              <span class="briefing-tag">국제</span>
+          <!-- 모바일용 레이아웃 -->
+          <div class="for-mobile">
+            <div class="ai-news-briefing__settings">
+              <div class="ai-news-briefing__tags">
+                <span class="briefing-tag">경제</span>
+                <span class="briefing-tag">사회</span>
+                <span class="briefing-tag">국제</span>
+              </div>
+              <button type="button" class="ai-news-briefing__config-btn">
+                브리핑 설정하기
+              </button>
+              <div class="config-wrapper">
+                <button type="button" class="ai-news-briefing__config-btn">
+                  월, 화, 수, 목, 금
+                </button>
+                <button type="button" class="ai-news-briefing__config-btn">
+                  오후 7시 30분
+                </button>
+                <button type="button" class="ai-news-briefing__config-btn">
+                  3분 · 1인 진행
+                </button>
+  
+              </div>
             </div>
-            <button type="button" class="ai-news-briefing__config-btn">
-              브리핑 설정하기
+            <button type="button" class="ai-news-briefing__create-btn">
+              지금 생성
             </button>
-            <div class="config-wrapper">
-              <button type="button" class="ai-news-briefing__config-btn">
-                월, 화, 수, 목, 금
-              </button>
-              <button type="button" class="ai-news-briefing__config-btn">
-                오후 7시 30분
-              </button>
-              <button type="button" class="ai-news-briefing__config-btn">
-                3분 · 1인 진행
-              </button>
-
-            </div>
           </div>
-          <button type="button" class="ai-news-briefing__create-btn">
-            지금 생성
-          </button>
+
 
           <div class="briefing-item__card">
             <div class="briefing-item__content">
@@ -216,6 +220,7 @@
             </div>
           </div>
 
+          <!-- 로딩중 case -->
           <div class="briefing-item__loading">
             <svg width="32" height="8" viewBox="0 0 32 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.5">
