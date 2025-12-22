@@ -1,0 +1,91 @@
+@use 'variables'as *;
+
+.voice-popup {
+  display: flex;
+  padding: var(--spacing-xl, 24px) 12px;
+  gap: var(--spacing-md, 12px);
+  min-width: 344px;
+
+  &__header {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    button.btn-close {
+      background-color: transparent;
+      border: 0;
+      color: var(--text-primary);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .icon {
+      position: relative;
+      width: 80px;
+      height: 80px;
+
+      svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .message {
+      margin-top: 14px;
+      color: var(--text-primary, #F0F0F0);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 150%;
+      /* 22.5px */
+    }
+
+    .time {
+      color: var(--text-secondary, #7B7B7B);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 150%;
+      /* 18px */
+    }
+
+    .notice {
+      color: var(--text-secondary, #7B7B7B);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 150%;
+      /* 18px */
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm, 8px);
+    .btn {
+      display: flex;
+      height: var(--height-md, 40px);
+      justify-content: center;
+      align-items: center;
+      gap: var(--gap-tight, 4px);
+      flex: 0 0 140px;
+      width: 140px;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-default, #464646);
+      background: var(--bg-default, #1D1D1D);
+      color: var(--text-primary, #F0F0F0);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 140%; /* 22.4px */
+
+      &-submit {
+        background: var(--orange-100, #FF7A00);
+      }
+    }
+  }
+
+}
