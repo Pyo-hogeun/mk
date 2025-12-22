@@ -393,7 +393,115 @@
             font-weight: 600;
           }
         }
-        
+
+        .word-meaning{
+          &__wrapper{
+            margin: 24px 0;
+            padding: 20px;
+            border-radius: var(--radius-lg, 12px);
+            border: 1px solid var(--border-default, #464646);
+            background: var(--bg-subtle, #2F2F2F);
+            color: var(--text-primary, #F0F0F0);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 150%;
+          }
+          &__title{
+            margin-bottom: 10px;
+            svg{
+              vertical-align: middle;
+            }
+          }
+          &__body{
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+
+        .expert-comment{
+          &__wrapper{
+            margin: 24px 0;
+          }
+        }
+
+        .expert-comment-card{
+          display: flex;
+          padding: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          flex: 1 0 0;
+          border-radius: var(--radius-lg, 12px);
+          border: 1px solid #FF800B;
+          background: var(--bg-subtle, #2F2F2F);
+          max-width: 800px;
+          margin: 0 auto;
+
+          @media (max-width: 991px) {
+            padding: 16px;
+            max-width: 600px;
+          }
+
+          @media (max-width: 640px) {
+            padding: 12px;
+            max-width: 100%;
+            margin: 0 10px;
+          }
+
+          &__header{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            align-self: stretch;
+          }
+
+          &__title{
+            display: flex;
+            align-items: center;
+            flex: 1 0 0;
+            color: #FF7A00;
+            font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 150%;
+
+            @media (max-width: 991px) {
+              font-size: 14px;
+            }
+
+            @media (max-width: 640px) {
+              font-size: 13px;
+            }
+          }
+
+          &__icon{
+            display: flex;
+            align-items: center;
+
+            svg{
+              width: 32px;
+              height: 32px;
+            }
+          }
+
+          &__content{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
+          }
+
+          &__text{
+            flex: 1 0 0;
+            color: var(--text-primary, #F0F0F0);
+            font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 150%;
+            margin: 0;
+          }
+        }
+
       }
     }
   }
