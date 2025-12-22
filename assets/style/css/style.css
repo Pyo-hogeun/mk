@@ -6021,11 +6021,30 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   /* 18px */
 }
 .voice-popup__body .notice {
+  margin-top: 12px;
   color: var(--text-secondary, #7B7B7B);
   font-size: 12px;
   font-weight: 500;
   line-height: 150%;
   /* 18px */
+}
+.voice-popup__body .listen-script {
+  display: flex;
+  width: 290px;
+  padding: 19px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  align-self: stretch;
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-default, #1D1D1D);
+  color: var(--text-primary, #F0F0F0);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  /* 21px */
+  margin-top: 8px;
 }
 .voice-popup__footer {
   display: flex;
@@ -6046,7 +6065,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   color: var(--text-primary, #F0F0F0);
   font-size: 16px;
   font-weight: 600;
-  line-height: 140%; /* 22.4px */
+  line-height: 140%;
+  /* 22.4px */
 }
 .voice-popup__footer .btn-submit {
   background: var(--orange-100, #FF7A00);
