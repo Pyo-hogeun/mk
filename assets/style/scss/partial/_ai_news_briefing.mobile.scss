@@ -43,7 +43,6 @@
       font-size: 15px;
       font-weight: 400;
       line-height: 23px;
-      margin-top: 12px;
     }
 
     &__settings {
@@ -159,8 +158,7 @@
         &.outline{
           border-radius: 100px;
           border: 1px solid var(--base-gradation, #FF800B);
-          background: var(--gray-dark, #1D1D1D);
-          @include GradientBorder;
+          @include GradientBorderDark;
         }
 
         font-size: 12px;

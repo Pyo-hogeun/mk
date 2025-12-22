@@ -6108,24 +6108,26 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: var(--spacing-xl, 24px);
+  }
+  .customized-review__body .news-list .news-list__item {
+    height: 387px;
   }
   .customized-review__body .news-list .news-list__item a {
     display: flex;
-    gap: 12px;
-    padding: 14px 0;
-    align-items: center;
-    border-top: 1px solid var(--border-default);
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    padding: 0;
+    border: 0;
+    width: 100%;
   }
   .customized-review__body .news-list .news-list__item a .news-thumb {
-    flex: 0 0 110px;
-    height: 72px;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    background: var(--bg-subtle);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    height: 207px;
+    align-self: stretch;
+    border-radius: 12px 12px 0 0;
+    flex: none;
+    border: 0;
     background-image: url("../../../assets/images/img-placeholder.png");
     background-size: cover;
   }
@@ -6134,41 +6136,53 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    display: block;
   }
   .customized-review__body .news-list .news-list__item a .news-content {
     display: flex;
+    padding: 20px;
     flex-direction: column;
-    gap: 4px;
-    position: relative;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #464646;
+    background: #1D1D1D;
     flex: 1 1 auto;
-    min-width: 0;
   }
   .customized-review__body .news-list .news-list__item a .news-content .news-badge {
-    display: inline-flex;
-    background: var(--orange-100);
+    display: flex;
+    height: 20px;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 100px;
+    background: var(--orange-200);
     color: var(--white);
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 150%;
+    box-shadow: none;
+  }
+  .customized-review__body .news-list .news-list__item a .news-content .news-title {
+    align-self: stretch;
+    color: #F0F0F0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
   }
   .customized-review__body .news-list .news-list__item a .news-content .news-summary {
-    margin: 0;
-    color: var(--text-secondary);
-    font-size: 13px;
-    line-height: 1.4;
-    overflow: hidden;
+    align-self: stretch;
+    color: #7B7B7B;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    color: var(--text-primary, #F0F0F0);
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 150%; /* 22.5px */
   }
 }
 @media screen and (max-width: 480px) {
@@ -6484,16 +6498,36 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background: var(--orange-100);
   }
   .customized-review .swiper-wrapper {
-    display: block;
+    display: grid;
+    gap: 32px;
   }
   .customized-review .swiper-wrapper .news-list {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl, 24px);
   }
-  .customized-review .swiper-wrapper .news-list .message {
+  .customized-review .swiper-wrapper .news-list__item a {
+    height: 379px;
+  }
+  .customized-review .swiper-wrapper .news-list__item a .news-content {
+    flex: 1 1 auto;
+  }
+  .customized-review .swiper-wrapper .news-list__item a .news-content .news-summary {
+    color: var(--text-primary, #F0F0F0);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+  }
+  .customized-review .swiper-wrapper .news-list__item a .news-content .message {
     color: var(--text-secondary, #7B7B7B);
     font-size: 14px;
     font-weight: 400;
     line-height: 150%; /* 21px */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .briefing-tag {
     display: flex;
@@ -6547,7 +6581,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 400;
     line-height: 23px;
-    margin-top: 12px;
   }
   .ai-news-briefing__settings {
     display: flex;
@@ -6652,9 +6685,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .briefing-item__badges .badge.outline {
     border-radius: 100px;
     border: 1px solid var(--base-gradation, #FF800B);
-    background: var(--gray-dark, #1D1D1D);
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .briefing-item__badges .badge {
     font-size: 12px;
