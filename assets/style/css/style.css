@@ -6972,3 +6972,323 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     transform: translateX(20px);
   }
 }
+.news-briefing-settings {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 351px;
+  margin: 0 auto;
+  background: var(--bg-default, #1D1D1D);
+  border: 1px solid var(--border-default, #464646);
+  border-radius: var(--radius-lg, 12px) var(--radius-lg, 12px) 0 0;
+}
+.news-briefing-settings__container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px;
+  gap: var(--spacing-xl, 24px);
+}
+.news-briefing-settings__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.news-briefing-settings__header .title {
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 140%;
+  margin: 0;
+}
+.news-briefing-settings__header .btn-close {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary, #F0F0F0);
+  transition: opacity 0.2s;
+}
+.news-briefing-settings__header .btn-close:hover {
+  opacity: 0.7;
+}
+.news-briefing-settings__header .btn-close svg {
+  width: 28px;
+  height: 28px;
+}
+.news-briefing-settings__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl, 24px);
+}
+.news-briefing-settings__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+}
+.news-briefing-settings__footer .btn {
+  display: flex;
+  height: var(--height-md, 40px);
+  padding: 9px 0;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-tight, 4px);
+  flex: 1 0 0;
+  border-radius: var(--radius-md, 8px);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.news-briefing-settings__footer .btn:hover {
+  opacity: 0.9;
+}
+.news-briefing-settings__footer .btn:active {
+  opacity: 0.8;
+}
+.news-briefing-settings__footer .btn-cancel {
+  border: 1px solid var(--border-default, #464646);
+  background: var(--bg-default, #1D1D1D);
+  color: var(--text-primary, #F0F0F0);
+}
+.news-briefing-settings__footer .btn-save {
+  border: 0;
+  background: var(--orange-100, #FF7A00);
+  color: var(--white, #FFFFFF);
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 12px);
+}
+.settings-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.settings-section .section-header .section-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 8px);
+  flex: 1 0 0;
+}
+.settings-section .section-header .section-count {
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.settings-section .section-header-simple {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 12px);
+}
+.settings-section .section-title {
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 140%;
+  margin: 0;
+}
+.settings-section .section-description {
+  color: var(--text-secondary, #7B7B7B);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+}
+
+.category-pills {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: var(--spacing-sm, 8px) var(--gap-tight, 4px);
+  flex-wrap: wrap;
+}
+.category-pills .pill-btn {
+  display: flex;
+  padding: 6px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid var(--border-default, #464646);
+  background: var(--bg-default, #1D1D1D);
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.category-pills .pill-btn:hover {
+  opacity: 0.9;
+}
+.category-pills .pill-btn.active {
+  background: var(--orange-100, #FF7A00);
+  border-color: var(--orange-100, #FF7A00);
+  color: var(--white, #FFFFFF);
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-sm, 8px);
+}
+
+.dropdown-btn {
+  display: flex;
+  height: var(--height-md, 40px);
+  padding: 9px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-tight, 4px);
+  align-self: stretch;
+  border-radius: var(--radius-md, 8px);
+  background: var(--surface-default, #2F2F2F);
+  border: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.dropdown-btn:hover {
+  opacity: 0.9;
+}
+.dropdown-btn .dropdown-label {
+  color: var(--text-primary, #F0F0F0);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  flex: 1;
+}
+.dropdown-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.notification-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl, 24px);
+}
+.notification-toggle .notification-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-sm, 8px);
+  flex: 1 0 0;
+}
+
+.toggle-circle {
+  display: flex;
+  width: 52px;
+  height: 32px;
+  padding: 4px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--surface-default, #2F2F2F);
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+.toggle-circle:hover {
+  opacity: 0.9;
+}
+.toggle-circle .toggle-knob {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--white, #FFFFFF);
+  transition: transform 0.3s ease;
+}
+.toggle-circle.active {
+  background: var(--orange-100, #FF7A00);
+}
+.toggle-circle.active .toggle-knob {
+  transform: translateX(20px);
+}
+
+.dual-dropdown {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 12px);
+}
+.dual-dropdown .dropdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1 0 0;
+}
+
+.comobobox-selector {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  flex-direction: column;
+  align-items: center;
+}
+.comobobox-selector .option-btn {
+  display: flex;
+  height: var(--height-md, 40px);
+  padding: 3px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border: 1px solid var(--border-default, #464646);
+  background: var(--bg-subtle, #2F2F2F);
+  color: var(--text-secondary, #7B7B7B);
+  text-align: center;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.comobobox-selector .option-btn:first-child {
+  border-radius: var(--radius-md, 8px) var(--radius-md, 8px) 0 0;
+  padding: 3px 0;
+}
+.comobobox-selector .option-btn:last-child {
+  border-radius: 0 0 var(--radius-md, 8px) var(--radius-md, 8px);
+}
+.comobobox-selector .option-btn:hover {
+  opacity: 0.9;
+}
+.comobobox-selector .option-btn.active {
+  border-color: var(--text-primary, #F0F0F0);
+  background: var(--bg-default, #1D1D1D);
+  color: var(--text-primary, #F0F0F0);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 480px) {
+  .bottom-sheet {
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
+  .bottom-sheet.is-open {
+    transform: translate(-50%, 0);
+  }
+}
