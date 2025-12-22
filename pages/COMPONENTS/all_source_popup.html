@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>전체 출처 팝업 - Components</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  
+</head>
+<body class="dark">
+  <div class="bottom-sheet all-source-popup is-open" role="dialog" aria-modal="true" aria-label="전체 출처 팝업">
+    <div class="all-source-popup__container">
+      <div class="all-source-popup__header">
+        <div class="header-title-wrapper">
+          <h2 class="title">전체 출처</h2>
+          <span class="badge">20개</span>
+        </div>
+        <button type="button" class="btn-close" data-bottom-sheet-dismiss aria-label="닫기">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.4104 13.2929C16.0198 13.6835 16.0198 14.3166 16.4104 14.7071L21.8737 20.1705C22.0612 20.358 22.1666 20.6124 22.1666 20.8776V21.1667C22.1666 21.719 21.7189 22.1667 21.1666 22.1667H20.8775C20.6123 22.1667 20.3579 22.0613 20.1704 21.8738L14.707 16.4105C14.3165 16.02 13.6833 16.02 13.2928 16.4105L7.82948 21.8738C7.64194 22.0613 7.38759 22.1667 7.12237 22.1667H6.83325C6.28097 22.1667 5.83325 21.719 5.83325 21.1667V20.8776C5.83325 20.6124 5.93861 20.358 6.12615 20.1705L11.5895 14.7071C11.98 14.3166 11.98 13.6835 11.5895 13.2929L6.12615 7.8296C5.93861 7.64206 5.83325 7.38771 5.83325 7.12249V6.83337C5.83325 6.28109 6.28097 5.83337 6.83325 5.83337H7.12237C7.38759 5.83337 7.64194 5.93873 7.82948 6.12627L13.2928 11.5896C13.6833 11.9801 14.3165 11.9801 14.707 11.5896L20.1704 6.12627C20.3579 5.93873 20.6122 5.83337 20.8775 5.83337H21.1666C21.7189 5.83337 22.1666 6.28109 22.1666 6.83337V7.12249C22.1666 7.38771 22.0612 7.64206 21.8737 7.8296L16.4104 13.2929Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="all-source-popup__body">
+        <div class="source-list">
+          <article class="source-item">
+            <div class="source-avatar"></div>
+            <div class="source-content">
+              <div class="source-meta">매일경제 • 2025.01.14</div>
+              <h3 class="source-title">반도체 슈퍼사이클 온다... 삼성전자 목표가 상향</h3>
+            </div>
+          </article>
+
+          <article class="source-item">
+            <div class="source-avatar"></div>
+            <div class="source-content">
+              <div class="source-meta">매일경제 • 2025.01.14</div>
+              <h3 class="source-title">반도체 슈퍼사이클 온다... 삼성전자 목표가 상향</h3>
+            </div>
+          </article>
+
+          <article class="source-item">
+            <div class="source-avatar"></div>
+            <div class="source-content">
+              <div class="source-meta">aiaiai • 2025.01.14</div>
+              <h3 class="source-title">반도체 슈퍼사이클 온다... 삼성전자 목표가 상향</h3>
+            </div>
+          </article>
+          <article class="source-item">
+            <div class="source-avatar"></div>
+            <div class="source-content">
+              <div class="source-meta">aiaiai • 2025.01.14</div>
+              <h3 class="source-title">반도체 슈퍼사이클 온다... 삼성전자 목표가 상향</h3>
+            </div>
+          </article>
+          <article class="source-item">
+            <div class="source-avatar"></div>
+            <div class="source-content">
+              <div class="source-meta">aiaiai • 2025.01.14</div>
+              <h3 class="source-title">반도체 슈퍼사이클 온다... 삼성전자 목표가 상향</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const confirmButton = document.querySelector('[data-bottom-sheet-dismiss]');
+
+    confirmButton.addEventListener('click', () => {
+      console.log('확인 button clicked');
+    });
+  </script>
+</body>
+</html>
