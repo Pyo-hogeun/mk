@@ -5240,7 +5240,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-shrink: 0;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: red;
+    color: var(--text-primary);
   }
   .chatbot__footer .btn-send:hover {
     opacity: 0.8;
