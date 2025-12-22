@@ -32,7 +32,21 @@
     <p class="meta">/assets/images 안의 모든 이미지 파일을 한눈에 확인하세요.</p>
   </header>
   <main>
-    <div class="empty">검색된 이미지가 없습니다.</div>
+    <section class="grid">
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="../assets/images/img-placeholder.png" data-asset-path="assets/images/img-placeholder.png" alt="img-placeholder.png"></div>
+          <div class="info">
+            <strong>img-placeholder.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">987 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article></section>
   </main>
   <script>
     const cards = document.querySelectorAll('.card');
