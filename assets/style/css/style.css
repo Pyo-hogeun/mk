@@ -6972,11 +6972,27 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     transform: translateX(20px);
   }
 }
+@media screen and (min-width: 480px) {
+  .news-briefing-settings.bottom-sheet {
+    bottom: unset;
+    top: 100px;
+    left: unset;
+    right: 0;
+    transform: translate(calc(-50% + 100px), 0);
+    border-radius: var(--radius-lg, 12px);
+  }
+  .news-briefing-settings.bottom-sheet.is-open {
+    transform: translate(calc(-50% + 100px), 0);
+  }
+  .news-briefing-settings.bottom-sheet .news-briefing-settings__container {
+    padding: 0;
+  }
+}
 .news-briefing-settings {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 351px;
+  max-width: 480px;
   margin: 0 auto;
   background: var(--bg-default, #1D1D1D);
   border: 1px solid var(--border-default, #464646);
