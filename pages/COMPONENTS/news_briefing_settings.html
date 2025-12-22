@@ -128,6 +128,7 @@
       </div>
     </div>
   </div>
+  <div class="combobox-dim" aria-hidden="true"></div>
 
   <script>
     const closeBtn = document.querySelector('.btn-close');
@@ -175,13 +176,59 @@
       console.log('Toggle switched:', !isActive);
     });
 
-    const weekdayBtns = document.querySelectorAll('.option-btn');
-    weekdayBtns.forEach((btn) => {
+    const comboboxDim = document.querySelector('.combobox-dim');
+    const dropdownButtons = Array.from(document.querySelectorAll('.dropdown-btn'));
+    let openedCombobox = null;
+
+    const closeCombobox = () => {
+      if (openedCombobox) {
+        openedCombobox.classList.remove('is-open');
+        openedCombobox = null;
+      }
+      comboboxDim.classList.remove('is-open');
+    };
+
+    comboboxDim.addEventListener('click', closeCombobox);
+
+    dropdownButtons.forEach((btn) => {
+      const combobox = btn.nextElementSibling?.classList?.contains('comobobox-selector')
+        ? btn.nextElementSibling
+        : null;
+
+      if (!combobox) return;
+
       btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        const selectedDays = Array.from(document.querySelectorAll('.option-btn.active'))
-          .map(b => b.dataset.day);
-        console.log('Selected days:', selectedDays);
+        if (openedCombobox === combobox) {
+          closeCombobox();
+          return;
+        }
+
+        if (openedCombobox) {
+          openedCombobox.classList.remove('is-open');
+        }
+
+        openedCombobox = combobox;
+        combobox.classList.add('is-open');
+        comboboxDim.classList.add('is-open');
+      });
+
+      combobox.querySelectorAll('.option-btn').forEach((option) => {
+        option.addEventListener('click', () => {
+          const isMulti = combobox.classList.contains('multie');
+          const label = btn.querySelector('.dropdown-label');
+
+          if (isMulti) {
+            option.classList.toggle('active');
+            const selectedValues = Array.from(combobox.querySelectorAll('.option-btn.active'))
+              .map((el) => el.dataset.day);
+            label.textContent = selectedValues.join(', ');
+          } else {
+            combobox.querySelectorAll('.option-btn.active').forEach((el) => el.classList.remove('active'));
+            option.classList.add('active');
+            label.textContent = option.dataset.day;
+            closeCombobox();
+          }
+        });
       });
     });
   </script>

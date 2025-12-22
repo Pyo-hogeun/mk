@@ -298,12 +298,38 @@
   }
 }
 
-.comobobox-selector {
-  display: flex;
-  width: 100%;
-  max-width: 300px;
-  flex-direction: column;
+.combobox-dim {
+  position: fixed;
+  inset: 0;
+  display: none;
   align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.comobobox-selector {
+  display: none;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: var(--bg-default, #191919);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  width: min(360px, 90vw);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2001;
+
+  &.is-open {
+    display: block;
+  }
 
   .option-btn {
     display: flex;
