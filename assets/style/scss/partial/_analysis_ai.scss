@@ -508,5 +508,15 @@
 
       }
     }
+    .related-news{
+      &__wrapper{
+        .briefing-item__card{
+          box-shadow: none;
+          .briefing-item__date{
+            margin-top: 5px;
+          }
+        }
+      }
+    }
   }
 }

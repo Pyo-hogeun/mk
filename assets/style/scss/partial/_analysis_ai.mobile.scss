@@ -70,6 +70,9 @@
           font-weight: 700;
           line-height: 140%; /* 25.2px */
           margin: 24px 0 12px;
+          &:nth-of-type(1){
+            margin-top: 0;
+          }
         }
 
         .multi-faceted{
@@ -465,6 +468,19 @@
           }
         }
 
+      }
+    }
+    .related-news{
+      &__wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        .briefing-item__card{
+          box-shadow: none;
+          .briefing-item__date{
+            margin-top: 5px;
+          }
+        }
       }
     }
   }
