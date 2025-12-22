@@ -7256,7 +7256,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   display: none;
   max-height: 70vh;
   overflow-y: auto;
-  background: var(--bg-default, #191919);
   border-radius: 16px;
   padding: 12px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
@@ -7272,6 +7271,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 .comobobox-selector .option-btn {
   display: flex;
+  width: 100%;
   height: var(--height-md, 40px);
   padding: 3px 0;
   justify-content: center;
