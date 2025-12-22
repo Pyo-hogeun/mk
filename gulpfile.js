@@ -257,7 +257,6 @@ function generateIndex(done) {
 <section class="list-panel">
   <div class="page-header">
     <h1>매일경제 HTML 파일 목록</h1>
-    <div class="meta">생성일: ${now.toLocaleString()}</div>
   </div>
 `;
 

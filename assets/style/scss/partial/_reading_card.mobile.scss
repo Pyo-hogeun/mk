@@ -1,7 +1,7 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
-@media screen and (min-width: $mobile) {
+@media screen and (max-width: $mobile) {
   .reading-card {
     display: flex;
     padding: 20px 12px;

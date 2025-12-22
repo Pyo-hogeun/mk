@@ -1,0 +1,90 @@
+@use 'variables'as *;
+
+@media screen and (min-width: $mobile) {
+  .customized-detail {
+    .play-button-wrapper {
+      .btn-play {
+        display: inline-flex;
+        height: var(--height-md, 40px);
+        padding: 0 20px;
+        align-items: center;
+        background-color: transparent;
+        border: 0;
+        border-radius: var(--radius-pill, 999px);
+        border: 1px solid var(--white, #FFF);
+        background: rgba(255, 255, 255, 0.80);
+
+        .label {
+          color: var(--orange-100, #FF7A00);
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 150%;
+          /* 22.5px */
+        }
+        .is-hidden {
+          display: none;
+        }
+      }
+    }
+  }
+  .nav-tabs {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    min-width: 240px;
+    min-height: 40px;
+    width: $pcContainerSub;
+    height: var(--height-md, 40px);
+    color: var(--text-secondary, #7B7B7B);
+    text-align: center;
+    padding: 8px 20px 0;
+  
+    .nav-tabs-container {
+      display: flex;
+      width: 100%;
+      align-items: start;
+      justify-content: start;
+  
+      .nav-tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex: 1;
+        height: 40px;
+        gap: var(--gap-normal, 8px);
+  
+        &.active{
+          box-shadow: inset 0 -2px 0px var(--orange-200, #E55204);
+          .tab-label {
+            color: var(--text-primary, #111111);
+          }
+        }
+  
+        .tab-label {
+          color: var(--text-secondary, #7B7B7B);
+          cursor: pointer;
+        }
+      }
+  
+      @media (max-width: $mobile) {
+        max-width: 100%;
+  
+        
+      }
+    }
+  }
+  .reading-card__wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 10dvh;
+    gap: 20px;
+    .source-info{
+      margin-top: 4px;
+    }
+  }
+
+}
