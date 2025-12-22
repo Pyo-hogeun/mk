@@ -13,7 +13,7 @@
 
 <body class="dark">
 
-  <div class="container">
+  <div class="container customized-detail">
     <div class="report-header">
       <div class="header-content">
         <div class="header-top-bar">
@@ -38,14 +38,14 @@
             <div class="report-date">생성 : 2025-12-1</div>
 
             <div class="header-actions-container">
-              <div class="play-button">
+              <div class="play-button-wrapper">
                 <button class="btn-play">
                   <!-- 재생 -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="play" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 5.14001V19.14L19 12.14L8 5.14001Z" fill="#FF7A00"/>
                   </svg>
                   <!-- 정지 -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stop" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 18H6V6H18V18Z" fill="#FF7A00"/>
                   </svg>
                   <span class="label">재생 하기</span>
@@ -81,346 +81,60 @@
       </div>
     </div>
 
+    <nav class="nav-tabs">
+      <div class="nav-tabs-container">
+        <div class="nav-tab active" data-target="content__brief">
+          <div class="tab-label">뉴스 브리핑</div>
+        </div>
+        <div class="nav-tab" data-target="content__review">
+          <div class="tab-label">맞춤형 해설</div>
+        </div>
+      </div>
+    </nav>
     <div class="report-body content-wrapper">
-      <div class="content__title" style="margin-bottom: 12px;">
-        <h3>
-          <span>기업·종목분석</span>
-          <i class="ai-interest-sheet" role="button" tabindex="0" data-bottom-sheet-target="ai-interest-sheet" aria-label="기업·종목분석">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13.2 18C13.2 18.4418 13.5582 18.8 14 18.8C14.4418 18.8 14.8 18.4418 14.8 18C14.8 17.5582 14.4418 17.2 14 17.2C13.5582 17.2 13.2 17.5582 13.2 18ZM14 6C12.9494 6 11.9091 6.20693 10.9385 6.60896C9.96793 7.011 9.08601 7.60028 8.34315 8.34315C6.84285 9.84344 6 11.8783 6 14C6 16.1217 6.84285 18.1566 8.34315 19.6569C9.08601 20.3997 9.96793 20.989 10.9385 21.391C11.9091 21.7931 12.9494 22 14 22C16.1217 22 18.1566 21.1571 19.6569 19.6569C21.1571 18.1566 22 16.1217 22 14C22 12.9494 21.7931 11.9091 21.391 10.9385C20.989 9.96793 20.3997 9.08601 19.6569 8.34315C18.914 7.60028 18.0321 7.011 17.0615 6.60896C16.0909 6.20693 15.0506 6 14 6ZM14 20.4C10.472 20.4 7.6 17.528 7.6 14C7.6 10.472 10.472 7.6 14 7.6C17.528 7.6 20.4 10.472 20.4 14C20.4 17.528 17.528 20.4 14 20.4ZM14 9.2C13.1513 9.2 12.3374 9.53714 11.7373 10.1373C11.3276 10.5469 11.0404 11.0563 10.8995 11.6083C10.7902 12.0364 11.1582 12.4 11.6 12.4C12.0418 12.4 12.3841 12.0206 12.5959 11.6329C12.6683 11.5003 12.7598 11.3774 12.8686 11.2686C13.1687 10.9686 13.5757 10.8 14 10.8C14.4243 10.8 14.8313 10.9686 15.1314 11.2686C15.4314 11.5687 15.6 11.9757 15.6 12.4C15.6 13.8156 13.7214 13.8222 13.2883 15.6055C13.184 16.0349 13.5582 16.4 14 16.4C14.4418 16.4 14.7814 16.0236 14.9738 15.6258C15.5253 14.4853 17.2 14.0707 17.2 12.4C17.2 11.5513 16.8629 10.7374 16.2627 10.1373C15.6626 9.53714 14.8487 9.2 14 9.2Z" fill="#7B7B7B"></path>
-            </svg>
-          </i>
-        </h3>
+      <div class="content__brief content-section is-active">
+        <div class="content__title" style="margin-bottom: 12px;">
+          <h3>
+            <span>뉴스 브리핑</span>
+            <i class="ai-interest-sheet" role="button" tabindex="0" data-bottom-sheet-target="ai-interest-sheet" aria-label="AI 뉴스 브리핑">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.2 18C13.2 18.4418 13.5582 18.8 14 18.8C14.4418 18.8 14.8 18.4418 14.8 18C14.8 17.5582 14.4418 17.2 14 17.2C13.5582 17.2 13.2 17.5582 13.2 18ZM14 6C12.9494 6 11.9091 6.20693 10.9385 6.60896C9.96793 7.011 9.08601 7.60028 8.34315 8.34315C6.84285 9.84344 6 11.8783 6 14C6 16.1217 6.84285 18.1566 8.34315 19.6569C9.08601 20.3997 9.96793 20.989 10.9385 21.391C11.9091 21.7931 12.9494 22 14 22C16.1217 22 18.1566 21.1571 19.6569 19.6569C21.1571 18.1566 22 16.1217 22 14C22 12.9494 21.7931 11.9091 21.391 10.9385C20.989 9.96793 20.3997 9.08601 19.6569 8.34315C18.914 7.60028 18.0321 7.011 17.0615 6.60896C16.0909 6.20693 15.0506 6 14 6ZM14 20.4C10.472 20.4 7.6 17.528 7.6 14C7.6 10.472 10.472 7.6 14 7.6C17.528 7.6 20.4 10.472 20.4 14C20.4 17.528 17.528 20.4 14 20.4ZM14 9.2C13.1513 9.2 12.3374 9.53714 11.7373 10.1373C11.3276 10.5469 11.0404 11.0563 10.8995 11.6083C10.7902 12.0364 11.1582 12.4 11.6 12.4C12.0418 12.4 12.3841 12.0206 12.5959 11.6329C12.6683 11.5003 12.7598 11.3774 12.8686 11.2686C13.1687 10.9686 13.5757 10.8 14 10.8C14.4243 10.8 14.8313 10.9686 15.1314 11.2686C15.4314 11.5687 15.6 11.9757 15.6 12.4C15.6 13.8156 13.7214 13.8222 13.2883 15.6055C13.184 16.0349 13.5582 16.4 14 16.4C14.4418 16.4 14.7814 16.0236 14.9738 15.6258C15.5253 14.4853 17.2 14.0707 17.2 12.4C17.2 11.5513 16.8629 10.7374 16.2627 10.1373C15.6626 9.53714 14.8487 9.2 14 9.2Z" fill="#7B7B7B"></path>
+              </svg>
+            </i>
+          </h3>
+        </div>
+
+        <div class="reading-card__wrapper">
+          <div class="reading-card">
+            <div class="reading-card__header">
+              <div class="reading-card__category-badge">경제</div>
+              <div class="reading-card__time">0:00</div>
+              <div class="reading-card__playing-status">
+                <div class="reading-card__animation-bars">
+                  <div class="reading-card__bar"></div>
+                  <div class="reading-card__bar"></div>
+                  <div class="reading-card__bar"></div>
+                </div>
+                <div class="reading-card__playing-label">재생 중</div>
+              </div>
+            </div>
+            <div class="reading-card__content">
+              <div class="reading-card__text">도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에 공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.<br>AI 반도체 시장 급성장과 부동산 정책 변화, K-컬처 수출 확대 등 11월 한 달간의 주요 경제·기업·문화 트렌드를 종합 분석</div>
+            </div>
+            <button class="reading-card__source-button" type="button">매일경제 +3</button>
+          </div>
+        </div>
+
+
       </div>
-
-      <div class="report-body__summary">
-        <div class="industry-issues-container">
-          <div class="industry-issues-list">
-            <div class="industry-issue-item">
-              <span class="badge badge-orange-rounded">AI 분석</span>
-              <p class="issue-text">생성형 AI 서비스 확대와 클라우드 전환 가속화로 수혜</p>
-            </div>
-  
-            <div class="issue-divider-line"></div>
-  
-            <div class="industry-issue-item">
-              <span class="badge badge-red-pill">강세지속</span>
-              <p class="issue-text">기업 클라우드 전환 가속, AI 서비스 구독 매출 확대</p>
-            </div>
-  
-            <div class="industry-issue-item">
-              <span class="badge badge-blue-pill">리스크</span>
-              <p class="issue-text">빅테크 규제 강화, 광고 경기 둔화 우려</p>
-            </div>
-          </div>
-        </div>
-
-        <h4>이슈 타임라인</h4>
-        <div class="issue-timeline">
-          <div class="stock-timeline-card">
-            <div class="stock-timeline-header">
-              <div class="company-name">SK하이닉스</div>
-              <div class="price-info">
-                <div class="current-price">168,500원</div>
-                <div class="price-change">▲ 5,200 (3.2%)</div>
-              </div>
-            </div>
-
-            <div class="timeline-chart-wrapper">
-              <div class="chart-card">
-                <canvas id="timelineChartJs" class="timeline-chart" aria-label="Chart.js 주가 라인 차트"></canvas>
-              </div>
-
-              <div class="timeline-legend">
-                <div class="legend-item">
-                  <div class="legend-marker legend-marker--positive"></div>
-                  <div class="legend-label">호재성 이슈</div>
-                </div>
-                <div class="legend-item">
-                  <div class="legend-marker legend-marker--negative"></div>
-                  <div class="legend-label">악재성 이슈</div>
-                </div>
-                <div class="legend-item">
-                  <div class="legend-marker legend-marker--neutral"></div>
-                  <div class="legend-label">일반 이슈</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h4>트렌드 분석</h4>
-        <div class="analysis-trend">
-          <p>
-            최근 AI 반도체 테마는 엔비디아의 실적 호조와 차세대 AI 가속기 로드맵 발표에 힘입어 강세를 보이고 있습니다. 특히 HBM 수요가 폭증하며 SK하이닉스가 16만원선을 돌파하는 등 신고가를 경신했습니다. 다만 단기 급등에 따른 차익 실현 매물이 출회되며 변동성이 확대되는 구간에 진입했습니다. 외국인 수급은 여전히 견조하지만, 미국 기술주 조정 여파에 따라 단기적인 숨고르기 장세가 나타날 수 있으므로 분할 매수 관점이 유효합니다.
-          </p>
-
-          <a href="" class="analysis-trend__source">
-            매일경제 +1
-          </a>
-        </div>
-        <h4>관련 종목</h4>
-        <div class="related-stocks">
-          <div class="related-stocks__item negative">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-               0.5%</span>
-          </div>
-          <div class="related-stocks__item positive">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg> 0.5%</span>
-          </div>
-          <div class="related-stocks__item negative">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-               0.5%</span>
-          </div>
-          <div class="related-stocks__item positive">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg> 0.5%</span>
-          </div>
-          <div class="related-stocks__item negative">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-               0.5%</span>
-          </div>
-          <div class="related-stocks__item positive">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg> 0.5%</span>
-          </div>
-          <div class="related-stocks__item negative">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-               0.5%</span>
-          </div>
-          <div class="related-stocks__item positive">
-            <span class="name">삼성전자</span>
-            <span class="price">74,200원</span>
-            <span class="percent"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.5 6L6 9.5L2.5 6" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 2.5L6 9.5" stroke="#2175FF" stroke-width="1.4988" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg> 0.5%</span>
-          </div>
-
-        </div>
-        <h4>뉴스 타임라인
-          <button type="button" class="btn-set-period">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1812_267)">
-              <path d="M3.50024 2.99979V0.999988C3.50024 0.723845 3.72391 0.500183 4.00005 0.500183C4.27619 0.500183 4.49985 0.723845 4.49985 0.999988V2.99979C4.49985 3.27593 4.27619 3.50018 4.00005 3.50018C3.72391 3.50018 3.50024 3.27593 3.50024 2.99979Z" fill="#7B7B7B"/>
-              <path d="M7.50024 2.99979V0.999988C7.50024 0.723845 7.72391 0.500183 8.00005 0.500183C8.27619 0.500183 8.49985 0.723845 8.49985 0.999988V2.99979C8.49985 3.27593 8.27619 3.50018 8.00005 3.50018C7.72391 3.50018 7.50024 3.27593 7.50024 2.99979Z" fill="#7B7B7B"/>
-              <path d="M10.0002 3.00018C10.0002 2.72404 9.776 2.49979 9.49986 2.49979H2.50024C2.2241 2.49979 1.99985 2.72404 1.99985 3.00018V9.99979C1.99985 10.2759 2.2241 10.5002 2.50024 10.5002H9.49986C9.776 10.5002 10.0002 10.2759 10.0002 9.99979V3.00018ZM10.9999 9.99979C10.9999 10.8282 10.3283 11.4998 9.49986 11.4998H2.50024C1.67182 11.4998 1.00024 10.8282 1.00024 9.99979V3.00018C1.00024 2.17176 1.67182 1.50018 2.50024 1.50018H9.49986C10.3283 1.50018 10.9999 2.17176 10.9999 3.00018V9.99979Z" fill="#7B7B7B"/>
-              <path d="M10.5001 4.50018C10.7762 4.50018 10.9999 4.72385 10.9999 4.99999C10.9999 5.27613 10.7762 5.49979 10.5001 5.49979H1.50005C1.22391 5.49979 1.00024 5.27613 1.00024 4.99999C1.00024 4.72385 1.22391 4.50018 1.50005 4.50018H10.5001Z" fill="#7B7B7B"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_1812_267">
-              <rect width="12" height="12" fill="white"/>
-              </clipPath>
-              </defs>
-              </svg>
-
-             기간설정</button>
-        </h4>
-        <div class="news-timeline">
-          <div class="news-timeline__container">
-            <div class="timeline-item">
-              <div class="timeline-item__header">
-                <span class="timeline-date">11.25</span>
-                <span class="timeline-time">19:40</span>
-              </div>
-              <div class="timeline-marker"></div>
-              <div class="timeline-news-card">
-                <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/1cb0eb1bf4ee96192d222311774811c592f0900e?placeholderIfAbsent=true" alt="News thumbnail" class="news-card__image">
-                <div class="news-card__content">
-                  <p class="news-card__title">[매일경제 오디오 뉴스] 11월 25일 저녁 주요뉴스</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-item__header">
-                <span class="timeline-date">11.25</span>
-                <span class="timeline-time">14:40</span>
-              </div>
-              <div class="timeline-marker"></div>
-              <div class="timeline-news-card">
-                <img src="https://api.builder.io/api/v1/image/assets/069658042ae543a0a7a7ca4289fe9182/1cb0eb1bf4ee96192d222311774811c592f0900e?placeholderIfAbsent=true" alt="News thumbnail" class="news-card__image">
-                <div class="news-card__content">
-                  <p class="news-card__title">[매일경제 오디오 뉴스] 11월 25일 저녁 주요뉴스</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-item__header">
-                <span class="timeline-date">11.25</span>
-                <span class="timeline-time">19:40</span>
-              </div>
-              <div class="timeline-marker"></div>
-              <div class="timeline-news-card">
-                <div class="news-card__content news-card__content--full">
-                  <p class="news-card__title">[매일경제 오디오 뉴스] 11월 25일 저녁 주요뉴스</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button type="button" class="news-timeline__more">
-            전체 타임라인 보기 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10.7221 20.0621C10.3292 19.672 10.3281 19.0369 10.7196 18.6454L14.6579 14.7071C15.0484 14.3166 15.0484 13.6834 14.6579 13.2929L10.7196 9.35461C10.3281 8.96311 10.3292 8.32802 10.7221 7.9379L10.9596 7.70212C11.3505 7.31395 11.9817 7.31507 12.3713 7.70461L17.9596 13.2929C18.3501 13.6834 18.3501 14.3166 17.9596 14.7071L12.3713 20.2954C11.9817 20.6849 11.3505 20.6861 10.9596 20.2979L10.7221 20.0621Z" fill="#F0F0F0"/>
-              </svg>
-              
-          </button>
-        </div>
+      <div class="content__review content-section"></div>
 
 
 
-        <div class="source-info">
-          <ul class="source-info__thumbnail">
-            <li>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"/>
-                </svg>                
-            </li>
-            <li>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"/>
-                </svg>                
-            </li>
-            <li>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="6" cy="6" r="6" fill="#F0F0F0" fill-opacity="0.7"/>
-                </svg>                
-            </li>
-          </ul>
-          전체 출처 <span class="source-info__badge">3개</span>
-        </div>
-
-        <div class="ai-question-suggestion">
-          <div class="ai-question-suggestion__title">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.99996 1.66663C11.5471 1.66663 13.0308 2.28121 14.1247 3.37517C15.2187 4.46913 15.8333 5.95286 15.8333 7.49996C15.8333 9.48329 14.8416 11.225 13.3333 12.2833V14.1666C13.3333 14.3876 13.2455 14.5996 13.0892 14.7559C12.9329 14.9122 12.721 15 12.5 15H7.49996C7.27895 15 7.06698 14.9122 6.9107 14.7559C6.75442 14.5996 6.66663 14.3876 6.66663 14.1666V12.2833C5.15829 11.225 4.16663 9.48329 4.16663 7.49996C4.16663 5.95286 4.78121 4.46913 5.87517 3.37517C6.96913 2.28121 8.45286 1.66663 9.99996 1.66663ZM7.49996 17.5V16.6666H12.5V17.5C12.5 17.721 12.4122 17.9329 12.2559 18.0892C12.0996 18.2455 11.8876 18.3333 11.6666 18.3333H8.33329C8.11228 18.3333 7.90032 18.2455 7.74404 18.0892C7.58776 17.9329 7.49996 17.721 7.49996 17.5ZM9.99996 3.33329C8.89489 3.33329 7.83508 3.77228 7.05368 4.55368C6.27228 5.33508 5.83329 6.39489 5.83329 7.49996C5.83329 9.20829 6.85829 10.675 8.33329 11.3166V13.3333H11.6666V11.3166C13.1416 10.675 14.1666 9.20829 14.1666 7.49996C14.1666 6.39489 13.7276 5.33508 12.9462 4.55368C12.1648 3.77228 11.105 3.33329 9.99996 3.33329Z" fill="url(#paint0_linear_1812_3737)"/>
-              <defs>
-              <linearGradient id="paint0_linear_1812_3737" x1="7.54731" y1="5.33329" x2="12.507" y2="6.37291" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FFA600"/>
-              <stop offset="1" stop-color="#FACE0B"/>
-              </linearGradient>
-              </defs>
-              </svg>
-               AI 추천 질문
-          </div>
-
-          <div class="ai-question-suggestion__body">
-            <p>
-              <i>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18.6236 11.6774C18.6236 8.84214 16.3555 6.57397 13.5203 6.57397H10.8977C8.06249 6.57397 5.79431 8.84214 5.79431 11.6774C5.79431 14.5125 7.9916 16.7099 10.7559 16.7808L12.1735 19.0489L13.5911 16.7808C16.3555 16.7808 18.6236 14.5125 18.6236 11.6774ZM12.2444 10.8268C12.6697 10.8268 13.0241 11.1812 13.0241 11.6065C13.0241 12.0318 12.6697 12.3862 12.2444 12.3862C11.8191 12.3862 11.4647 12.0318 11.4647 11.6065C11.4647 11.1812 11.8191 10.8268 12.2444 10.8268ZM9.40921 12.457C8.98392 12.457 8.62953 12.1026 8.62953 11.6774C8.62953 11.2521 8.98392 10.8977 9.40921 10.8977C9.83449 10.8977 10.1889 11.2521 10.1889 11.6774C10.1889 12.1026 9.83449 12.457 9.40921 12.457ZM15.0797 12.457C14.6544 12.457 14.3 12.1026 14.3 11.6774C14.3 11.2521 14.6544 10.8977 15.0797 10.8977C15.5049 10.8977 15.8594 11.2521 15.8594 11.6774C15.8594 12.1026 15.5049 12.457 15.0797 12.457Z" fill="#FF7A00"/>
-                  </svg>
-              </i>
-               희토류 관련주 투자 시 주의할 점은?
-            </p>
-            <p>
-              <i>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18.6236 11.6774C18.6236 8.84214 16.3555 6.57397 13.5203 6.57397H10.8977C8.06249 6.57397 5.79431 8.84214 5.79431 11.6774C5.79431 14.5125 7.9916 16.7099 10.7559 16.7808L12.1735 19.0489L13.5911 16.7808C16.3555 16.7808 18.6236 14.5125 18.6236 11.6774ZM12.2444 10.8268C12.6697 10.8268 13.0241 11.1812 13.0241 11.6065C13.0241 12.0318 12.6697 12.3862 12.2444 12.3862C11.8191 12.3862 11.4647 12.0318 11.4647 11.6065C11.4647 11.1812 11.8191 10.8268 12.2444 10.8268ZM9.40921 12.457C8.98392 12.457 8.62953 12.1026 8.62953 11.6774C8.62953 11.2521 8.98392 10.8977 9.40921 10.8977C9.83449 10.8977 10.1889 11.2521 10.1889 11.6774C10.1889 12.1026 9.83449 12.457 9.40921 12.457ZM15.0797 12.457C14.6544 12.457 14.3 12.1026 14.3 11.6774C14.3 11.2521 14.6544 10.8977 15.0797 10.8977C15.5049 10.8977 15.8594 11.2521 15.8594 11.6774C15.8594 12.1026 15.5049 12.457 15.0797 12.457Z" fill="#FF7A00"/>
-                  </svg>
-              </i>
-               미·호주 동맹이 한국 반도체 산업에 미칠 영향은?
-            </p>
-            <p>
-              <i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.6236 11.6774C18.6236 8.84214 16.3555 6.57397 13.5203 6.57397H10.8977C8.06249 6.57397 5.79431 8.84214 5.79431 11.6774C5.79431 14.5125 7.9916 16.7099 10.7559 16.7808L12.1735 19.0489L13.5911 16.7808C16.3555 16.7808 18.6236 14.5125 18.6236 11.6774ZM12.2444 10.8268C12.6697 10.8268 13.0241 11.1812 13.0241 11.6065C13.0241 12.0318 12.6697 12.3862 12.2444 12.3862C11.8191 12.3862 11.4647 12.0318 11.4647 11.6065C11.4647 11.1812 11.8191 10.8268 12.2444 10.8268ZM9.40921 12.457C8.98392 12.457 8.62953 12.1026 8.62953 11.6774C8.62953 11.2521 8.98392 10.8977 9.40921 10.8977C9.83449 10.8977 10.1889 11.2521 10.1889 11.6774C10.1889 12.1026 9.83449 12.457 9.40921 12.457ZM15.0797 12.457C14.6544 12.457 14.3 12.1026 14.3 11.6774C14.3 11.2521 14.6544 10.8977 15.0797 10.8977C15.5049 10.8977 15.8594 11.2521 15.8594 11.6774C15.8594 12.1026 15.5049 12.457 15.0797 12.457Z" fill="#FF7A00"/>
-                </svg></i>
-               중국의 희토류 보복 가능성은 어느 정도인가요?
-            </p>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 
-  <div class="layer-popup" id="set-period-popup" aria-hidden="true">
-    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
-    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="기간 설정">
-      <div class="layer-popup__content">
-        <div class="set-period">
-          <div class="set-period__header">
-            <h2 class="set-period__title">기간 설정</h2>
-            <button class="set-period__close" type="button" aria-label="닫기">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="set-period__close-icon">
-                <path d="M16.4105 13.2929C16.02 13.6834 16.02 14.3166 16.4105 14.7071L21.8738 20.1704C22.0613 20.358 22.1667 20.6123 22.1667 20.8775V21.1666C22.1667 21.7189 21.719 22.1666 21.1667 22.1666H20.8776C20.6124 22.1666 20.358 22.0613 20.1705 21.8738L14.7071 16.4104C14.3166 16.0199 13.6835 16.0199 13.2929 16.4104L7.8296 21.8738C7.64206 22.0613 7.38771 22.1666 7.12249 22.1666H6.83337C6.28109 22.1666 5.83337 21.7189 5.83337 21.1666V20.8775C5.83337 20.6123 5.93873 20.358 6.12627 20.1704L11.5896 14.7071C11.9801 14.3166 11.9801 13.6834 11.5896 13.2929L6.12627 7.82954C5.93873 7.642 5.83337 7.38765 5.83337 7.12243V6.83331C5.83337 6.28103 6.28109 5.83331 6.83337 5.83331H7.12249C7.38771 5.83331 7.64206 5.93867 7.8296 6.12621L13.2929 11.5895C13.6835 11.9801 14.3166 11.9801 14.7071 11.5895L20.1705 6.12621C20.358 5.93867 20.6124 5.83331 20.8776 5.83331H21.1667C21.719 5.83331 22.1667 6.28103 22.1667 6.83331V7.12243C22.1667 7.38765 22.0613 7.642 21.8738 7.82954L16.4105 13.2929Z" fill="#F0F0F0"/>
-                </svg>
-                
-            </button>
-          </div>
-
-          <div class="set-period__section">
-            <h3 class="set-period__section-title">빠른 선택</h3>
-            <div class="set-period__quick-buttons">
-              <button class="quick-button quick-button--active" type="button">오늘</button>
-              <button class="quick-button" type="button">최근 1주일</button>
-              <button class="quick-button" type="button">최근 1개월</button>
-              <button class="quick-button" type="button">최근 3개월</button>
-              <button class="quick-button" type="button">직접 선택</button>
-            </div>
-          </div>
-
-          <div class="set-period__section">
-            <h3 class="set-period__section-title">시작일</h3>
-            <button class="date-picker" type="button" data-date-target="start" data-default-date="2025-12-15">
-              <span class="date-picker__text">2025년 12월 15일</span>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="date-picker__icon">
-                <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
-                </svg>
-            </button>
-            <input type="text" class="date-picker__input" data-date-target="start" data-default-date="2025-12-15" aria-hidden="true" tabindex="-1">
-          </div>
-
-          <div class="set-period__section">
-            <h3 class="set-period__section-title">종료일</h3>
-            <button class="date-picker" type="button" data-date-target="end" data-default-date="2025-12-15">
-              <span class="date-picker__text">2025년 12월 15일</span>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="date-picker__icon">
-                <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
-                </svg>
-            </button>
-            <input type="text" class="date-picker__input" data-date-target="end" data-default-date="2025-12-15" aria-hidden="true" tabindex="-1">
-          </div>
-
-          <div class="set-period__actions">
-            <button class="action-button action-button--cancel" type="button">취소</button>
-            <button class="action-button action-button--save" type="button">저장</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="layer-popup" id="font-size-popup" aria-hidden="true">
     <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
@@ -500,15 +214,15 @@
   </div>
 
 
-  <!-- 기업·종목분석 -->
-  <div class="bottom-sheet bottom-sheet--ai" id="ai-interest-sheet" role="dialog" aria-modal="true" aria-label="기업·종목분석" aria-hidden="true">
+  <!-- AI 뉴스 브리핑 -->
+  <div class="bottom-sheet bottom-sheet--ai" id="ai-interest-sheet" role="dialog" aria-modal="true" aria-label="AI 뉴스 브리핑" aria-hidden="true">
     <div class="bottom-sheet__handle" data-bottom-sheet-dismiss></div>
-    <h2 class="bottom-sheet__title">기업·종목분석</h2>
+    <h2 class="bottom-sheet__title">AI 뉴스 브리핑</h2>
     <div class="bottom-sheet__body">
       <ul class="bottom-sheet__list">
-        <li class="bottom-sheet__list-item">선택한 종목의 현재 상태와 주요 변동 요인을 AI가 정밀하게 분석하여 요약해드려요.</li>
-        <li class="bottom-sheet__list-item">시장 데이터와 공시를 바탕으로 강세 요인과 리스크를 객관적으로 짚어내어 투자 시 유의해야 할 핵심 정보를 제공해요.</li>
-        <li class="bottom-sheet__list-item">복잡한 분석 과정을 대신해 해당 종목의 현재 위치를 한눈에 파악하고 전략적인 흐름을 따라갈 수 있어요.</li>
+        <li class="bottom-sheet__list-item">설정한 섹션 카테고리를 기준으로 AI가 매일 주요 뉴스를 선별해 브리핑으로 정리해드려요.</li>
+        <li class="bottom-sheet__list-item">설정 전에는 그동안 읽은 뉴스 흐름을 분석해 추천 섹션 3개에 대한 자동 브리핑을 먼저 제공해요.</li>
+        <li class="bottom-sheet__list-item">매일 나에게 꼭 필요한 소식만 골라 효율적으로 뉴스를 소비할 수 있어요.</li>
       </ul>
     </div>
     <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
@@ -528,169 +242,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script>
     // 이슈 타임라인 차트 (Chart.js)
-    (function () {
-      const labels = ['1.15', '2.01', '2.14', '3.01', '3.15', '4.01', '4.15', '5.01'];
-      const prices = [62000, 68000, 76000, 91000, 98000, 113000, 118500, 120000];
-      const eventMarkers = [
-        { label: '1.15', price: 62000, type: 'positive', note: 'AI 반도체 수요 급증 기대감' },
-        { label: '3.01', price: 91000, type: 'positive', note: 'AI 데이터센터 고객사 발주 확대' },
-        { label: '3.15', price: 98000, type: 'neutral', note: 'HBM 증설 계획 발표' },
-        { label: '4.01', price: 113000, type: 'negative', note: '미국 규제 이슈 재부각' },
-        { label: '4.15', price: 118500, type: 'positive', note: '고객사와 장기 공급 계약 체결' },
-        { label: '5.01', price: 120000, type: 'neutral', note: '수급 개선 전망 상향' },
-      ];
-
-      const colorMap = {
-        positive: { fill: '#EF4444', border: '#F0F0F0' },
-        negative: { fill: '#2175FF', border: '#F0F0F0' },
-        neutral: { fill: '#9CA3AF', border: '#CCCCCC' },
-      };
-
-      // Chart.js
-      const chartCanvas = document.getElementById('timelineChartJs');
-      if (chartCanvas && window.Chart) {
-        const existing = Chart.getChart(chartCanvas);
-        if (existing) {
-          existing.destroy();
-        }
-
-        chartCanvas.height = 251;
-        chartCanvas.style.height = '251px';
-
-        const chartCard = chartCanvas.closest('.chart-card');
-        if (chartCard) {
-          chartCard.style.position = 'relative';
-        }
-
-        const ctx = chartCanvas.getContext('2d');
-        const gradientHeight = chartCanvas.getBoundingClientRect().height || 251;
-        const gradient = ctx.createLinearGradient(0, 0, 0, gradientHeight);
-        gradient.addColorStop(0, 'rgba(255, 122, 0, 0.3)');
-        gradient.addColorStop(1, 'rgba(255, 122, 0, 0)');
-
-        const getOrCreateTooltip = (chart) => {
-          let tooltipEl = chart.canvas.parentNode.querySelector('.chart-tooltip');
-
-          if (!tooltipEl) {
-            tooltipEl = document.createElement('div');
-            tooltipEl.classList.add('chart-tooltip');
-            tooltipEl.setAttribute('role', 'status');
-            tooltipEl.style.position = 'absolute';
-            tooltipEl.style.pointerEvents = 'none';
-            tooltipEl.style.transform = 'translate(-50%, -100%)';
-            tooltipEl.style.transition = 'opacity 0.12s ease, transform 0.12s ease';
-
-            tooltipEl.innerHTML = `
-              <div class="chart-tooltip__date"></div>
-              <div class="chart-tooltip__value"></div>
-              <div class="chart-tooltip__note"></div>
-            `;
-
-            chart.canvas.parentNode.appendChild(tooltipEl);
-          }
-
-          return tooltipEl;
-        };
-
-        const externalTooltipHandler = (context) => {
-          const { chart, tooltip } = context;
-          const tooltipEl = getOrCreateTooltip(chart);
-
-          if (tooltip.opacity === 0) {
-            tooltipEl.style.opacity = 0;
-            tooltipEl.style.transform = 'translate(-50%, -120%)';
-            return;
-          }
-
-          const dataPoint = tooltip.dataPoints?.[0];
-          const date = tooltip.title?.[0] ?? '';
-          const value = dataPoint?.parsed?.y ?? 0;
-          const isEventPoint = dataPoint?.datasetIndex === 1;
-          const matchedMarker = eventMarkers.find((marker) => marker.label === date);
-          const markerNote = isEventPoint
-            ? eventMarkers[dataPoint.dataIndex]?.note
-            : matchedMarker?.note ?? '주가 추세';
-
-          const dateEl = tooltipEl.querySelector('.chart-tooltip__date');
-          const valueEl = tooltipEl.querySelector('.chart-tooltip__value');
-          const noteEl = tooltipEl.querySelector('.chart-tooltip__note');
-
-          if (dateEl) dateEl.textContent = date;
-          if (valueEl) valueEl.textContent = `${value.toLocaleString('ko-KR')}원`;
-          if (noteEl) noteEl.textContent = markerNote;
-
-          const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
-          tooltipEl.style.opacity = 0.95;
-          tooltipEl.style.left = `${positionX + tooltip.caretX}px`;
-          tooltipEl.style.top = `${positionY + tooltip.caretY - 12}px`;
-          tooltipEl.style.transform = 'translate(-50%, -100%)';
-        };
-
-        new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels,
-            datasets: [
-              {
-                label: '주가',
-                data: prices,
-                borderColor: '#FF7A00',
-                backgroundColor: gradient,
-                borderWidth: 2,
-                fill: true,
-                tension: 0.35,
-                pointRadius: 0,
-                pointHitRadius: 8,
-              },
-              {
-                label: '이슈 포인트',
-                type: 'scatter',
-                data: eventMarkers.map((marker) => ({ x: marker.label, y: marker.price })),
-                backgroundColor: eventMarkers.map((marker) => colorMap[marker.type].fill),
-                borderColor: eventMarkers.map((marker) => colorMap[marker.type].border),
-                borderWidth: 2,
-                pointRadius: 5,
-                hoverRadius: 6,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                enabled: false,
-                position: 'nearest',
-                external: externalTooltipHandler,
-              },
-            },
-            scales: {
-              x: {
-                grid: { display: false },
-                ticks: {
-                  color: '#F0F0F0',
-                  font: { size: 12 },
-                },
-              },
-              y: {
-                min: 60000,
-                max: 120000,
-                ticks: {
-                  color: '#F0F0F0',
-                  font: { size: 11 },
-                  callback: (value) => value.toLocaleString('ko-KR'),
-                },
-                grid: {
-                  color: '#464646',
-                  borderDash: [3, 3],
-                },
-              },
-            },
-          },
-        });
-      }
-    })();
     // 보관함 저장
     (function () {
       const saveStorageButton = document.querySelector('.save-storage');
@@ -982,37 +533,8 @@
         }
       });
     })();
-    // 상승/하락 토글
-    (function () {
-      const upInput = document.getElementById('up-side');
-      const downInput = document.getElementById('down-side');
-      const upSection = document.querySelector('.stock-issues.up-side');
-      const downSection = document.querySelector('.stock-issues.down-side');
-
-      if (!upInput || !downInput || !upSection || !downSection) {
-        return;
-      }
-
-      const mobileQuery = window.matchMedia('(max-width: 480px)');
-
-      const updateVisibility = () => {
-        const isMobile = mobileQuery.matches;
-
-        if (isMobile) {
-          upSection.classList.toggle('is-active', upInput.checked);
-          downSection.classList.toggle('is-active', downInput.checked);
-        } else {
-          upSection.classList.remove('is-active');
-          downSection.classList.remove('is-active');
-        }
-      };
-
-      upInput.addEventListener('change', updateVisibility);
-      downInput.addEventListener('change', updateVisibility);
-      mobileQuery.addEventListener('change', updateVisibility);
-
-      updateVisibility();
-
+    (function(){
+      //gnb
       const tabs = document.querySelectorAll('.nav-tab');
       const sections = document.querySelectorAll('.content-section');
 

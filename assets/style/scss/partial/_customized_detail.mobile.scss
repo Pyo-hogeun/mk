@@ -1,5 +1,31 @@
-@use 'variables' as *;
+@use 'variables'as *;
+
 @media screen and (max-width: $mobile) {
-  .customized-detail{}
-  
+  .customized-detail {
+    .play-button-wrapper {
+      .btn-play {
+        display: inline-flex;
+        height: var(--height-md, 40px);
+        padding: 0 20px;
+        align-items: center;
+        background-color: transparent;
+        border: 0;
+        border-radius: var(--radius-pill, 999px);
+        border: 1px solid var(--white, #FFF);
+        background: rgba(255, 255, 255, 0.80);
+
+        .label {
+          color: var(--orange-100, #FF7A00);
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 150%;
+          /* 22.5px */
+        }
+      }
+    }
+  }
+  .reading-card__wrapper{
+    padding: 0 $mobilePadSide;
+  }
+
 }
