@@ -39,16 +39,16 @@
 
             <div class="header-actions-container">
               <div class="play-button-wrapper">
-                <button class="btn-play">
+                <button class="btn-play" aria-pressed="false">
                   <!-- 재생 -->
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="play" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 5.14001V19.14L19 12.14L8 5.14001Z" fill="#FF7A00"/>
                   </svg>
                   <!-- 정지 -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stop" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stop is-hidden" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 18H6V6H18V18Z" fill="#FF7A00"/>
                   </svg>
-                  <span class="label">재생 하기</span>
+                  <span class="label">재생하기</span>
                 </button>
               </div>
               <div class="action-buttons">
@@ -565,6 +565,31 @@
           closePopup();
         }
       });
+    })();
+    // 오디오 재생 토글
+    (function () {
+      const playButton = document.querySelector('.btn-play');
+      const playIcon = playButton?.querySelector('.play');
+      const stopIcon = playButton?.querySelector('.stop');
+      const label = playButton?.querySelector('.label');
+
+      const setPlayingState = (isPlaying) => {
+        if (!playButton || !playIcon || !stopIcon || !label) return;
+
+        playButton.classList.toggle('is-playing', isPlaying);
+        playButton.setAttribute('aria-pressed', String(isPlaying));
+        playIcon.classList.toggle('is-hidden', isPlaying);
+        stopIcon.classList.toggle('is-hidden', !isPlaying);
+        label.textContent = isPlaying ? '정지하기' : '재생하기';
+      };
+
+      if (playButton && playIcon && stopIcon && label) {
+        setPlayingState(false);
+        playButton.addEventListener('click', () => {
+          const nextState = !playButton.classList.contains('is-playing');
+          setPlayingState(nextState);
+        });
+      }
     })();
     // 공유
     (function () {

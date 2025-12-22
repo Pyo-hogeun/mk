@@ -7543,6 +7543,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 150%;
     /* 22.5px */
   }
+  .customized-detail .play-button-wrapper .btn-play .is-hidden {
+    display: none;
+  }
   .reading-card__wrapper {
     display: flex;
     flex-direction: column;
