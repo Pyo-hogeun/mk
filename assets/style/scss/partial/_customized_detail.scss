@@ -2,6 +2,10 @@
 
 @media screen and (min-width: $mobile) {
   .customized-detail {
+    width: $pcContainerSub;
+    .content__title{
+      margin: 24px 0;
+    }
     .play-button-wrapper {
       .btn-play {
         display: inline-flex;

@@ -7637,6 +7637,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
 }
 @media screen and (min-width: 480px) {
+  .customized-detail {
+    width: 700px;
+  }
+  .customized-detail .content__title {
+    margin: 24px 0;
+  }
   .customized-detail .play-button-wrapper .btn-play {
     display: inline-flex;
     height: var(--height-md, 40px);
@@ -7787,6 +7793,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   align-self: stretch;
 }
 .player-control__main {
+  position: relative;
   display: flex;
   padding: 12px 0;
   align-items: center;
@@ -7840,7 +7847,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 .player-control__speed-selector {
   display: flex;
-  padding: 4px 14px;
+  padding: 4px 0;
+  width: 50px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -7863,9 +7871,75 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 
 @media screen and (min-width: 480px) {
+  .player-control__wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 1px;
+    right: 0;
+    min-width: 700px;
+    width: 100dvw;
+  }
   .player-control {
+    position: absolute;
     width: 700px;
     left: 50%;
     transform: translateX(-50%);
   }
 }
+.speed-selector-dropdown {
+  position: absolute;
+  bottom: calc(50% + 14px);
+  right: 0;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  width: 50px;
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.speed-selector-dropdown[aria-hidden=false] {
+  display: flex;
+}
+
+.speed-option {
+  display: flex;
+  padding: 4px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--gray-dark, #1d1d1d);
+  background: var(--gray-light, #ccc);
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+  margin-top: -1px;
+}
+.speed-option:first-child {
+  margin-top: 0;
+}
+.speed-option--first {
+  border-radius: var(--radius-md, 8px) var(--radius-md, 8px) 0 0;
+}
+.speed-option--last {
+  border-radius: 0 0 var(--radius-md, 8px) var(--radius-md, 8px);
+}
+.speed-option:hover {
+  opacity: 0.85;
+}
+.speed-option--active {
+  background: var(--gray-dark, #1d1d1d);
+}
+.speed-option--active .speed-label {
+  color: var(--gray-light, #ccc);
+}
+
+.speed-label {
+  color: var(--gray-dark, #1d1d1d);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}/*# sourceMappingURL=style.css.map */
