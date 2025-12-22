@@ -6465,6 +6465,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: flex;
     align-items: center;
     gap: 4px;
+    width: auto;
   }
   .customized-review__header .indicator .dot {
     display: inline-flex;
