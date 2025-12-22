@@ -1,0 +1,20 @@
+@use 'variables'as *;
+@media screen and (max-width: $mobile) {
+  //stock에서 추가된 내용만
+  .fn-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-right: $mobilePadSide;
+    .btn{
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      background-color: transparent;
+      border: 0;
+      color: var(--text-primary);
+    }
+  }
+  
+}

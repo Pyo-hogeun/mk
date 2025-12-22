@@ -634,7 +634,7 @@ body.dark {
   height: var(--height-md, 40px);
   color: var(--text-secondary, #7B7B7B);
   text-align: center;
-  padding: 0 20px;
+  padding: 8px 20px 0;
   font: 600 16px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
 }
 @media (max-width: 480px) {
@@ -1086,7 +1086,7 @@ body.dark {
   line-height: 150%;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .content__title {
     align-items: center;
     gap: 12px;
@@ -6070,4 +6070,22 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 .voice-popup__footer .btn-submit {
   background: var(--orange-100, #FF7A00);
+}
+
+@media screen and (max-width: 480px) {
+  .fn-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-right: 15px;
+  }
+  .fn-buttons .btn {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: 0;
+    color: var(--text-primary);
+  }
 }

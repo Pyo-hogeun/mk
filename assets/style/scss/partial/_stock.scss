@@ -6,6 +6,7 @@
   justify-content: start;
   flex-wrap: wrap;
   margin: 24px 0;
+  
 
   @media (max-width: $mobile) {
     display: grid;
@@ -64,7 +65,7 @@
   height: var(--height-md, 40px);
   color: var(--text-secondary, #7B7B7B);
   text-align: center;
-  padding: 0 20px;
+  padding: 8px 20px 0;
   font: 600 16px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
 
   @media (max-width: $mobile) {

@@ -1,6 +1,6 @@
 @use 'variables'as *;
 
-@media (max-width: $mobile) {
+@media screen and (max-width: $mobile) {
   .content__title {
     align-items: center;
     gap: 12px;
