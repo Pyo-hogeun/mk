@@ -1,6 +1,9 @@
 @use 'variables'as *;
 .agent-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 10px;
+
   align-items: center;
   gap: 36px;
   justify-content: start;
@@ -16,6 +19,7 @@
 }
 
 .agent-brand {
+  grid-column: 1/2;
   display: flex;
   align-items: center;
   gap: var(--spacing-sm, 8px);
@@ -55,6 +59,8 @@
 }
 
 .nav-tabs {
+  grid-column: 2/3;
+  grid-row: 1;
   display: flex;
   justify-content: center;
   align-items: stretch;

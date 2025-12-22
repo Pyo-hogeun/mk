@@ -2,6 +2,9 @@
 @use 'mixin' as *;
 
 @media (max-width: $mobile) {
+  .for-pc{
+    display: none;
+  }
   .ai-news-briefing {
     display: flex;
     flex-direction: column;
@@ -22,6 +25,9 @@
 
     &__title {
       color: var(--text-primary, #F0F0F0);
+      i{
+        vertical-align: middle;
+      }
     }
 
     &__icon {
@@ -47,6 +53,7 @@
       flex-direction: column;
       gap: 8px;
     }
+    
 
     &__tags {
       display: flex;
@@ -114,7 +121,6 @@
       display: flex;
       padding: 24px 15px 16px;
       flex-direction: column;
-      align-items: flex-end;
       align-self: stretch;
       border-radius: var(--radius-md, 8px);
       border: 1px solid var(--border-default, #464646);
@@ -215,10 +221,11 @@
           vertical-align: top;
         }
       }
-      .indicator{
+      .indicator.swiper-pagination-horizontal{
         display: flex;
         align-items: center;
         gap: 4px;
+        width: auto;
         .dot{
           display: inline-flex;
           width: 8px;

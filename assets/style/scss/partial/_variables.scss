@@ -35,6 +35,14 @@
   --spacing-md: 0.75rem;
   --spacing-lg: 1rem;
   --spacing-xl: 1.5rem;
+
+  /* border radius */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* heights */
+  --height-md: 40px;
 }
 $mobile: 480px;
 $pc: 1210px;
@@ -43,4 +51,3 @@ $pcContainerSub: 700px;
 $bgDark: #1D1D1D;
 $gnbHeight: 80px;
 $mobilePadSide: 15px;
-
