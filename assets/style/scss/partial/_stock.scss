@@ -78,7 +78,7 @@
     grid-column: 1 / 3;
     width: auto;
     max-width: 100%;
-    border-bottom: 1px solid #464646;
+    border-bottom: 1px solid var(--border-default, #464646);
   }
 
   .nav-tabs-container {

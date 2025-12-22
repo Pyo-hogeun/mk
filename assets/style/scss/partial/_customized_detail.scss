@@ -18,8 +18,65 @@
       border-top: 0;
       gap: var(--spacing-lg, 16px);
       .swiper-wrapper{
-        .news-list{
-          grid-template-columns: 1fr;
+        .slider{
+          padding: 20px;
+          border-radius: var(--radius-lg, 12px);
+          background: var(--bg-subtle, #2F2F2F);
+          &__title{
+            color: var(--text-primary, #F0F0F0);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 150%; /* 22.5px */
+            margin-bottom: 8px;
+          }
+          .news-list{
+            grid-template-columns: 1fr;
+            gap: 0;
+            &__item{
+              height: auto;
+              border-bottom: 1px solid var(--border-default, #464646);
+              padding: var(--spacing-md, 12px) 0;
+              &:first-child{
+                padding-top: 0;
+              }
+              &:last-child{
+                padding-bottom: 0;
+                border-bottom: 0;
+              }
+              a{
+                flex-direction: row;
+                height: auto;
+                display: flex;
+                height: 68px;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                align-self: stretch;
+                .news-thumb{
+                  width: 100px;
+                  height: 68px;
+                  border-radius: var(--radius-sm, 4px);
+                }
+                .news-content{
+                  padding: 0;
+                  gap: 4px;
+                  border: 0;
+                  background-color: transparent;
+                  .news-summary{
+                    overflow: hidden;
+                    color: var(--text-primary, #F0F0F0);
+                    text-overflow: ellipsis;
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 150%; /* 22.5px */
+                  }
+                  .message{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
         }
       }
       
@@ -48,57 +105,60 @@
         }
       }
     }
-  }
-  .nav-tabs {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: column;
-    min-width: 240px;
-    min-height: 40px;
-    width: $pcContainerSub;
-    height: var(--height-md, 40px);
-    color: var(--text-secondary, #7B7B7B);
-    text-align: center;
-    padding: 8px 20px 0;
-  
-    .nav-tabs-container {
+    .nav-tabs {
       display: flex;
-      width: 100%;
-      align-items: start;
-      justify-content: start;
-  
-      .nav-tab {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 24px;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+      min-width: 240px;
+      min-height: 40px;
+      width: $pcContainerSub;
+      height: var(--height-md, 40px);
+      color: var(--text-secondary, #7B7B7B);
+      text-align: center;
+      padding: 8px 20px 0;
+      border-bottom: 1px solid var(--border-default, #464646);
+    
+      .nav-tabs-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        flex: 1;
-        height: 40px;
-        gap: var(--gap-normal, 8px);
-  
-        &.active{
-          box-shadow: inset 0 -2px 0px var(--orange-200, #E55204);
+        width: 100%;
+        align-items: start;
+        justify-content: start;
+    
+        .nav-tab {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          flex: 1;
+          height: 40px;
+          gap: var(--gap-normal, 8px);
+    
+          &.active{
+            box-shadow: inset 0 -2px 0px var(--orange-200, #E55204);
+            .tab-label {
+              color: var(--text-primary, #111111);
+            }
+          }
+    
           .tab-label {
-            color: var(--text-primary, #111111);
+            color: var(--text-secondary, #7B7B7B);
+            cursor: pointer;
           }
         }
-  
-        .tab-label {
-          color: var(--text-secondary, #7B7B7B);
-          cursor: pointer;
+    
+        @media (max-width: $mobile) {
+          max-width: 100%;
+    
+          
         }
-      }
-  
-      @media (max-width: $mobile) {
-        max-width: 100%;
-  
-        
       }
     }
   }
+  
   .reading-card__wrapper{
     display: flex;
     flex-direction: column;
