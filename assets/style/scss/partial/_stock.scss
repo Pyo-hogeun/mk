@@ -71,7 +71,7 @@
   height: var(--height-md, 40px);
   color: var(--text-secondary, #7B7B7B);
   text-align: center;
-  padding: 8px 20px 0;
+  padding: 0 20px;
   font: 600 16px/1.4 Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
 
   @media (max-width: $mobile) {

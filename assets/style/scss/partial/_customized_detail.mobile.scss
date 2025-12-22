@@ -38,6 +38,9 @@
       padding-right: $mobilePadSide;
       
       .swiper{
+        .swiper-wrapper{
+          height: auto;
+        }
         .slider{
           &__title{
             display: none;
