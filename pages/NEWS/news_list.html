@@ -386,9 +386,14 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     (function () {
+      const MOBILE_VIEWPORT_MAX = 480;
       const reviewSwiperElement = document.querySelector('.customized-review .swiper');
-      if (reviewSwiperElement) {
-        const indicatorEl = document.querySelector('.customized-review__header .indicator');
+      const indicatorEl = document.querySelector('.customized-review__header .indicator');
+      let reviewSwiper = null;
+
+      const createReviewSwiper = () => {
+        if (!reviewSwiperElement || reviewSwiper) return;
+
         const swiperOptions = {
           slidesPerView: 1,
           spaceBetween: 16,
@@ -406,9 +411,28 @@
           };
         }
 
-        new Swiper(reviewSwiperElement, swiperOptions);
-      }
+        reviewSwiper = new Swiper(reviewSwiperElement, swiperOptions);
+      };
 
+      const destroyReviewSwiper = () => {
+        if (!reviewSwiper) return;
+        reviewSwiper.destroy(true, true);
+        reviewSwiper = null;
+        if (indicatorEl) {
+          indicatorEl.innerHTML = '';
+        }
+      };
+
+      const handleResponsiveSwiper = () => {
+        if (window.innerWidth <= MOBILE_VIEWPORT_MAX) {
+          createReviewSwiper();
+        } else {
+          destroyReviewSwiper();
+        }
+      };
+
+      handleResponsiveSwiper();
+      window.addEventListener('resize', handleResponsiveSwiper);
 
       //gnb
       const tabs = document.querySelectorAll('.nav-tab');
