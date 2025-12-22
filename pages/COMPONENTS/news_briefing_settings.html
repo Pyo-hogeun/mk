@@ -43,11 +43,11 @@
         </section>
 
         <section class="settings-section">
-          <div class="section-header-simple">
-            <h3 class="section-title">예약 업데이트 시간</h3>
-          </div>
-          <div class="dropdown-group">
-            <button class="dropdown-btn" type="button">
+        <div class="section-header-simple">
+          <h3 class="section-title">예약 업데이트 시간</h3>
+        </div>
+        <div class="dropdown-group">
+          <button class="dropdown-btn" type="button">
               <span class="dropdown-label">월, 화, 수, 목</span>
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
@@ -70,35 +70,12 @@
               </svg>
             </button>
           </div>
-          <div class="time-selector__wrapper is-open">
+          <div class="time-selector__wrapper" aria-hidden="true">
             <div class="time-selector" role="dialog" aria-label="예약 업데이트 시간">
               <div class="select-bar"></div>
-              <div class="dial ampm">
-                <div class="slot selected">am</div> 
-                <div class="slot">pm</div> 
-              </div>
-              <div class="dial hour">
-                <div class="slot selected">01</div>
-                <div class="slot">02</div>
-                <div class="slot">03</div>
-                <div class="slot">04</div>
-                <div class="slot">05</div>
-                <div class="slot">06</div>
-                <div class="slot">07</div>
-                <div class="slot">08</div>
-                <div class="slot">09</div>
-                <div class="slot">10</div>
-                <div class="slot">11</div>
-                <div class="slot">12</div>
-              </div>
-              <div class="dial minute">
-                <div class="slot selected">00</div>
-                <div class="slot">10</div>
-                <div class="slot">20</div>
-                <div class="slot">30</div>
-                <div class="slot">40</div>
-                <div class="slot">50</div>
-              </div>
+              <div class="dial ampm" data-dial="ampm"></div>
+              <div class="dial hour" data-dial="hour"></div>
+              <div class="dial minute" data-dial="minute"></div>
             </div>
           </div>
         </section>
@@ -217,6 +194,7 @@
       }
       if (isTimeSelectorOpen) {
         timeSelectorWrapper.classList.remove('is-open');
+        timeSelectorWrapper?.setAttribute('aria-hidden', 'true');
         isTimeSelectorOpen = false;
       }
       comboboxDim.classList.remove('is-open');
@@ -268,24 +246,114 @@
 
     const timeDropdownBtn = document.querySelector('.dropdown-btn[data-target="time-selector"]');
     const timeDropdownLabel = timeDropdownBtn?.querySelector('.dropdown-label');
+    const timeSelectorWrapper = document.querySelector('.time-selector__wrapper');
+    const timeSelector = document.querySelector('.time-selector');
 
-    const formatTimeLabel = (date) => {
-      const hours = date.getHours();
-      const minutes = date.getMinutes();
-      const period = hours >= 12 ? '오후' : '오전';
-      const formattedHours = hours % 12 || 12;
-      const formattedMinutes = minutes.toString().padStart(2, '0');
-      return `${period} ${formattedHours}시 ${formattedMinutes}분`;
+    const dialConfigs = {
+      ampm: {
+        key: 'ampm',
+        values: ['AM', 'PM'],
+        element: document.querySelector('.dial.ampm')
+      },
+      hour: {
+        key: 'hour',
+        values: Array.from({ length: 12 }, (_, index) => String(index + 1).padStart(2, '0')),
+        element: document.querySelector('.dial.hour')
+      },
+      minute: {
+        key: 'minute',
+        values: Array.from({ length: 12 }, (_, index) => String(index * 5).padStart(2, '0')),
+        element: document.querySelector('.dial.minute')
+      }
     };
 
-    const setTimeLabel = (date) => {
+    const initialTime = new Date();
+    initialTime.setHours(19, 30, 0, 0);
+
+    const selectionState = {
+      ampm: initialTime.getHours() >= 12 ? 'PM' : 'AM',
+      hour: String(initialTime.getHours() % 12 || 12).padStart(2, '0'),
+      minute: String(Math.round(initialTime.getMinutes() / 5) * 5).padStart(2, '0').padStart(2, '0')
+    };
+
+    const formatTimeLabel = (state) => `${state.ampm}:${state.hour}:${state.minute}`;
+
+    const setTimeLabel = (state) => {
       if (!timeDropdownLabel) return;
-      timeDropdownLabel.textContent = formatTimeLabel(date);
+      timeDropdownLabel.textContent = formatTimeLabel(state);
+    };
+
+    const updateSelection = (config, index, withAnimation = false) => {
+      if (!config?.element) return;
+
+      const slots = Array.from(config.element.querySelectorAll('.slot'));
+      slots.forEach((slot, slotIndex) => {
+        slot.classList.toggle('selected', slotIndex === index);
+      });
+
+      selectionState[config.key] = config.values[index];
+      const topOffset = (config.paddingTop ?? 0) + (config.slotHeight ?? 0) * index;
+      config.element.scrollTo({
+        top: topOffset,
+        behavior: withAnimation ? 'smooth' : 'auto'
+      });
+      setTimeLabel(selectionState);
+    };
+
+    const snapToNearestSlot = (config) => {
+      if (!config?.element || !config.values.length) return;
+      const slotHeight = config.slotHeight || 1;
+      const paddingTop = config.paddingTop || 0;
+      const rawIndex = Math.round((config.element.scrollTop - paddingTop) / slotHeight);
+      const boundedIndex = Math.min(Math.max(rawIndex, 0), config.values.length - 1);
+      updateSelection(config, boundedIndex, true);
+    };
+
+    const attachDialHandlers = (config) => {
+      if (!config?.element) return;
+
+      let scrollTimeout = null;
+      config.element.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(() => snapToNearestSlot(config), 80);
+      }, { passive: true });
+
+      config.element.addEventListener('wheel', (event) => {
+        event.preventDefault();
+      }, { passive: false });
+    };
+
+    const buildDial = (config) => {
+      if (!config?.element) return;
+      config.element.innerHTML = '';
+      config.values.forEach((value, index) => {
+        const slot = document.createElement('div');
+        slot.className = 'slot';
+        slot.textContent = value;
+        slot.dataset.index = index;
+        slot.addEventListener('click', () => updateSelection(config, index, true));
+        config.element.appendChild(slot);
+      });
+      config.slotHeight = config.element.querySelector('.slot')?.offsetHeight || 40;
+      config.paddingTop = parseFloat(getComputedStyle(config.element).paddingTop) || 0;
+      attachDialHandlers(config);
+    };
+
+    const initializeTimeSelector = () => {
+      Object.values(dialConfigs).forEach((config) => {
+        buildDial(config);
+        const initialIndex = config.values.indexOf(selectionState[config.key]);
+        const safeIndex = initialIndex >= 0 ? initialIndex : 0;
+        updateSelection(config, safeIndex);
+      });
     };
 
     const openTimeSelector = () => {
       closeCombobox();
       timeSelectorWrapper.classList.add('is-open');
+      timeSelectorWrapper?.setAttribute('aria-hidden', 'false');
       comboboxDim.classList.add('is-open');
       isTimeSelectorOpen = true;
     };
@@ -300,36 +368,8 @@
 
     timeSelectorCloseBtn?.addEventListener('click', closeCombobox);
     timeSelectorApplyBtn?.addEventListener('click', closeCombobox);
-  </script>
-  <script src="https://cdn.mobiscroll.com/5.29.0/js/mobiscroll.javascript.min.js"></script>
-  <script>
-    const initialTime = new Date();
-    initialTime.setHours(19, 30, 0, 0);
-
-    if (window.mobiscroll) {
-      mobiscroll.setOptions({
-        theme: 'ios',
-        themeVariant: 'dark',
-        locale: mobiscroll.localeKo
-      });
-
-      const timePicker = mobiscroll.timepicker('#time-12h-picker', {
-        controls: ['time'],
-        timeFormat: 'hh:mm A',
-        display: 'inline',
-        touchUi: false,
-        cssClass: 'news-timepicker',
-        onChange: (event) => {
-          if (!event.value) return;
-          setTimeLabel(event.value);
-        }
-      });
-
-      timePicker.setVal(initialTime, true);
-      setTimeLabel(initialTime);
-    } else {
-      setTimeLabel(initialTime);
-    }
+    initializeTimeSelector();
+    setTimeLabel(selectionState);
   </script>
 </body>
 </html>

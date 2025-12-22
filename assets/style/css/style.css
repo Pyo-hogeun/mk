@@ -7329,9 +7329,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   border: 1px solid var(--border-default, #464646);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   border-radius: 16px;
-  padding: 16px;
-  gap: 16px;
-  height: 136px;
+  padding: 24px 20px;
+  gap: 24px;
+  height: 200px;
   overflow: hidden;
 }
 .time-selector .select-bar {
@@ -7352,8 +7352,17 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   gap: 10px;
 }
 .time-selector .dial {
+  position: relative;
   width: 50px;
-  transform: translateY(calc(50% - 20px));
+  padding: 52px 0;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-y;
+}
+.time-selector .dial::-webkit-scrollbar {
+  display: none;
 }
 .time-selector .slot {
   display: flex;
@@ -7365,6 +7374,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   font-weight: 500;
   line-height: 140%; /* 19.6px */
   height: var(--height-md, 40px);
+  scroll-snap-align: center;
 }
 .time-selector .slot.selected {
   color: var(--text-primary, #F0F0F0);
