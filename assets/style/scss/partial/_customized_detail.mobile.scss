@@ -2,6 +2,11 @@
 
 @media screen and (max-width: $mobile) {
   .customized-detail {
+    .report-title{
+      .briefing-item__badges{
+        margin: 12px 0;
+      }
+    }
     .play-button-wrapper {
       .btn-play {
         display: inline-flex;
@@ -25,6 +30,12 @@
           display: none;
         }
       }
+    }
+    .customized-review{
+      margin-top: 0;
+      border-top: 0;
+      padding-left: $mobilePadSide;
+      padding-right: $mobilePadSide;
     }
   }
   .reading-card__wrapper{

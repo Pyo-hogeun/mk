@@ -3,8 +3,26 @@
 @media screen and (min-width: $mobile) {
   .customized-detail {
     width: $pcContainerSub;
+    .report-title{
+      .briefing-item__badges{
+        margin: 12px 0;
+      }
+    }
     .content__title{
       margin: 24px 0;
+    }
+    .customized-review{
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      border-top: 0;
+      gap: var(--spacing-lg, 16px);
+      .swiper-wrapper{
+        .news-list{
+          grid-template-columns: 1fr;
+        }
+      }
+      
     }
     .play-button-wrapper {
       .btn-play {

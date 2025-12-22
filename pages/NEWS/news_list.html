@@ -521,6 +521,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
+    //브리핑 설정 팝업
     (() => {
       const settingsButton = document.querySelector('.btn-setting');
       const settingsSheet = document.querySelector('.bottom-sheet.news-briefing-settings');
@@ -807,8 +808,8 @@
         initializeTimeSelector();
       }
     })();
-
     (function () {
+      // 맞춤형 해설 swiper 동작
       const MOBILE_VIEWPORT_MAX = 480;
       const reviewSwiperElement = document.querySelector('.customized-review .swiper');
       const indicatorEl = document.querySelector('.customized-review__header .indicator');
