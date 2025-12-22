@@ -241,6 +241,20 @@
         }
       }
     }
+    .swiper-wrapper{
+      display: block;
+      .news-list{
+        flex-direction: row;
+        .news-summary{
+        }
+        .message{
+          color: var(--text-secondary, #7B7B7B);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 150%; /* 21px */
+        }
+      }
+    }
   }
 
   .briefing-tag {
