@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body class="dark">
@@ -158,15 +159,12 @@
               </i></h3>
 
               <div class="indicator">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
               </div>
             </div>
             <div class="customized-review__body">
               <div class="swiper">
-                <div class="swipper-wrapper">
-                  <div class="slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide slider">
                     <ul class="news-list" aria-label="맞춤형 해설 뉴스 목록">
                       <li class="news-list__item">
                         <a href="">
@@ -210,7 +208,7 @@
       
                     </ul>
                   </div>
-                  <div class="slider">
+                  <div class="swiper-slide slider">
                     <ul class="news-list" aria-label="맞춤형 해설 뉴스 목록">
                       <li class="news-list__item">
                         <a href="">
@@ -297,8 +295,32 @@
     <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     (function () {
+      const reviewSwiperElement = document.querySelector('.customized-review .swiper');
+      if (reviewSwiperElement) {
+        const indicatorEl = document.querySelector('.customized-review__header .indicator');
+        const swiperOptions = {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        };
+
+        if (indicatorEl) {
+          indicatorEl.innerHTML = '';
+          swiperOptions.pagination = {
+            el: indicatorEl,
+            clickable: true,
+            bulletClass: 'dot',
+            bulletActiveClass: 'active',
+            renderBullet: (index, className) =>
+              `<span class="${className}" aria-label="맞춤형 해설 ${index + 1}번 슬라이드"></span>`,
+          };
+        }
+
+        new Swiper(reviewSwiperElement, swiperOptions);
+      }
+
       //상승/하락 토글
       const upInput = document.getElementById('up-side');
       const downInput = document.getElementById('down-side');
