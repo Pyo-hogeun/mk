@@ -361,6 +361,137 @@
     </div>
   </div>
 
+  <!-- 뉴스 브리핑 설정 -->
+  <div class="bottom-sheet news-briefing-settings" role="dialog" aria-modal="true" aria-label="브리핑 설정" aria-hidden="true">
+    <div class="news-briefing-settings__container">
+      <div class="news-briefing-settings__header">
+        <h2 class="title">브리핑 설정</h2>
+        <button type="button" class="btn-close" aria-label="닫기">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.4104 13.2928C16.0199 13.6833 16.0199 14.3165 16.4104 14.707L21.8738 20.1704C22.0613 20.3579 22.1666 20.6122 22.1666 20.8775V21.1666C22.1666 21.7189 21.7189 22.1666 21.1666 22.1666H20.8775C20.6123 22.1666 20.358 22.0612 20.1704 21.8737L14.7071 16.4104C14.3166 16.0198 13.6834 16.0198 13.2929 16.4104L7.82954 21.8737C7.642 22.0612 7.38765 22.1666 7.12243 22.1666H6.83331C6.28103 22.1666 5.83331 21.7189 5.83331 21.1666V20.8775C5.83331 20.6123 5.93867 20.3579 6.12621 20.1704L11.5895 14.707C11.9801 14.3165 11.9801 13.6833 11.5895 13.2928L6.12621 7.82948C5.93867 7.64194 5.83331 7.38759 5.83331 7.12237V6.83325C5.83331 6.28097 6.28103 5.83325 6.83331 5.83325H7.12243C7.38765 5.83325 7.642 5.93861 7.82954 6.12615L13.2929 11.5895C13.6834 11.98 14.3166 11.98 14.7071 11.5895L20.1704 6.12615C20.358 5.93861 20.6123 5.83325 20.8775 5.83325H21.1666C21.7189 5.83325 22.1666 6.28097 22.1666 6.83325V7.12237C22.1666 7.38759 22.0613 7.64194 21.8738 7.82948L16.4104 13.2928Z" fill="#F0F0F0"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="news-briefing-settings__body">
+        <section class="settings-section">
+          <div class="section-header">
+            <div class="section-info">
+              <h3 class="section-title">관심 섹션 설정</h3>
+              <p class="section-description">최대 3개까지 선택 가능합니다.</p>
+            </div>
+            <div class="section-count">0/3 선택</div>
+          </div>
+          <div class="category-pills">
+            <button class="pill-btn" type="button">경제</button>
+            <button class="pill-btn" type="button">기업</button>
+            <button class="pill-btn" type="button">사회</button>
+            <button class="pill-btn" type="button">국제</button>
+            <button class="pill-btn" type="button">부동산</button>
+            <button class="pill-btn" type="button">증권</button>
+            <button class="pill-btn" type="button">정치</button>
+            <button class="pill-btn" type="button">IT·과학</button>
+            <button class="pill-btn" type="button">문화</button>
+            <button class="pill-btn" type="button">스포츠</button>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="section-header-simple">
+            <h3 class="section-title">예약 업데이트 시간</h3>
+          </div>
+          <div class="dropdown-group">
+            <button class="dropdown-btn" type="button">
+              <span class="dropdown-label">매일</span>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
+              </svg>
+            </button>
+            <div class="comobobox-selector multie">
+              <button class="option-btn active" type="button" data-day="매일">매일</button>
+              <button class="option-btn" type="button" data-day="일">일요일 마다</button>
+              <button class="option-btn" type="button" data-day="월">월요일 마다</button>
+              <button class="option-btn" type="button" data-day="화">화요일 마다</button>
+              <button class="option-btn" type="button" data-day="수">수요일 마다</button>
+              <button class="option-btn" type="button" data-day="목">목요일 마다</button>
+              <button class="option-btn" type="button" data-day="금">금요일 마다</button>
+              <button class="option-btn" type="button" data-day="토">토요일 마다</button>
+            </div>
+            <button class="dropdown-btn" type="button" data-target="time-selector">
+              <span class="dropdown-label">오후 07시 30분</span>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
+              </svg>
+            </button>
+          </div>
+          <div class="time-selector__wrapper" aria-hidden="true">
+            <div class="time-selector" role="dialog" aria-label="예약 업데이트 시간">
+              <div class="select-bar"></div>
+              <div class="dial ampm" data-dial="ampm">
+                <div class="dial__track"></div>
+              </div>
+              <div class="dial hour" data-dial="hour">
+                <div class="dial__track"></div>
+              </div>
+              <div class="dial minute" data-dial="minute">
+                <div class="dial__track"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="notification-toggle">
+            <div class="notification-info">
+              <h3 class="section-title">정기 알림 받기</h3>
+              <p class="section-description">브리핑이 생성되면 이메일로 알림이 발송됩니다.</p>
+            </div>
+            <button class="toggle-circle" type="button" role="switch" aria-checked="false" aria-label="정기 알림 받기">
+              <span class="toggle-knob"></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="dual-dropdown">
+            <div class="dropdown-item">
+              <h3 class="section-title">브리핑 시간</h3>
+              <button class="dropdown-btn" type="button">
+                <span class="dropdown-label">3분</span>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
+                </svg>
+              </button>
+              <div class="comobobox-selector single">
+                <button class="option-btn active" type="button" data-day="3분">3분</button>
+                <button class="option-btn" type="button" data-day="7분">7분</button>
+              </div>
+            </div>
+            <div class="dropdown-item">
+              <h3 class="section-title">진행 인원</h3>
+              <button class="dropdown-btn" type="button">
+                <span class="dropdown-label">1인 진행</span>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z" fill="#7B7B7B"/>
+                </svg>
+              </button>
+              <div class="comobobox-selector single">
+                <button class="option-btn active" type="button" data-day="1인 진행">1인 진행</button>
+                <button class="option-btn" type="button" data-day="2인 진행">2인 진행</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="news-briefing-settings__footer">
+        <button class="btn btn-cancel" type="button">취소</button>
+        <button class="btn btn-save" type="button">저장</button>
+      </div>
+    </div>
+    <div class="combobox-dim" aria-hidden="true"></div>
+  </div>
+
   <!-- AI 뉴스 브리핑 -->
   <div class="bottom-sheet bottom-sheet--ai" id="ai-briefing-sheet" role="dialog" aria-modal="true" aria-label="AI 뉴스 브리핑" aria-hidden="true">
     <div class="bottom-sheet__handle" data-bottom-sheet-dismiss></div>
@@ -390,6 +521,272 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
+    (() => {
+      const settingsButton = document.querySelector('.btn-setting');
+      const settingsSheet = document.querySelector('.bottom-sheet.news-briefing-settings');
+      if (!settingsButton || !settingsSheet) return;
+
+      const closeButtons = settingsSheet.querySelectorAll('.btn-close, .btn-cancel, .btn-save');
+      const comboboxDim = settingsSheet.querySelector('.combobox-dim');
+      const dropdownButtons = Array.from(settingsSheet.querySelectorAll('.dropdown-btn'));
+      const timeSelectorWrapper = settingsSheet.querySelector('.time-selector__wrapper');
+      const timeDropdownBtn = settingsSheet.querySelector('.dropdown-btn[data-target="time-selector"]');
+      const timeDropdownLabel = timeDropdownBtn?.querySelector('.dropdown-label');
+      const timeSelector = settingsSheet.querySelector('.time-selector');
+      const pillBtns = Array.from(settingsSheet.querySelectorAll('.pill-btn'));
+      const sectionCount = settingsSheet.querySelector('.section-count');
+      const notificationToggle = settingsSheet.querySelector('.toggle-circle');
+      let openedCombobox = null;
+      let isTimeSelectorOpen = false;
+
+      const closeCombobox = () => {
+        if (openedCombobox) {
+          openedCombobox.classList.remove('is-open');
+          openedCombobox = null;
+        }
+        if (isTimeSelectorOpen) {
+          timeSelectorWrapper?.classList.remove('is-open');
+          timeSelectorWrapper?.setAttribute('aria-hidden', 'true');
+          isTimeSelectorOpen = false;
+        }
+        comboboxDim?.classList.remove('is-open');
+      };
+
+      const setSheetVisibility = (isOpen) => {
+        settingsSheet.classList.toggle('is-open', isOpen);
+        settingsSheet.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        if (!isOpen) closeCombobox();
+      };
+
+      const updateSectionCount = () => {
+        if (!sectionCount) return;
+        const count = settingsSheet.querySelectorAll('.pill-btn.active').length;
+        sectionCount.textContent = `${count}/3 선택`;
+      };
+
+      settingsButton.addEventListener('click', () => setSheetVisibility(true));
+      closeButtons.forEach((btn) => btn.addEventListener('click', () => setSheetVisibility(false)));
+      comboboxDim?.addEventListener('click', closeCombobox);
+
+      pillBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const isActive = btn.classList.contains('active');
+          const activeCount = settingsSheet.querySelectorAll('.pill-btn.active').length;
+
+          if (isActive) {
+            btn.classList.remove('active');
+          } else if (activeCount < 3) {
+            btn.classList.add('active');
+          }
+
+          updateSectionCount();
+        });
+      });
+      updateSectionCount();
+
+      notificationToggle?.addEventListener('click', () => {
+        const isActive = notificationToggle.classList.toggle('active');
+        notificationToggle.setAttribute('aria-checked', String(isActive));
+      });
+
+      dropdownButtons.forEach((btn) => {
+        const isTimeDropdown = btn.dataset.target === 'time-selector';
+        const combobox = btn.nextElementSibling?.classList?.contains('comobobox-selector')
+          ? btn.nextElementSibling
+          : null;
+
+        if (isTimeDropdown) {
+          btn.addEventListener('click', () => {
+            closeCombobox();
+            if (!timeSelectorWrapper) return;
+            timeSelectorWrapper.classList.add('is-open');
+            timeSelectorWrapper.setAttribute('aria-hidden', 'false');
+            comboboxDim?.classList.add('is-open');
+            isTimeSelectorOpen = true;
+          });
+          return;
+        }
+
+        if (!combobox) return;
+
+        btn.addEventListener('click', () => {
+          if (openedCombobox === combobox) {
+            closeCombobox();
+            return;
+          }
+
+          closeCombobox();
+          openedCombobox = combobox;
+          combobox.classList.add('is-open');
+          comboboxDim?.classList.add('is-open');
+        });
+
+        combobox.querySelectorAll('.option-btn').forEach((option) => {
+          option.addEventListener('click', () => {
+            const isMulti = combobox.classList.contains('multie');
+            const label = btn.querySelector('.dropdown-label');
+
+            if (isMulti) {
+              option.classList.toggle('active');
+              const selectedValues = Array.from(combobox.querySelectorAll('.option-btn.active')).map(
+                (el) => el.dataset.day,
+              );
+              if (label) {
+                label.textContent = selectedValues.join(', ');
+              }
+            } else {
+              combobox.querySelectorAll('.option-btn.active').forEach((el) => el.classList.remove('active'));
+              option.classList.add('active');
+              if (label) {
+                label.textContent = option.dataset.day;
+              }
+              closeCombobox();
+            }
+          });
+        });
+      });
+
+      if (timeSelector && timeDropdownLabel) {
+        const dialConfigs = {
+          ampm: {
+            key: 'ampm',
+            values: ['오전', '오후'],
+            element: settingsSheet.querySelector('.dial.ampm'),
+            track: settingsSheet.querySelector('.dial.ampm .dial__track'),
+          },
+          hour: {
+            key: 'hour',
+            values: Array.from({ length: 12 }, (_, index) => String(index + 1).padStart(2, '0')),
+            element: settingsSheet.querySelector('.dial.hour'),
+            track: settingsSheet.querySelector('.dial.hour .dial__track'),
+          },
+          minute: {
+            key: 'minute',
+            values: Array.from({ length: 6 }, (_, index) => String(index * 10).padStart(2, '0')),
+            element: settingsSheet.querySelector('.dial.minute'),
+            track: settingsSheet.querySelector('.dial.minute .dial__track'),
+          },
+        };
+
+        const initialTime = new Date();
+        initialTime.setHours(19, 30, 0, 0);
+
+        const selectionState = {
+          ampm: initialTime.getHours() >= 12 ? '오후' : '오전',
+          hour: String(initialTime.getHours() % 12 || 12).padStart(2, '0'),
+          minute: String(Math.round(initialTime.getMinutes() / 10) * 10).padStart(2, '0').padStart(2, '0'),
+        };
+
+        const formatTimeLabel = (state) => `${state.ampm} ${state.hour}시 ${state.minute}분`;
+
+        const setTimeLabel = (state) => {
+          timeDropdownLabel.textContent = formatTimeLabel(state);
+        };
+
+        const applyTransform = (config, value, animated = false) => {
+          if (!config?.track) return;
+          config.track.style.transition = animated ? 'transform 0.18s ease-out' : 'none';
+          config.track.style.transform = `translateY(${value}px)`;
+          config.translateY = value;
+        };
+
+        const updateSelection = (config, index, animated = false) => {
+          if (!config?.track) return;
+
+          const slots = Array.from(config.track.querySelectorAll('.slot'));
+          slots.forEach((slot, slotIndex) => {
+            slot.classList.toggle('selected', slotIndex === index);
+          });
+
+          selectionState[config.key] = config.values[index];
+          const targetTranslate = (config.centerOffset ?? 0) - (config.slotHeight ?? 0) * index;
+          applyTransform(config, targetTranslate, animated);
+          setTimeLabel(selectionState);
+        };
+
+        const snapToNearestSlot = (config, animated = true) => {
+          if (!config?.track || !config.values.length) return;
+          const slotHeight = config.slotHeight || 1;
+          const centerOffset = config.centerOffset || 0;
+          const rawIndex = Math.round((centerOffset - (config.translateY ?? 0)) / slotHeight);
+          const boundedIndex = Math.min(Math.max(rawIndex, 0), config.values.length - 1);
+          updateSelection(config, boundedIndex, animated);
+        };
+
+        const attachDialHandlers = (config) => {
+          if (!config?.element || !config.track) return;
+
+          let isPointerDown = false;
+          let startY = 0;
+          let startTranslate = 0;
+
+          const onPointerMove = (event) => {
+            if (!isPointerDown) return;
+            event.preventDefault();
+            const delta = event.clientY - startY;
+            const nextTranslate = startTranslate + delta;
+            applyTransform(config, nextTranslate, false);
+          };
+
+          const onPointerUp = () => {
+            if (!isPointerDown) return;
+            isPointerDown = false;
+            snapToNearestSlot(config, true);
+            if (config.pointerId != null) {
+              config.element.releasePointerCapture(config.pointerId);
+              config.pointerId = null;
+            }
+          };
+
+          config.element.addEventListener('pointerdown', (event) => {
+            event.preventDefault();
+            isPointerDown = true;
+            startY = event.clientY;
+            startTranslate = config.translateY ?? config.centerOffset ?? 0;
+            config.pointerId = event.pointerId;
+            config.track.style.transition = 'none';
+            config.element.setPointerCapture(event.pointerId);
+          });
+
+          config.element.addEventListener('pointermove', onPointerMove, { passive: false });
+          config.element.addEventListener('pointerup', onPointerUp);
+          config.element.addEventListener('pointercancel', onPointerUp);
+          config.element.addEventListener('pointerleave', onPointerUp);
+        };
+
+        const buildDial = (config) => {
+          if (!config?.track) return;
+          config.track.innerHTML = '';
+          config.values.forEach((value, index) => {
+            const slot = document.createElement('div');
+            slot.className = 'slot';
+            slot.textContent = value;
+            slot.dataset.index = index;
+            slot.addEventListener('click', () => updateSelection(config, index, true));
+            config.track.appendChild(slot);
+          });
+          const slotSample = config.track.querySelector('.slot');
+          const slotHeightFromStyle = slotSample ? parseFloat(getComputedStyle(slotSample).height) : 0;
+          config.slotHeight = slotSample?.offsetHeight || slotHeightFromStyle || 40;
+          const dialHeightStyle = parseFloat(getComputedStyle(config.element).height) || 0;
+          const dialHeight = config.element.clientHeight || dialHeightStyle || 152;
+          config.centerOffset = dialHeight / 2 - config.slotHeight / 2;
+          attachDialHandlers(config);
+        };
+
+        const initializeTimeSelector = () => {
+          Object.values(dialConfigs).forEach((config) => {
+            buildDial(config);
+            const initialIndex = config.values.indexOf(selectionState[config.key]);
+            const safeIndex = initialIndex >= 0 ? initialIndex : 0;
+            updateSelection(config, safeIndex, false);
+          });
+        };
+
+        initializeTimeSelector();
+      }
+    })();
+
     (function () {
       const MOBILE_VIEWPORT_MAX = 480;
       const reviewSwiperElement = document.querySelector('.customized-review .swiper');
