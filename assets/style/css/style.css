@@ -9291,6 +9291,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 20px;
+    counter-reset: top-news;
   }
   .ai-suggestion-news .top-news-list__wrapper {
     display: flex;
@@ -9311,6 +9312,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     vertical-align: middle;
   }
   .ai-suggestion-news .top-news-list__wrapper .btn-refresh-top-news {
+    display: none;
     margin-top: 4px;
     display: flex;
     height: var(--height-md, 40px);
@@ -9330,6 +9332,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .ai-suggestion-news .top-news-list__item {
     height: auto;
+    counter-increment: top-news;
   }
   .ai-suggestion-news .top-news-list__item a {
     display: flex;
@@ -9350,7 +9353,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background-position: center;
   }
   .ai-suggestion-news .top-news-list__item a .news-thumb:before {
-    content: "01";
+    content: counter(top-news, decimal-leading-zero);
     color: var(--text-primary);
     background: var(--orange-200, #E55204);
     font-size: 13px;
