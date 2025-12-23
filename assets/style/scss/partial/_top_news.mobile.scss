@@ -49,11 +49,13 @@
       padding: 0 $mobilePadSide;
       width: 100%;
       margin-top: 24px;
+      counter-reset: top-news;
       &__item{
         display: flex;
         height: auto;
         flex-direction: column;
         gap: var(--spacing-sm, 8px);
+        counter-increment: top-news;
       }
       &__thumb{
         position: relative;
@@ -84,6 +86,9 @@
             align-items: center;
             align-content: center;
             flex-wrap: wrap;
+            &:before{
+              content: counter(top-news, decimal-leading-zero);
+            }
           }
           &.category{
             display: inline-flex;
