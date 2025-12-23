@@ -6,7 +6,7 @@
     &__wrapper {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 24px;
       padding: 0 $mobilePadSide;
     }
 
@@ -44,6 +44,50 @@
       font-size: 15px;
       font-weight: 400;
       line-height: 23px;
+    }
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    height: 294px;
+  }
+
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: var(--bg-subtle_02, #212121);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    &__label {
+      color: var(--text-primary, #F0F0F0);
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 150%;
     }
   }
 }
