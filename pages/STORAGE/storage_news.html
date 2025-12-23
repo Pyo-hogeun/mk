@@ -27,16 +27,19 @@
     <div class="content-wrapper">
       <div class="section-bar">
         <div class="section-bar__container">
-          <button type="button" class="section-bar__tab active" data-section="kospi">
+          <button type="button" class="section-bar__tab active" data-target="content__news-brief">
             <div class="section-bar__label">뉴스 브리핑</div>
             <div class="section-bar__indicator"></div>
           </button>
-          <button type="button" class="section-bar__tab" data-section="kosdaq">
+          <button type="button" class="section-bar__tab" data-target="content__issue-trend">
             <div class="section-bar__label">이슈 트렌드</div>
             <div class="section-bar__indicator"></div>
           </button>
         </div>
       </div>
+
+      <div class="content__news-brief content-section is-active"></div>
+      <div class="content__issue-trend content-section"></div>
 
       <div class="filter-buttons col-2">
         <button type="button" class="filter-btn active">전체 브리핑</button>
