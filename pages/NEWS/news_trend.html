@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body class="dark">
+  <div class="container">
+    <div class="agent-header">
+      <div class="agent-brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.49996 5.83333C2.9602 5.83333 3.33329 6.20643 3.33329 6.66667V15.8333H15C15.4602 15.8333 15.8333 16.2064 15.8333 16.6667C15.8333 17.1269 15.4602 17.5 15 17.5H3.33329C1.66663 17.5 1.66663 15.8333 1.66663 15.8333V6.66667C1.66663 6.20643 2.03972 5.83333 2.49996 5.83333ZM17.5 4.16667V12.5H6.66663V4.16667H17.5ZM17.75 2.5H6.41663C5.63329 2.5 4.99996 3.08333 4.99996 3.79167V12.875C4.99996 13.5917 5.63329 14.1667 6.41663 14.1667H17.75C18.5333 14.1667 19.1666 13.5917 19.1666 12.875V3.79167C19.1666 3.08333 18.5333 2.5 17.75 2.5ZM7.49996 6C7.49996 5.44772 7.94767 5 8.49996 5H8.99996C9.55224 5 9.99996 5.44772 9.99996 6V8.16667C9.99996 8.71895 9.55224 9.16667 8.99996 9.16667H8.49996C7.94767 9.16667 7.49996 8.71895 7.49996 8.16667V6ZM16.6666 10.8333C16.6666 11.2936 16.2935 11.6667 15.8333 11.6667H8.33329C7.87306 11.6667 7.49996 11.2936 7.49996 10.8333C7.49996 10.3731 7.87305 10 8.33329 10H15.8333C16.2935 10 16.6666 10.3731 16.6666 10.8333ZM16.6666 5.83333C16.6666 6.29357 16.2935 6.66667 15.8333 6.66667H12.5C12.0397 6.66667 11.6666 6.29357 11.6666 5.83333C11.6666 5.3731 12.0397 5 12.5 5H15.8333C16.2935 5 16.6666 5.3731 16.6666 5.83333ZM16.6666 8.33333C16.6666 8.79357 16.2935 9.16667 15.8333 9.16667H12.5C12.0397 9.16667 11.6666 8.79357 11.6666 8.33333C11.6666 7.8731 12.0397 7.5 12.5 7.5H15.8333C16.2935 7.5 16.6666 7.8731 16.6666 8.33333Z"
+              fill="white" />
+          </svg>
+
+        </div>
+        <div class="brand-title">
+          MAI 뉴스 에이전트
+          <button type="button" class="btn-toggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0 8C0 3.58172 3.58172 0 8 0H12C16.4183 0 20 3.58172 20 8V12C20 16.4183 16.4183 20 12 20H8C3.58172 20 0 16.4183 0 12V8Z"
+                fill="#2F2F2F" />
+              <path
+                d="M5.58542 7.74378C5.9107 7.4162 6.44024 7.41526 6.76667 7.74169L9.29289 10.2679C9.68342 10.6584 10.3166 10.6584 10.7071 10.2679L13.2333 7.7417C13.5598 7.41526 14.0893 7.4162 14.4146 7.74378C14.7382 8.06973 14.7373 8.59606 14.4125 8.92086L10.7071 12.6263C10.3166 13.0168 9.68342 13.0168 9.29289 12.6263L5.5875 8.92086C5.2627 8.59606 5.26177 8.06973 5.58542 7.74378Z"
+                fill="#F0F0F0" />
+            </svg>
+          </button>
+
+        </div>
+      </div>
+      <div class="fn-buttons">
+        <button type="button" class="btn btn-storage">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17 17C17 17.5523 16.5523 18 16 18H2C1.44772 18 1 17.5523 1 17V8C1 7.44771 1.44772 7 2 7C2.55228 7 3 7.44772 3 8V15C3 15.5523 3.44772 16 4 16H14C14.5523 16 15 15.5523 15 15V8C15 7.44772 15.4477 7 16 7C16.5523 7 17 7.44772 17 8V17ZM0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1V5C18 5.55228 17.5523 6 17 6H1C0.447716 6 0 5.55228 0 5V1ZM6.5 8H11.5C11.78 8 12 8.22 12 8.5V9C12 9.55229 11.5523 10 11 10H7C6.44772 10 6 9.55228 6 9V8.5C6 8.22 6.22 8 6.5 8ZM3 2C2.44772 2 2 2.44772 2 3C2 3.55228 2.44772 4 3 4H15C15.5523 4 16 3.55228 16 3C16 2.44772 15.5523 2 15 2H3Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+        <button type="button" class="btn btn-setting">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9 11.25C10.2426 11.25 11.25 10.2426 11.25 9C11.25 7.75736 10.2426 6.75 9 6.75C7.75736 6.75 6.75 7.75736 6.75 9C6.75 10.2426 7.75736 11.25 9 11.25Z"
+              fill="currentColor" />
+            <path
+              d="M7.875 17.25C7.6875 17.25 7.5375 17.1188 7.5 16.9313L7.2375 15.0375C7.2 14.775 7.0125 14.55 6.75 14.4375C6.46875 14.3063 6.2 14.1563 5.93125 14.0063C5.6875 13.875 5.4 13.8375 5.15625 13.9313L3.375 14.625C3.1875 14.7 2.9625 14.625 2.85 14.4563L1.5 12.3188C1.3875 12.15 1.425 11.9438 1.5375 11.8125L2.99843 10.5234C3.19687 10.3594 3.30156 10.1016 3.28125 9.84375L3.25312 9.42188C3.25156 9.38906 3.25156 9.35625 3.25469 9.32344L3.28281 8.89219C3.30312 8.63281 3.19687 8.37344 2.99687 8.21094L1.5375 6.92188C1.425 6.79062 1.3875 6.58438 1.5 6.41562L2.85 4.27813C2.9625 4.10938 3.1875 4.02188 3.375 4.10938L5.16094 4.79531C5.40156 4.88906 5.66562 4.85156 5.90625 4.71094C6.17344 4.56094 6.44062 4.41094 6.71875 4.27969C6.97656 4.16719 7.16406 3.94219 7.20156 3.67969L7.5 1.78125C7.5375 1.59375 7.6875 1.46094 7.875 1.46094H10.125C10.3125 1.46094 10.4625 1.59375 10.5 1.78125L10.7625 3.67969C10.8 3.94219 10.9875 4.16719 11.25 4.27969C11.5312 4.41094 11.7984 4.56094 12.0672 4.71094C12.3109 4.85156 12.5984 4.88906 12.8391 4.79531L14.625 4.10938C14.8125 4.02188 15.0375 4.10938 15.15 4.27813L16.5 6.41562C16.6125 6.58438 16.575 6.79062 16.4625 6.92188L15.0016 8.21094C14.8031 8.37344 14.6984 8.63281 14.7188 8.89219L14.7469 9.32344C14.7484 9.35625 14.7484 9.38906 14.7453 9.42188L14.7172 9.84375C14.6969 10.1016 14.8031 10.3594 15.0031 10.5234L16.4625 11.8125C16.575 11.9438 16.6125 12.15 16.5 12.3188L15.15 14.4563C15.0375 14.625 14.8125 14.7 14.625 14.625L12.8391 13.9313C12.5984 13.8375 12.3344 13.875 12.0938 14.0063C11.8266 14.1563 11.5594 14.3063 11.2812 14.4375C11.0234 14.55 10.8359 14.775 10.7984 15.0375L10.5 16.9313C10.4625 17.1188 10.3125 17.25 10.125 17.25H7.875Z"
+              stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-tabs">
+        <div class="nav-tabs-container">
+          <div class="nav-tab" data-target="content__brief">
+            <div class="tab-label">뉴스 브리핑</div>
+          </div>
+          <div class="nav-tab" data-target="content__suggestion">
+            <div class="tab-label">추천 뉴스</div>
+          </div>
+          <div class="nav-tab active" data-target="content__trend">
+            <div class="tab-label">이슈 트렌드</div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content__brief content-section"></div>
+      <div class="content__suggestion content-section"></div>
+      <div class="content__trend content-section is-active">
+        <div class="trend__wrapper">
+          <div class="trend__header">
+            <div class="trend__title">
+              이슈 트렌드
+              <i class="notice__ai-brief" role="button" tabindex="0" data-bottom-sheet-target="ai-briefing-sheet"
+                aria-label="AI 뉴스 브리핑 안내">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.2 18C13.2 18.4418 13.5582 18.8 14 18.8C14.4418 18.8 14.8 18.4418 14.8 18C14.8 17.5582 14.4418 17.2 14 17.2C13.5582 17.2 13.2 17.5582 13.2 18ZM14 6C12.9494 6 11.9091 6.20693 10.9385 6.60896C9.96793 7.011 9.08601 7.60028 8.34315 8.34315C6.84285 9.84344 6 11.8783 6 14C6 16.1217 6.84285 18.1566 8.34315 19.6569C9.08601 20.3997 9.96793 20.989 10.9385 21.391C11.9091 21.7931 12.9494 22 14 22C16.1217 22 18.1566 21.1571 19.6569 19.6569C21.1571 18.1566 22 16.1217 22 14C22 12.9494 21.7931 11.9091 21.391 10.9385C20.989 9.96793 20.3997 9.08601 19.6569 8.34315C18.914 7.60028 18.0321 7.011 17.0615 6.60896C16.0909 6.20693 15.0506 6 14 6ZM14 20.4C10.472 20.4 7.6 17.528 7.6 14C7.6 10.472 10.472 7.6 14 7.6C17.528 7.6 20.4 10.472 20.4 14C20.4 17.528 17.528 20.4 14 20.4ZM14 9.2C13.1513 9.2 12.3374 9.53714 11.7373 10.1373C11.3276 10.5469 11.0404 11.0563 10.8995 11.6083C10.7902 12.0364 11.1582 12.4 11.6 12.4C12.0418 12.4 12.3841 12.0206 12.5959 11.6329C12.6683 11.5003 12.7598 11.3774 12.8686 11.2686C13.1687 10.9686 13.5757 10.8 14 10.8C14.4243 10.8 14.8313 10.9686 15.1314 11.2686C15.4314 11.5687 15.6 11.9757 15.6 12.4C15.6 13.8156 13.7214 13.8222 13.2883 15.6055C13.184 16.0349 13.5582 16.4 14 16.4C14.4418 16.4 14.7814 16.0236 14.9738 15.6258C15.5253 14.4853 17.2 14.0707 17.2 12.4C17.2 11.5513 16.8629 10.7374 16.2627 10.1373C15.6626 9.53714 14.8487 9.2 14 9.2Z"
+                    fill="#7B7B7B"></path>
+                </svg>
+              </i>
+            </div>
+          </div>
+          <div class="trend__description">
+            AI가 분석한 실시간 이슈 트렌드를 확인해보세요.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 뉴스 브리핑 설정 -->
+  <div class="bottom-sheet news-briefing-settings" role="dialog" aria-modal="true" aria-label="브리핑 설정"
+    aria-hidden="true">
+    <div class="news-briefing-settings__container">
+      <div class="news-briefing-settings__header">
+        <h2 class="title">브리핑 설정</h2>
+        <button type="button" class="btn-close" aria-label="닫기">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16.4104 13.2928C16.0199 13.6833 16.0199 14.3165 16.4104 14.707L21.8738 20.1704C22.0613 20.3579 22.1666 20.6122 22.1666 20.8775V21.1666C22.1666 21.7189 21.7189 22.1666 21.1666 22.1666H20.8775C20.6123 22.1666 20.358 22.0612 20.1704 21.8737L14.7071 16.4104C14.3166 16.0198 13.6834 16.0198 13.2929 16.4104L7.82954 21.8737C7.642 22.0612 7.38765 22.1666 7.12243 22.1666H6.83331C6.28103 22.1666 5.83331 21.7189 5.83331 21.1666V20.8775C5.83331 20.6123 5.93867 20.3579 6.12621 20.1704L11.5895 14.707C11.9801 14.3165 11.9801 13.6833 11.5895 13.2928L6.12621 7.82948C5.93867 7.64194 5.83331 7.38759 5.83331 7.12237V6.83325C5.83331 6.28097 6.28103 5.83325 6.83331 5.83325H7.12243C7.38765 5.83325 7.642 5.93861 7.82954 6.12615L13.2929 11.5895C13.6834 11.98 14.3166 11.98 14.7071 11.5895L20.1704 6.12615C20.358 5.93861 20.6123 5.83325 20.8775 5.83325H21.1666C21.7189 5.83325 22.1666 6.28097 22.1666 6.83325V7.12237C22.1666 7.38759 22.0613 7.64194 21.8738 7.82948L16.4104 13.2928Z"
+              fill="#F0F0F0" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="news-briefing-settings__body">
+        <section class="settings-section">
+          <div class="section-header">
+            <div class="section-info">
+              <h3 class="section-title">관심 섹션 설정</h3>
+              <p class="section-description">최대 3개까지 선택 가능합니다.</p>
+            </div>
+            <div class="section-count">0/3 선택</div>
+          </div>
+          <div class="category-pills">
+            <button class="pill-btn" type="button">경제</button>
+            <button class="pill-btn" type="button">기업</button>
+            <button class="pill-btn" type="button">사회</button>
+            <button class="pill-btn" type="button">국제</button>
+            <button class="pill-btn" type="button">부동산</button>
+            <button class="pill-btn" type="button">증권</button>
+            <button class="pill-btn" type="button">정치</button>
+            <button class="pill-btn" type="button">IT·과학</button>
+            <button class="pill-btn" type="button">문화</button>
+            <button class="pill-btn" type="button">스포츠</button>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="section-header-simple">
+            <h3 class="section-title">예약 업데이트 시간</h3>
+          </div>
+          <div class="dropdown-group">
+            <button class="dropdown-btn" type="button">
+              <span class="dropdown-label">매일</span>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z"
+                  fill="#7B7B7B" />
+              </svg>
+            </button>
+            <div class="comobobox-selector multie">
+              <button class="option-btn active" type="button" data-day="매일">매일</button>
+              <button class="option-btn" type="button" data-day="일">일요일 마다</button>
+              <button class="option-btn" type="button" data-day="월">월요일 마다</button>
+              <button class="option-btn" type="button" data-day="화">화요일 마다</button>
+              <button class="option-btn" type="button" data-day="수">수요일 마다</button>
+              <button class="option-btn" type="button" data-day="목">목요일 마다</button>
+              <button class="option-btn" type="button" data-day="금">금요일 마다</button>
+              <button class="option-btn" type="button" data-day="토">토요일 마다</button>
+            </div>
+            <button class="dropdown-btn" type="button" data-target="time-selector">
+              <span class="dropdown-label">오후 07시 30분</span>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z"
+                  fill="#7B7B7B" />
+              </svg>
+            </button>
+          </div>
+          <div class="time-selector__wrapper" aria-hidden="true">
+            <div class="time-selector" role="dialog" aria-label="예약 업데이트 시간">
+              <div class="select-bar"></div>
+              <div class="dial ampm" data-dial="ampm">
+                <div class="dial__track"></div>
+              </div>
+              <div class="dial hour" data-dial="hour">
+                <div class="dial__track"></div>
+              </div>
+              <div class="dial minute" data-dial="minute">
+                <div class="dial__track"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="notification-toggle">
+            <div class="notification-info">
+              <h3 class="section-title">정기 알림 받기</h3>
+              <p class="section-description">브리핑이 생성되면 이메일로 알림이 발송됩니다.</p>
+            </div>
+            <button class="toggle-circle" type="button" role="switch" aria-checked="false" aria-label="정기 알림 받기">
+              <span class="toggle-knob"></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="dual-dropdown">
+            <div class="dropdown-item">
+              <h3 class="section-title">브리핑 시간</h3>
+              <button class="dropdown-btn" type="button">
+                <span class="dropdown-label">3분</span>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z"
+                    fill="#7B7B7B" />
+                </svg>
+              </button>
+              <div class="comobobox-selector single">
+                <button class="option-btn active" type="button" data-day="3분">3분</button>
+                <button class="option-btn" type="button" data-day="7분">7분</button>
+              </div>
+            </div>
+            <div class="dropdown-item">
+              <h3 class="section-title">진행 인원</h3>
+              <button class="dropdown-btn" type="button">
+                <span class="dropdown-label">1인 진행</span>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.9379 10.7221C8.32802 10.3292 8.96311 10.3281 9.35461 10.7196L13.2929 14.6579C13.6834 15.0484 14.3166 15.0484 14.7071 14.6579L18.6454 10.7196C19.0369 10.3281 19.672 10.3292 20.0621 10.7221L20.2979 10.9596C20.6861 11.3505 20.6849 11.9817 20.2954 12.3713L14.7071 17.9596C14.3166 18.3501 13.6834 18.3501 13.2929 17.9596L7.70461 12.3713C7.31506 11.9817 7.31395 11.3505 7.70212 10.9596L7.9379 10.7221Z"
+                    fill="#7B7B7B" />
+                </svg>
+              </button>
+              <div class="comobobox-selector single">
+                <button class="option-btn active" type="button" data-day="1인 진행">1인 진행</button>
+                <button class="option-btn" type="button" data-day="2인 진행">2인 진행</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="news-briefing-settings__footer">
+        <button class="btn btn-cancel" type="button">취소</button>
+        <button class="btn btn-save" type="button">저장</button>
+      </div>
+    </div>
+    <div class="combobox-dim" aria-hidden="true"></div>
+  </div>
+
+  <!-- AI 뉴스 브리핑 -->
+  <div class="bottom-sheet bottom-sheet--ai" id="ai-briefing-sheet" role="dialog" aria-modal="true"
+    aria-label="AI 뉴스 브리핑" aria-hidden="true">
+    <div class="bottom-sheet__handle" data-bottom-sheet-dismiss></div>
+    <h2 class="bottom-sheet__title">AI 뉴스 브리핑</h2>
+    <div class="bottom-sheet__body">
+      <ul class="bottom-sheet__list">
+        <li class="bottom-sheet__list-item">설정한 섹션 카테고리를 기준으로 AI가 매일 주요 뉴스를 선별해 브리핑으로 정리해드려요.</li>
+        <li class="bottom-sheet__list-item">설정 전에는 그동안 읽은 뉴스 흐름을 분석해 추천 섹션 3개에 대한 자동 브리핑을 먼저 제공해요.</li>
+        <li class="bottom-sheet__list-item">매일 나에게 꼭 필요한 소식만 골라 효율적으로 뉴스를 소비할 수 있어요.</li>
+      </ul>
+    </div>
+    <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
+  </div>
+  <!-- 맞춤형 해설 -->
+  <div class="bottom-sheet bottom-sheet--ai" id="ai-customize-sheet" role="dialog" aria-modal="true" aria-label="맞춤형 해설"
+    aria-hidden="true">
+    <div class="bottom-sheet__handle" data-bottom-sheet-dismiss></div>
+    <h2 class="bottom-sheet__title">맞춤형 해설</h2>
+    <div class="bottom-sheet__body">
+      <ul class="bottom-sheet__list">
+        <li class="bottom-sheet__list-item">선택한 뉴스의 핵심 이슈와 배경, 사회적 영향을 AI가 분석해 리포트 형태로 정리해드려요.</li>
+        <li class="bottom-sheet__list-item">단순한 사실 전달을 넘어 다각도 분석과 시사점을 제공하여 복잡한 뉴스를 더 깊이 있게 이해할 수 있어요.</li>
+        <li class="bottom-sheet__list-item">뉴스의 맥락을 파악하고 나만의 관점을 세우는 데 도움을 드려요.</li>
+      </ul>
+    </div>
+    <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    //브리핑 설정 팝업
+    (() => {
+      const settingsButton = document.querySelector('.btn-setting');
+      const settingsSheet = document.querySelector('.bottom-sheet.news-briefing-settings');
+      if (!settingsButton || !settingsSheet) return;
+
+      let sheetDim = document.querySelector('.bottom-sheet-dim');
+      if (!sheetDim) {
+        sheetDim = document.createElement('div');
+        sheetDim.className = 'bottom-sheet-dim';
+        document.body.appendChild(sheetDim);
+      }
+
+      const closeButtons = settingsSheet.querySelectorAll('.btn-close, .btn-cancel, .btn-save');
+      const comboboxDim = settingsSheet.querySelector('.combobox-dim');
+      const dropdownButtons = Array.from(settingsSheet.querySelectorAll('.dropdown-btn'));
+      const timeSelectorWrapper = settingsSheet.querySelector('.time-selector__wrapper');
+      const timeDropdownBtn = settingsSheet.querySelector('.dropdown-btn[data-target="time-selector"]');
+      const timeDropdownLabel = timeDropdownBtn?.querySelector('.dropdown-label');
+      const timeSelector = settingsSheet.querySelector('.time-selector');
+      const pillBtns = Array.from(settingsSheet.querySelectorAll('.pill-btn'));
+      const sectionCount = settingsSheet.querySelector('.section-count');
+      const notificationToggle = settingsSheet.querySelector('.toggle-circle');
+      let openedCombobox = null;
+      let isTimeSelectorOpen = false;
+
+      const toggleSheetDim = (shouldShow) => {
+        if (!sheetDim) return;
+        const hasAnyOpenSheet = document.querySelectorAll('.bottom-sheet.is-open').length > 0;
+        const isVisible = shouldShow || hasAnyOpenSheet;
+        sheetDim.classList.toggle('is-visible', isVisible);
+        document.body.classList.toggle('bottom-sheet-open', isVisible);
+      };
+
+      const closeCombobox = () => {
+        if (openedCombobox) {
+          openedCombobox.classList.remove('is-open');
+          openedCombobox = null;
+        }
+        if (isTimeSelectorOpen) {
+          timeSelectorWrapper?.classList.remove('is-open');
+          timeSelectorWrapper?.setAttribute('aria-hidden', 'true');
+          isTimeSelectorOpen = false;
+        }
+        comboboxDim?.classList.remove('is-open');
+      };
+
+      const setSheetVisibility = (isOpen) => {
+        settingsSheet.classList.toggle('is-open', isOpen);
+        settingsSheet.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        toggleSheetDim(isOpen);
+        if (!isOpen) closeCombobox();
+      };
+
+      const updateSectionCount = () => {
+        if (!sectionCount) return;
+        const count = settingsSheet.querySelectorAll('.pill-btn.active').length;
+        sectionCount.textContent = `${count}/3 선택`;
+      };
+
+      settingsButton.addEventListener('click', () => setSheetVisibility(true));
+      closeButtons.forEach((btn) => btn.addEventListener('click', () => setSheetVisibility(false)));
+      comboboxDim?.addEventListener('click', closeCombobox);
+      sheetDim?.addEventListener('click', () => {
+        if (settingsSheet.classList.contains('is-open')) {
+          setSheetVisibility(false);
+        }
+      });
+
+      pillBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const isActive = btn.classList.contains('active');
+          const activeCount = settingsSheet.querySelectorAll('.pill-btn.active').length;
+
+          if (isActive) {
+            btn.classList.remove('active');
+          } else if (activeCount < 3) {
+            btn.classList.add('active');
+          }
+
+          updateSectionCount();
+        });
+      });
+      updateSectionCount();
+
+      notificationToggle?.addEventListener('click', () => {
+        const isActive = notificationToggle.classList.toggle('active');
+        notificationToggle.setAttribute('aria-checked', String(isActive));
+      });
+
+      dropdownButtons.forEach((btn) => {
+        const isTimeDropdown = btn.dataset.target === 'time-selector';
+        const combobox = btn.nextElementSibling?.classList?.contains('comobobox-selector')
+          ? btn.nextElementSibling
+          : null;
+
+        if (isTimeDropdown) {
+          btn.addEventListener('click', () => {
+            closeCombobox();
+            if (!timeSelectorWrapper) return;
+            timeSelectorWrapper.classList.add('is-open');
+            timeSelectorWrapper.setAttribute('aria-hidden', 'false');
+            comboboxDim?.classList.add('is-open');
+            isTimeSelectorOpen = true;
+          });
+          return;
+        }
+
+        if (!combobox) return;
+
+        btn.addEventListener('click', () => {
+          if (openedCombobox === combobox) {
+            closeCombobox();
+            return;
+          }
+
+          closeCombobox();
+          openedCombobox = combobox;
+          combobox.classList.add('is-open');
+          comboboxDim?.classList.add('is-open');
+        });
+
+        combobox.querySelectorAll('.option-btn').forEach((option) => {
+          option.addEventListener('click', () => {
+            const isMulti = combobox.classList.contains('multie');
+            const label = btn.querySelector('.dropdown-label');
+
+            if (isMulti) {
+              option.classList.toggle('active');
+              const selectedValues = Array.from(combobox.querySelectorAll('.option-btn.active')).map(
+                (el) => el.dataset.day,
+              );
+              if (label) {
+                label.textContent = selectedValues.join(', ');
+              }
+            } else {
+              combobox.querySelectorAll('.option-btn.active').forEach((el) => el.classList.remove('active'));
+              option.classList.add('active');
+              if (label) {
+                label.textContent = option.dataset.day;
+              }
+              closeCombobox();
+            }
+          });
+        });
+      });
+
+      if (timeSelector && timeDropdownLabel) {
+        const dialConfigs = {
+          ampm: {
+            key: 'ampm',
+            values: ['오전', '오후'],
+            element: settingsSheet.querySelector('.dial.ampm'),
+            track: settingsSheet.querySelector('.dial.ampm .dial__track'),
+          },
+          hour: {
+            key: 'hour',
+            values: Array.from({ length: 12 }, (_, index) => String(index + 1).padStart(2, '0')),
+            element: settingsSheet.querySelector('.dial.hour'),
+            track: settingsSheet.querySelector('.dial.hour .dial__track'),
+          },
+          minute: {
+            key: 'minute',
+            values: Array.from({ length: 6 }, (_, index) => String(index * 10).padStart(2, '0')),
+            element: settingsSheet.querySelector('.dial.minute'),
+            track: settingsSheet.querySelector('.dial.minute .dial__track'),
+          },
+        };
+
+        const initialTime = new Date();
+        initialTime.setHours(19, 30, 0, 0);
+
+        const selectionState = {
+          ampm: initialTime.getHours() >= 12 ? '오후' : '오전',
+          hour: String(initialTime.getHours() % 12 || 12).padStart(2, '0'),
+          minute: String(Math.round(initialTime.getMinutes() / 10) * 10).padStart(2, '0').padStart(2, '0'),
+        };
+
+        const formatTimeLabel = (state) => `${state.ampm} ${state.hour}시 ${state.minute}분`;
+
+        const setTimeLabel = (state) => {
+          timeDropdownLabel.textContent = formatTimeLabel(state);
+        };
+
+        const applyTransform = (config, value, animated = false) => {
+          if (!config?.track) return;
+          config.track.style.transition = animated ? 'transform 0.18s ease-out' : 'none';
+          config.track.style.transform = `translateY(${value}px)`;
+          config.translateY = value;
+        };
+
+        const updateSelection = (config, index, animated = false) => {
+          if (!config?.track) return;
+
+          const slots = Array.from(config.track.querySelectorAll('.slot'));
+          slots.forEach((slot, slotIndex) => {
+            slot.classList.toggle('selected', slotIndex === index);
+          });
+
+          selectionState[config.key] = config.values[index];
+          const targetTranslate = (config.centerOffset ?? 0) - (config.slotHeight ?? 0) * index;
+          applyTransform(config, targetTranslate, animated);
+          setTimeLabel(selectionState);
+        };
+
+        const snapToNearestSlot = (config, animated = true) => {
+          if (!config?.track || !config.values.length) return;
+          const slotHeight = config.slotHeight || 1;
+          const centerOffset = config.centerOffset || 0;
+          const rawIndex = Math.round((centerOffset - (config.translateY ?? 0)) / slotHeight);
+          const boundedIndex = Math.min(Math.max(rawIndex, 0), config.values.length - 1);
+          updateSelection(config, boundedIndex, animated);
+        };
+
+        const attachDialHandlers = (config) => {
+          if (!config?.element || !config.track) return;
+
+          let isPointerDown = false;
+          let startY = 0;
+          let startTranslate = 0;
+
+          const onPointerMove = (event) => {
+            if (!isPointerDown) return;
+            event.preventDefault();
+            const delta = event.clientY - startY;
+            const nextTranslate = startTranslate + delta;
+            applyTransform(config, nextTranslate, false);
+          };
+
+          const onPointerUp = () => {
+            if (!isPointerDown) return;
+            isPointerDown = false;
+            snapToNearestSlot(config, true);
+            if (config.pointerId != null) {
+              config.element.releasePointerCapture(config.pointerId);
+              config.pointerId = null;
+            }
+          };
+
+          config.element.addEventListener('pointerdown', (event) => {
+            event.preventDefault();
+            isPointerDown = true;
+            startY = event.clientY;
+            startTranslate = config.translateY ?? config.centerOffset ?? 0;
+            config.pointerId = event.pointerId;
+            config.track.style.transition = 'none';
+            config.element.setPointerCapture(event.pointerId);
+          });
+
+          config.element.addEventListener('pointermove', onPointerMove, { passive: false });
+          config.element.addEventListener('pointerup', onPointerUp);
+          config.element.addEventListener('pointercancel', onPointerUp);
+          config.element.addEventListener('pointerleave', onPointerUp);
+        };
+
+        const buildDial = (config) => {
+          if (!config?.track) return;
+          config.track.innerHTML = '';
+          config.values.forEach((value, index) => {
+            const slot = document.createElement('div');
+            slot.className = 'slot';
+            slot.textContent = value;
+            slot.dataset.index = index;
+            slot.addEventListener('click', () => updateSelection(config, index, true));
+            config.track.appendChild(slot);
+          });
+          const slotSample = config.track.querySelector('.slot');
+          const slotHeightFromStyle = slotSample ? parseFloat(getComputedStyle(slotSample).height) : 0;
+          config.slotHeight = slotSample?.offsetHeight || slotHeightFromStyle || 40;
+          const dialHeightStyle = parseFloat(getComputedStyle(config.element).height) || 0;
+          const dialHeight = config.element.clientHeight || dialHeightStyle || 152;
+          config.centerOffset = dialHeight / 2 - config.slotHeight / 2;
+          attachDialHandlers(config);
+        };
+
+        const initializeTimeSelector = () => {
+          Object.values(dialConfigs).forEach((config) => {
+            buildDial(config);
+            const initialIndex = config.values.indexOf(selectionState[config.key]);
+            const safeIndex = initialIndex >= 0 ? initialIndex : 0;
+            updateSelection(config, safeIndex, false);
+          });
+        };
+
+        initializeTimeSelector();
+      }
+    })();
+    (function () {
+      // 맞춤형 해설 swiper 동작
+      const MOBILE_VIEWPORT_MAX = 480;
+      const reviewSwiperElement = document.querySelector('.customized-review .swiper');
+      const indicatorEl = document.querySelector('.customized-review__header .indicator');
+      let reviewSwiper = null;
+
+      const createReviewSwiper = () => {
+        if (!reviewSwiperElement || reviewSwiper) return;
+
+        const swiperOptions = {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        };
+
+        if (indicatorEl) {
+          indicatorEl.innerHTML = '';
+          swiperOptions.pagination = {
+            el: indicatorEl,
+            clickable: true,
+            bulletClass: 'dot',
+            bulletActiveClass: 'active',
+            renderBullet: (index, className) =>
+              `<span class="${className}" aria-label="맞춤형 해설 ${index + 1}번 슬라이드"></span>`,
+          };
+        }
+
+        reviewSwiper = new Swiper(reviewSwiperElement, swiperOptions);
+      };
+
+      const destroyReviewSwiper = () => {
+        if (!reviewSwiper) return;
+        reviewSwiper.destroy(true, true);
+        reviewSwiper = null;
+        if (indicatorEl) {
+          indicatorEl.innerHTML = '';
+        }
+      };
+
+      const handleResponsiveSwiper = () => {
+        if (window.innerWidth <= MOBILE_VIEWPORT_MAX) {
+          createReviewSwiper();
+        } else {
+          destroyReviewSwiper();
+        }
+      };
+
+      handleResponsiveSwiper();
+      window.addEventListener('resize', handleResponsiveSwiper);
+
+      //gnb
+      const tabs = document.querySelectorAll('.nav-tab');
+      const sections = document.querySelectorAll('.content-section');
+
+      const resetTabs = () => {
+        tabs.forEach((tab) => tab.classList.remove('active'));
+        sections.forEach((section) => section.classList.remove('is-active'));
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-target');
+          const content = target
+            ? document.querySelector(`.${target}`)
+            : null;
+
+          if (!content) return;
+
+          resetTabs();
+          tab.classList.add('active');
+          content.classList.add('is-active');
+        });
+      });
+    })();
+
+
+  </script>
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+
+</html>

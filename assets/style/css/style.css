@@ -9928,4 +9928,44 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .top-news .top-news-list__title .message {
     display: none;
   }
+}
+@media screen and (max-width: 480px) {
+  .trend__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+  }
+  .trend__header {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    gap: 4px;
+    font-size: 20px;
+    color: var(--text-primary, #F0F0F0);
+    font-weight: 700;
+    line-height: 28px;
+    justify-content: space-between;
+  }
+  .trend__title {
+    color: var(--text-primary, #F0F0F0);
+  }
+  .trend__title i {
+    vertical-align: middle;
+  }
+  .trend__icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .trend__description {
+    color: var(--text-primary, #F0F0F0);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+  }
 }/*# sourceMappingURL=style.css.map */
