@@ -1,7 +1,7 @@
 @use 'variables'as *;
 @use 'mixin'as *;
 
-@media screen and (max-width: $mobile) {
+@media screen and (min-width: $mobile) {
   .trend {
     &__wrapper {
       display: flex;
@@ -56,7 +56,7 @@
 
   .category-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-template-rows: repeat(4, minmax(0, 1fr));
     gap: 16px;
     height: 294px;
@@ -100,25 +100,17 @@
 
   .industry-insights-scroll {
     display: flex;
-    width: calc(100% + $mobilePadSide * 2);
-    margin-left: -$mobilePadSide;
-    padding-left: $mobilePadSide;
-    padding-right: $mobilePadSide;
+    width: 100%;
+    // margin-left: -$mobilePadSide;
+    // padding-left: $mobilePadSide;
+    // padding-right: $mobilePadSide;
     gap: 12px;
-    overflow-x: auto;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    gap: 24px;
   }
 
   .insight-card {
     display: flex;
-    flex: 0 0 auto;
-    width: 212px;
+    flex: 1 1 380px;
     padding: 24px;
     flex-direction: column;
     align-items: flex-end;
