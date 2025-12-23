@@ -9205,19 +9205,19 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .ai-suggestion-news .suggestion-news-list {
     display: flex;
-    gap: 12px;
+    gap: 24px;
   }
   .ai-suggestion-news .suggestion-news-list__wrapper {
     width: calc(100% + 15px);
     overflow-x: auto;
   }
   .ai-suggestion-news .suggestion-news-list__wrapper::-webkit-scrollbar {
-    display: none; /* Chrome / Safari / Edge */
+    display: none;
+    /* Chrome / Safari / Edge */
   }
   .ai-suggestion-news .suggestion-news-list__item {
-    flex: 0 0 300px;
+    flex: 1 0 300px;
     display: inline-flex;
-    width: 300px;
     height: 224px;
     flex-direction: column;
     gap: var(--spacing-sm, 8px);
@@ -9233,10 +9233,15 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .ai-suggestion-news .suggestion-news-list__thumb .badge {
     color: var(--text-primary);
+    background: var(--orange-200, #E55204);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 19.5px */
   }
   .ai-suggestion-news .suggestion-news-list__thumb .badge.rank {
     border-radius: 1px 0 12px 0;
-    background: var(--orange-200, #E55204);
     position: absolute;
     left: 0;
     top: 0;
@@ -9249,6 +9254,19 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-content: center;
     flex-wrap: wrap;
   }
+  .ai-suggestion-news .suggestion-news-list__thumb .badge.category {
+    display: inline-flex;
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    height: 20px;
+    padding: 0 var(--gap-normal, 8px);
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    border-radius: 99px;
+  }
   .ai-suggestion-news .suggestion-news-list__title {
     overflow: hidden;
     color: var(--text-primary, #F0F0F0);
@@ -9258,7 +9276,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     -webkit-box-orient: vertical;
     font-size: 18px;
     font-weight: 400;
-    line-height: 150%; /* 27px */
+    line-height: 150%;
+    /* 27px */
   }
   .ai-suggestion-news__divider {
     display: block;
@@ -9266,6 +9285,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     width: 100%;
     height: 1px;
     background: var(--border-default, #464646);
+  }
+  .ai-suggestion-news .top-news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
   }
   .ai-suggestion-news .top-news-list__wrapper {
     display: flex;
@@ -9279,7 +9304,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     /* Body/SS */
     font-size: 14px;
     font-weight: 400;
-    line-height: 150%; /* 21px */
+    line-height: 150%;
+    /* 21px */
   }
   .ai-suggestion-news .top-news-list__wrapper .btn-all svg {
     vertical-align: middle;
@@ -9298,49 +9324,64 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     white-space: nowrap;
     font-size: 16px;
     font-weight: 600;
-    line-height: 140%; /* 22.4px */
+    line-height: 140%;
+    /* 22.4px */
     border: 0;
-  }
-  .ai-suggestion-news .top-news-list {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
   .ai-suggestion-news .top-news-list__item {
     height: auto;
-    border-bottom: 1px solid var(--border-default, #464646);
-    padding: var(--spacing-md, 12px) 0;
-  }
-  .ai-suggestion-news .top-news-list__item:first-child {
-    padding-top: 0;
-  }
-  .ai-suggestion-news .top-news-list__item:last-child {
-    padding-bottom: 0;
-    border-bottom: 0;
   }
   .ai-suggestion-news .top-news-list__item a {
-    flex-direction: row;
-    height: auto;
     display: flex;
-    height: 68px;
+    flex-direction: column;
+    height: auto;
     justify-content: center;
     align-items: center;
-    gap: 12px;
     align-self: stretch;
   }
   .ai-suggestion-news .top-news-list__item a .news-thumb {
-    flex: 0 0 100px;
-    width: 100px;
-    height: 68px;
-    border-radius: var(--radius-sm, 4px);
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 207px;
+    border-radius: 12px 12px 0 0;
     background-image: url("../../../assets/images/img-placeholder.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .ai-suggestion-news .top-news-list__item a .news-thumb:before {
+    content: "01";
+    color: var(--text-primary);
+    background: var(--orange-200, #E55204);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 19.5px */
+    border-radius: 12px 0 12px 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-flex;
+    width: 32px;
+    height: 24px;
+    padding: 0 var(--gap-normal, 8px);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
   }
   .ai-suggestion-news .top-news-list__item a .news-content {
     display: flex;
     flex-direction: column;
-    padding: 0;
-    gap: 4px;
     border: 0;
     background-color: transparent;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-default, #1D1D1D);
+    padding: 20px;
+    align-items: flex-start;
+    gap: 8px;
   }
   .ai-suggestion-news .top-news-list__item a .news-content .news-badge {
     display: inline-flex;
@@ -9371,10 +9412,21 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 22.5px */
+    line-height: 150%;
+    /* 22.5px */
   }
   .ai-suggestion-news .top-news-list__item a .news-content .message {
-    display: none;
+    color: var(--text-secondary, #7B7B7B);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    /* 21px */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    align-self: stretch;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 @media screen and (max-width: 480px) {
@@ -9446,10 +9498,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .ai-suggestion-news .suggestion-news-list__thumb .badge {
     color: var(--text-primary);
+    background: var(--orange-200, #E55204);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 19.5px */
   }
   .ai-suggestion-news .suggestion-news-list__thumb .badge.rank {
     border-radius: 1px 0 12px 0;
-    background: var(--orange-200, #E55204);
     position: absolute;
     left: 0;
     top: 0;
@@ -9461,6 +9517,19 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
+  }
+  .ai-suggestion-news .suggestion-news-list__thumb .badge.category {
+    display: inline-flex;
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    height: 20px;
+    padding: 0 var(--gap-normal, 8px);
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    border-radius: 99px;
   }
   .ai-suggestion-news .suggestion-news-list__title {
     overflow: hidden;
