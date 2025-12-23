@@ -186,26 +186,24 @@
   <script>
     (function () {
 
-      const tabs = document.querySelectorAll('.nav-tab');
-      const sections = document.querySelectorAll('.content-section');
+      // 섹션 바 탭 전환 로직
+      const sectionTabs = document.querySelectorAll('.section-bar__tab');
+      const sectionContents = document.querySelectorAll('.content-section');
 
-      const resetTabs = () => {
-        tabs.forEach((tab) => tab.classList.remove('active'));
-        sections.forEach((section) => section.classList.remove('is-active'));
-      };
-
-      tabs.forEach((tab) => {
+      sectionTabs.forEach((tab) => {
         tab.addEventListener('click', () => {
-          const target = tab.getAttribute('data-target');
-          const content = target
-            ? document.querySelector(`.${target}`)
+          const targetClass = tab.getAttribute('data-target');
+          const targetContent = targetClass
+            ? document.querySelector(`.${targetClass}`)
             : null;
 
-          if (!content) return;
+          if (!targetContent) return;
 
-          resetTabs();
+          sectionTabs.forEach((t) => t.classList.remove('active'));
+          sectionContents.forEach((section) => section.classList.remove('is-active'));
+
           tab.classList.add('active');
-          content.classList.add('is-active');
+          targetContent.classList.add('is-active');
         });
       });
 
@@ -215,15 +213,6 @@
         button.addEventListener('click', () => {
           filterButtons.forEach((btn) => btn.classList.remove('active'));
           button.classList.add('active');
-        });
-      });
-
-      const sectionTabs = document.querySelectorAll('.section-bar__tab');
-
-      sectionTabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          sectionTabs.forEach((t) => t.classList.remove('active'));
-          tab.classList.add('active');
         });
       });
 
