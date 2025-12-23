@@ -8677,21 +8677,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     max-width: 800px;
     margin: 0 auto;
   }
-}
-@media screen and (min-width: 480px) and (max-width: 991px) {
-  .analysis-news .analysis__wrapper .expert-comment-card {
-    padding: 16px;
-    max-width: 600px;
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 640px) {
-  .analysis-news .analysis__wrapper .expert-comment-card {
-    padding: 12px;
-    max-width: 100%;
-    margin: 0 10px;
-  }
-}
-@media screen and (min-width: 480px) {
   .analysis-news .analysis__wrapper .expert-comment-card__header {
     display: flex;
     align-items: center;
@@ -10498,6 +10483,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 700;
     line-height: 140%; /* 28px */
   }
+  .trend-section .emphas__title.fs-18 {
+    font-size: 18px;
+  }
   .trend-section .emphas__title .sub {
     color: var(--text-secondary, #7B7B7B);
     font-size: 12px;
@@ -11050,6 +11038,18 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 22.5px */
+  }
+  .trend-section .related-news {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .trend-section .related-news__wrapper {
+    margin-top: 4px;
+    gap: 12px;
+  }
+  .trend-section .ai-question-suggestion {
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 480px) {

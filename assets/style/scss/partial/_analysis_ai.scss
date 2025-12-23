@@ -445,18 +445,6 @@
           background: var(--bg-subtle, #2F2F2F);
           max-width: 800px;
           margin: 0 auto;
-
-          @media (max-width: 991px) {
-            padding: 16px;
-            max-width: 600px;
-          }
-
-          @media (max-width: 640px) {
-            padding: 12px;
-            max-width: 100%;
-            margin: 0 10px;
-          }
-
           &__header{
             display: flex;
             align-items: center;
