@@ -12114,4 +12114,189 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 600;
     line-height: 140%; /* 22.4px */
   }
+}
+.storage-search {
+  display: flex;
+  width: 1040px;
+  max-width: calc(100vw - 48px);
+  padding: 32px 40px;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+  background: #1D1D1D;
+  box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.storage-search__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.storage-search__title {
+  color: #F0F0F0;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 140%;
+  margin: 0;
+}
+.storage-search__close {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F0F0F0;
+}
+.storage-search__close:hover {
+  opacity: 0.8;
+}
+.storage-search__input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.storage-search__input {
+  display: flex;
+  padding: 9px 20px;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #464646;
+  background: #1D1D1D;
+}
+.storage-search__input-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.storage-search__field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #F0F0F0;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.storage-search__field::-moz-placeholder {
+  color: #7B7B7B;
+}
+.storage-search__field::placeholder {
+  color: #7B7B7B;
+}
+.storage-search__divider {
+  width: 960px;
+  height: 1px;
+  background: #464646;
+}
+.storage-search__recent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.storage-search__recent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.storage-search__recent-title {
+  color: #F0F0F0;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0;
+}
+.storage-search__clear-all {
+  color: #7B7B7B;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.storage-search__clear-all:hover {
+  opacity: 0.8;
+}
+.storage-search__recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.storage-search__recent-item {
+  display: flex;
+  height: 40px;
+  padding: 8px 24px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.storage-search__recent-item:hover {
+  background: #2F2F2F;
+}
+.storage-search__recent-item--active {
+  background: #2F2F2F;
+}
+.storage-search__recent-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.storage-search__recent-text {
+  flex: 1;
+  color: #F0F0F0;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+}
+.storage-search__recent-remove {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7B7B7B;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.storage-search__recent-item:hover .storage-search__recent-remove {
+  opacity: 1;
+}
+.storage-search__recent-item--active .storage-search__recent-remove {
+  opacity: 1;
+}
+.storage-search__recent-remove:hover {
+  opacity: 1 !important;
+}
+
+@media (max-width: 480px) {
+  .storage-search {
+    width: 100%;
+    max-width: 100vw;
+    padding: 24px 20px;
+  }
+  .storage-search__divider {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

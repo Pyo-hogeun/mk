@@ -278,6 +278,76 @@
     </div>
   </div>
 
+  <div class="layer-popup storage-search-popup">
+    <div class="layer-popup__backdrop"></div>
+    <div class="layer-popup__dialog">
+      <div class="layer-popup__content">
+        <div class="storage-search">
+          <div class="storage-search__header">
+            <h2 class="storage-search__title">보관함 검색</h2>
+            <button type="button" class="storage-search__close" aria-label="닫기">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.4111 13.2928C16.0206 13.6833 16.0206 14.3165 16.4111 14.707L21.8744 20.1704C22.062 20.3579 22.1673 20.6122 22.1673 20.8775V21.1666C22.1673 21.7189 21.7196 22.1666 21.1673 22.1666H20.8782C20.613 22.1666 20.3586 22.0612 20.1711 21.8737L14.7078 16.4104C14.3172 16.0198 13.6841 16.0198 13.2935 16.4104L7.83021 21.8737C7.64267 22.0612 7.38832 22.1666 7.1231 22.1666H6.83398C6.2817 22.1666 5.83398 21.7189 5.83398 21.1666V20.8775C5.83398 20.6123 5.93934 20.3579 6.12688 20.1704L11.5902 14.707C11.9807 14.3165 11.9807 13.6833 11.5902 13.2928L6.12688 7.82948C5.93934 7.64194 5.83398 7.38759 5.83398 7.12237V6.83325C5.83398 6.28097 6.2817 5.83325 6.83398 5.83325H7.1231C7.38832 5.83325 7.64267 5.93861 7.83021 6.12615L13.2935 11.5895C13.6841 11.98 14.3172 11.98 14.7078 11.5895L20.1711 6.12615C20.3586 5.93861 20.613 5.83325 20.8782 5.83325H21.1673C21.7196 5.83325 22.1673 6.28097 22.1673 6.83325V7.12237C22.1673 7.38759 22.062 7.64194 21.8744 7.82948L16.4111 13.2928Z" fill="#F0F0F0"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="storage-search__input-wrapper">
+            <div class="storage-search__input">
+              <svg class="storage-search__input-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.0833 3.5C13.0946 3.5 15.0234 4.29896 16.4456 5.72111C17.8677 7.14326 18.6667 9.07211 18.6667 11.0833C18.6667 12.9617 17.9783 14.6883 16.8467 16.0183L17.1617 16.3333H18.0833L23.2096 21.4596C23.6001 21.8501 23.6001 22.4832 23.2096 22.8738L22.8738 23.2096C22.4832 23.6001 21.8501 23.6001 21.4596 23.2096L16.3333 18.0833V17.1617L16.0183 16.8467C14.6883 17.9783 12.9617 18.6667 11.0833 18.6667C9.07211 18.6667 7.14326 17.8677 5.72111 16.4456C4.29896 15.0234 3.5 13.0946 3.5 11.0833C3.5 9.07211 4.29896 7.14326 5.72111 5.72111C7.14326 4.29896 9.07211 3.5 11.0833 3.5ZM11.0833 5.83333C8.16667 5.83333 5.83333 8.16667 5.83333 11.0833C5.83333 14 8.16667 16.3333 11.0833 16.3333C14 16.3333 16.3333 14 16.3333 11.0833C16.3333 8.16667 14 5.83333 11.0833 5.83333Z" fill="#7B7B7B"/>
+              </svg>
+              <input type="text" class="storage-search__field" placeholder="브리핑, 이슈 트렌드 검색" aria-label="검색">
+            </div>
+          </div>
+
+          <div class="storage-search__divider"></div>
+
+          <div class="storage-search__recent">
+            <div class="storage-search__recent-header">
+              <h3 class="storage-search__recent-title">최근 검색</h3>
+              <button type="button" class="storage-search__clear-all">전체 삭제</button>
+            </div>
+
+            <div class="storage-search__recent-list">
+              <div class="storage-search__recent-item storage-search__recent-item--active">
+                <div class="storage-search__recent-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.33301 0C14.4874 0.000131945 18.6668 4.17858 18.667 9.33301C18.6667 14.4874 14.4874 18.6669 9.33301 18.667C4.17866 18.6668 0.000263882 14.4873 0 9.33301C0.000175813 4.17861 4.17861 0.000175809 9.33301 0ZM9.33301 2C5.28318 2.00018 2.00018 5.28318 2 9.33301C2.00026 13.3828 5.28323 16.6668 9.33301 16.667C13.3828 16.6669 16.6667 13.3828 16.667 9.33301C16.6668 5.28315 13.3829 2.00013 9.33301 2ZM9.33301 3.33301C9.88529 3.33301 10.333 3.78072 10.333 4.33301V8.71484L13.1133 10.1055C13.6073 10.3525 13.8075 10.9533 13.5605 11.4473C13.3134 11.941 12.7126 12.1415 12.2188 11.8945L8.88574 10.2275C8.54696 10.0581 8.33301 9.71178 8.33301 9.33301V4.33301C8.33301 3.78072 8.78072 3.33301 9.33301 3.33301Z" fill="#F0F0F0"/>
+                  </svg>
+                </div>
+                <span class="storage-search__recent-text">부동산 정책</span>
+                <button type="button" class="storage-search__recent-remove" aria-label="삭제">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.4111 13.2928C16.0206 13.6833 16.0206 14.3165 16.4111 14.707L21.8744 20.1704C22.062 20.3579 22.1673 20.6123 22.1673 20.8775V21.1666C22.1673 21.7189 21.7196 22.1666 21.1673 22.1666H20.8782C20.613 22.1666 20.3586 22.0612 20.1711 21.8737L14.7078 16.4104C14.3172 16.0198 13.6841 16.0198 13.2935 16.4104L7.83021 21.8737C7.64267 22.0612 7.38832 22.1666 7.1231 22.1666H6.83398C6.2817 22.1666 5.83398 21.7189 5.83398 21.1666V20.8775C5.83398 20.6123 5.93934 20.3579 6.12688 20.1704L11.5902 14.707C11.9807 14.3165 11.9807 13.6833 11.5902 13.2928L6.12688 7.82948C5.93934 7.64194 5.83398 7.38759 5.83398 7.12237V6.83325C5.83398 6.28097 6.2817 5.83325 6.83398 5.83325H7.1231C7.38832 5.83325 7.64267 5.93861 7.83021 6.12615L13.2935 11.5895C13.6841 11.98 14.3172 11.98 14.7078 11.5895L20.1711 6.12615C20.3586 5.93861 20.613 5.83325 20.8782 5.83325H21.1673C21.7196 5.83325 22.1673 6.28097 22.1673 6.83325V7.12237C22.1673 7.38759 22.062 7.64194 21.8744 7.82948L16.4111 13.2928Z" fill="#7B7B7B"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="storage-search__recent-item">
+                <div class="storage-search__recent-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.33301 0C14.4874 0.000131945 18.6668 4.17858 18.667 9.33301C18.6667 14.4874 14.4874 18.6669 9.33301 18.667C4.17866 18.6668 0.000263882 14.4873 0 9.33301C0.000175813 4.17861 4.17861 0.000175809 9.33301 0ZM9.33301 2C5.28318 2.00018 2.00018 5.28318 2 9.33301C2.00026 13.3828 5.28323 16.6668 9.33301 16.667C13.3828 16.6669 16.6667 13.3828 16.667 9.33301C16.6668 5.28315 13.3829 2.00013 9.33301 2ZM9.33301 3.33301C9.88529 3.33301 10.333 3.78072 10.333 4.33301V8.71484L13.1133 10.1055C13.6073 10.3525 13.8075 10.9533 13.5605 11.4473C13.3134 11.941 12.7126 12.1415 12.2188 11.8945L8.88574 10.2275C8.54696 10.0581 8.33301 9.71178 8.33301 9.33301V4.33301C8.33301 3.78072 8.78072 3.33301 9.33301 3.33301Z" fill="#F0F0F0"/>
+                  </svg>
+                </div>
+                <span class="storage-search__recent-text">금리 인해</span>
+              </div>
+
+              <div class="storage-search__recent-item">
+                <div class="storage-search__recent-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.33301 0C14.4874 0.000131945 18.6668 4.17858 18.667 9.33301C18.6667 14.4874 14.4874 18.6669 9.33301 18.667C4.17866 18.6668 0.000263882 14.4873 0 9.33301C0.000175813 4.17861 4.17861 0.000175809 9.33301 0ZM9.33301 2C5.28318 2.00018 2.00018 5.28318 2 9.33301C2.00026 13.3828 5.28323 16.6668 9.33301 16.667C13.3828 16.6669 16.6667 13.3828 16.667 9.33301C16.6668 5.28315 13.3829 2.00013 9.33301 2ZM9.33301 3.33301C9.88529 3.33301 10.333 3.78072 10.333 4.33301V8.71484L13.1133 10.1055C13.6073 10.3525 13.8075 10.9533 13.5605 11.4473C13.3134 11.941 12.7126 12.1415 12.2188 11.8945L8.88574 10.2275C8.54696 10.0581 8.33301 9.71178 8.33301 9.33301V4.33301C8.33301 3.78072 8.78072 3.33301 9.33301 3.33301Z" fill="#F0F0F0"/>
+                  </svg>
+                </div>
+                <span class="storage-search__recent-text">AI 반도체</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script>
     (function () {
@@ -329,6 +399,61 @@
           rateFilterButtons.forEach((btn) => btn.classList.remove('active'));
           button.classList.add('active');
         });
+      });
+
+      // Search popup functionality
+      const searchPopup = document.querySelector('.storage-search-popup');
+      const searchInput = document.querySelector('.search-input__field');
+      const searchPopupBackdrop = searchPopup?.querySelector('.layer-popup__backdrop');
+      const searchPopupClose = searchPopup?.querySelector('.storage-search__close');
+      const clearAllBtn = searchPopup?.querySelector('.storage-search__clear-all');
+      const recentItems = searchPopup?.querySelectorAll('.storage-search__recent-item');
+
+      // Open popup when clicking search input
+      if (searchInput && searchPopup) {
+        searchInput.addEventListener('click', () => {
+          searchPopup.classList.add('is-active');
+          document.body.classList.add('layer-popup-open');
+        });
+      }
+
+      // Close popup
+      const closeSearchPopup = () => {
+        if (searchPopup) {
+          searchPopup.classList.remove('is-active');
+          document.body.classList.remove('layer-popup-open');
+        }
+      };
+
+      // Close on backdrop click
+      if (searchPopupBackdrop) {
+        searchPopupBackdrop.addEventListener('click', closeSearchPopup);
+      }
+
+      // Close on close button click
+      if (searchPopupClose) {
+        searchPopupClose.addEventListener('click', closeSearchPopup);
+      }
+
+      // Clear all recent searches
+      if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', () => {
+          const recentList = searchPopup.querySelector('.storage-search__recent-list');
+          if (recentList) {
+            recentList.innerHTML = '';
+          }
+        });
+      }
+
+      // Remove individual recent item
+      recentItems?.forEach((item) => {
+        const removeBtn = item.querySelector('.storage-search__recent-remove');
+        if (removeBtn) {
+          removeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            item.remove();
+          });
+        }
       });
     })();
 
