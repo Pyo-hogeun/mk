@@ -11976,6 +11976,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-self: stretch;
     background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.7));
   }
+  .storage aside.lnb .search-input {
+    border: 1px solid var(--border-default, #464646);
+  }
+  .storage .folder__wrapper {
+    width: 100%;
+  }
   .storage .folder-menu {
     display: flex;
     flex-direction: column;
@@ -12033,6 +12039,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     transition: fill 0.2s ease;
   }
   .storage .folder-menu__text {
+    text-align: left;
     flex: 1;
     color: var(--text-secondary, #7B7B7B);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;

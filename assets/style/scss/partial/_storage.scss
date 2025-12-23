@@ -151,6 +151,12 @@
       gap: 20px;
       align-self: stretch;
       background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.70));
+      .search-input{
+        border: 1px solid var(--border-default, #464646);
+      }
+    }
+    .folder__wrapper{
+      width: 100%;
     }
     .folder-menu{
       display: flex;
@@ -210,6 +216,7 @@
         }
       }
       &__text{
+        text-align: left;
         flex: 1;
         color: var(--text-secondary, #7B7B7B);
         font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
