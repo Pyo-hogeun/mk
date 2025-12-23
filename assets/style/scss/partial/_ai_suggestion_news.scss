@@ -142,6 +142,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 20px;
+      counter-reset: top-news;
 
       &__wrapper {
         display: flex;
@@ -186,6 +187,7 @@
 
       &__item {
         height: auto;
+        counter-increment: top-news;
         // padding: var(--spacing-md, 12px) 0;
 
         a {
@@ -209,7 +211,7 @@
             
 
             &:before {
-              content: '01';
+              content: counter(top-news, decimal-leading-zero);
               color: var(--text-primary);
               background: var(--orange-200, #E55204);
               font-size: 13px;
