@@ -8283,6 +8283,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-left: auto;
     margin-right: auto;
     width: 700px;
+    border-bottom: 1px solid var(--border-default, #464646);
   }
   .analysis-news .nav-tabs .nav-tab {
     height: 40px;
