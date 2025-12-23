@@ -54,6 +54,7 @@ body{
   }
 }
 @media screen and (min-width: $mobile){
+  
   .container{
     width: $pc;
     padding-left:10px;
@@ -65,5 +66,13 @@ body{
       padding: 0;
 
     }
+  }
+  .for-mobile{
+    display: none !important;
+  }
+}
+@media screen and (max-width: $mobile) {
+  .for-pc{
+    display: none !important;
   }
 }

@@ -1,0 +1,156 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+@media screen and (min-width: $mobile) {
+  .storage{
+    display: grid;
+    grid-template-columns: 272px 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+    "header header"
+    "sidebar content";
+    min-height: 100vh;
+    padding-bottom: 0;
+
+    .container__header{
+      width: $pc;
+      grid-area: header;
+    }
+    .content-wrapper{
+      grid-area: content;
+      padding: 0 $mobilePadSide;
+      .section{
+        &__topper{
+          display: flex;
+          justify-content: space-between;
+          h2{
+            color: var(--text-primary, #F0F0F0);
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 140%; /* 30.8px */
+            .sub{
+              color: var(--text-secondary, #7B7B7B);
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 150%; /* 18px */
+              margin-top: 12px;
+            }
+          }
+          .fn-order{
+            display: inline-flex;
+            gap: 7px;
+            button{
+              background-color: transparent;
+              border: 0;
+              color: var(--text-secondary, #7B7B7B);
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 150%; /* 21px */
+              padding: 0;
+              &.active{
+                color: var(--text-primary, #F0F0F0);
+              }
+            }
+          }
+        }
+      }
+      .filter-buttons{
+        display: flex;
+        height: 40px;
+        padding: 0 20px;
+        justify-content: flex-end;
+        align-items: center;
+        align-self: stretch;
+        border-bottom: 1px solid var(--border-default, #464646);
+        .filter-btn{
+          flex: 1 1 auto;
+          display: flex;
+          height: 40px;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          border-radius: 0;
+          padding: 0;
+          color: var(--text-secondary, #7B7B7B);
+          text-align: center;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 140%; /* 22.4px */
+          &.active{
+            color: var(--text-primary, #F0F0F0);
+            border-bottom: 2px solid var(--text-primary, #F0F0F0);
+          }
+        }
+      }
+      .briefing{
+        &__title{
+          display: flex;
+          justify-content: space-between;
+          margin: 24px 0;
+          h3{
+            color: var(--text-primary);
+          }
+          .fn-order{
+            display: inline-flex;
+            gap: 7px;
+            button{
+              background-color: transparent;
+              border: 0;
+              color: var(--text-secondary, #7B7B7B);
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 150%; /* 21px */
+              padding: 0;
+              &.active{
+                color: var(--text-primary, #F0F0F0);
+              }
+            }
+          }
+        }
+        &__list{
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px 12px;
+          margin-top: 24px;
+        }
+      }
+      .briefing-item__card{
+        position: relative;
+        padding: 20px;
+        .btn-remove{
+          position: absolute;
+          right: 12px;
+          top: 20px;
+
+        }
+      }
+      .btn-more{
+        display: flex;
+        width: 100%;
+        border: 0;
+        height: var(--height-md, 40px);
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap-tight, 4px);
+        border-radius: var(--radius-md, 8px);
+        background: var(--surface-raised, #434343);
+        color: var(--text-primary, #F0F0F0);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 140%; /* 22.4px */
+      }
+    }
+    aside.lnb{
+      grid-area: sidebar;
+      display: flex;
+      width: 272px;
+      padding: 68px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      align-self: stretch;
+      background: var(--bg-dark-opacity, rgba(0, 0, 0, 0.70));
+    }
+  }
+}

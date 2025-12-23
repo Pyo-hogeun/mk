@@ -2,9 +2,7 @@
 @use 'mixin' as *;
 
 @media (max-width: $mobile) {
-  .for-pc{
-    display: none;
-  }
+  
   .ai-news-briefing {
     display: flex;
     flex-direction: column;
