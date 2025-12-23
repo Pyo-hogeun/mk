@@ -284,22 +284,32 @@
 
       // 섹션 바 탭 전환 로직
       const sectionTabs = document.querySelectorAll('.section-bar__tab');
+      const folderMenuItems = document.querySelectorAll('.folder-menu__item');
       const sectionContents = document.querySelectorAll('.content-section');
+      const sectionControllers = [...sectionTabs, ...folderMenuItems];
 
-      sectionTabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          const targetClass = tab.getAttribute('data-target');
-          const targetContent = targetClass
-            ? document.querySelector(`.${targetClass}`)
-            : null;
+      const activateSection = (targetClass) => {
+        const targetContent = targetClass
+          ? document.querySelector(`.${targetClass}`)
+          : null;
 
-          if (!targetContent) return;
+        if (!targetContent) return;
 
-          sectionTabs.forEach((t) => t.classList.remove('active'));
-          sectionContents.forEach((section) => section.classList.remove('is-active'));
+        sectionControllers.forEach((controller) => {
+          const isActive = controller.getAttribute('data-target') === targetClass;
+          controller.classList.toggle('active', isActive);
+        });
 
-          tab.classList.add('active');
-          targetContent.classList.add('is-active');
+        sectionContents.forEach((section) => {
+          const isTargetSection = section.classList.contains(targetClass);
+          section.classList.toggle('is-active', isTargetSection);
+        });
+      };
+
+      sectionControllers.forEach((controller) => {
+        controller.addEventListener('click', () => {
+          const targetClass = controller.getAttribute('data-target');
+          activateSection(targetClass);
         });
       });
 
