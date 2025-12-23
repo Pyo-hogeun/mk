@@ -8324,6 +8324,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 140%; /* 25.2px */
     margin: 24px 0 12px;
   }
+  .analysis-news .analysis__wrapper .emphas__title:first-child {
+    margin-top: 0;
+  }
   .analysis-news .analysis__wrapper .multi-faceted-card {
     display: flex;
     padding: 20px;
@@ -8725,6 +8728,11 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 400;
     line-height: 150%;
     margin: 0;
+  }
+  .analysis-news .related-news__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md, 12px);
   }
   .analysis-news .related-news__wrapper .briefing-item__card {
     box-shadow: none;
@@ -10460,6 +10468,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     -o-object-position: center;
        object-position: center;
   }
+  .trend-section__divider {
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: var(--border-default, #464646);
+    margin: 4px 0;
+  }
   .trend-section .emphas__title {
     display: flex;
     align-items: center;
@@ -10474,6 +10489,103 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 12px;
     font-weight: 500;
     line-height: 150%; /* 18px */
+  }
+  .trend-section .keyword-ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .trend-section .keyword-ranking-item {
+    display: flex;
+    padding: 12px 16px;
+    flex-direction: column;
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
+  }
+  .trend-section .keyword-ranking-item--featured {
+    border-color: var(--orange-100, #FF7A00);
+  }
+  .trend-section .keyword-ranking-item__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .trend-section .keyword-ranking-item__left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1 0 0;
+  }
+  .trend-section .keyword-ranking-item__rank {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .trend-section .keyword-ranking-item__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .trend-section .keyword-ranking-item__title {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .trend-section .keyword-ranking-item__category {
+    color: var(--text-disabled, #A8A8A8);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+  .trend-section .keyword-ranking-item__stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex: 1 0 0;
+  }
+  .trend-section .keyword-ranking-item__count {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .trend-section .keyword-ranking-item__badge {
+    display: flex;
+    padding: 4px 14px;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid;
+    background: var(--bg-default, #1D1D1D);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+  .trend-section .keyword-ranking-item__badge--new {
+    border-color: var(--orange-100, #FF7A00);
+    color: var(--orange-100, #FF7A00);
+  }
+  .trend-section .keyword-ranking-item__badge--up {
+    border-color: var(--red, #FF0000);
+    color: var(--red, #FF0000);
+  }
+  .trend-section .keyword-ranking-item__badge--neutral {
+    border-color: var(--text-secondary, #7B7B7B);
+    color: var(--text-secondary, #7B7B7B);
+  }
+  .trend-section .keyword-ranking-item__badge--down {
+    border-color: var(--text-secondary, #7B7B7B);
+    color: var(--text-secondary, #7B7B7B);
   }
   .trend-section .report-title .briefing-item__badges {
     margin: 12px 0;
