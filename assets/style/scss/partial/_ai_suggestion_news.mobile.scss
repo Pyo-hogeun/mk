@@ -42,6 +42,7 @@
     .suggestion-news-list{
       display: flex;
       gap: 12px;
+      counter-reset: suggestion-news;
       &__wrapper{
         width: calc(100% + $mobilePadSide);
         overflow-x: auto;
@@ -56,6 +57,7 @@
         height: 224px;
         flex-direction: column;
         gap: var(--spacing-sm, 8px);
+        counter-increment: suggestion-news;
       }
       &__thumb{
         position: relative;
@@ -86,6 +88,9 @@
             align-items: center;
             align-content: center;
             flex-wrap: wrap;
+            &:before{
+              content: counter(suggestion-news, decimal-leading-zero);
+            }
           }
           &.category{
             display: inline-flex;
