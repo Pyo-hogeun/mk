@@ -45,6 +45,13 @@
       font-weight: 400;
       line-height: 23px;
     }
+
+    &__divider{
+      width: 100%;
+      height: 1px;
+      display: block;
+      background: var(--border-default, #464646);
+    }
   }
 
   .category-grid {
@@ -89,5 +96,195 @@
       font-weight: 600;
       line-height: 150%;
     }
+  }
+
+  .industry-insights-scroll {
+    display: flex;
+    width: calc(100% + $mobilePadSide * 2);
+    margin-left: -$mobilePadSide;
+    padding-left: $mobilePadSide;
+    padding-right: $mobilePadSide;
+    gap: 12px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .insight-card {
+    display: flex;
+    flex: 0 0 auto;
+    width: 212px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20) inset;
+    position: relative;
+    height: 163px;
+    overflow: hidden;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      align-self: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    &__badges {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    &__title {
+      color: var(--text-primary, #F0F0F0);
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 150%;
+      margin: 0;
+    }
+
+    &__tags {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+      // flex-wrap: wrap;
+    }
+
+    &__icon {
+      position: absolute;
+      right: -22px;
+      bottom: -10px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      pointer-events: none;
+
+      svg {
+        width: 100px;
+        height: 90px;
+      }
+    }
+
+    &--add {
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    &__add-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      align-self: stretch;
+    }
+  }
+
+  .status-badge {
+    display: flex;
+    padding: 4px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--radius-md, 8px);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+
+    &--normal {
+      background: var(--bg-default, #1D1D1D);
+      color: var(--text-primary, #F0F0F0);
+    }
+
+    &--hot {
+      background: var(--orange-100, #FF7A00);
+      color: var(--white, #FFFFFF);
+    }
+  }
+
+  .category-badge {
+    display: flex;
+    height: 20px;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 100px;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 150%;
+    color: var(--white, #FFFFFF);
+    width: fit-content;
+
+    &--economy {
+      background: var(--orange-200, #E55204);
+    }
+
+    &--society {
+      background: var(--orange-200, #E55204);
+    }
+  }
+
+  .hashtag {
+    color: var(--text-disabled, #A8A8A8);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 150%;
+    white-space: nowrap;
+  }
+
+  .add-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .add-icon-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  .add-icon-plus {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+  }
+
+  .add-label {
+    color: var(--text-primary, #F0F0F0);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    text-align: center;
   }
 }
