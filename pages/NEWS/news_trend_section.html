@@ -129,7 +129,7 @@
     <div class="report-body content-wrapper">
       <div class="content__daily content-section is-active">
         <div class="trend-section__wrapper">
-          <div class="trend__header">
+          <div class="trend__header for-mobile">
             <div class="trend__title">
               이슈 트렌드
               <i class="notice__ai-brief" role="button" tabindex="0" data-bottom-sheet-target="ai-issue-sheet"
@@ -143,7 +143,7 @@
             </div>
           </div>
           <div class="col-1">
-            <div class="emphas__title"><span>키워드 랭킹 Top 5</span><span class="sub">분석된 뉴스 수 00건</span></div>
+            <div class="emphas__title"><span>키워드 랭킹 Top 5</span><span class="sub for-mobile">분석된 뉴스 수 00건</span></div>
 
             <div class="keyword-ranking-list">
               <div class="keyword-ranking-item keyword-ranking-item--featured">
@@ -231,13 +231,20 @@
           <div class="col-2">
             <div class="emphas__title fs-18">AI요약</div>
             <div class="reading-card">
-              <div class="reading-card__header">
-                <div class="reading-card__catch-phrase">선택하신 <em>‘물가'</em></div>
+              <div class="summary-card__header">
+                선택하신 <em>‘외환수급 안정’</em>키워드
+
               </div>
-              <div class="reading-card__content">
-                <div class="reading-card__text">도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에
-                  공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.<br>AI 반도체 시장 급성장과
-                  부동산 정책 변화, K-컬처 수출 확대 등 11월 한 달간의 주요 경제·기업·문화 트렌드를 종합 분석</div>
+              <div class="summary-card__body">
+                <div class="summary-card__title">무슨 일이 있었나?</div>
+                도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에 공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.
+              </div>
+                
+              <div class="divider"></div>
+
+              <div class="summary-card__body">
+                <div class="summary-card__title">이 뉴스는 왜 나왔나?</div>
+                이번 협력은 글로벌 공급망의 구조적 재편을 알리는 신호탄입니다. 중국이 전 세계 희토류 생산의 70~90%를 독점하며 '자원 무기화'를 노골화하고 있기 때문입니다.
               </div>
               <button class="reading-card__source-button" type="button">매일경제 +3</button>
             </div>
@@ -490,11 +497,11 @@
       const ctx = canvas.getContext('2d');
       const sentimentValue = 72;
       const foregroundColor = '#2175FF';
-      const backgroundColor = '#1D1D1D';
+      const backgroundColor = '#FFFFFF';
 
       const valueEl = document.querySelector('.graph-half-circle__value');
       if (valueEl) {
-        valueEl.textContent = `${sentimentValue}%`;
+        valueEl.textContent = `${sentimentValue}`;
       }
 
       new Chart(ctx, {
