@@ -56,16 +56,16 @@
 
   .category-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(4, minmax(0, 1fr));
-    gap: 32px 96px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(100px, 1fr));
+    gap: 16px;
+    height: 294px;
   }
-
   .category-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 4px;
     padding: 0;
     border: none;
