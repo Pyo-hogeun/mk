@@ -1,5 +1,5 @@
 @use 'variables'as *;
-
+@use 'mixin' as *;
 @media screen and (min-width: $mobile) {
   .customized-detail {
     width: $pcContainerSub;
@@ -56,6 +56,10 @@
                   width: 100px;
                   height: 68px;
                   border-radius: var(--radius-sm, 4px);
+                  overflow: hidden;
+                  img{
+                    @include imgCover;
+                  }
                 }
                 .news-content{
                   padding: 0;

@@ -52,6 +52,10 @@
           background-size: cover;
           background-position: center;
           z-index: 1;
+          overflow: hidden;
+          img{
+            @include imgCover;
+          }
           .btn-origin{
             position: absolute;
             bottom: 12px;

@@ -37,3 +37,8 @@
 @mixin placeholderImg{
   background-image: url('../../../assets/images/img-placeholder.png');
 }
+@mixin imgCover{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

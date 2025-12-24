@@ -2624,14 +2624,15 @@ body.bottom-sheet-open {
   }
   .news-timeline .news-card__image {
     aspect-ratio: 1;
-    -o-object-fit: contain;
-       object-fit: contain;
     -o-object-position: center;
        object-position: center;
-    width: 48px;
     align-self: stretch;
     flex-shrink: 0;
     margin: auto 0;
+    width: 48px;
+    height: 48px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .news-timeline .news-card__content {
     align-self: stretch;
@@ -2767,14 +2768,15 @@ body.bottom-sheet-open {
   }
   .news-timeline .news-card__image {
     aspect-ratio: 1;
-    -o-object-fit: contain;
-       object-fit: contain;
     -o-object-position: center;
        object-position: center;
-    width: 48px;
     align-self: stretch;
     flex-shrink: 0;
     margin: auto 0;
+    width: 48px;
+    height: 48px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .news-timeline .news-card__content {
     align-self: stretch;
@@ -6368,6 +6370,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border: 0;
     background-image: url("../../../assets/images/img-placeholder.png");
     background-size: cover;
+    overflow: hidden;
   }
   .customized-review__body .news-list .news-list__item a .news-thumb img {
     width: 100%;
@@ -7944,6 +7947,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     width: 100px;
     height: 68px;
     border-radius: var(--radius-sm, 4px);
+    overflow: hidden;
+  }
+  .customized-detail .customized-review .swiper-wrapper .slider .news-list__item a .news-thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .customized-detail .customized-review .swiper-wrapper .slider .news-list__item a .news-content {
     padding: 0;
@@ -8505,10 +8515,17 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 160px;
     margin: 24px 0;
     border-radius: var(--radius-md, 8px);
-    background-image: url("../../../assets/images/img-placeholder.png");
     background-size: cover;
     background-position: center;
     z-index: 1;
+    background-image: url("../../../assets/images/img-placeholder.png");
+    overflow: hidden;
+  }
+  .analysis-news .analysis__wrapper .origin-article img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .analysis-news .analysis__wrapper .origin-article .btn-origin {
     position: absolute;
@@ -8969,6 +8986,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background-size: cover;
     background-position: center;
     z-index: 1;
+    overflow: hidden;
+  }
+  .analysis-news .analysis__wrapper .origin-article img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .analysis-news .analysis__wrapper .origin-article .btn-origin {
     position: absolute;
@@ -9416,7 +9440,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     /* Chrome / Safari / Edge */
   }
   .ai-suggestion-news .suggestion-news-list__item {
-    flex: 1 0 300px;
+    flex: 1 0 30%;
+    min-width: 0;
     display: inline-flex;
     height: 224px;
     flex-direction: column;
@@ -9431,6 +9456,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background-position: center;
     border-radius: var(--radius-md, 8px);
     overflow: hidden;
+  }
+  .ai-suggestion-news .suggestion-news-list__thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .ai-suggestion-news .suggestion-news-list__thumb .badge {
     color: var(--text-primary);
@@ -9537,6 +9568,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .ai-suggestion-news .top-news-list__item {
     height: auto;
     counter-increment: top-news;
+    min-width: 0;
   }
   .ai-suggestion-news .top-news-list__item a {
     display: flex;
@@ -9552,9 +9584,16 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     width: 100%;
     height: 207px;
     border-radius: 12px 12px 0 0;
+    overflow: hidden;
     background-image: url("../../../assets/images/img-placeholder.png");
     background-size: cover;
     background-position: center;
+  }
+  .ai-suggestion-news .top-news-list__item a .news-thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .ai-suggestion-news .top-news-list__item a .news-thumb:before {
     content: counter(top-news, decimal-leading-zero);
@@ -9705,6 +9744,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-radius: var(--radius-md, 8px);
     overflow: hidden;
   }
+  .ai-suggestion-news .suggestion-news-list__thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .ai-suggestion-news .suggestion-news-list__thumb .badge {
     color: var(--text-primary);
     background: var(--orange-200, #E55204);
@@ -9827,6 +9872,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 68px;
     border-radius: var(--radius-sm, 4px);
     background-image: url("../../../assets/images/img-placeholder.png");
+    overflow: hidden;
+  }
+  .ai-suggestion-news .top-news-list__item a .news-thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .ai-suggestion-news .top-news-list__item a .news-content {
     display: flex;
@@ -9937,6 +9989,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background-position: center;
     border-radius: 12px 12px 0 0;
     overflow: hidden;
+  }
+  .top-news .top-news-list__thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .top-news .top-news-list__thumb .badge {
     color: var(--text-primary);
@@ -10071,6 +10129,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background-position: center;
     border-radius: var(--radius-md, 8px);
     overflow: hidden;
+  }
+  .top-news .top-news-list__thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .top-news .top-news-list__thumb .badge {
     color: var(--text-primary);

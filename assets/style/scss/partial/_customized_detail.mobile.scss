@@ -1,5 +1,5 @@
 @use 'variables'as *;
-
+@use 'mixin' as *;
 @media screen and (max-width: $mobile) {
   .customized-detail {
     .report-title{

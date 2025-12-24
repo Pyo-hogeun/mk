@@ -65,6 +65,9 @@
         background-position: center;
         border-radius: var(--radius-md, 8px);
         overflow: hidden;
+        img{
+          @include imgCover;
+        }
         .badge{
           color: var(--text-primary);
           background: var(--orange-200, #E55204);
