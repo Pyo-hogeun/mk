@@ -195,10 +195,14 @@
               </div>
             </div>
   
-            <button class="player-control__btn-stop" type="button" aria-label="정지">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 30H10V10H30V30Z" fill="white"/>
+            <button class="player-control__btn-stop" type="button" aria-pressed="false">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="재생" class="play">
+                <path d="M9.53688 6.11815C8.87115 5.69451 8 6.17272 8 6.96181V17.3185C8 18.1076 8.87115 18.5858 9.53688 18.1621L17.6742 12.9838C18.2917 12.5908 18.2917 11.6894 17.6742 11.2965L9.53688 6.11815Z" fill="white"/>
               </svg>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="stop" aria-label="정지">
+                <path d="M30 30H10V10H30V30Z" fill="white" />
+              </svg>
+                
             </button>
   
             <button class="player-control__speed-selector" type="button" aria-label="재생 속도" aria-expanded="false" aria-controls="speed-selector-dropdown">
