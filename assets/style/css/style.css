@@ -2495,6 +2495,27 @@ body.bottom-sheet-open {
   font-weight: 400;
   line-height: 150%;
 }
+.ai-loading__detail {
+  display: flex;
+  width: 540px;
+  align-items: center;
+  color: var(--text-secondary, #7B7B7B);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 4px;
+}
+.ai-loading__detail .animation-spin {
+  animation: svg-rotate 1s linear infinite;
+  /* 회전 중심 잡기 (브라우저 호환용) */
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes svg-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .ai-loading__time {
   align-self: stretch;
   color: #7B7B7B;
