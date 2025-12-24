@@ -66,6 +66,7 @@
   &__detail{
     display: flex;
     width: 540px;
+    max-width: 100%;
     align-items: center;
     color: var(--text-secondary, #7B7B7B);
     text-align: center;
