@@ -1552,7 +1552,7 @@ body.dark {
     align-self: stretch;
     border-radius: 12px;
     border: 1px solid #464646;
-    background: #2F2F2F;
+    background: var(--bg-subtle);
   }
   .industry-detail-card__header {
     display: flex;
@@ -1808,7 +1808,7 @@ body.dark {
     align-self: stretch;
     border-radius: 12px;
     border: 1px solid #464646;
-    background: #2F2F2F;
+    background: var(--bg-subtle);
     margin-top: 16px;
   }
   .industry-detail-card__header {
@@ -8645,7 +8645,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     gap: 10px;
     border-radius: var(--radius-md, 8px);
-    background: var(--gray-dark, #1D1D1D);
+    background: var(--bg-default, #1D1D1D);
     font-size: 12px;
     font-weight: 500;
     line-height: 150%;
@@ -8768,7 +8768,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-self: stretch;
     border-radius: 12px;
     border: 1px solid;
-    background: #2F2F2F;
+    background: var(--bg-subtle);
     box-sizing: border-box;
   }
   .analysis-news .analysis__wrapper .future__wrapper .scenario-cards .scenario-card--orange {
@@ -9112,7 +9112,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     gap: 10px;
     border-radius: var(--radius-md, 8px);
-    background: var(--gray-dark, #1D1D1D);
+    background: var(--bg-default, #1D1D1D);
     font-size: 12px;
     font-weight: 500;
     line-height: 150%;
@@ -9155,7 +9155,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-self: stretch;
     border-radius: 12px;
     border: 1px solid;
-    background: #2F2F2F;
+    background: var(--bg-subtle);
     box-sizing: border-box;
     padding: 20px;
     border-radius: var(--radius-lg, 12px);
@@ -11066,7 +11066,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-self: stretch;
     border-radius: 12px;
     border: 1px solid;
-    background: #2F2F2F;
+    background: var(--bg-subtle);
     box-sizing: border-box;
     padding: 20px;
     border-radius: var(--radius-lg, 12px);
@@ -11733,7 +11733,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-self: stretch;
     border-radius: 12px;
     border: 1px solid;
-    background: #2F2F2F;
+    background: var(--bg-subtle);
     box-sizing: border-box;
     padding: 20px;
     border-radius: var(--radius-lg, 12px);
@@ -12520,10 +12520,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   transition: background-color 0.2s;
 }
 .storage-search__recent-item:hover {
-  background: #2F2F2F;
+  background: var(--bg-subtle);
 }
 .storage-search__recent-item--active {
-  background: #2F2F2F;
+  background: var(--bg-subtle);
 }
 .storage-search__recent-icon {
   width: 20px;
