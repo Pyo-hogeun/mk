@@ -22,7 +22,7 @@
         </div>
         <div class="brand-title">
           MAI 뉴스 에이전트
-          <button type="button" class="btn-toggle">
+          <button type="button" class="btn-toggle" data-agent-selector-toggle>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M0 8C0 3.58172 3.58172 0 8 0H12C16.4183 0 20 3.58172 20 8V12C20 16.4183 16.4183 20 12 20H8C3.58172 20 0 16.4183 0 12V8Z"
@@ -33,6 +33,26 @@
             </svg>
           </button>
 
+        </div>
+
+        <!-- Agent Selection Dropdown -->
+        <div class="agent-selector-dropdown" data-agent-selector-dropdown aria-hidden="true">
+          <div class="agent-selector-option active" data-agent="news">
+            <div class="agent-selector-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.50033 5.83333C2.96056 5.83333 3.33366 6.20643 3.33366 6.66667V15.8333H15.0003C15.4606 15.8333 15.8337 16.2064 15.8337 16.6667C15.8337 17.1269 15.4606 17.5 15.0003 17.5H3.33366C1.66699 17.5 1.66699 15.8333 1.66699 15.8333V6.66667C1.66699 6.20643 2.04009 5.83333 2.50033 5.83333ZM17.5003 4.16667V12.5H6.66699V4.16667H17.5003ZM17.7503 2.5H6.41699C5.63366 2.5 5.00033 3.08333 5.00033 3.79167V12.875C5.00033 13.5917 5.63366 14.1667 6.41699 14.1667H17.7503C18.5337 14.1667 19.167 13.5917 19.167 12.875V3.79167C19.167 3.08333 18.5337 2.5 17.7503 2.5ZM7.50033 6C7.50033 5.44772 7.94804 5 8.50033 5H9.00033C9.55261 5 10.0003 5.44772 10.0003 6V8.16667C10.0003 8.71895 9.55261 9.16667 9.00033 9.16667H8.50033C7.94804 9.16667 7.50033 8.71895 7.50033 8.16667V6ZM16.667 10.8333C16.667 11.2936 16.2939 11.6667 15.8337 11.6667H8.33366C7.87342 11.6667 7.50033 11.2936 7.50033 10.8333C7.50033 10.3731 7.87342 10 8.33366 10H15.8337C16.2939 10 16.667 10.3731 16.667 10.8333ZM16.667 5.83333C16.667 6.29357 16.2939 6.66667 15.8337 6.66667H12.5003C12.0401 6.66667 11.667 6.29357 11.667 5.83333C11.667 5.3731 12.0401 5 12.5003 5H15.8337C16.2939 5 16.667 5.3731 16.667 5.83333ZM16.667 8.33333C16.667 8.79357 16.2939 9.16667 15.8337 9.16667H12.5003C12.0401 9.16667 11.667 8.79357 11.667 8.33333C11.667 7.8731 12.0401 7.5 12.5003 7.5H15.8337C16.2939 7.5 16.667 7.8731 16.667 8.33333Z" fill="white"/>
+              </svg>
+            </div>
+            <div class="agent-selector-label">MAI 뉴스 에이전트</div>
+          </div>
+          <div class="agent-selector-option" data-agent="stock">
+            <div class="agent-selector-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.29199 14.7916C2.63717 15.1368 3.19681 15.1368 3.54199 14.7916L7.91699 10.4166L10.4997 12.9994C10.9068 13.4065 11.5727 13.3866 11.9548 12.956L17.8154 6.35077C18.1068 6.02237 18.0928 5.52406 17.7834 5.21251C17.445 4.8717 16.8891 4.88746 16.5705 5.24691L11.2503 11.25L8.6241 8.62375C8.23357 8.23323 7.60041 8.23323 7.20989 8.62375L2.29199 13.5416C1.94681 13.8868 1.94681 14.4465 2.29199 14.7916Z" fill="white"/>
+              </svg>
+            </div>
+            <div class="agent-selector-label">MAI 증권 에이전트</div>
+          </div>
         </div>
       </div>
       <div class="fn-buttons">
@@ -883,7 +903,83 @@
       });
     })();
 
-    
+    //Agent Selector Dropdown
+    (() => {
+      const toggleBtn = document.querySelector('[data-agent-selector-toggle]');
+      const dropdown = document.querySelector('[data-agent-selector-dropdown]');
+      const options = document.querySelectorAll('.agent-selector-option');
+      const brandTitle = document.querySelector('.brand-title');
+      const brandIcon = document.querySelector('.brand-icon svg');
+
+      if (!toggleBtn || !dropdown || !options.length) return;
+
+      const iconMap = {
+        news: `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.50033 5.83333C2.96056 5.83333 3.33366 6.20643 3.33366 6.66667V15.8333H15.0003C15.4606 15.8333 15.8337 16.2064 15.8337 16.6667C15.8337 17.1269 15.4606 17.5 15.0003 17.5H3.33366C1.66699 17.5 1.66699 15.8333 1.66699 15.8333V6.66667C1.66699 6.20643 2.04009 5.83333 2.50033 5.83333ZM17.5003 4.16667V12.5H6.66699V4.16667H17.5003ZM17.7503 2.5H6.41699C5.63366 2.5 5.00033 3.08333 5.00033 3.79167V12.875C5.00033 13.5917 5.63366 14.1667 6.41699 14.1667H17.7503C18.5337 14.1667 19.167 13.5917 19.167 12.875V3.79167C19.167 3.08333 18.5337 2.5 17.7503 2.5ZM7.50033 6C7.50033 5.44772 7.94804 5 8.50033 5H9.00033C9.55261 5 10.0003 5.44772 10.0003 6V8.16667C10.0003 8.71895 9.55261 9.16667 9.00033 9.16667H8.50033C7.94804 9.16667 7.50033 8.71895 7.50033 8.16667V6ZM16.667 10.8333C16.667 11.2936 16.2939 11.6667 15.8337 11.6667H8.33366C7.87342 11.6667 7.50033 11.2936 7.50033 10.8333C7.50033 10.3731 7.87342 10 8.33366 10H15.8337C16.2939 10 16.667 10.3731 16.667 10.8333ZM16.667 5.83333C16.667 6.29357 16.2939 6.66667 15.8337 6.66667H12.5003C12.0401 6.66667 11.667 6.29357 11.667 5.83333C11.667 5.3731 12.0401 5 12.5003 5H15.8337C16.2939 5 16.667 5.3731 16.667 5.83333ZM16.667 8.33333C16.667 8.79357 16.2939 9.16667 15.8337 9.16667H12.5003C12.0401 9.16667 11.667 8.79357 11.667 8.33333C11.667 7.8731 12.0401 7.5 12.5003 7.5H15.8337C16.2939 7.5 16.667 7.8731 16.667 8.33333Z" fill="white"/>
+        </svg>`,
+        stock: `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.29199 14.7916C2.63717 15.1368 3.19681 15.1368 3.54199 14.7916L7.91699 10.4166L10.4997 12.9994C10.9068 13.4065 11.5727 13.3866 11.9548 12.956L17.8154 6.35077C18.1068 6.02237 18.0928 5.52406 17.7834 5.21251C17.445 4.8717 16.8891 4.88746 16.5705 5.24691L11.2503 11.25L8.6241 8.62375C8.23357 8.23323 7.60041 8.23323 7.20989 8.62375L2.29199 13.5416C1.94681 13.8868 1.94681 14.4465 2.29199 14.7916Z" fill="white"/>
+        </svg>`
+      };
+
+      const labelMap = {
+        news: 'MAI 뉴스 에이전트',
+        stock: 'MAI 증권 에이전트'
+      };
+
+      const toggleDropdown = (show) => {
+        const isOpen = show !== undefined ? show : dropdown.getAttribute('aria-hidden') === 'true';
+        dropdown.setAttribute('aria-hidden', !isOpen);
+      };
+
+      const closeDropdown = () => {
+        toggleDropdown(false);
+        console.log('닫기');
+      };
+
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown();
+      });
+
+      options.forEach((option) => {
+        option.addEventListener('click', () => {
+          const agentType = option.dataset.agent;
+
+          // Update active state
+          options.forEach(opt => opt.classList.remove('active'));
+          option.classList.add('active');
+
+          // Update brand title and icon
+          const titleText = brandTitle.childNodes[0];
+          if (titleText.nodeType === Node.TEXT_NODE) {
+            titleText.textContent = labelMap[agentType];
+          }
+
+          if (brandIcon) {
+            brandIcon.outerHTML = iconMap[agentType];
+          }
+
+          closeDropdown();
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
+          closeDropdown();
+        }
+      });
+
+      // Close dropdown on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dropdown.getAttribute('aria-hidden') === 'false') {
+          closeDropdown();
+        }
+      });
+    })();
+
+
   </script>
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>
