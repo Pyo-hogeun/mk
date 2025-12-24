@@ -188,7 +188,13 @@
     .search-input{
       background-color: var(--bg-default);
     }
+    .search-result{
+      margin-top: 21px;
+      padding-top: 21px;
+      border-top: 1px solid var(--border-default, #464646);
+    }
     .recent-search{
+      
       &__title{
         display: flex;
         justify-content: space-between;
@@ -217,6 +223,10 @@
     }
     .section-bar{
       margin-top: 21px;
+      padding-top: 21px;
+      border-top: 1px solid var(--border-default, #464646);
+      min-height: 40px;
+      height: auto;
     }
     .rate-filter{
       margin: 21px 0;
@@ -396,6 +406,7 @@
         border: 0;
         background: transparent;
         cursor: pointer;
+        color: var(--text-primary);
     
         svg {
           width: 28px;
