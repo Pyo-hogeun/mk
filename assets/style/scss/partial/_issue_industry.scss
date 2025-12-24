@@ -37,7 +37,7 @@
     gap: 16px;
     align-self: stretch;
     border-radius: 12px;
-    border: 1px solid #464646;
+    border: 1px solid var(--border-default, #E0E0E0);
     background: var(--bg-subtle);
   }
   
@@ -149,9 +149,8 @@
     align-items: center;
     gap: 4px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 122, 0, 1);
-    background: #1D1D1D;
-  
+    border: 1px solid var(--orange-100, #FF7A00);
+    background: var(--bg-default, #FFF);
     span {
       color: rgba(255, 122, 0, 1);
       font-size: 12px;
@@ -228,8 +227,8 @@
     gap: 4px;
     // flex: 1 0 0;
     border-radius: 12px;
-    border: 1px solid #464646;
-    background: #1D1D1D;
+    border: 1px solid var(--border-default, #E0E0E0);
+    background: var(--bg-default, #FFF);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
   }
   

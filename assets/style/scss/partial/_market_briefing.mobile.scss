@@ -12,7 +12,7 @@
     border: 1px solid transparent;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
     background:
-      linear-gradient(#1D1D1D, #1D1D1D) padding-box,
+      linear-gradient(var(--bg-subtle), var(--bg-subtle)) padding-box,
       linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
     // box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
     margin: 24px $mobilePadSide;
