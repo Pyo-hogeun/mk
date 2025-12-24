@@ -91,8 +91,9 @@
         padding: 0 $mobilePadSide 32px;
         display: flex;
         flex-direction: column;
-        background: rgba(5, 5, 5, 1);
-        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+        background-color: rgb(125,125,125);
+        // background: var(--bg-dark-opacity);
+        // box-shadow: 4px 0 20px var(--bg-dark-opacity);
         transform: translateX(-100%);
         transition: transform 0.3s ease;
       }
@@ -105,7 +106,6 @@
         top: 0;
         padding: 24px 0 24px;
         width: 100%;
-        background: rgba(5, 5, 5, 1);
 
         h3 {
           margin: 0;
@@ -194,7 +194,7 @@
         .history{
           margin-top: 24px;
           &__title{
-            color: var(--text-primary);
+            color: var(--white);
             font-size: 15px;
             font-weight: 600;
             line-height: 150%; /* 22.5px */
@@ -209,13 +209,15 @@
             .history__item{
               display: flex;
               gap: 8px;
+              color: var(--text-secondary);
               a.keyword{
                 flex: 1 1 auto;
-                color: var(--text-primary);
+                color: var(--white);
               }
               .btn-remove{
                 background-color: transparent;
                 border: 0;
+                color: var(--text-secondary);
               }
             }
           }
@@ -270,6 +272,9 @@
             padding: 0;
             margin: 0;
           }
+          .chatbot__menu-body .history__list .history__item a.keyword{
+            color: var(--text-primary);
+          }
         }
         .recent-search{
           display: block;
@@ -278,6 +283,7 @@
           padding: 24px 0;
           margin: 0 0 24px 0;
         }
+
       }
     }
 
@@ -344,6 +350,9 @@
           margin-bottom: 8px;
           .chat__text{
             font-weight: 600;
+            .ai-loading__dots{
+              display: inline-flex;
+            }
           }
         }
       }
@@ -428,7 +437,7 @@
       gap: 14px;
       margin: 0 auto;
       padding: 5px $mobilePadSide calc(env(safe-area-inset-bottom, 0) + 20px);
-      background: linear-gradient(180deg, rgba(47, 47, 47, 0) 0%, #1D1D1D 40%);
+      background: linear-gradient(180deg, rgba(47, 47, 47, 0) 0%, var(--bg-default) 40%);
       z-index: 2;
 
       .search-input-wrapper {
@@ -649,5 +658,16 @@
       
     }
 
+  }
+  .dark{
+    .chatbot{
+      .chatbot__menu-panel{
+        // background: var(--bg-dark-opacity);
+        background-color: #1D1D1D;
+      }
+      .chatbot__menu-body .history__list .history__item a.keyword{
+        color: var(--white);
+      }
+    }
   }
 }
