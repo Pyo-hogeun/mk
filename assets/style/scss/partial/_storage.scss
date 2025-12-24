@@ -156,6 +156,7 @@
         font-size: 15px;
         font-weight: 400;
         line-height: 150%;
+        color: var(--text-primary);
       }
       &__items{
         display: flex;
@@ -182,11 +183,11 @@
         &.active{
           background: var(--bg-subtle, #2F2F2F);
           .folder-menu__text{
-            color: var(--white, #FFFFFF);
+            color: var(--text-primary, #FFFFFF);
           }
           .folder-menu__icon{
             path{
-              fill: var(--white, #FFFFFF);
+              fill: var(--text-primary, #FFFFFF);
             }
           }
         }
@@ -195,8 +196,9 @@
         width: 20px;
         height: 20px;
         flex-shrink: 0;
-        path{
-          fill: var(--text-secondary, #7B7B7B);
+        color: var(--text-primary, #FFFFFF);
+        svg{
+          fill: var(--text-pri, #7B7B7B);
           transition: fill 0.2s ease;
         }
       }
@@ -209,6 +211,7 @@
         font-weight: 600;
         line-height: 140%;
         transition: color 0.2s ease;
+        color: var(--text-primary, #FFFFFF);
       }
     }
   }

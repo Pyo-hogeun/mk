@@ -12404,6 +12404,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
+    color: var(--text-primary);
   }
   .storage .folder-menu__items {
     display: flex;
@@ -12432,18 +12433,19 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background: var(--bg-subtle, #2F2F2F);
   }
   .storage .folder-menu__item.active .folder-menu__text {
-    color: var(--white, #FFFFFF);
+    color: var(--text-primary, #FFFFFF);
   }
   .storage .folder-menu__item.active .folder-menu__icon path {
-    fill: var(--white, #FFFFFF);
+    fill: var(--text-primary, #FFFFFF);
   }
   .storage .folder-menu__icon {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+    color: var(--text-primary, #FFFFFF);
   }
-  .storage .folder-menu__icon path {
-    fill: var(--text-secondary, #7B7B7B);
+  .storage .folder-menu__icon svg {
+    fill: var(--text-pri, #7B7B7B);
     transition: fill 0.2s ease;
   }
   .storage .folder-menu__text {
@@ -12455,6 +12457,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 600;
     line-height: 140%;
     transition: color 0.2s ease;
+    color: var(--text-primary, #FFFFFF);
   }
 }
 @media screen and (max-width: 480px) {
