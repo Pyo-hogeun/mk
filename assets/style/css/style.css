@@ -4916,7 +4916,6 @@ body.bottom-sheet-open {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
   position: relative;
 }
 .chatbot-floating .chatbot-bubble .bubble-container {
@@ -4926,7 +4925,7 @@ body.bottom-sheet-open {
 .chatbot-floating .chatbot-bubble .bubble-background {
   height: 32px;
   border-radius: 999px;
-  background: var(--gray-dark);
+  background: var(--bg-default);
   border: 1px solid #FF800B;
   display: flex;
   align-items: center;
