@@ -18,7 +18,7 @@
   }
 
   &__title {
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 22px;
     font-weight: 700;
@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F0F0F0;
+    color: var(--text-primary);
 
     &:hover {
       opacity: 0.8;
@@ -71,7 +71,7 @@
     background: transparent;
     border: none;
     outline: none;
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -101,7 +101,7 @@
   }
 
   &__recent-title {
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -162,7 +162,7 @@
 
   &__recent-text {
     flex: 1;
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: 500;

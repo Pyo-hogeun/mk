@@ -50,7 +50,7 @@
   
   .industry-title {
     width: 159px;
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-size: 18px;
     font-weight: 700;
     line-height: 140%;
@@ -114,7 +114,7 @@
   .issue-text {
     flex: 1 0 0;
     align-self: stretch;
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
@@ -135,7 +135,7 @@
   
   .key-issue-label {
     width: 151px;
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
@@ -178,7 +178,7 @@
   
   .section-subtitle {
     align-self: stretch;
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
@@ -234,7 +234,7 @@
   }
   
   .stock-name {
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-size: 22px;
     font-weight: 700;
     line-height: 140%;
@@ -255,7 +255,7 @@
   
   .stock-price {
     width: 52px;
-    color: #F0F0F0;
+    color: var(--text-primary);
     font-size: 13px;
     font-weight: 600;
     line-height: 150%;

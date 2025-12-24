@@ -54,6 +54,16 @@
     .btn-toggle {
       background-color: transparent;
       border: 0;
+      svg{
+        path{
+          &:first-child{
+            color: var(--bg-subtle);
+          }
+          &:last-child{
+            color: var(--text-primary);
+          }
+        }
+      }
     }
   }
 }

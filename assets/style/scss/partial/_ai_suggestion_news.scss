@@ -81,7 +81,7 @@
         }
 
         .badge {
-          color: var(--text-primary);
+          color: var(--white);
           background: var(--orange-200, #E55204);
           font-size: 13px;
           font-style: normal;
@@ -226,7 +226,7 @@
 
             &:before {
               content: counter(top-news, decimal-leading-zero);
-              color: var(--text-primary);
+              color: var(--white);
               background: var(--orange-200, #E55204);
               font-size: 13px;
               font-style: normal;

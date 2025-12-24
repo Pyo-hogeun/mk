@@ -38,6 +38,7 @@
           line-height: 140%; /* 22.4px */
           white-space: nowrap;
           &.active{
+            color: var(--white);
             border-radius: var(--radius-pill, 999px);
             background: var(--orange-100, #FF7A00);
             border-color: var(--orange-100, #FF7A00);
@@ -72,7 +73,7 @@
           @include imgCover;
         }
         .badge{
-          color: var(--text-primary);
+          color: var(--white);
           background: var(--orange-200, #E55204);
           font-size: 13px;
           font-style: normal;
@@ -124,7 +125,7 @@
           line-height: 150%; /* 27px */
         }
         .badge{
-          color: var(--text-primary);
+          color: var(--white);
           background: var(--orange-200, #E55204);
           font-size: 13px;
           font-style: normal;
