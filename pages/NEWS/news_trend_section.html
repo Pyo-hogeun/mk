@@ -1,13 +1,54 @@
 <html lang="ko">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../../assets/style/css/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/style/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      .graph-half-circle {
+        position: relative;
+        max-width: 260px;
+        margin: 0 auto;
+      }
+
+      .graph-half-circle__chart {
+        position: relative;
+        height: 140px;
+      }
+
+      .graph-half-circle__chart canvas {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .graph-half-circle__center-label {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        color: #ffffff;
+      }
+
+      .graph-half-circle__value {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .graph-half-circle__name {
+        font-size: 13px;
+        line-height: 1.2;
+        color: #d0d0d0;
+      }
+    </style>
+  </head>
 
 <body class="dark">
 
@@ -246,20 +287,13 @@
               <div class="factor">
                 <div class="factor__label">산업 감성지수</div>
                 <div class="graph-half-circle">
-                  <svg width="103" height="56" viewBox="0 0 103 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M-2.25114e-06 51.5C-2.46611e-06 44.7369 1.33208 38.0401 3.9202 31.7918C6.50832 25.5435 10.3018 19.8662 15.084 15.084C19.8662 10.3018 25.5435 6.50831 31.7918 3.9202C38.0401 1.33208 44.7369 -1.95551e-06 51.5 -2.25114e-06C58.2631 -2.54676e-06 64.9599 1.33209 71.2082 3.92021C77.4565 6.50832 83.1338 10.3018 87.916 15.084C92.6982 19.8662 96.4917 25.5435 99.0798 31.7918C101.668 38.0401 103 44.7369 103 51.5L91.67 51.5C91.67 46.2248 90.631 41.0013 88.6122 36.1276C86.5935 31.254 83.6346 26.8257 79.9045 23.0955C76.1744 19.3654 71.746 16.4065 66.8724 14.3878C61.9987 12.369 56.7752 11.33 51.5 11.33C46.2248 11.33 41.0013 12.369 36.1276 14.3878C31.254 16.4065 26.8257 19.3654 23.0955 23.0955C19.3654 26.8256 16.4065 31.254 14.3878 36.1276C12.369 41.0013 11.33 46.2248 11.33 51.5L-2.25114e-06 51.5Z"
-                      fill="#1D1D1D" />
-                    <path
-                      d="M103 51.5C103 41.3143 99.9796 31.3573 94.3207 22.8881C88.6618 14.419 80.6186 7.81811 71.2082 3.9202C61.7978 0.0222913 51.4429 -0.997584 41.4529 0.989553C31.4628 2.9767 22.2864 7.8816 15.084 15.084L23.0955 23.0955C28.7134 17.4776 35.871 13.6518 43.6632 12.1019C51.4554 10.5519 59.5323 11.3474 66.8724 14.3878C74.2125 17.4281 80.4862 22.5768 84.9001 29.1827C89.3141 35.7887 91.67 43.5551 91.67 51.5L103 51.5Z"
-                      fill="#2175FF" />
-                    <path
-                      d="M42.8242 38L48.1855 27.5234V27.4355H41.9453V25.2734H50.9277V27.4707L45.5664 38H42.8242ZM52.6855 38L52.668 36.084L57.2383 31.8828C58.4336 30.7402 59.0664 30.0371 59.0664 29.0352C59.0664 27.9102 58.2051 27.207 57.0449 27.207C55.8496 27.207 55.0762 27.9629 55.0762 29.1758H52.5625C52.5449 26.6797 54.3906 25.0977 57.0801 25.0977C59.8047 25.0977 61.6152 26.6445 61.6152 28.8594C61.6152 30.3008 60.9121 31.4961 58.293 33.8691L56.3594 35.75V35.8203H61.791V38H52.6855Z"
-                      fill="#F0F0F0" />
-                    <path
-                      d="M44.7773 42.0352V42.832C44.7773 43.6699 44.7773 44.6367 44.5078 45.9375H45.9844V46.8398H36.3867V45.9375H43.3711C43.6641 44.6777 43.6758 43.752 43.6758 42.9375H37.5938V42.0352H44.7773ZM41.168 47.9766C43.4414 47.9648 44.8477 48.7148 44.8477 49.9922C44.8477 51.2578 43.4414 51.9727 41.168 51.9727C38.8828 51.9727 37.4766 51.2578 37.4766 49.9922C37.4766 48.7148 38.8828 47.9648 41.168 47.9766ZM41.168 48.8789C39.5391 48.8789 38.5898 49.2656 38.6016 49.9922C38.5898 50.6719 39.5391 51.0703 41.168 51.082C42.7734 51.0703 43.7227 50.6719 43.7344 49.9922C43.7227 49.2656 42.7734 48.8789 41.168 48.8789ZM55.5117 41.4961V47.7422H54.3984V45.082H52.4414V44.168H54.3984V41.4961H55.5117ZM51.9961 48.0352C54.1992 48.0352 55.5469 48.7617 55.5469 50.0156C55.5469 51.2695 54.1992 51.9844 51.9961 51.9961C49.793 51.9844 48.4336 51.2695 48.4453 50.0156C48.4336 48.7617 49.793 48.0352 51.9961 48.0352ZM51.9961 48.9023C50.4609 48.9023 49.5469 49.3008 49.5469 50.0156C49.5469 50.7188 50.4609 51.1289 51.9961 51.1172C53.5312 51.1289 54.4453 50.7188 54.4453 50.0156C54.4453 49.3008 53.5312 48.9023 51.9961 48.9023ZM50.5195 43.3477C50.5195 44.6836 51.4688 45.9727 53.0508 46.5117L52.4766 47.3906C51.2988 46.9805 50.4316 46.1426 49.9805 45.1055C49.5176 46.2832 48.5977 47.2266 47.3438 47.6836L46.7578 46.793C48.3867 46.2305 49.3828 44.8125 49.3828 43.3594V43.125H47.1094V42.2227H52.7695V43.125H50.5195V43.3477ZM60.8906 43.3594C60.8906 44.6836 61.8398 45.9844 63.4219 46.5234L62.8477 47.3906C61.6699 46.9805 60.7969 46.1426 60.3398 45.1055C59.8828 46.2598 58.9629 47.1855 57.7148 47.625L57.1406 46.7461C58.7578 46.1953 59.7539 44.7891 59.7539 43.3711V43.0781H57.4805V42.1758H63.1406V43.0781H60.8906V43.3594ZM65.8828 48.3047V51.9961H64.7695V49.207H58.7695V48.3047H65.8828ZM65.8828 41.4961V47.7773H64.7695V45.082H62.8242V44.168H64.7695V41.4961H65.8828Z"
-                      fill="#2175FF" />
-                  </svg>
+                  <div class="graph-half-circle__chart">
+                    <canvas id="sentimentHalfDonut" role="img" aria-label="산업 감성지수 하프 도넛 차트"></canvas>
+                  </div>
+                  <div class="graph-half-circle__center-label" aria-hidden="true">
+                    <span class="graph-half-circle__value">0%</span>
+                    <span class="graph-half-circle__name">산업 감성지수</span>
+                  </div>
 
                 </div>
               </div>
@@ -487,6 +521,62 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js"></script>
+
+  <script>
+    (() => {
+      const canvas = document.getElementById('sentimentHalfDonut');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      const sentimentValue = 72;
+      const foregroundColor = '#2175FF';
+      const backgroundColor = 'rgba(255, 255, 255, 0.08)';
+
+      const valueEl = document.querySelector('.graph-half-circle__value');
+      if (valueEl) {
+        valueEl.textContent = `${sentimentValue}%`;
+      }
+
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['산업 감성지수', '나머지'],
+          datasets: [
+            {
+              label: '산업 감성지수',
+              data: [sentimentValue, 100 - sentimentValue],
+              backgroundColor: [foregroundColor, backgroundColor],
+              hoverBackgroundColor: [foregroundColor, backgroundColor],
+              borderWidth: 0,
+              cutout: '70%',
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          rotation: -90,
+          circumference: 180,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'bottom',
+              labels: {
+                color: '#ffffff',
+                boxWidth: 12,
+                usePointStyle: true,
+                padding: 12,
+              },
+            },
+            tooltip: {
+              enabled: false,
+            },
+          },
+        },
+      });
+    })();
+  </script>
 
   <script>
     // 보관함 저장
