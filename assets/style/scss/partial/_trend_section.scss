@@ -702,6 +702,7 @@
         justify-content: space-between;
         align-items: center;
         &__label{
+          flex: 1 1 auto;
           color: var(--text-primary, #F0F0F0);
           font-size: 15px;
           font-style: normal;
@@ -728,3 +729,46 @@
     }
   }
 }
+
+.graph-half-circle {
+  position: relative;
+  max-width: 260px;
+  margin: 0 auto;
+  &__chart {
+    position: relative;
+    height: 140px;
+  }
+  
+  &__chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  &__center-label {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #ffffff;
+  }
+  
+  &__value {
+    color: var(--text-primary, #F0F0F0);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  &__name {
+    color: var(--blue, #2175FF);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1; 
+  }
+}
+
