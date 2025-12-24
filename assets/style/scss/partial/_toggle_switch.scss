@@ -1,5 +1,5 @@
 @use 'variables'as *;
-
+@use 'mixin' as *;
 .toggle-switch {
   display: flex;
   width: 105px;
@@ -17,6 +17,7 @@
     display: none;
     &:checked + label{
       font-weight: 600;
+      color: #FFFFFF;
       background: var(--orange-100, #FF7A00);
     }
   }
@@ -28,7 +29,7 @@
     justify-content: center;
     align-items: center;
     flex: 1 0 0;
-    color: #FFFFFF;
+    color: var(--text-primary);
     border-radius: 6px;
     font-size: 14px;
     font-weight: 500;

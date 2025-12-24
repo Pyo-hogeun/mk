@@ -1,4 +1,5 @@
-@use 'variables'as *;
+@use 'variables' as *;
+@use 'mixin' as *;
 .agent-header {
   display: grid;
   grid-template-columns: 180px 1fr 1fr;
@@ -432,21 +433,10 @@
         align-items: center;
         margin-bottom: 16px;
       }
-      &::-webkit-scrollbar {
-        height: 8px;
-        /* Chrome / Safari / Edge */
-      }
-  
-      // /* 트랙(배경) */
+      @include scrollbarPc;
       &::-webkit-scrollbar-track {
-        background: #5f5f5f;
-        border-radius: 8px;
-      }
-  
-      // /* 드래그 핸들 */
-      &::-webkit-scrollbar-thumb {
-        background: #464646;
-        border-radius: 8px;
+        background-color: transparent;
+        /* Chrome / Safari / Edge */
       }
     }
 
