@@ -12058,6 +12058,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-top: 4px;
     margin-bottom: 24px;
   }
+  .trend-section .related-news__wrapper .briefing-item__card .briefing-item__title {
+    color: var(--text-primary, #111);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%; /* 25.2px */
+  }
   .trend-section .related-news__wrapper .briefing-item__card {
     color: var(--text-primary, #111);
     font-size: 18px;
