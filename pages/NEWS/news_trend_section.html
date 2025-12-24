@@ -531,7 +531,7 @@
       const ctx = canvas.getContext('2d');
       const sentimentValue = 72;
       const foregroundColor = '#2175FF';
-      const backgroundColor = 'rgba(255, 255, 255, 0.08)';
+      const backgroundColor = '#1D1D1D';
 
       const valueEl = document.querySelector('.graph-half-circle__value');
       if (valueEl) {
@@ -560,14 +560,7 @@
           circumference: 180,
           plugins: {
             legend: {
-              display: true,
-              position: 'bottom',
-              labels: {
-                color: '#ffffff',
-                boxWidth: 12,
-                usePointStyle: true,
-                padding: 12,
-              },
+              display: false,
             },
             tooltip: {
               enabled: false,
