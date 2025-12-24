@@ -267,9 +267,12 @@
               </div>
             </div>
   
-            <button class="player-control__btn-stop" type="button" aria-label="정지">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 30H10V10H30V30Z" fill="white"/>
+            <button class="player-control__btn-stop" type="button" aria-pressed="false">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="재생" class="play">
+                <path d="M9.53688 6.11815C8.87115 5.69451 8 6.17272 8 6.96181V17.3185C8 18.1076 8.87115 18.5858 9.53688 18.1621L17.6742 12.9838C18.2917 12.5908 18.2917 11.6894 17.6742 11.2965L9.53688 6.11815Z" fill="white"/>
+              </svg>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="stop" aria-label="정지">
+                <path d="M30 30H10V10H30V30Z" fill="white" />
               </svg>
             </button>
   
@@ -607,23 +610,45 @@
       const stopIcon = playButton?.querySelector('.stop');
       const label = playButton?.querySelector('.label');
 
-      const setPlayingState = (isPlaying) => {
-        if (!playButton || !playIcon || !stopIcon || !label) return;
+      const controlButton = document.querySelector('.player-control__btn-stop');
+      const controlPlayIcon = controlButton?.querySelector('.play');
+      const controlStopIcon = controlButton?.querySelector('.stop');
 
-        playButton.classList.toggle('is-playing', isPlaying);
-        playButton.setAttribute('aria-pressed', String(isPlaying));
-        playIcon.classList.toggle('is-hidden', isPlaying);
-        stopIcon.classList.toggle('is-hidden', !isPlaying);
-        label.textContent = isPlaying ? '정지하기' : '재생하기';
+      let isPlaying = false;
+
+      const setPlayingState = (nextState) => {
+        isPlaying = nextState;
+
+        if (playButton && playIcon && stopIcon && label) {
+          playButton.classList.toggle('is-playing', isPlaying);
+          playButton.setAttribute('aria-pressed', String(isPlaying));
+          playIcon.classList.toggle('is-hidden', isPlaying);
+          stopIcon.classList.toggle('is-hidden', !isPlaying);
+          label.textContent = isPlaying ? '정지하기' : '재생하기';
+        }
+
+        if (controlButton && controlPlayIcon && controlStopIcon) {
+          controlButton.classList.toggle('is-playing', isPlaying);
+          controlButton.setAttribute('aria-pressed', String(isPlaying));
+          controlButton.setAttribute('aria-label', isPlaying ? '정지' : '재생');
+          controlPlayIcon.classList.toggle('is-hidden', isPlaying);
+          controlStopIcon.classList.toggle('is-hidden', !isPlaying);
+        }
+      };
+
+      const togglePlayingState = () => {
+        setPlayingState(!isPlaying);
       };
 
       if (playButton && playIcon && stopIcon && label) {
-        setPlayingState(false);
-        playButton.addEventListener('click', () => {
-          const nextState = !playButton.classList.contains('is-playing');
-          setPlayingState(nextState);
-        });
+        playButton.addEventListener('click', togglePlayingState);
       }
+
+      if (controlButton && controlPlayIcon && controlStopIcon) {
+        controlButton.addEventListener('click', togglePlayingState);
+      }
+
+      setPlayingState(false);
     })();
     // 공유
     (function () {

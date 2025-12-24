@@ -677,31 +677,7 @@
         }
       });
     })();
-    // 오디오 재생 토글
-    (function () {
-      const playButton = document.querySelector('.btn-play');
-      const playIcon = playButton?.querySelector('.play');
-      const stopIcon = playButton?.querySelector('.stop');
-      const label = playButton?.querySelector('.label');
-
-      const setPlayingState = (isPlaying) => {
-        if (!playButton || !playIcon || !stopIcon || !label) return;
-
-        playButton.classList.toggle('is-playing', isPlaying);
-        playButton.setAttribute('aria-pressed', String(isPlaying));
-        playIcon.classList.toggle('is-hidden', isPlaying);
-        stopIcon.classList.toggle('is-hidden', !isPlaying);
-        label.textContent = isPlaying ? '정지하기' : '재생하기';
-      };
-
-      if (playButton && playIcon && stopIcon && label) {
-        setPlayingState(false);
-        playButton.addEventListener('click', () => {
-          const nextState = !playButton.classList.contains('is-playing');
-          setPlayingState(nextState);
-        });
-      }
-    })();
+    
     // 공유
     (function () {
       const shareButton = document.querySelector('.share-news');
