@@ -909,7 +909,7 @@
       const dropdown = document.querySelector('[data-agent-selector-dropdown]');
       const options = document.querySelectorAll('.agent-selector-option');
       const brandTitle = document.querySelector('.brand-title');
-      const brandIcon = document.querySelector('.brand-icon svg');
+      const brandIconContainer = document.querySelector('.brand-icon');
 
       if (!toggleBtn || !dropdown || !options.length) return;
 
@@ -956,8 +956,8 @@
             titleText.textContent = labelMap[agentType];
           }
 
-          if (brandIcon) {
-            brandIcon.outerHTML = iconMap[agentType];
+          if (brandIconContainer) {
+            brandIconContainer.innerHTML = iconMap[agentType];
           }
 
           closeDropdown();
