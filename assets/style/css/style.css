@@ -12055,6 +12055,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .storage .content-wrapper .section__topper {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 12px;
   }
   .storage .content-wrapper .section__topper h2 {
     color: var(--text-primary, #F0F0F0);
@@ -12068,22 +12069,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 500;
     line-height: 150%; /* 18px */
     margin-top: 12px;
-  }
-  .storage .content-wrapper .section__topper .fn-order {
-    display: inline-flex;
-    gap: 7px;
-  }
-  .storage .content-wrapper .section__topper .fn-order button {
-    background-color: transparent;
-    border: 0;
-    color: var(--text-secondary, #7B7B7B);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 150%; /* 21px */
-    padding: 0;
-  }
-  .storage .content-wrapper .section__topper .fn-order button.active {
-    color: var(--text-primary, #F0F0F0);
   }
   .storage .content-wrapper .filter-buttons {
     display: flex;
