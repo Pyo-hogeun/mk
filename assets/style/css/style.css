@@ -12349,6 +12349,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px 12px;
     margin-top: 24px;
+    margin-bottom: 24px;
   }
   .storage .content-wrapper .briefing-item__card {
     position: relative;
