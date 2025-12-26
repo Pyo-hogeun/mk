@@ -18,6 +18,7 @@
   transform: translateY(-8px);
   transition: all 0.2s ease-in-out;
   z-index: 1000;
+  border-radius: 12px;
 
   &[aria-hidden="false"] {
     visibility: visible;
@@ -34,7 +35,7 @@
   align-items: center;
   gap: 8px;
   align-self: stretch;
-  border: 1px solid #464646;
+  border: 1px solid var(--border-default);
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
 
