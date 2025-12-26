@@ -541,6 +541,9 @@
         neutral: { fill: '#9CA3AF', border: '#CCCCCC' },
       };
 
+      const isDarkMode = document.body.classList.contains('dark');
+      const axisLabelColor = isDarkMode ? '#F0F0F0' : '#111111';
+
       // Chart.js
       const chartCanvas = document.getElementById('timelineChartJs');
       if (chartCanvas && window.Chart) {
@@ -664,7 +667,7 @@
               x: {
                 grid: { display: false },
                 ticks: {
-                  color: '#F0F0F0',
+                  color: axisLabelColor,
                   font: { size: 12 },
                 },
               },
@@ -672,7 +675,7 @@
                 min: 60000,
                 max: 120000,
                 ticks: {
-                  color: '#F0F0F0',
+                  color: axisLabelColor,
                   font: { size: 11 },
                   callback: (value) => value.toLocaleString('ko-KR'),
                 },
