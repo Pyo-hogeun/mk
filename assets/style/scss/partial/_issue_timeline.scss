@@ -130,7 +130,7 @@
     line-height: 150%; /* 18px */
   }
   &__value{
-    color: #FFF;
+    color: var(--text-opposite);
 
     /* Body/SM */
     font-size: 15px;

@@ -3412,7 +3412,7 @@ body.bottom-sheet-open {
   line-height: 150%; /* 18px */
 }
 .chart-tooltip__value {
-  color: #FFF;
+  color: var(--text-opposite);
   /* Body/SM */
   font-size: 15px;
   font-weight: 400;
