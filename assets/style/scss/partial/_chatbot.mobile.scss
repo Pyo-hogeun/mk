@@ -307,7 +307,7 @@
         .chat{
           &__text{
             display: inline-block;
-            width: 250px;
+            min-width: 50px;
             padding: 8px 12px;
             border-radius: var(--radius-lg, 12px);
             border: 1px solid var(--border-default, #464646);
