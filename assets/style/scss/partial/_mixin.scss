@@ -30,6 +30,10 @@
   border: 1px solid transparent;
   background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
 }
+@mixin GradientBorderLight {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(180deg, #FFEFE0 14.9%, var(--surface-raised) 88.94%) border-box;
+}
 @mixin StickyTop{
   position: sticky;
   top: 0;
