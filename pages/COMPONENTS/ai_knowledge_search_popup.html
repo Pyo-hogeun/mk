@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 지식검색 팝업 - Components</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+</head>
+<body>
+  <div class="layer-popup is-active">
+    <div class="layer-popup__backdrop"></div>
+    <div class="layer-popup__dialog">
+      <div class="layer-popup__content">
+        <div class="ai-knowledge-popup">
+          <button class="ai-knowledge-popup__close" type="button" aria-label="닫기">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.7068 11.9236C10.3163 11.5331 9.68309 11.5331 9.29257 11.9236L5.63499 15.5812C5.47365 15.7425 5.25482 15.8332 5.02665 15.8332C4.55151 15.8332 4.16634 15.448 4.16634 14.9729C4.16634 14.7447 4.25698 14.5259 4.41832 14.3645L8.0759 10.7069C8.46643 10.3164 8.46643 9.68326 8.0759 9.29273L4.41832 5.63515C4.25698 5.47381 4.16634 5.25499 4.16634 5.02682C4.16634 4.55168 4.55152 4.1665 5.02665 4.1665C5.25482 4.1665 5.47365 4.25714 5.63499 4.41848L9.29257 8.07607C9.68309 8.46659 10.3163 8.46659 10.7068 8.07606L14.3644 4.41849C14.5257 4.25714 14.7445 4.1665 14.9727 4.1665C15.4478 4.1665 15.833 4.55168 15.833 5.02682C15.833 5.25499 15.7424 5.47381 15.581 5.63515L11.9234 9.29273C11.5329 9.68326 11.5329 10.3164 11.9234 10.7069L15.581 14.3645C15.7424 14.5259 15.833 14.7447 15.833 14.9729C15.833 15.448 15.4478 15.8332 14.9727 15.8332C14.7445 15.8332 14.5257 15.7425 14.3644 15.5812L10.7068 11.9236Z" fill="#212121"/>
+            </svg>
+          </button>
+          
+          <div class="ai-knowledge-popup__images">
+            <img class="device-img device-img-laptop" src="https://api.builder.io/api/v1/image/assets/TEMP/8fe54f38d18fa2456804e4afe6ce4bebb954dcb2?width=600" alt="매일경제 AI 지식검색" />
+            <img class="device-img device-img-phone" src="https://api.builder.io/api/v1/image/assets/TEMP/75dfc80a8be2bec74f6903cd25866bd4819aa13a?width=255" alt="매일경제 AI 지식검색 모바일" />
+          </div>
+          
+          <div class="ai-knowledge-popup__body">
+            <h2 class="popup-title">AI 지식검색</h2>
+            <p class="popup-description">독자가 문장 형태로 질문을 입력하면, 매일 경제의 60년 기사를 AI가 탐색해 의도에 맞는 답변과 관련 기사 출처를 함께 제공합니다. 단순 키워드 검색을 넘어 맥락 기반으로 더 빠르고 정확한 정보를 찾을 수 있습니다. </p>
+            <button class="btn-try" type="button">사용해 보기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const backdrop = document.querySelector('.layer-popup__backdrop');
+    const closeButton = document.querySelector('.ai-knowledge-popup__close');
+    const tryButton = document.querySelector('.btn-try');
+    const popup = document.querySelector('.layer-popup');
+
+    backdrop.addEventListener('click', () => {
+      popup.classList.remove('is-active');
+      console.log('Popup closed');
+    });
+
+    closeButton.addEventListener('click', () => {
+      popup.classList.remove('is-active');
+      console.log('Close button clicked');
+    });
+
+    tryButton.addEventListener('click', () => {
+      console.log('Try button clicked');
+      popup.classList.remove('is-active');
+    });
+  </script>
+</body>
+</html>
