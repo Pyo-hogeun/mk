@@ -13848,7 +13848,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 
 .ai-tools-tooltip {
   max-width: 400px;
-  height: 447px;
+  min-height: 200px;
   position: absolute;
   display: none;
   z-index: 10;
@@ -13887,6 +13887,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   overflow: hidden;
 }
 .ai-tools-tooltip .ai-knowledge-popup {
+  width: 400px;
   box-shadow: 0px -4px 18px 3px rgba(0, 0, 0, 0.2);
 }
 .ai-tools-tooltip .tooltip-image {
@@ -13898,7 +13899,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 .ai-tools-tooltip.is-above .tooltip-arrow {
   top: auto;
-  bottom: -6px;
+  bottom: -20px;
   transform: rotate(180deg);
 }
 .ai-tools-tooltip.is-above .tooltip-content {
