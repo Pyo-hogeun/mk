@@ -13,6 +13,33 @@
     display: flex;
   }
 
+  &.tooltip-style {
+    position: absolute;
+    inset: auto;
+    padding: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &.is-active {
+      display: block;
+    }
+
+    .layer-popup__backdrop {
+      display: none;
+    }
+
+    .layer-popup__dialog {
+      position: absolute;
+      width: max-content;
+      max-width: min(640px, calc(100vw - 32px));
+    }
+
+    .layer-popup__content {
+      width: auto;
+      justify-content: flex-start;
+    }
+  }
+
   .layer-popup__backdrop {
     position: absolute;
     inset: 0;

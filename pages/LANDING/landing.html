@@ -693,24 +693,60 @@
     const aiKnowledgeBackdrop = aiKnowledgePopup.querySelector('.layer-popup__backdrop');
     const aiKnowledgeCloseBtn = aiKnowledgePopup.querySelector('.ai-knowledge-popup__close');
     const aiKnowledgeTryBtn = aiKnowledgePopup.querySelector('.btn-try');
+    const aiKnowledgeDialog = aiKnowledgePopup.querySelector('.layer-popup__dialog');
+
+    const closeAiKnowledgePopup = () => {
+      aiKnowledgePopup.classList.remove('is-active', 'tooltip-style');
+      document.body.classList.remove('layer-popup-open');
+      aiKnowledgeDialog.style.top = '';
+      aiKnowledgeDialog.style.left = '';
+    };
+
+    const positionPopupNextToCard = (card) => {
+      const isDesktop = window.innerWidth >= 480;
+
+      aiKnowledgePopup.classList.toggle('tooltip-style', isDesktop);
+
+      if (!isDesktop) {
+        aiKnowledgeDialog.style.top = '';
+        aiKnowledgeDialog.style.left = '';
+        return;
+      }
+
+      const cardRect = card.getBoundingClientRect();
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+      const offset = 16;
+
+      requestAnimationFrame(() => {
+        const dialogRect = aiKnowledgeDialog.getBoundingClientRect();
+        const viewportWidth = document.documentElement.clientWidth;
+        let left = scrollLeft + cardRect.right + offset;
+        const maxLeft = scrollLeft + viewportWidth - dialogRect.width - offset;
+
+        if (left > maxLeft) {
+          left = Math.max(scrollLeft + cardRect.left - dialogRect.width - offset, scrollLeft + offset);
+        }
+
+        aiKnowledgeDialog.style.top = `${scrollTop + cardRect.top}px`;
+        aiKnowledgeDialog.style.left = `${left}px`;
+      });
+    };
 
     // Close popup on backdrop click
     aiKnowledgeBackdrop.addEventListener('click', () => {
-      aiKnowledgePopup.classList.remove('is-active');
-      document.body.classList.remove('layer-popup-open');
+      closeAiKnowledgePopup();
     });
 
     // Close popup on close button click
     aiKnowledgeCloseBtn.addEventListener('click', () => {
-      aiKnowledgePopup.classList.remove('is-active');
-      document.body.classList.remove('layer-popup-open');
+      closeAiKnowledgePopup();
     });
 
     // Handle try button click
     aiKnowledgeTryBtn.addEventListener('click', () => {
       console.log('AI 지식검색 사용해 보기 clicked');
-      aiKnowledgePopup.classList.remove('is-active');
-      document.body.classList.remove('layer-popup-open');
+      closeAiKnowledgePopup();
       // Add navigation or other functionality here
     });
 
@@ -750,6 +786,7 @@
         console.log('click');
         aiKnowledgePopup.classList.add('is-active');
         document.body.classList.add('layer-popup-open');
+        positionPopupNextToCard(card);
       });
     });
   </script>

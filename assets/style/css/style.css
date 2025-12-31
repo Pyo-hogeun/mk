@@ -2222,6 +2222,28 @@ body.dark {
 .layer-popup.is-active {
   display: flex;
 }
+.layer-popup.tooltip-style {
+  position: absolute;
+  inset: auto;
+  padding: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.layer-popup.tooltip-style.is-active {
+  display: block;
+}
+.layer-popup.tooltip-style .layer-popup__backdrop {
+  display: none;
+}
+.layer-popup.tooltip-style .layer-popup__dialog {
+  position: absolute;
+  width: max-content;
+  max-width: min(640px, calc(100vw - 32px));
+}
+.layer-popup.tooltip-style .layer-popup__content {
+  width: auto;
+  justify-content: flex-start;
+}
 .layer-popup .layer-popup__backdrop {
   position: absolute;
   inset: 0;
