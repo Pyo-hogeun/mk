@@ -754,15 +754,85 @@
       }
     }
 
-    // Example: Open popup when clicking on the AI tools card
-    const aiToolsFeatureCards = document.querySelectorAll('.tools-feature-card');
-    aiToolsFeatureCards.forEach((card) => {
-      card.addEventListener('click', () => {
-        console.log('click');
-        aiKnowledgePopup.classList.add('is-active');
-        document.body.classList.add('layer-popup-open');
+    const aiToolsTooltip = document.querySelector('.ai-tools-tooltip');
+    const toolFeatureCards = Array.from(document.querySelectorAll('.tool-feature-card'));
+    let activeToolCard = null;
+
+    const hideAiToolsTooltip = () => {
+      if (!aiToolsTooltip) return;
+      aiToolsTooltip.classList.remove('is-visible', 'is-above');
+      aiToolsTooltip.style.visibility = '';
+    };
+
+    const positionAiToolsTooltip = (card) => {
+      if (!aiToolsTooltip || !card) return;
+
+      const spacing = 12;
+      const scrollY = window.scrollY || window.pageYOffset;
+      const scrollX = window.scrollX || window.pageXOffset;
+      const viewportWidth = document.documentElement.clientWidth;
+
+      aiToolsTooltip.classList.add('is-visible');
+      aiToolsTooltip.classList.remove('is-above');
+      aiToolsTooltip.style.visibility = 'hidden';
+
+      const tooltipRect = aiToolsTooltip.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      const hasSpaceBelow = window.innerHeight - cardRect.bottom >= tooltipRect.height + spacing;
+
+      let top = hasSpaceBelow
+        ? cardRect.bottom + spacing + scrollY
+        : cardRect.top + scrollY - tooltipRect.height - spacing;
+
+      const tooltipWidth = tooltipRect.width;
+      let left = cardRect.left + scrollX + (cardRect.width - tooltipWidth) / 2;
+      const minLeft = scrollX + 12;
+      const maxLeft = scrollX + viewportWidth - tooltipWidth - 12;
+      left = Math.max(minLeft, Math.min(left, maxLeft));
+
+      aiToolsTooltip.style.left = `${left}px`;
+      aiToolsTooltip.style.top = `${top}px`;
+      aiToolsTooltip.classList.toggle('is-above', !hasSpaceBelow);
+
+      const tooltipArrow = aiToolsTooltip.querySelector('.tooltip-arrow');
+      if (tooltipArrow) {
+        const arrowRect = tooltipArrow.getBoundingClientRect();
+        const cardCenter = cardRect.left + scrollX + cardRect.width / 2;
+        const arrowLeft = cardCenter - left - (arrowRect.width || 24) / 2;
+        const clampedArrowLeft = Math.max(8, Math.min(arrowLeft, tooltipWidth - (arrowRect.width || 24) - 8));
+        tooltipArrow.style.left = `${clampedArrowLeft}px`;
+      }
+
+      aiToolsTooltip.style.visibility = '';
+    };
+
+    toolFeatureCards.forEach((card) => {
+      card.addEventListener('click', (event) => {
+        event.stopPropagation();
+        activeToolCard = card;
+        positionAiToolsTooltip(card);
       });
     });
+
+    document.addEventListener('click', (event) => {
+      if (!aiToolsTooltip?.classList.contains('is-visible')) return;
+      const isClickOnTooltip = aiToolsTooltip.contains(event.target);
+      const isClickOnCard = toolFeatureCards.some((card) => card.contains(event.target));
+
+      if (!isClickOnTooltip && !isClickOnCard) {
+        hideAiToolsTooltip();
+        activeToolCard = null;
+      }
+    });
+
+    const repositionAiToolsTooltip = () => {
+      if (activeToolCard && aiToolsTooltip?.classList.contains('is-visible')) {
+        positionAiToolsTooltip(activeToolCard);
+      }
+    };
+
+    window.addEventListener('resize', repositionAiToolsTooltip);
+    window.addEventListener('scroll', repositionAiToolsTooltip, { passive: true });
   </script>
 
 

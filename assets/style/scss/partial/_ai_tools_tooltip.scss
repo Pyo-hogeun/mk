@@ -3,9 +3,10 @@
 .ai-tools-tooltip {
   width: 400px;
   height: 447px;
-  position: relative;
+  position: absolute;
   display: none;
-  
+  z-index: 10;
+
   &.is-visible {
     display: block;
   }
@@ -15,7 +16,7 @@
     height: 24px;
     position: absolute;
     left: 316px;
-    top: 0;
+    top: -6px;
     z-index: 2;
 
     svg {
@@ -34,7 +35,7 @@
     border-radius: 20px;
     position: absolute;
     left: 0;
-    top: 18px;
+    top: 12px;
     height: 429px;
     overflow: hidden;
   }
@@ -44,5 +45,18 @@
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  &.is-above {
+    .tooltip-arrow {
+      top: auto;
+      bottom: -6px;
+      transform: rotate(180deg);
+    }
+
+    .tooltip-content {
+      top: 0;
+      bottom: auto;
+    }
   }
 }

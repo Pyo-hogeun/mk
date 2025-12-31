@@ -13846,8 +13846,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 .ai-tools-tooltip {
   width: 400px;
   height: 447px;
-  position: relative;
+  position: absolute;
   display: none;
+  z-index: 10;
 }
 .ai-tools-tooltip.is-visible {
   display: block;
@@ -13857,7 +13858,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   height: 24px;
   position: absolute;
   left: 316px;
-  top: 0;
+  top: -6px;
   z-index: 2;
 }
 .ai-tools-tooltip .tooltip-arrow svg {
@@ -13874,7 +13875,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   border-radius: 20px;
   position: absolute;
   left: 0;
-  top: 18px;
+  top: 12px;
   height: 429px;
   overflow: hidden;
 }
@@ -13884,4 +13885,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+.ai-tools-tooltip.is-above .tooltip-arrow {
+  top: auto;
+  bottom: -6px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.ai-tools-tooltip.is-above .tooltip-content {
+  top: 0;
+  bottom: auto;
 }/*# sourceMappingURL=style.css.map */
