@@ -744,13 +744,18 @@
     }
 
     // Example: Open popup when clicking on the AI tools card
-    const aiToolsFeatureCard = document.querySelector('.tools-feature-card');
+    const openAiKnowledgePopup = () => {
+      aiKnowledgePopup.classList.add('is-active');
+      document.body.classList.add('layer-popup-open');
+    };
+
+    const aiToolsFeatureCard = document.querySelector('.aiToolsFeatureCard');
     if (aiToolsFeatureCard) {
-      aiToolsFeatureCard.addEventListener('click', () => {
-        aiKnowledgePopup.classList.add('is-active');
-        document.body.classList.add('layer-popup-open');
-      });
+      aiToolsFeatureCard.addEventListener('click', openAiKnowledgePopup);
     }
+
+    const toolsFeatureCards = Array.from(document.querySelectorAll('.tools-feature-card'));
+    toolsFeatureCards.forEach((card) => card.addEventListener('click', openAiKnowledgePopup));
   </script>
 
 
