@@ -83,7 +83,7 @@
             align-items: center;
             border-radius: var(--radius-md);
             border: 1px solid var(--orange-100);
-            background: var(--white);
+            background: var(--bg-default);
             color: var(--orange-100);
             font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
             font-size: 12px;
@@ -134,6 +134,7 @@
           flex: 1 0 0;
           border-radius: 12px;
           box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
+          cursor: pointer;
 
           // background: var(--bg-default);
           // border: 1px solid #FF800B;

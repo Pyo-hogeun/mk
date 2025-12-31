@@ -12775,7 +12775,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     border-radius: var(--radius-md);
     border: 1px solid var(--orange-100);
-    background: var(--white);
+    background: var(--bg-default);
     color: var(--orange-100);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 12px;
@@ -12820,6 +12820,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex: 1 0 0;
     border-radius: 12px;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     border: 1px solid transparent;
     background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
