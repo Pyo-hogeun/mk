@@ -565,12 +565,11 @@
 
       .tag {
         display: flex;
-        height: 40px;
-        height: var(--height-md, 40px);
+        min-height: var(--height-md, 40px);
         padding: 8px 20px;
         justify-content: center;
         align-items: center;
-        border-radius: 999px;
+        border-radius: 20px;
         border: 1px solid var(--border-default);
         background: transparent;
         cursor: pointer;
@@ -579,15 +578,15 @@
 
         &__text {
           color: var(--text-primary, #F0F0F0);
-          text-align: center;
+          text-align: left;
 
           /* Body/SM */
           font-family: Pretendard;
           font-size: 15px;
           font-style: normal;
           font-weight: 400;
-          line-height: 150%;
-          /* 22.5px */
+          line-height: 120%;
+          word-break: break-all;
         }
 
         &__close {
