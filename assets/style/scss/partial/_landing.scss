@@ -34,7 +34,7 @@
         // border: 1px solid #FFEEDF;
         // background: var(--orange-100);
         border: 1px solid transparent;
-        background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, .7) 12%, #602F16 90%) border-box;
+        background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, .7) 12%, var(--oragne-border-dark) 90%) border-box;
 
         .hero-images-wrapper {
           position: absolute;

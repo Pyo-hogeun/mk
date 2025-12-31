@@ -81,6 +81,7 @@ svg {
   --orange-200: #e55204;
   --red: #ff0000;
   --white: #ffffff;
+  --oragne-border-dark: rgba(206, 108, 55, 1);
   /* spacing */
   /* Mode 1 */
   /* number */
@@ -119,6 +120,7 @@ body.dark {
   --text-primary: #f0f0f0;
   --text-secondary: #7b7b7b;
   --text-opposite: #f0f0f0;
+  --oragne-border-dark: rgba(206, 108, 55, 1);
 }
 
 .container {
@@ -3820,7 +3822,7 @@ body.bottom-sheet-open {
     align-items: center;
     border-radius: 100px;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .stock-briefing-item__for-pc .ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -4101,7 +4103,7 @@ body.bottom-sheet-open {
     align-items: center;
     border-radius: 100px;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .stock-briefing-item .ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -4657,7 +4659,7 @@ body.bottom-sheet-open {
   .broadcast-item__badges .badge.outline {
     border: 1px solid transparent;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .broadcast-item__badges .badge {
     font-size: 12px;
@@ -4696,7 +4698,7 @@ body.bottom-sheet-open {
     width: -moz-fit-content;
     width: fit-content;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .broadcast-item__ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -4830,7 +4832,7 @@ body.bottom-sheet-open {
   .broadcast-item__badges .badge.outline {
     border: 1px solid transparent;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .broadcast-item__badges .badge {
     font-size: 12px;
@@ -4869,7 +4871,7 @@ body.bottom-sheet-open {
     width: -moz-fit-content;
     width: fit-content;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .broadcast-item__ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -5625,7 +5627,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     border-radius: 100px;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .chatbot .recommand-q__card__topper .ai-badge .ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -6225,7 +6227,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     border-radius: 100px;
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .chatbot .recommand-q__card__topper .ai-badge .ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -6691,7 +6693,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border: 1px solid var(--base-gradation, #FF800B);
     background: var(--gray-dark, #1D1D1D);
     border: 1px solid transparent;
-    background: linear-gradient(#2F2F2F, #2F2F2F) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .briefing-item__badges .badge {
     font-size: 12px;
@@ -6950,7 +6952,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-radius: 100px;
     border: 1px solid var(--base-gradation, #FF800B);
     border: 1px solid transparent;
-    background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .briefing-item__badges .badge {
     font-size: 12px;
@@ -12728,7 +12730,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     overflow: hidden;
     min-height: 331px;
     border: 1px solid transparent;
-    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, #602F16 90%) border-box;
+    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, var(--oragne-border-dark) 90%) border-box;
   }
   .landing .for-pc .ai-agent-promo .hero-images-wrapper {
     position: absolute;
@@ -12819,7 +12821,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-radius: 12px;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     border: 1px solid transparent;
-    background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-agents-grid .agent-card__icon {
     display: flex;
@@ -12878,7 +12880,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-top: 20px;
     position: relative;
     border: 1px solid transparent;
-    background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-tools-showcase__header {
     display: flex;
@@ -13372,7 +13374,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 150px;
     border-radius: var(--radius-lg);
     border: 1px solid transparent;
-    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, #602F16 90%) border-box;
+    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, var(--oragne-border-dark) 90%) border-box;
     position: relative;
     overflow: hidden;
   }
@@ -13609,7 +13611,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-top: 20px;
     border-radius: 12px;
     border: 1px solid transparent;
-    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, #602F16 90%) border-box;
+    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, var(--oragne-border-dark) 90%) border-box;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
@@ -13844,7 +13846,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 
 .ai-tools-tooltip {
-  width: 400px;
+  max-width: 400px;
   height: 447px;
   position: absolute;
   display: none;
@@ -13860,11 +13862,15 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   left: 316px;
   top: -6px;
   z-index: 2;
+  color: var(--bg-default);
 }
 .ai-tools-tooltip .tooltip-arrow svg {
   width: 100%;
   height: 100%;
   fill: var(--bg-default);
+}
+.ai-tools-tooltip .tooltip-arrow {
+  top: -20px;
 }
 .ai-tools-tooltip .tooltip-content {
   display: flex;
@@ -13879,6 +13885,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   height: 429px;
   overflow: hidden;
 }
+.ai-tools-tooltip .ai-knowledge-popup {
+  box-shadow: 0px -4px 18px 3px rgba(0, 0, 0, 0.2);
+}
 .ai-tools-tooltip .tooltip-image {
   width: 100%;
   height: 100%;
@@ -13889,10 +13898,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 .ai-tools-tooltip.is-above .tooltip-arrow {
   top: auto;
   bottom: -6px;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .ai-tools-tooltip.is-above .tooltip-content {
   top: 0;
   bottom: auto;
+}
+.ai-tools-tooltip.is-above .ai-knowledge-popup {
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=style.css.map */

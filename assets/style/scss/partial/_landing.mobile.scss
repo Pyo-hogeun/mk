@@ -21,7 +21,7 @@
       height: 150px;
       border-radius: var(--radius-lg);
       border: 1px solid transparent;
-      background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, .7) 12%, #602F16 90%) border-box;
+      background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, .7) 12%, var(--oragne-border-dark) 90%) border-box;
       position: relative;
       overflow: hidden;
 
@@ -297,7 +297,7 @@
       border-radius: 12px;
       border: 1px solid transparent;
       // background: var(--orange-100);
-      background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, .7) 12%, #602F16 90%) border-box;
+      background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, .7) 12%, var(--oragne-border-dark) 90%) border-box;
       box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
       position: relative;
       overflow: hidden;
