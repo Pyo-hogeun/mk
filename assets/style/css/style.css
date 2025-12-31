@@ -12986,6 +12986,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
+    color: var(--text-primary);
   }
   .landing .for-pc .tool-feature-card__name {
     color: var(--text-primary);
@@ -12993,6 +12994,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 600;
     line-height: 150%;
+    color: var(--text-primary);
     margin: 0;
   }
   .landing .for-pc .tool-feature-card__description {
