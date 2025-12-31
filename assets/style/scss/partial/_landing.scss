@@ -6,6 +6,10 @@
     .container {
       &__header {
         width: 100%;
+        color: var(--text-primary);
+        .btn-back{
+          color: var(--text-primary);
+        }
       }
     }
 
@@ -25,10 +29,12 @@
         align-items: center;
         gap: 41px;
         border-radius: 12px;
-        border: 1px solid #FFEEDF;
-        background: var(--orange-100);
         overflow: hidden;
         min-height: 331px;
+        // border: 1px solid #FFEEDF;
+        // background: var(--orange-100);
+        border: 1px solid transparent;
+        background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, .7) 12%, #602F16 90%) border-box;
 
         .hero-images-wrapper {
           position: absolute;
@@ -127,9 +133,11 @@
           gap: 8px;
           flex: 1 0 0;
           border-radius: 12px;
-          border: 1px solid #FF800B;
-          background: var(--white);
           box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
+
+          // background: var(--bg-default);
+          // border: 1px solid #FF800B;
+          @include GradientBorderDark;
 
           &__icon {
             display: flex;
@@ -139,7 +147,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 12px;
-            background: #FF800B;
+            background: var(--base-gradation, linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%));
 
             svg {
               width: 28px;
@@ -158,7 +166,7 @@
           }
 
           &__description {
-            color: #212121;
+            color: var(--text-primary);
             font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
             font-size: 12px;
             font-weight: 500;
@@ -192,11 +200,12 @@
         align-items: center;
         gap: 28px;
         border-radius: 12px;
-        border: 1px solid #FF800B;
-        background: var(--white);
+        overflow: hidden;
         box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.20);
         margin-top: 20px;
         position: relative;
+        @include GradientBorderDark;
+        
 
         &__header {
           display: flex;
@@ -204,9 +213,6 @@
           padding: 14px 0;
           justify-content: center;
           align-items: center;
-          // position: absolute;
-          // bottom: 0;
-          // left: 0;
           background: #FF7A00;
         }
 
@@ -254,7 +260,7 @@
 
         &__title {
           width: 184px;
-          color: #212121;
+          color: var(--text-primary);
           font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
           font-size: 18px;
           font-weight: 700;
@@ -281,8 +287,8 @@
         flex: 1 0 0;
         align-self: stretch;
         border-radius: 8px;
-        border: 1px solid #E0E0E0;
-        background: #F9FAFB;
+        border: 1px solid var(--border-default);
+        background: var(--bg-subtle);
 
         &__icon {
           display: flex;
@@ -324,7 +330,7 @@
         }
 
         &__name {
-          color: #212121;
+          color: var(--text-primary);
           font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
           font-size: 15px;
           font-weight: 600;
@@ -334,7 +340,7 @@
 
         &__description {
           align-self: stretch;
-          color: #212121;
+          color: var(--text-primary);
           font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
           font-size: 12px;
           font-weight: 400;

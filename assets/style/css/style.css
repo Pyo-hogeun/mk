@@ -12705,6 +12705,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 @media screen and (min-width: 480px) {
   .landing .container__header {
     width: 100%;
+    color: var(--text-primary);
+  }
+  .landing .container__header .btn-back {
+    color: var(--text-primary);
   }
   .landing .for-mobile {
     padding: 0 15px;
@@ -12721,10 +12725,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     gap: 41px;
     border-radius: 12px;
-    border: 1px solid #FFEEDF;
-    background: var(--orange-100);
     overflow: hidden;
     min-height: 331px;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, #602F16 90%) border-box;
   }
   .landing .for-pc .ai-agent-promo .hero-images-wrapper {
     position: absolute;
@@ -12813,9 +12817,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     gap: 8px;
     flex: 1 0 0;
     border-radius: 12px;
-    border: 1px solid #FF800B;
-    background: var(--white);
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+    background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-agents-grid .agent-card__icon {
     display: flex;
@@ -12825,7 +12829,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     justify-content: center;
     align-items: center;
     border-radius: 12px;
-    background: #FF800B;
+    background: var(--base-gradation, linear-gradient(180deg, #FF800B 14.9%, #E44F00 88.94%));
   }
   .landing .for-pc .ai-agents-grid .agent-card__icon svg {
     width: 28px;
@@ -12841,7 +12845,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin: 0;
   }
   .landing .for-pc .ai-agents-grid .agent-card__description {
-    color: #212121;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: 500;
@@ -12869,11 +12873,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     gap: 28px;
     border-radius: 12px;
-    border: 1px solid #FF800B;
-    background: var(--white);
+    overflow: hidden;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     margin-top: 20px;
     position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(#1D1D1D, #1D1D1D) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-tools-showcase__header {
     display: flex;
@@ -12921,7 +12926,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .landing .for-pc .tools-section__title {
     width: 184px;
-    color: #212121;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -12945,8 +12950,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex: 1 0 0;
     align-self: stretch;
     border-radius: 8px;
-    border: 1px solid #E0E0E0;
-    background: #F9FAFB;
+    border: 1px solid var(--border-default);
+    background: var(--bg-subtle);
   }
   .landing .for-pc .tool-feature-card__icon {
     display: flex;
@@ -12983,7 +12988,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-shrink: 0;
   }
   .landing .for-pc .tool-feature-card__name {
-    color: #212121;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -12992,7 +12997,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .landing .for-pc .tool-feature-card__description {
     align-self: stretch;
-    color: #212121;
+    color: var(--text-primary);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -13365,7 +13370,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 150px;
     border-radius: var(--radius-lg);
     border: 1px solid transparent;
-    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, #FFEEDF 14.9%, #602F16 88.94%) border-box;
+    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, #602F16 90%) border-box;
     position: relative;
     overflow: hidden;
   }
@@ -13508,7 +13513,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-top: 20px;
     border-radius: var(--radius-lg);
     border: 1px solid transparent;
-    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(180deg, #FFEFE0 14.9%, var(--surface-raised) 88.94%) border-box;
+    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 14.9%, var(--surface-raised) 88.94%) border-box;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
@@ -13598,75 +13603,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 140%;
     margin: 0;
   }
-  .landing .ai-agent-recommendation {
-    margin-top: 20px;
-    padding: 16px 20px;
-    border-radius: var(--radius-lg);
-    background: var(--bg-subtle);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .landing .ai-agent-recommendation .recommendation-title {
-    color: #929292;
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 150%;
-    margin: 0;
-  }
-  .landing .ai-agent-recommendation .agent-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .landing .ai-agent-recommendation .agent-item .agent-icon {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    padding: 4px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: var(--radius-lg);
-    border: 1px solid #EAEAEA;
-    background: var(--white);
-  }
-  .landing .ai-agent-recommendation .agent-item .agent-icon svg {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-  }
-  .landing .ai-agent-recommendation .agent-item .agent-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-    flex: 1;
-  }
-  .landing .ai-agent-recommendation .agent-item .agent-info .agent-name {
-    color: var(--text-primary);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 150%;
-    margin: 0;
-  }
-  .landing .ai-agent-recommendation .agent-item .agent-info .agent-description {
-    color: var(--text-primary);
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 140%;
-    margin: 0;
-  }
   .landing .ai-tools-card {
     margin-top: 20px;
     border-radius: 12px;
-    border: 1px solid #FFEEDF;
-    background: var(--orange-100);
+    border: 1px solid transparent;
+    background: linear-gradient(var(--orange-100), var(--orange-100)) padding-box, linear-gradient(180deg, rgba(255, 238, 223, 0.7) 12%, #602F16 90%) border-box;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     position: relative;
+    overflow: hidden;
   }
   .landing .ai-tools-card .tools-title {
     position: absolute;
@@ -13706,7 +13650,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     padding: 20px 20px 24px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
   }
   .landing .ai-tools-card .tools-content .tools-tags {
     display: flex;
@@ -13748,7 +13692,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     align-items: center;
     gap: 24px;
     border-radius: var(--radius-md);
-    background: var(--white);
+    background: var(--bg-default);
   }
   .landing .ai-tools-card .tools-content .tools-feature-card .feature-icon {
     display: flex;
@@ -13788,6 +13732,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin: 0;
   }
   .landing .ai-tools-card .tools-content .tools-feature-card .feature-info .feature-title-row svg {
+    color: var(--text-primary);
     width: 16px;
     height: 16px;
     flex-shrink: 0;
