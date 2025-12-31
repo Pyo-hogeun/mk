@@ -13841,4 +13841,47 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 .ai-knowledge-popup .ai-knowledge-popup__body .btn-try:hover {
   background: #f0f1f2;
+}
+
+.ai-tools-tooltip {
+  width: 400px;
+  height: 447px;
+  position: relative;
+  display: none;
+}
+.ai-tools-tooltip.is-visible {
+  display: block;
+}
+.ai-tools-tooltip .tooltip-arrow {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 316px;
+  top: 0;
+  z-index: 2;
+}
+.ai-tools-tooltip .tooltip-arrow svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--bg-default);
+}
+.ai-tools-tooltip .tooltip-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  top: 18px;
+  height: 429px;
+  overflow: hidden;
+}
+.ai-tools-tooltip .tooltip-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }/*# sourceMappingURL=style.css.map */
