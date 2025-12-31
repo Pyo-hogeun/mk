@@ -9597,13 +9597,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: flex;
     flex-direction: column;
     height: auto;
+    min-height: 100%;
     justify-content: center;
     align-items: center;
     align-self: stretch;
   }
   .ai-suggestion-news .top-news-list__item a .news-thumb {
     position: relative;
-    flex: 1 1 auto;
+    flex: 0 0 207px;
     width: 100%;
     height: 207px;
     border-radius: 12px 12px 0 0;
@@ -9642,6 +9643,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .ai-suggestion-news .top-news-list__item a .news-content {
     display: flex;
+    width: 100%;
     flex-direction: column;
     border: 0;
     background-color: transparent;
@@ -9651,6 +9653,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     padding: 20px;
     align-items: flex-start;
     gap: 8px;
+    flex: 1 1 auto;
   }
   .ai-suggestion-news .top-news-list__item a .news-content .news-badge {
     display: inline-flex;
@@ -9910,6 +9913,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     gap: 4px;
     border: 0;
     background-color: transparent;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    height: 100%;
   }
   .ai-suggestion-news .top-news-list__item a .news-content .news-badge {
     display: inline-flex;

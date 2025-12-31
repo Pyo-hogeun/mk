@@ -204,14 +204,14 @@
           display: flex;
           flex-direction: column;
           height: auto;
-          // height: 68px;
+          min-height: 100%;
           justify-content: center;
           align-items: center;
           align-self: stretch;
 
           .news-thumb {
             position: relative;
-            flex: 1 1 auto;
+            flex: 0 0 207px;
             width: 100%;
             height: 207px;
             border-radius: 12px 12px 0 0;
@@ -251,6 +251,7 @@
 
           .news-content {
             display: flex;
+            width: 100%;
             flex-direction: column;
             border: 0;
             background-color: transparent;
@@ -260,6 +261,7 @@
             padding: 20px;
             align-items: flex-start;
             gap: 8px;
+            flex: 1 1 auto;
 
             .news-badge {
               display: inline-flex;

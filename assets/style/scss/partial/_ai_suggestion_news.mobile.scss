@@ -206,6 +206,9 @@
             gap: 4px;
             border: 0;
             background-color: transparent;
+            flex: 1 1 auto;
+            justify-content: flex-start;
+            height: 100%;
             .news-badge {
               display: inline-flex;
               height: 20px;
