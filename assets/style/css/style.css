@@ -12937,7 +12937,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: grid;
     align-items: flex-start;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 20px;
     flex: 1 0 0;
     align-self: stretch;
     flex-direction: column;
