@@ -391,6 +391,7 @@ body.dark {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 15px;
   }
   .report-body h4 {
     display: flex;
@@ -581,6 +582,9 @@ body.dark {
   }
   .report-header .save-storage.is-saved .save-storage__icon--saved {
     display: block;
+  }
+  .report-body {
+    font-size: 15px;
   }
   .report-body .report-body__summary {
     padding: 0 15px;
@@ -6771,8 +6775,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-radius: 100px;
     border: 1px solid var(--base-gradation, #FF800B);
     background: var(--gray-dark, #1D1D1D);
-    border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .briefing-item__badges .badge {
     font-size: 12px;
@@ -7030,8 +7032,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .briefing-item__badges .badge.outline {
     border-radius: 100px;
     border: 1px solid var(--base-gradation, #FF800B);
-    border: 1px solid transparent;
-    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: var(--gray-dark, #1D1D1D);
   }
   .briefing-item__badges .badge {
     font-size: 12px;

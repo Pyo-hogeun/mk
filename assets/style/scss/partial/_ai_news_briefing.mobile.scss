@@ -156,7 +156,8 @@
         &.outline{
           border-radius: 100px;
           border: 1px solid var(--base-gradation, #FF800B);
-          @include GradientBorderDark;
+          background: var(--gray-dark, #1D1D1D);
+          // @include GradientBorderDark;
         }
 
         font-size: 12px;

@@ -163,7 +163,6 @@
           border-radius: 100px;
           border: 1px solid var(--base-gradation, #FF800B);
           background: var(--gray-dark, #1D1D1D);
-          @include GradientBorder;
         }
 
         font-size: 12px;
