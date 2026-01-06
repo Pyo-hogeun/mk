@@ -113,7 +113,7 @@
   
             &__title {
               color: var(--text-primary, #F0F0F0);
-              font-size: 15px;
+              font-size: 1em;
               font-weight: 600;
               line-height: 150%;
               margin: 0;
@@ -136,7 +136,7 @@
               width: 100%;
               flex: 1 0 0;
               color: var(--text-primary, #F0F0F0);
-              font-size: 14px;
+              font-size: 0.93334em;
               font-weight: 400;
               line-height: 150%;
               margin: 0;
@@ -169,7 +169,7 @@
             gap: 10px;
             border-radius: var(--radius-md, 8px);
             background: var(--bg-default, #1D1D1D);
-            font-size: 12px;
+            font-size: 0.8em;
             font-weight: 500;
             line-height: 150%;
   
@@ -191,7 +191,7 @@
             
 
             /* Body/SM */
-            font-size: 15px;
+            font-size: 1em;
             font-weight: 400;
             line-height: 150%; /* 22.5px */
           }
@@ -276,8 +276,7 @@
                 &__title{
                   align-self: stretch;
                   color: var(--text-primary);
-                  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-                  font-size: 15px;
+                  font-size: 1em;
                   font-weight: 600;
                   line-height: 150%;
                 }
@@ -285,8 +284,7 @@
                 &__description{
                   align-self: stretch;
                   color: #7B7B7B;
-                  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-                  font-size: 14px;
+                  font-size: 0.93334em;
                   font-weight: 400;
                   line-height: 150%;
                 }
@@ -332,7 +330,7 @@
             flex: 1 0 0;
             color: var(--text-primary, #F0F0F0);
             font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-            font-size: 15px;
+            font-size: 1em;
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
@@ -360,11 +358,11 @@
           color: var(--text-primary, #F0F0F0);
 
           /* Body/SS */
-          font-size: 14px;
+          font-size: 0.93334em;
           font-weight: 400;
           line-height: 150%; /* 21px */
           &__title{
-            font-size: 15px;
+            font-size: 1em;
             font-weight: 600;
           }
           .divider{
@@ -389,7 +387,7 @@
             margin: 24px 0;
             @include card;
             color: var(--text-primary, #F0F0F0);
-            font-size: 15px;
+            font-size: 1em;
             font-weight: 600;
             line-height: 150%; /* 22.5px */
           }
@@ -400,7 +398,7 @@
             }
           }
           &__body{
-            font-size: 14px;
+            font-size: 0.93334em;
             font-weight: 400;
           }
         }
@@ -438,7 +436,7 @@
             flex: 1 0 0;
             color: #FF7A00;
             font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-            font-size: 15px;
+            font-size: 1em;
             font-weight: 600;
             line-height: 150%;
 
@@ -464,8 +462,7 @@
           &__text{
             flex: 1 0 0;
             color: var(--text-primary, #F0F0F0);
-            font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-            font-size: 14px;
+            font-size: 0.93334em;
             font-weight: 400;
             line-height: 150%;
             margin: 0;

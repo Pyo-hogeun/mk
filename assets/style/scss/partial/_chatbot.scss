@@ -668,7 +668,8 @@
             justify-content: center;
             align-items: center;
             border-radius: 100px;
-            @include GradientBorder;
+            border: 1px solid var(--base-gradation, #FF800B);
+            background: var(--gray-dark, #1D1D1D);
             .ai-badge-text {
               color: var(--white, #FFFFFF);
               font-size: 13px;
