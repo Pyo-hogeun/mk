@@ -2,7 +2,6 @@
 @media (min-width: $mobile) {
   .news-timeline {
     padding: 0 4px;
-    font: 400 14px Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
 
     &__container {
       border-left: 1.078px solid var(--border-default, #464646);
@@ -27,6 +26,8 @@
         align-items: center;
         gap: 8px;
         justify-content: start;
+        font-size: 14px;
+        font-weight: 400;
       }
     }
 
@@ -122,6 +123,7 @@
   
       &__title {
         color: var(--text-primary, #111111);
+        font-size: 0.93334em;
       }
     }
 
