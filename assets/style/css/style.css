@@ -6326,8 +6326,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    border: 1px solid var(--base-gradation, #FF800B);
+    background: var(--gray-dark, #1D1D1D);
   }
   .chatbot .recommand-q__card__topper .ai-badge .ai-badge-text {
     color: var(--white, #FFFFFF);
