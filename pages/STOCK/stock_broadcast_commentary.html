@@ -633,6 +633,37 @@
         }
       };
 
+      const reportBody = document.querySelector('.report-body');
+      const fontSizeMap = {
+        small: '13px',
+        medium: '15px',
+        large: '17px',
+        xlarge: '19px',
+      };
+
+      const applyFontSize = (sizeKey) => {
+        if (!reportBody) return;
+        const fontSize = fontSizeMap[sizeKey];
+        if (fontSize) {
+          reportBody.style.fontSize = fontSize;
+        }
+      };
+
+      const attachFontSizeHandlers = (rootElement) => {
+        const sizeOptions = rootElement.querySelectorAll('.size-option');
+
+        sizeOptions.forEach((option) => {
+          const sizeClass = Array.from(option.classList).find((className) =>
+            className.startsWith('size-option-')
+          );
+
+          if (!sizeClass) return;
+
+          const sizeKey = sizeClass.replace('size-option-', '');
+          option.addEventListener('click', () => applyFontSize(sizeKey));
+        });
+      };
+
       const loadFontSizeSelector = async () => {
         if (selectorLoaded || !popupContent) {
           return selectorLoaded;
@@ -656,6 +687,7 @@
           popupContent.innerHTML = '';
           popupContent.appendChild(selectorElement);
           attachCloseHandlers(selectorElement);
+          attachFontSizeHandlers(selectorElement);
           selectorLoaded = true;
           return true;
         } catch (error) {
