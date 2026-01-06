@@ -2479,6 +2479,11 @@ body.bottom-sheet-open {
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (max-width: 480px) {
+  .ai-loading {
+    width: 100%;
+  }
+}
 .ai-loading--fail {
   padding: 40px 80px;
 }
@@ -2573,6 +2578,11 @@ body.bottom-sheet-open {
   border-radius: var(--radius-pill, 999px);
   border: 2px solid var(--orange-100, #ff7a00);
   background: rgba(255, 122, 0, 0.6);
+}
+.ai-loading__icon-container.dark {
+  border: 2px solid rgba(123, 123, 123, 0.25);
+  background: rgba(123, 123, 123, 0.13);
+  color: var(--border-default);
 }
 .ai-loading__warning-icon {
   width: 32px;
