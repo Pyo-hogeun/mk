@@ -2458,6 +2458,7 @@ body.bottom-sheet-open {
 
 .ai-loading {
   display: flex;
+  width: 700px;
   height: 400px;
   padding: 40px 24px;
   flex-direction: column;
@@ -2467,6 +2468,16 @@ body.bottom-sheet-open {
   flex-shrink: 0;
   align-self: stretch;
   border-radius: var(--radius-md, 8px);
+  margin-left: auto;
+  margin-right: auto;
+}
+.ai-loading--fail {
+  padding: 40px 80px;
+}
+@media (max-width: 480px) {
+  .ai-loading--fail {
+    padding: 40px 24px;
+  }
 }
 .ai-loading__dots {
   display: flex;
@@ -2543,6 +2554,74 @@ body.bottom-sheet-open {
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
+}
+.ai-loading__icon-container {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill, 999px);
+  border: 2px solid var(--orange-100, #ff7a00);
+  background: rgba(255, 122, 0, 0.6);
+}
+.ai-loading__warning-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.ai-loading__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+}
+.ai-loading__actions button {
+  display: flex;
+  height: var(--height-md, 40px);
+  padding: 9px 128px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-tight, 4px);
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: var(--radius-md, 8px);
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+@media (max-width: 480px) {
+  .ai-loading__actions button {
+    padding: 9px 24px;
+  }
+}
+.ai-loading__actions button:hover {
+  opacity: 0.8;
+}
+.ai-loading__actions button:active {
+  opacity: 0.6;
+}
+.ai-loading__actions button svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.ai-loading__actions button span {
+  color: inherit;
+}
+.ai-loading__actions .btn-retry {
+  background: var(--orange-100, #ff7a00);
+  color: var(--white, #ffffff);
+}
+.ai-loading__actions .btn-back-page {
+  background: var(--surface-raised, #434343);
+  color: var(--text-primary, #f0f0f0);
 }
 
 @keyframes dot-pulse {

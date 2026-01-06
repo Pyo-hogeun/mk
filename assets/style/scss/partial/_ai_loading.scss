@@ -2,6 +2,7 @@
 
 .ai-loading {
   display: flex;
+  width: $pcContainerSub;
   height: 400px;
   padding: 40px 24px;
   flex-direction: column;
@@ -11,6 +12,16 @@
   flex-shrink: 0;
   align-self: stretch;
   border-radius: var(--radius-md, 8px);
+  margin-left: auto;
+  margin-right: auto;
+
+  &--fail {
+    padding: 40px 80px;
+
+    @media (max-width: $mobile) {
+      padding: 40px 24px;
+    }
+  }
 
   &__dots {
     display: flex;
@@ -96,6 +107,83 @@
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
+  }
+
+  &__icon-container {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill, 999px);
+    border: 2px solid var(--orange-100, #ff7a00);
+    background: rgba(255, 122, 0, 0.60);
+  }
+
+  &__warning-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+
+    button {
+      display: flex;
+      height: var(--height-md, 40px);
+      padding: 9px 128px;
+      justify-content: center;
+      align-items: center;
+      gap: var(--gap-tight, 4px);
+      flex-shrink: 0;
+      align-self: stretch;
+      border-radius: var(--radius-md, 8px);
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 140%;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s ease;
+
+      @media (max-width: $mobile) {
+        padding: 9px 24px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+      span {
+        color: inherit;
+      }
+    }
+
+    .btn-retry {
+      background: var(--orange-100, #ff7a00);
+      color: var(--white, #ffffff);
+    }
+
+    .btn-back-page {
+      background: var(--surface-raised, #434343);
+      color: var(--text-primary, #f0f0f0);
+    }
   }
 }
 
