@@ -4705,6 +4705,7 @@ body.bottom-sheet-open {
     line-height: 150%;
   }
   .broadcast-section__view-all-icon {
+    color: var(--text-primary, #111111);
     width: 20px;
     height: 20px;
   }
@@ -4757,9 +4758,9 @@ body.bottom-sheet-open {
     color: var(--white, #FFF);
   }
   .broadcast-item__badges .badge.outline {
-    border: 1px solid transparent;
-    border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    border: 1px solid var(--base-gradation, #FF800B);
+    background: var(--bg-default, #FFFFFF);
+    color: var(--text-primary);
   }
   .broadcast-item__badges .badge {
     font-size: 12px;
@@ -4794,11 +4795,10 @@ body.bottom-sheet-open {
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    border: 1px solid transparent;
     width: -moz-fit-content;
     width: fit-content;
-    border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    border: 1px solid var(--base-gradation, #FF800B);
+    background: var(--gray-dark, #1D1D1D);
   }
   .broadcast-item__ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -4879,6 +4879,7 @@ body.bottom-sheet-open {
     line-height: 150%;
   }
   .broadcast-section__view-all-icon {
+    color: var(--text-primary, #111111);
     width: 20px;
     height: 20px;
   }
@@ -4930,9 +4931,9 @@ body.bottom-sheet-open {
     color: var(--white, #FFF);
   }
   .broadcast-item__badges .badge.outline {
-    border: 1px solid transparent;
-    border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    border: 1px solid var(--base-gradation, #FF800B);
+    background: var(--bg-default, #FFFFFF);
+    color: var(--text-primary);
   }
   .broadcast-item__badges .badge {
     font-size: 12px;
@@ -4970,8 +4971,8 @@ body.bottom-sheet-open {
     border: 1px solid transparent;
     width: -moz-fit-content;
     width: fit-content;
-    border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    border: 1px solid var(--base-gradation, #FF800B);
+    background: var(--gray-dark, #1D1D1D);
   }
   .broadcast-item__ai-badge-text {
     color: var(--white, #FFFFFF);

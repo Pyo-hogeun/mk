@@ -53,6 +53,7 @@
     }
   
     &__view-all-icon {
+      color: var(--text-primary, #111111);
       width: 20px;
       height: 20px;
     }
@@ -106,8 +107,9 @@
           color: var(--white, #FFF);
         }
         &.outline{
-          border: 1px solid transparent;
-          @include GradientBorder;
+          border: 1px solid var(--base-gradation, #FF800B);
+          background: var(--bg-default, #FFFFFF);
+          color: var(--text-primary);
         }
 
         font-size: 12px;
@@ -149,7 +151,8 @@
       border-radius: 100px;
       border: 1px solid transparent;
       width: fit-content;
-      @include GradientBorder;
+      border: 1px solid var(--base-gradation, #FF800B);
+      background: var(--gray-dark, #1D1D1D);
     }
   
     &__ai-badge-text {
