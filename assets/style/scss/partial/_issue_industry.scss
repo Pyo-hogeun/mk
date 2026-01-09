@@ -78,6 +78,7 @@
   .industry-issue-item {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 8px;
     align-self: stretch;
   }
@@ -112,7 +113,7 @@
   }
   
   .issue-text {
-    flex: 1 0 0;
+    flex: 0 0 250px;
     align-self: stretch;
     color: var(--text-primary);
     font-size: 14px;
@@ -207,7 +208,7 @@
   .related-stocks-grid {
     display: flex;
     width: 100%;
-    margin-left: $mobilePadSide;
+    // margin-left: $mobilePadSide;
     padding-left: $mobilePadSide;
     align-items: flex-start;
     gap: 12px;

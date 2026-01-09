@@ -436,6 +436,7 @@ body.dark {
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
+    word-break: keep-all;
   }
   .analysis-trend__source {
     display: flex;
@@ -632,6 +633,7 @@ body.dark {
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
+    word-break: keep-all;
   }
   .analysis-trend__source {
     display: flex;
@@ -1612,6 +1614,7 @@ body.dark {
   .industry-issue-item {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 8px;
     align-self: stretch;
   }
@@ -1641,7 +1644,7 @@ body.dark {
     gap: 4px;
   }
   .issue-text {
-    flex: 1 0 0;
+    flex: 0 0 250px;
     align-self: stretch;
     color: var(--text-primary);
     font-size: 14px;
@@ -1725,7 +1728,6 @@ body.dark {
   .related-stocks-grid {
     display: flex;
     width: 100%;
-    margin-left: 15px;
     padding-left: 15px;
     align-items: flex-start;
     gap: 12px;
@@ -1869,6 +1871,7 @@ body.dark {
   .industry-issue-item {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 8px;
     align-self: stretch;
   }
@@ -1899,7 +1902,7 @@ body.dark {
     gap: 4px;
   }
   .issue-text {
-    flex: 1 0 0;
+    flex: 0 0 calc(100% - 88px);
     align-self: stretch;
     color: var(--text-primary);
     font-size: 14px;
