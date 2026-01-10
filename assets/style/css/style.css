@@ -7727,6 +7727,20 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   align-items: center;
   gap: 10px;
 }
+.time-selector button {
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+}
+.time-selector button.min {
+  right: 60px;
+}
+.time-selector button.btn-up {
+  top: 0px;
+}
+.time-selector button.btn-down {
+  bottom: 0px;
+}
 .time-selector .dial {
   position: relative;
   width: 50px;

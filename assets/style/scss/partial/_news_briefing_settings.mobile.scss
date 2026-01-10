@@ -417,6 +417,20 @@
     align-items: center;
     gap: 10px;
   }
+  button{
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    &.min{
+      right: 60px;
+    }
+    &.btn-up{
+      top: 0px;
+    }
+    &.btn-down{
+      bottom: 0px;
+    }
+  }
   .dial{
     position: relative;
     width: 50px;
