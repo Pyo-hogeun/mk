@@ -1711,6 +1711,7 @@ body.dark {
     align-items: flex-start;
     gap: 8px;
     flex: 1 0 0;
+    width: 100%;
   }
   .section-subtitle {
     align-self: stretch;
@@ -1732,6 +1733,11 @@ body.dark {
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .content-divider {
     width: 282px;
