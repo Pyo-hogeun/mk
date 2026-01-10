@@ -73,6 +73,14 @@
     gap: 12px;
     flex: 1 0 0;
     padding: 12px;
+    height: 300px;
+    overflow-y: auto;
+    @include scrollbarPc;
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 6px;
+      /* Chrome / Safari / Edge */
+    }
   }
   
   .industry-issue-item {

@@ -1603,6 +1603,25 @@ body.dark {
     gap: 12px;
     flex: 1 0 0;
     padding: 12px;
+    height: 300px;
+    overflow-y: auto;
+  }
+  .industry-issues-list::-webkit-scrollbar {
+    height: 8px;
+    /* Chrome / Safari / Edge */
+  }
+  .industry-issues-list::-webkit-scrollbar-track {
+    background: var(--bg-subtle_02);
+    border-radius: 8px;
+  }
+  .industry-issues-list::-webkit-scrollbar-thumb {
+    background: var(--surface-raised);
+    border-radius: 8px;
+  }
+  .industry-issues-list::-webkit-scrollbar {
+    height: 8px;
+    width: 6px;
+    /* Chrome / Safari / Edge */
   }
   .industry-issue-item {
     display: flex;
