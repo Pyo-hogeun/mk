@@ -718,6 +718,11 @@
           minute: String(Math.round(initialTime.getMinutes() / 10) * 10).padStart(2, '0').padStart(2, '0'),
         };
 
+        const hourUpButton = timeSelector.querySelector('.btn-up.hour');
+        const hourDownButton = timeSelector.querySelector('.btn-down.hour');
+        const minuteUpButton = timeSelector.querySelector('.btn-up.min');
+        const minuteDownButton = timeSelector.querySelector('.btn-down.min');
+
         const formatTimeLabel = (state) => `${state.ampm} ${state.hour}시 ${state.minute}분`;
 
         const setTimeLabel = (state) => {
@@ -815,6 +820,14 @@
           attachDialHandlers(config);
         };
 
+        const shiftSelection = (config, delta) => {
+          if (!config?.values?.length) return;
+          const currentIndex = config.values.indexOf(selectionState[config.key]);
+          const safeIndex = currentIndex >= 0 ? currentIndex : 0;
+          const nextIndex = (safeIndex + delta + config.values.length) % config.values.length;
+          updateSelection(config, nextIndex, true);
+        };
+
         const initializeTimeSelector = () => {
           Object.values(dialConfigs).forEach((config) => {
             buildDial(config);
@@ -825,6 +838,11 @@
         };
 
         initializeTimeSelector();
+
+        hourUpButton?.addEventListener('click', () => shiftSelection(dialConfigs.hour, -1));
+        hourDownButton?.addEventListener('click', () => shiftSelection(dialConfigs.hour, 1));
+        minuteUpButton?.addEventListener('click', () => shiftSelection(dialConfigs.minute, -1));
+        minuteDownButton?.addEventListener('click', () => shiftSelection(dialConfigs.minute, 1));
       }
     })();
     (function () {
