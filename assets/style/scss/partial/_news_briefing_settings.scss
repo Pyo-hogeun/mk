@@ -9,6 +9,7 @@
     border-radius: var(--radius-lg, 12px);
     &.is-open{
       transform: translate(calc(-50% + 100px), 0);
+      overflow: hidden;
     }
     .news-briefing-settings__container{
       padding: 0;

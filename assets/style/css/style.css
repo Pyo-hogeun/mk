@@ -431,13 +431,6 @@ body.dark {
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-subtle, #2F2F2F);
   }
-  .analysis-trend p {
-    color: var(--text-primary);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
-    word-break: keep-all;
-  }
   .analysis-trend__source {
     display: flex;
     padding: 4px 14px;
@@ -1644,7 +1637,7 @@ body.dark {
     gap: 4px;
   }
   .issue-text {
-    flex: 0 0 250px;
+    flex: 0 0 calc(100% - 88px);
     align-self: stretch;
     color: var(--text-primary);
     font-size: 14px;
@@ -3924,8 +3917,8 @@ body.bottom-sheet-open {
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    border: 1px solid #FF800B;
+    background: #1D1D1D;
   }
   .stock-briefing-item__for-pc .ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -7350,6 +7343,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .news-briefing-settings.bottom-sheet.is-open {
     transform: translate(calc(-50% + 100px), 0);
+    overflow: hidden;
   }
   .news-briefing-settings.bottom-sheet .news-briefing-settings__container {
     padding: 0;
@@ -14001,4 +13995,26 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 .ai-tools-tooltip.is-above .ai-knowledge-popup {
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.article-style h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.8em;
+}
+.article-style p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 150%;
+  word-break: keep-all;
+  margin-bottom: 0.2em;
+}
+.article-style ul {
+  margin: 1em 0;
+}
+.article-style ul li {
+  font-size: 14px;
+  margin: 0.5em 0;
 }/*# sourceMappingURL=style.css.map */
