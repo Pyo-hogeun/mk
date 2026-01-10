@@ -7700,6 +7700,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: var(--text-primary);
   background: var(--bg-default, #1D1D1D);
   border: 1px solid var(--border-default, #464646);
@@ -7731,20 +7732,21 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   position: absolute;
   background-color: transparent;
   border: 0;
+  color: var(--text-secondary);
 }
 .time-selector button.min {
-  right: 60px;
+  right: 88px;
 }
 .time-selector button.btn-up {
-  top: 0px;
+  top: 10px;
 }
 .time-selector button.btn-down {
-  bottom: 0px;
+  bottom: 10px;
 }
 .time-selector .dial {
   position: relative;
   width: 50px;
-  height: 152px;
+  height: 140px;
   overflow: hidden;
   touch-action: none;
 }
