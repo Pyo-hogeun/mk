@@ -9,6 +9,9 @@
   align-items: flex-end;
   gap: 4px;
   z-index: 1;
+  &.with-player{
+    bottom: 100px;
+  }
 
   .chatbot-bubble {
     display: flex;

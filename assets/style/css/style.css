@@ -5037,6 +5037,9 @@ body.bottom-sheet-open {
   gap: 4px;
   z-index: 1;
 }
+.chatbot-floating.with-player {
+  bottom: 100px;
+}
 .chatbot-floating .chatbot-bubble {
   display: flex;
   flex-direction: column;
