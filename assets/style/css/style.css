@@ -9037,6 +9037,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .analysis-news .analysis__wrapper .word-meaning__title svg {
     vertical-align: middle;
+    color: var(--text-primary);
   }
   .analysis-news .analysis__wrapper .word-meaning__body {
     font-size: 0.93334em;
@@ -9477,6 +9478,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .analysis-news .analysis__wrapper .word-meaning__title svg {
     vertical-align: middle;
+    color: var(--text-primary);
   }
   .analysis-news .analysis__wrapper .word-meaning__body {
     font-size: 0.93334em;
