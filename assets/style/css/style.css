@@ -8821,6 +8821,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 0.8em;
     font-weight: 500;
     line-height: 150%;
+    white-space: nowrap;
   }
   .analysis-news .analysis__wrapper .multi-faceted-tag--blue {
     border: 1px solid var(--blue, #2175FF);
@@ -9227,6 +9228,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: flex;
     align-items: flex-start;
     gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
   }
   .analysis-news .analysis__wrapper .multi-faceted-card__description {
     display: flex;
@@ -9275,6 +9278,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 0.8em;
     font-weight: 500;
     line-height: 150%;
+    white-space: nowrap;
   }
   .analysis-news .analysis__wrapper .multi-faceted-tag--blue {
     border: 1px solid var(--blue, #2175FF);

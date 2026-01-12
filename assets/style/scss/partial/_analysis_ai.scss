@@ -188,6 +188,7 @@
             font-size: 0.8em;
             font-weight: 500;
             line-height: 150%;
+            white-space: nowrap;
   
             &--blue {
               border: 1px solid var(--blue, #2175FF);
