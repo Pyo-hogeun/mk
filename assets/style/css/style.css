@@ -11702,12 +11702,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    gap: 3px;
   }
   .trend-section .keyword-ranking-item__left {
     display: flex;
     align-items: center;
     gap: 24px;
-    flex: 1 0 auto;
   }
   .trend-section .keyword-ranking-item__rank {
     color: var(--text-primary, #F0F0F0);

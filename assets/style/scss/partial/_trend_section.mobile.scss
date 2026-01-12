@@ -101,13 +101,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        gap: 3px;
       }
 
       &__left {
         display: flex;
         align-items: center;
         gap: 24px;
-        flex: 1 0 auto;
+        // flex: 1 0 auto;
       }
 
       &__rank {
