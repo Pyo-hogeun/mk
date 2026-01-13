@@ -76,9 +76,10 @@
   justify-content: center;
   align-items: stretch;
   flex-direction: column;
+
   // min-width: 240px;
   min-height: 40px;
-  width: $mobile;
+  // width: $mobile;
   height: var(--height-md, 40px);
   color: var(--text-secondary, #7B7B7B);
   text-align: center;
@@ -106,6 +107,7 @@
       height: 32px;
       flex: 1;
       gap: var(--gap-normal, 8px);
+      padding: 0 10px;
 
       &.active .tab-label {
         color: var(--text-primary, #111111);
@@ -113,6 +115,7 @@
 
       .tab-label {
         color: var(--text-secondary, #7B7B7B);
+        white-space: nowrap;
         cursor: pointer;
       }
     }
