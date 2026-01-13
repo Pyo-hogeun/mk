@@ -11796,7 +11796,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-color: var(--text-secondary, #7B7B7B);
     color: var(--text-secondary, #7B7B7B);
   }
-  .trend-section .image.pngreport-title .briefing-item__badges {
+  .trend-section .report-title .briefing-item__badges {
     margin: 12px 0;
   }
   .trend-section .play-button-wrapper .btn-play {
