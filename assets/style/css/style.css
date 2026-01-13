@@ -5427,6 +5427,16 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__menu.is-search-focused ~ .chatbot__header, .chatbot__menu.is-search-focused ~ .chatbot__body, .chatbot__menu.is-search-focused ~ .chatbot__footer {
     width: calc(100% - 640px);
   }
+}
+@media screen and (min-width: 480px) and (min-width: 480px) {
+  .chatbot__menu.is-search-focused {
+    width: 500px;
+  }
+  .chatbot__menu.is-search-focused ~ .chatbot__header, .chatbot__menu.is-search-focused ~ .chatbot__body, .chatbot__menu.is-search-focused ~ .chatbot__footer {
+    width: calc(100% - 500px);
+  }
+}
+@media screen and (min-width: 480px) {
   .chatbot__body {
     width: calc(100% - 272px);
     flex: 1 1 0;

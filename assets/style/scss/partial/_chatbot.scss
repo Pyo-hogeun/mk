@@ -4,6 +4,7 @@
 @media screen and (min-width: $mobile) {
   $menu-w: 272px;
   $menu-w-opened: 640px;
+  $menu-w-opened-tablet: 500px;
   $chat-w: calc(100% - $menu-w);
   .chatbot {
     position: fixed;
@@ -331,6 +332,14 @@
         & ~ .chatbot__body,
         & ~ .chatbot__footer{
           width: calc(100% - $menu-w-opened);
+        }
+        @media screen and (min-width: $mobile){
+          width: $menu-w-opened-tablet;
+          & ~ .chatbot__header,
+          & ~ .chatbot__body,
+          & ~ .chatbot__footer{
+            width: calc(100% - $menu-w-opened-tablet);
+          }
         }
       }
     }
