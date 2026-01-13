@@ -746,7 +746,6 @@ body.dark {
   justify-content: center;
   align-items: stretch;
   flex-direction: column;
-  min-width: 240px;
   min-height: 40px;
   width: 480px;
   height: var(--height-md, 40px);
