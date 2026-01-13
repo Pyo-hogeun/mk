@@ -6478,6 +6478,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 .voice-popup__footer .btn-submit {
   background: var(--orange-100, #FF7A00);
+  color: var(--white, #FFFFFF);
 }
 
 @media screen and (min-width: 480px) {
