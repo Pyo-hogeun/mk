@@ -5425,7 +5425,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     color: var(--text-primary);
   }
   .chatbot__menu.is-search-focused ~ .chatbot__header, .chatbot__menu.is-search-focused ~ .chatbot__body, .chatbot__menu.is-search-focused ~ .chatbot__footer {
-    width: 546px;
+    width: calc(100% - 640px);
   }
   .chatbot__body {
     width: calc(100% - 272px);

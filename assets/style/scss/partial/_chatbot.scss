@@ -3,6 +3,7 @@
 
 @media screen and (min-width: $mobile) {
   $menu-w: 272px;
+  $menu-w-opened: 640px;
   $chat-w: calc(100% - $menu-w);
   .chatbot {
     position: fixed;
@@ -260,7 +261,7 @@
       
 
       &.is-search-focused {
-        width: 640px;
+        width: $menu-w-opened;
         .chatbot__menu-panel {
           width: 100vw;
           // background: var(--bg-default, #1D1D1D);
@@ -329,7 +330,7 @@
         & ~ .chatbot__header,
         & ~ .chatbot__body,
         & ~ .chatbot__footer{
-          width: 546px;
+          width: calc(100% - $menu-w-opened);
         }
       }
     }
