@@ -6175,7 +6175,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .chatbot__footer .search-input-wrapper {
     display: flex;
-    flex: 1 0 0;
+    flex: 1 1 auto;
   }
   .chatbot__footer .search-input-container {
     display: flex;
@@ -6184,7 +6184,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex: 1 0 0;
+    flex: 1 1 auto;
     border-radius: 100px;
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-default, #1D1D1D);
@@ -6213,6 +6213,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background: transparent;
     border: 0;
     outline: none;
+    width: 100%;
+    min-width: 50px;
   }
   .chatbot__footer .search-input::-moz-placeholder {
     color: var(--text-secondary, #7B7B7B);
