@@ -160,7 +160,8 @@
 
       &__badge {
         display: flex;
-        padding: 4px 14px;
+        padding: 4px 0;
+        width: 50px;
         justify-content: center;
         align-items: center;
         border-radius: var(--radius-md, 8px);
@@ -193,7 +194,7 @@
       }
     }
 
-    .report-title{
+    .image.pngreport-title{
       .briefing-item__badges{
         margin: 12px 0;
       }

@@ -31,12 +31,16 @@
           font-size: 15px;
           font-weight: 600;
           line-height: 150%;
-          /* 22.5px */
+          white-space: nowrap;
         }
         .is-hidden {
           display: none;
         }
       }
+    }
+    .status-message{
+      font-size: 13px;
+      color: #FFFFFF;
     }
     .analysis{
       &__wrapper{

@@ -8662,10 +8662,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 600;
     line-height: 150%;
-    /* 22.5px */
+    white-space: nowrap;
   }
   .analysis-news .play-button-wrapper .btn-play .is-hidden {
     display: none;
+  }
+  .analysis-news .status-message {
+    font-size: 13px;
+    color: #FFFFFF;
   }
   .analysis-news .nav-tabs {
     margin-left: auto;
@@ -9130,10 +9134,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 600;
     line-height: 150%;
-    /* 22.5px */
+    white-space: nowrap;
   }
   .analysis-news .play-button-wrapper .btn-play .is-hidden {
     display: none;
+  }
+  .analysis-news .status-message {
+    font-size: 13px;
+    color: #FFFFFF;
   }
   .analysis-news .analysis__wrapper {
     padding: 20px 15px 10dvh;
@@ -11759,7 +11767,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .trend-section .keyword-ranking-item__badge {
     display: flex;
-    padding: 4px 14px;
+    padding: 4px 0;
+    width: 50px;
     justify-content: center;
     align-items: center;
     border-radius: var(--radius-md, 8px);
@@ -11786,7 +11795,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-color: var(--text-secondary, #7B7B7B);
     color: var(--text-secondary, #7B7B7B);
   }
-  .trend-section .report-title .briefing-item__badges {
+  .trend-section .image.pngreport-title .briefing-item__badges {
     margin: 12px 0;
   }
   .trend-section .play-button-wrapper .btn-play {
