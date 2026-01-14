@@ -240,14 +240,12 @@
         }
       }
     }
-    .swiper-wrapper{
-      display: grid;
-      gap: 32px;
+    &__body{
       .news-list{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-xl, 24px);
-        &__item{
+        .news-list__item{
           
           a{
             height: 379px;
