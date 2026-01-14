@@ -424,6 +424,7 @@
             font-size: 1em;
             font-weight: 600;
             line-height: 150%;
+            
           }
           &__title{
             margin-bottom: 10px;
@@ -433,9 +434,26 @@
             }
           }
           &__body{
-            font-size: 0.93334em;
-            font-weight: 400;
+            .word{
+              margin-bottom: 1em;
+              padding-bottom: 1em;
+              border-bottom: 1px solid var(--border-default, #464646);
+              &:nth-last-of-type(1){
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: 0;
+              }
+              h5{
+                font-size: 0.93334em;
+                margin-bottom: 0.2em;
+              }
+              p{
+                font-size: 0.857em;
+                font-weight: 400;
+              }
+            }
           }
+          
         }
 
         .expert-comment{
