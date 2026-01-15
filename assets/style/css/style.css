@@ -9527,6 +9527,24 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 0.93334em;
     font-weight: 400;
   }
+  .analysis-news .analysis__wrapper .word-meaning__body .word {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--border-default, #464646);
+  }
+  .analysis-news .analysis__wrapper .word-meaning__body .word:nth-last-of-type(1) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .analysis-news .analysis__wrapper .word-meaning__body .word h5 {
+    font-size: 0.93334em;
+    margin-bottom: 0.2em;
+  }
+  .analysis-news .analysis__wrapper .word-meaning__body .word p {
+    font-size: 0.857em;
+    font-weight: 400;
+  }
   .analysis-news .analysis__wrapper .expert-comment__wrapper {
     margin: 24px 0;
   }
