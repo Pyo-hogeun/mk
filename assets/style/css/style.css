@@ -8080,6 +8080,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-top: 0;
     gap: var(--spacing-lg, 16px);
   }
+  .customized-detail .customized-review .swiper-wrapper {
+    display: grid;
+    gap: 32px;
+  }
   .customized-detail .customized-review .swiper-wrapper .slider {
     padding: 20px;
     border-radius: var(--radius-lg, 12px);

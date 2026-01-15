@@ -18,6 +18,8 @@
       border-top: 0;
       gap: var(--spacing-lg, 16px);
       .swiper-wrapper{
+        display: grid;
+        gap: 32px;
         .slider{
           padding: 20px;
           border-radius: var(--radius-lg, 12px);
