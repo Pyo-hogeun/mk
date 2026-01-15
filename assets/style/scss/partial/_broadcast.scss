@@ -10,6 +10,7 @@
   }
   .broadcast-section {
     margin-bottom: 20px;
+    flex: 0 1 50%;
     &__card{
       display: flex;
       padding: 20px 12px;
@@ -98,6 +99,7 @@
     &__badges{
       display: flex;
       gap: 4px;
+      flex-wrap: wrap;
       .badge{
         // flex: 1 1 auto;
         display: inline-flex;

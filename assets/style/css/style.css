@@ -4682,6 +4682,7 @@ body.bottom-sheet-open {
   }
   .broadcast-section {
     margin-bottom: 20px;
+    flex: 0 1 50%;
   }
   .broadcast-section__card {
     display: flex;
@@ -4762,6 +4763,7 @@ body.bottom-sheet-open {
   .broadcast-item__badges {
     display: flex;
     gap: 4px;
+    flex-wrap: wrap;
   }
   .broadcast-item__badges .badge {
     display: inline-flex;
