@@ -22,6 +22,8 @@
   /* 맞춤형 해설 - 뉴스 목록 (mobile) */
   .customized-review__body {
     .news-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       list-style: none;
       margin: 0;
       padding: 0;
