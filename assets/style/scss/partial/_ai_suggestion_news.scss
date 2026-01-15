@@ -44,7 +44,9 @@
     }
 
     .suggestion-news-list {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 224px;
       gap: 24px;
       counter-reset: suggestion-news;
 

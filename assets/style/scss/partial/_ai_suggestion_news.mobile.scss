@@ -41,19 +41,21 @@
 
     .suggestion-news-list{
       display: flex;
+      flex-direction: column;
       gap: 12px;
       counter-reset: suggestion-news;
       &__wrapper{
-        width: calc(100% + $mobilePadSide);
-        overflow-x: auto;
-        &::-webkit-scrollbar {
-          display: none;           /* Chrome / Safari / Edge */
-        }
+        width: 100%;
+        // width: calc(100% + $mobilePadSide);
+        // overflow-x: auto;
+        // &::-webkit-scrollbar {
+        //   display: none;           /* Chrome / Safari / Edge */
+        // }
       }
       &__item{
-        flex: 0 0 300px;
+        // flex: 0 0 100%;
         display: inline-flex;
-        width: 300px;
+        // width: 100%;
         height: 224px;
         flex-direction: column;
         gap: var(--spacing-sm, 8px);
