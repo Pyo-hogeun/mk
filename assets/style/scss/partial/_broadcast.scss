@@ -110,6 +110,10 @@
           background: var(--orange-100, #FF7A00);
           color: var(--white, #FFF);
         }
+        &.filled-dark{
+          border: 1px solid var(--base-gradation, #FF800B);
+          background: var(--gray-dark, #1D1D1D);
+        }
         &.outline{
           border: 1px solid var(--base-gradation, #FF800B);
           background: var(--bg-default, #FFFFFF);
