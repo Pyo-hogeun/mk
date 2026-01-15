@@ -40,17 +40,19 @@
       .swiper{
         .swiper-wrapper{
           height: auto;
+          flex-direction: column;
         }
         .slider{
           &__title{
             display: none;
           }
-          .news-list{
-            margin-top: 20px;
-            &__item{
-              &:first-child{
-                a{
-                  border-top: 0;
+          &:first-child{
+            .news-list{
+              &__item{
+                &:first-child{
+                  a{
+                    border-top: 0;
+                  }
                 }
               }
             }

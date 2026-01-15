@@ -830,56 +830,7 @@
         }
       });
     })();
-    (function () {
-      const MOBILE_VIEWPORT_MAX = 480;
-      const reviewSwiperElement = document.querySelector('.customized-review .swiper');
-      const indicatorEl = document.querySelector('.customized-review__header .indicator');
-      let reviewSwiper = null;
-
-      const createReviewSwiper = () => {
-        if (!reviewSwiperElement || reviewSwiper) return;
-
-        const swiperOptions = {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        };
-
-        if (indicatorEl) {
-          indicatorEl.innerHTML = '';
-          swiperOptions.pagination = {
-            el: indicatorEl,
-            clickable: true,
-            bulletClass: 'dot',
-            bulletActiveClass: 'active',
-            renderBullet: (index, className) =>
-              `<span class="${className}" aria-label="맞춤형 해설 ${index + 1}번 슬라이드"></span>`,
-          };
-        }
-
-        reviewSwiper = new Swiper(reviewSwiperElement, swiperOptions);
-      };
-
-      const destroyReviewSwiper = () => {
-        if (!reviewSwiper) return;
-        reviewSwiper.destroy(true, true);
-        reviewSwiper = null;
-        if (indicatorEl) {
-          indicatorEl.innerHTML = '';
-        }
-      };
-
-      const handleResponsiveSwiper = () => {
-        if (window.innerWidth <= MOBILE_VIEWPORT_MAX) {
-          createReviewSwiper();
-        } else {
-          destroyReviewSwiper();
-        }
-      };
-
-      handleResponsiveSwiper();
-      window.addEventListener('resize', handleResponsiveSwiper);
-      
-    })();
+    
   </script>
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>

@@ -8261,14 +8261,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .customized-detail .customized-review .swiper .swiper-wrapper {
     height: auto;
+    flex-direction: column;
   }
   .customized-detail .customized-review .swiper .slider__title {
     display: none;
   }
-  .customized-detail .customized-review .swiper .slider .news-list {
-    margin-top: 20px;
-  }
-  .customized-detail .customized-review .swiper .slider .news-list__item:first-child a {
+  .customized-detail .customized-review .swiper .slider:first-child .news-list__item:first-child a {
     border-top: 0;
   }
   .customized-detail .nav-tabs {
