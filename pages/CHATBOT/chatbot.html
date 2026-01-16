@@ -1922,6 +1922,8 @@
       const chatbotMenuOpenButton = chatbot?.querySelector('.btn-menu');
       const chatbotMenuCloseButton = chatbotMenu?.querySelector('.chatbot__menu-close');
       const chatbotMenuSearchInput = chatbotMenu?.querySelector('.search-input__field');
+      const chatbotPlayer = chatbot?.querySelector('.chatbot__player');
+      const chatbotPlayerCloseButton = chatbotPlayer?.querySelector('.audio-player-bar__close-btn');
 
       const toggleChatbotMenuSearchFocus = (isFocused) => {
         if (!chatbotMenu) return;
@@ -1968,6 +1970,9 @@
 
       chatbotOpenButton?.addEventListener('click', () => toggleChatbot(true));
       chatbotCloseButton?.addEventListener('click', () => toggleChatbot(false));
+      chatbotPlayerCloseButton?.addEventListener('click', () => {
+        chatbotPlayer?.remove();
+      });
     })();
 
 
