@@ -2,11 +2,11 @@
 @use 'mixin' as *;
 .agent-header {
   display: grid;
-  grid-template-columns: 180px 1fr 1fr;
+  grid-template-columns: minmax(0, 250px) 1fr 1fr;
   gap: 10px;
 
   align-items: center;
-  gap: 36px;
+  gap: 8px;
   justify-content: start;
   flex-wrap: wrap;
   margin: 24px 0;

@@ -3,7 +3,7 @@
 @media screen and (min-width: $mobile) {
   //stock에서 추가된 내용만
   .fn-buttons{
-    grid: 3/4;
+    grid-column: 3/4;
     display: flex;
     align-items: center;
     justify-content: flex-end;

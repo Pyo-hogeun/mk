@@ -11,7 +11,7 @@
     color: var(--text-primary, #F0F0F0);
   }
   .analysis-news{
-    width: $pcContainerSub;
+    max-width: $pcContainerSub;
     .report-title{
       .briefing-item__badges{
         margin: 12px 0;
@@ -48,7 +48,7 @@
     .nav-tabs{
       margin-left: auto;
       margin-right: auto;
-      width: $pcContainerSub;
+      max-width: $pcContainerSub;
       border-bottom: 1px solid var(--border-default, #464646);
       .nav-tab {
         height: 40px;
