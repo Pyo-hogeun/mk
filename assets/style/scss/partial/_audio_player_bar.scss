@@ -50,6 +50,17 @@
       width: 24px;
       height: 24px;
     }
+    svg.play{
+      display: none;
+    }
+    &.is-paused{
+      svg.play{
+        display: block;
+      }
+      svg.pause{
+        display: none;
+      }
+    }
   }
 
   &__progress-wrapper {

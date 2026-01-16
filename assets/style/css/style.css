@@ -6581,6 +6581,15 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   width: 24px;
   height: 24px;
 }
+.audio-player-bar__pause-btn svg.play {
+  display: none;
+}
+.audio-player-bar__pause-btn.is-paused svg.play {
+  display: block;
+}
+.audio-player-bar__pause-btn.is-paused svg.pause {
+  display: none;
+}
 .audio-player-bar__progress-wrapper {
   position: absolute;
   left: 67px;
