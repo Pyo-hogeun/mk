@@ -1889,6 +1889,31 @@
         });
       });
 
+      // 오디오 플레이어 재생/일시정지 토글
+      const playerToggleButton = document.querySelector('.chatbot__player .audio-player-bar__pause-btn');
+
+      const updatePlayerIcon = (button) => {
+        const isPaused = button.classList.contains('is-paused');
+        const pauseIcon = button.querySelector('.pause');
+        const playIcon = button.querySelector('.play');
+
+        if (!pauseIcon || !playIcon) return;
+
+        pauseIcon.hidden = isPaused;
+        playIcon.hidden = !isPaused;
+        pauseIcon.setAttribute('aria-hidden', String(isPaused));
+        playIcon.setAttribute('aria-hidden', String(!isPaused));
+        button.setAttribute('aria-label', isPaused ? '재생' : '일시정지');
+      };
+
+      if (playerToggleButton) {
+        updatePlayerIcon(playerToggleButton);
+        playerToggleButton.addEventListener('click', () => {
+          playerToggleButton.classList.toggle('is-paused');
+          updatePlayerIcon(playerToggleButton);
+        });
+      }
+
       // 챗봇 레이어 토글
       const chatbot = document.querySelector('.chatbot');
       const chatbotOpenButton = document.querySelector('.chatbot-button');
