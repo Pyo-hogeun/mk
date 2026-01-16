@@ -7,7 +7,7 @@
     padding: 12px 15px 16px;
     background: #FF7A00;
     flex-wrap: wrap;
-    width: $pcContainerSub;
+    max-width: $pcContainerSub;
     margin-left: auto;
     margin-right: auto;
 
@@ -125,7 +125,7 @@
   }
 
   .report-body {
-    width: $pcContainerSub;
+    max-width: $pcContainerSub;
     margin-left: auto;
     margin-right: auto;
     font-size: 15px;

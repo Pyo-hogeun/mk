@@ -170,7 +170,7 @@ body.dark {
     padding-right: 10px;
   }
   .container__header {
-    width: 700px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
@@ -291,7 +291,7 @@ body.dark {
     padding: 12px 15px 16px;
     background: #FF7A00;
     flex-wrap: wrap;
-    width: 700px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -388,7 +388,7 @@ body.dark {
     display: block;
   }
   .report-body {
-    width: 700px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     font-size: 15px;
@@ -10382,7 +10382,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 @media screen and (min-width: 480px) {
   .top-news .container__header {
-    width: 1210px;
+    max-width: 1210px;
     padding: 0;
   }
   .top-news .topper-message {
@@ -10397,6 +10397,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: flex;
     justify-content: center;
     gap: var(--spacing-xs, 4px);
+    flex-wrap: wrap;
   }
   .top-news .category-tag__wrapper::-webkit-scrollbar {
     display: none; /* Chrome / Safari / Edge */
@@ -11194,10 +11195,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 @media screen and (min-width: 480px) {
   .trend-section .report-header {
-    width: 1210px;
+    max-width: 1210px;
   }
   .trend-section .nav-tabs {
-    width: 1210px;
+    max-width: 1210px;
     border-bottom: 1px solid var(--border-default, #464646);
     margin-top: 24px;
   }
@@ -11208,7 +11209,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     box-shadow: inset 0 -2px 0px var(--orange-200, #E55204);
   }
   .trend-section .report-body {
-    width: 1210px;
+    max-width: 1210px;
   }
   .trend-section__wrapper {
     display: grid;
@@ -11291,12 +11292,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2px;
   }
   .trend-section .keyword-ranking-item__left {
     display: flex;
     align-items: center;
     gap: 24px;
-    flex: 1 0 0;
   }
   .trend-section .keyword-ranking-item__rank {
     color: var(--text-primary, #F0F0F0);
@@ -11329,7 +11330,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-direction: column;
     align-items: flex-end;
     gap: 4px;
-    flex: 1 0 0;
+    flex: 1 1 20%;
   }
   .trend-section .keyword-ranking-item__count {
     color: var(--text-primary, #F0F0F0);
