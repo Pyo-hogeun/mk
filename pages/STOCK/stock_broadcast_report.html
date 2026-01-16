@@ -1,0 +1,527 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+  <div class="container broadcast-report">
+    <div class="report-header">
+      <div class="header-content">
+        <div class="header-top-bar">
+          <button type="button" class="btn-back" aria-label="뒤로가기">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.1467 12.8333C22.699 12.8333 23.1467 13.2811 23.1467 13.8333V14.1667C23.1467 14.719 22.699 15.1667 22.1467 15.1667H9.14675L14.8563 20.8762C15.2468 21.2668 15.2468 21.8999 14.8563 22.2904L14.6139 22.5329C14.2233 22.9234 13.5902 22.9234 13.1996 22.5329L5.37386 14.7071C4.98333 14.3166 4.98333 13.6834 5.37385 13.2929L13.1996 5.46712C13.5902 5.07659 14.2233 5.07659 14.6139 5.46712L14.8563 5.70957C15.2468 6.10009 15.2468 6.73326 14.8563 7.12378L9.14675 12.8333H22.1467Z" fill="white"/>
+            </svg>
+          </button>
+          <div class="header-logo">
+            <svg width="85" height="20" viewBox="0 0 85 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M79.1153 0.800053C79.1153 0.933386 79.1807 1.00005 79.3115 1.00005C79.7692 1.00005 80.1615 1.40005 80.2269 1.93339V19.3334H81.4692C82.45 19.2667 83.1692 18.4667 83.1692 17.4667V0.533386H79.3769C79.1807 0.533386 79.1153 0.66672 79.1153 0.800053ZM17.0654 0.800053C17.0654 0.933386 17.1307 1.00005 17.2615 1.00005C17.7192 1.00005 18.1115 1.40005 18.1115 1.93339V5.13339H16.2807V0.533386H12.5538C12.4231 0.533386 12.3577 0.66672 12.3577 0.733386C12.3577 0.86672 12.4231 0.933386 12.5538 0.933386C13.0115 0.933386 13.4038 1.33339 13.4038 1.86672V19.3334H14.6461C15.5615 19.2667 16.2807 18.4667 16.2154 17.5334V7.26672H18.0461V19.3334H19.4846C20.4 19.3334 20.9884 18.5334 20.9884 17.4667V0.533386H17.1961C17.1307 0.533386 17.0654 0.66672 17.0654 0.800053ZM74.8 0.533386C74.6692 0.533386 74.6038 0.66672 74.6038 0.733386C74.6038 0.86672 74.6692 0.933386 74.8 0.933386C75.2577 0.933386 75.65 1.33339 75.65 1.80005V5.80005H72.7077C72.25 5.80005 72.25 6.00005 72.3807 6.26672L73.2961 7.73339H75.65V19.3334H76.9577C77.873 19.2667 78.5923 18.4667 78.5269 17.5334V0.533386H74.8ZM57.8 0.600053C57.6692 0.600053 57.6038 0.733386 57.6038 0.800053C57.6038 0.933386 57.6692 1.00005 57.8 1.00005C58.323 1.00005 58.7154 1.40005 58.7154 1.93339V2.93339H55.4461C54.9884 2.93339 54.9884 3.13339 55.1192 3.40005L55.9038 4.73339H58.7154V6.13339H55.4461C54.9884 6.13339 54.9884 6.33339 55.1192 6.60005L55.9038 7.93339H58.7154V10.1334H59.9577C61.0038 10.0667 61.7884 9.20005 61.723 8.13339V0.600053H57.8ZM53.8115 0.533386H44.6577C44.2 0.533386 44.2 0.733386 44.3307 1.00005L45.2461 2.53339H51C50.2807 6.26672 46.8807 9.00005 44.2 9.80005C44.0038 9.80005 43.9384 10.0001 43.9384 10.1334C43.9384 10.2667 44.2 10.4001 44.3307 10.4001C48.123 10.5334 53.4846 7.80005 54.6615 1.93339C54.8577 1.06672 54.3346 0.533386 53.8115 0.533386Z" fill="white"/>
+              <path d="M69.7653 9.2667C70.0269 9.73336 72.5769 13.4 73.1 14C73.623 14.6 73.95 14.8 74.0807 14.1334V11.1334C74.1461 10.9334 74.0153 10.7334 73.8192 10.6667C72.6423 9.93336 71.5307 9.00003 70.5499 8.00003C71.4653 6.60003 73.1 3.00003 73.1 1.60003C73.1653 1.0667 72.7076 0.600029 72.1846 0.533362H64.9923C64.5346 0.533362 64.5346 0.733362 64.6653 1.00003L65.6461 2.60003H69.373C69.0461 6.53336 66.5615 11.6 64.0769 13.6C63.8807 13.7334 63.8153 13.8667 63.8807 14.0667C63.9461 14.2 64.1423 14.2 64.4038 14.1334C65.123 13.9334 67.6076 12.2667 69.7653 9.2667ZM5.88458 2.60003H8.49996V11.7334H5.88458V2.60003ZM1.89612 0.800029C1.89612 0.933362 1.9615 1.00003 2.09227 1.00003C2.54996 1.00003 2.94227 1.40003 3.00766 1.93336V11.6667C2.94227 12.8 3.85766 13.8 4.96919 13.8667H9.41535C10.5269 13.8667 11.3769 12.9334 11.3769 11.8667V0.533362H2.09227C1.9615 0.533362 1.89612 0.666695 1.89612 0.800029ZM54.4 17.8667C52.1769 17.8667 50.0846 16.4 50.0846 14.7334C50.0846 13.0667 52.1769 11.8 54.4 11.8C56.623 11.8 58.7153 13.1334 58.7153 14.7334C58.7153 16.3334 56.623 17.8667 54.4 17.8667ZM54.4 9.8667C50.0192 9.8667 47.1423 12.0667 47.1423 14.8C47.1423 17.5334 50.0192 19.8667 54.4 19.8667C58.7807 19.8667 61.6576 17.4667 61.6576 14.8C61.6576 12.1334 58.7807 9.8667 54.4 9.8667ZM37.2692 0.733362C37.2692 0.866695 37.3346 0.933362 37.4653 0.933362C37.923 0.933362 38.3807 1.33336 38.3807 1.80003V9.33336H39.8192C40.8653 9.2667 41.65 8.40003 41.5846 7.33336V0.533362H37.4653C37.3346 0.533362 37.2692 0.600029 37.2692 0.733362ZM29.3577 7.53336C27.7884 7.60003 26.4807 6.33336 26.4153 4.80003C26.5461 3.13336 27.9846 1.93336 29.6192 2.0667C31.0576 2.20003 32.1692 3.33336 32.3 4.80003C32.2346 6.33336 30.9269 7.60003 29.3577 7.53336ZM29.3577 0.133362C25.6307 0.133362 23.4076 2.20003 23.4076 4.73336C23.4076 7.2667 25.6307 9.33336 29.3577 9.33336C33.0846 9.33336 35.3076 7.33336 35.3076 4.80003C35.3076 2.2667 33.0846 0.133362 29.3577 0.133362ZM41.8461 17.2667H30.4692V15.8H39.8192C40.8653 15.7334 41.65 14.8667 41.5846 13.8V10.4H26.7423C26.4153 10.4 26.35 10.6 26.4807 10.8667L27.3961 12.4H38.5115V13.8667H26.4807C26.35 13.8667 26.2846 13.9334 26.2846 14.0667C26.2846 14.2 26.35 14.2667 26.4807 14.2667C27.0038 14.2667 27.3961 14.6667 27.3961 15.2V17.3334C27.3961 18.4667 28.2461 19.3334 29.2923 19.4H41.8461V17.2667Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="header-help-icon"></div>
+        </div>
+
+        <div class="header-body">
+          
+          <h1 class="report-title">
+            <div class="briefing-item__badges">
+              <span class="badge outline">굿모닝 오늘의 증시</span>
+            </div>
+            외인 대규모 순매도 지속...대응 전략은?
+          </h1>
+
+          <div class="report-meta">
+            <div class="report-date">생성 : 2025-12-1</div>
+
+            <div class="header-actions-container">
+              <div class="action-buttons">
+                <button type="button" class="btn-action btn-font-size" aria-label="글자 크기 조절">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.6877 3V11.5512H24V13.1102H20.6877V24H18.8935V3H20.6877ZM15.3971 5.26772C15.3971 11.2205 12.6828 16.6299 6.01211 20.0079L5 18.5433C10.2906 15.8386 13.1659 11.7992 13.5799 6.82677H5.9431V5.26772H15.3971Z" fill="white"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-action share-news" aria-label="공유하기">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 18.76C20.1133 18.76 19.32 19.11 18.7133 19.6583L10.395 14.8166C10.4533 14.5483 10.5 14.28 10.5 14C10.5 13.72 10.4533 13.4516 10.395 13.1833L18.62 8.38831C19.25 8.97165 20.0783 9.33331 21 9.33331C22.9367 9.33331 24.5 7.76998 24.5 5.83331C24.5 3.89665 22.9367 2.33331 21 2.33331C19.0633 2.33331 17.5 3.89665 17.5 5.83331C17.5 6.11331 17.5467 6.38165 17.605 6.64998L9.38 11.445C8.75 10.8616 7.92167 10.5 7 10.5C5.06333 10.5 3.5 12.0633 3.5 14C3.5 15.9366 5.06333 17.5 7 17.5C7.92167 17.5 8.75 17.1383 9.38 16.555L17.6867 21.3967C17.6283 21.6416 17.5933 21.8983 17.5933 22.1666C17.5933 24.045 19.1217 25.5616 21 25.5616C22.8783 25.5616 24.4067 24.045 24.4067 22.1666C24.4067 20.2883 22.8783 18.76 21 18.76ZM21 4.66665C21.6417 4.66665 22.1667 5.19165 22.1667 5.83331C22.1667 6.47498 21.6417 6.99998 21 6.99998C20.3583 6.99998 19.8333 6.47498 19.8333 5.83331C19.8333 5.19165 20.3583 4.66665 21 4.66665ZM7 15.1666C6.35833 15.1666 5.83333 14.6416 5.83333 14C5.83333 13.3583 6.35833 12.8333 7 12.8333C7.64167 12.8333 8.16667 13.3583 8.16667 14C8.16667 14.6416 7.64167 15.1666 7 15.1666ZM21 23.3333C20.3583 23.3333 19.8333 22.8083 19.8333 22.1666C19.8333 21.525 20.3583 21 21 21C21.6417 21 22.1667 21.525 22.1667 22.1666C22.1667 22.8083 21.6417 23.3333 21 23.3333Z" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-body content-wrapper">
+      <div class="analysis__wrapper">
+        <div class="customized-review__header">
+          <h3>방송 요약 <i class="notice__ai-brief" role="button" tabindex="0" data-bottom-sheet-target="ai-customize-sheet" aria-label="방송 요약">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.2 18C13.2 18.4418 13.5582 18.8 14 18.8C14.4418 18.8 14.8 18.4418 14.8 18C14.8 17.5582 14.4418 17.2 14 17.2C13.5582 17.2 13.2 17.5582 13.2 18ZM14 6C12.9494 6 11.9091 6.20693 10.9385 6.60896C9.96793 7.011 9.08601 7.60028 8.34315 8.34315C6.84285 9.84344 6 11.8783 6 14C6 16.1217 6.84285 18.1566 8.34315 19.6569C9.08601 20.3997 9.96793 20.989 10.9385 21.391C11.9091 21.7931 12.9494 22 14 22C16.1217 22 18.1566 21.1571 19.6569 19.6569C21.1571 18.1566 22 16.1217 22 14C22 12.9494 21.7931 11.9091 21.391 10.9385C20.989 9.96793 20.3997 9.08601 19.6569 8.34315C18.914 7.60028 18.0321 7.011 17.0615 6.60896C16.0909 6.20693 15.0506 6 14 6ZM14 20.4C10.472 20.4 7.6 17.528 7.6 14C7.6 10.472 10.472 7.6 14 7.6C17.528 7.6 20.4 10.472 20.4 14C20.4 17.528 17.528 20.4 14 20.4ZM14 9.2C13.1513 9.2 12.3374 9.53714 11.7373 10.1373C11.3276 10.5469 11.0404 11.0563 10.8995 11.6083C10.7902 12.0364 11.1582 12.4 11.6 12.4C12.0418 12.4 12.3841 12.0206 12.5959 11.6329C12.6683 11.5003 12.7598 11.3774 12.8686 11.2686C13.1687 10.9686 13.5757 10.8 14 10.8C14.4243 10.8 14.8313 10.9686 15.1314 11.2686C15.4314 11.5687 15.6 11.9757 15.6 12.4C15.6 13.8156 13.7214 13.8222 13.2883 15.6055C13.184 16.0349 13.5582 16.4 14 16.4C14.4418 16.4 14.7814 16.0236 14.9738 15.6258C15.5253 14.4853 17.2 14.0707 17.2 12.4C17.2 11.5513 16.8629 10.7374 16.2627 10.1373C15.6626 9.53714 14.8487 9.2 14 9.2Z" fill="#7B7B7B"></path>
+            </svg>
+          </i></h3>
+        </div>
+
+        <div class="emphas__title">시장 분석</div>
+        <div class="keypoints__wrapper">
+          <div class="keypoints-card">
+            <div class="keypoints-card__list">
+              <div class="keypoints-card__item">
+                <svg class="keypoints-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF7A00" stroke-width="1.3332" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 12L11 14L15 10" stroke="#FF7A00" stroke-width="1.3332" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20.9994 12C20.9994 7.02941 16.9705 3.00056 12 3.00056C7.02941 3.00056 3.00056 7.02941 3.00056 12C3.00056 16.9705 7.02941 20.9994 12 20.9994C16.9705 20.9994 20.9994 16.9705 20.9994 12ZM23.0006 12C23.0006 18.0751 18.0751 23.0006 12 23.0006C5.92484 23.0005 0.99939 18.0751 0.99939 12C0.999393 5.92484 5.92484 0.999393 12 0.99939C18.0751 0.99939 23.0005 5.92484 23.0006 12Z" fill="#FF7A00"/>
+                  <path d="M14.2929 9.29241C14.6833 8.90232 15.3162 8.90242 15.7066 9.29241C16.0972 9.68293 16.0972 10.3171 15.7066 10.7076L11.7072 14.707C11.3168 15.0974 10.6841 15.0972 10.2935 14.707L8.29234 12.7073C7.90216 12.3169 7.90245 11.6841 8.29234 11.2936C8.68287 10.9031 9.317 10.9031 9.70752 11.2936L10.9996 12.5857L14.2929 9.29241Z" fill="#FF7A00"/>
+                </svg>
+                <div class="keypoints-card__text">
+                  <span class="keypoints-card__text-strong">미국-호주 동맹: </span>
+                  <span class="keypoints-card__text-regular">핵심 광물·희토류 공급망 프레임 워크 서명</span>
+                </div>
+              </div>
+              <div class="keypoints-card__item">
+                <svg class="keypoints-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF7A00" stroke-width="1.3332" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 12L11 14L15 10" stroke="#FF7A00" stroke-width="1.3332" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20.9994 12C20.9994 7.02941 16.9705 3.00056 12 3.00056C7.02941 3.00056 3.00056 7.02941 3.00056 12C3.00056 16.9705 7.02941 20.9994 12 20.9994C16.9705 20.9994 20.9994 16.9705 20.9994 12ZM23.0006 12C23.0006 18.0751 18.0751 23.0006 12 23.0006C5.92484 23.0005 0.99939 18.0751 0.99939 12C0.999393 5.92484 5.92484 0.999393 12 0.99939C18.0751 0.99939 23.0005 5.92484 23.0006 12Z" fill="#FF7A00"/>
+                  <path d="M14.2929 9.29241C14.6833 8.90232 15.3162 8.90242 15.7066 9.29241C16.0972 9.68293 16.0972 10.3171 15.7066 10.7076L11.7072 14.707C11.3168 15.0974 10.6841 15.0972 10.2935 14.707L8.29234 12.7073C7.90216 12.3169 7.90245 11.6841 8.29234 11.2936C8.68287 10.9031 9.317 10.9031 9.70752 11.2936L10.9996 12.5857L14.2929 9.29241Z" fill="#FF7A00"/>
+                </svg>
+                <div class="keypoints-card__text">
+                  <span class="keypoints-card__text-strong">미국-호주 동맹: </span>
+                  <span class="keypoints-card__text-regular">핵심 광물·희토류 공급망 프레임</span>
+                </div>
+              </div>
+              <div class="keypoints-card__item">
+                <svg class="keypoints-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF7A00" stroke-width="1.3332" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 12L11 14L15 10" stroke="#FF7A00" stroke-width="1.3332" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20.9994 12C20.9994 7.02941 16.9705 3.00056 12 3.00056C7.02941 3.00056 3.00056 7.02941 3.00056 12C3.00056 16.9705 7.02941 20.9994 12 20.9994C16.9705 20.9994 20.9994 16.9705 20.9994 12ZM23.0006 12C23.0006 18.0751 18.0751 23.0006 12 23.0006C5.92484 23.0005 0.99939 18.0751 0.99939 12C0.999393 5.92484 5.92484 0.999393 12 0.99939C18.0751 0.99939 23.0005 5.92484 23.0006 12Z" fill="#FF7A00"/>
+                  <path d="M14.2929 9.29241C14.6833 8.90232 15.3162 8.90242 15.7066 9.29241C16.0972 9.68293 16.0972 10.3171 15.7066 10.7076L11.7072 14.707C11.3168 15.0974 10.6841 15.0972 10.2935 14.707L8.29234 12.7073C7.90216 12.3169 7.90245 11.6841 8.29234 11.2936C8.68287 10.9031 9.317 10.9031 9.70752 11.2936L10.9996 12.5857L14.2929 9.29241Z" fill="#FF7A00"/>
+                </svg>
+                <div class="keypoints-card__text">
+                  <span class="keypoints-card__text-strong">미국-호주 동맹: </span>
+                  <span class="keypoints-card__text-regular">핵심 광물·희토류 공급망 프레임 워크 서명</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="emphas__title">섹터 분석</div>
+        <div class="sector-analysis__wrapper">
+          <div class="sector-analysis__content">
+            <p class="title">1. 시장 상황, AI 거품 논란 속 혼조세</p>
+            <p class="description">미국 증시는 평소와 달리 AI 버블 논란과 경기 둔화 우려로 혼조세를 보였다.<br>다우존스에서는 나이키를 제외하고는 헬스케어 섹터가 강세를 보였다.<br>암젠, 머크, 존슨앤존스 같은 제약/헬스케어 기업들이 큰 폭으로 올랐다.<br>반면, AI 관련주들은 전반적으로 약세를 면치 못했다.</p>
+          </div>
+          <div class="sector-analysis__content">
+            <p class="title">2. AI 대장주 엔비디아의 흔들림과 소프트뱅크의 그림자</p>
+            <p class="description">AI 인프라의 핵심인 엔비디아는 소프트뱅크의 대규모 지분 매각 소식에 큰 폭으로 하락했다.<br>소프트뱅크는 매각 이유를 포트폴리오 조정이자 오픈AI 투자 재원 확보라고 설명했다.</p>
+          </div>
+        </div>
+
+        <div class="emphas__title">종목 분석</div>
+        <div class="stock-analysis-list">
+          <div class="stock-briefing-card">
+            <div class="stock-briefing-card__header">
+              <div class="stock-briefing-card__name">SK하이닉스</div>
+              <div class="stock-briefing-card__code">000660</div>
+            </div>
+            <div class="stock-briefing-card__price-info">
+              <div class="stock-briefing-card__price">16,000</div>
+              <div class="stock-briefing-card__change">
+                <svg class="stock-briefing-card__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                </svg>
+                <div class="stock-briefing-card__change-value">1,600</div>
+                <div class="stock-briefing-card__change-percent">(10%)</div>
+              </div>
+            </div>
+            <div class="stock-briefing-card__divider"></div>
+            <div class="stock-briefing-card__badge">애널리스트 코멘트</div>
+            <div class="stock-briefing-card__description">도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에 공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.</div>
+          </div>
+          <div class="stock-briefing-card">
+            <div class="stock-briefing-card__header">
+              <div class="stock-briefing-card__name">SK하이닉스</div>
+              <div class="stock-briefing-card__code">000660</div>
+            </div>
+            <div class="stock-briefing-card__price-info">
+              <div class="stock-briefing-card__price">16,000</div>
+              <div class="stock-briefing-card__change">
+                <svg class="stock-briefing-card__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                </svg>
+                <div class="stock-briefing-card__change-value">1,600</div>
+                <div class="stock-briefing-card__change-percent">(10%)</div>
+              </div>
+            </div>
+            <div class="stock-briefing-card__divider"></div>
+            <div class="stock-briefing-card__badge">애널리스트 코멘트</div>
+            <div class="stock-briefing-card__description">도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에 공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.</div>
+          </div>
+          <div class="stock-briefing-card">
+            <div class="stock-briefing-card__header">
+              <div class="stock-briefing-card__name">SK하이닉스</div>
+              <div class="stock-briefing-card__code">000660</div>
+            </div>
+            <div class="stock-briefing-card__price-info">
+              <div class="stock-briefing-card__price">16,000</div>
+              <div class="stock-briefing-card__change">
+                <svg class="stock-briefing-card__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.13398 4.5C9.51888 3.83333 10.4811 3.83333 10.866 4.5L16.0622 13.5C16.4471 14.1667 15.966 15 15.1962 15H4.80385C4.03405 15 3.55292 14.1667 3.93782 13.5L9.13398 4.5Z" fill="#FF0000"/>
+                </svg>
+                <div class="stock-briefing-card__change-value">1,600</div>
+                <div class="stock-briefing-card__change-percent">(10%)</div>
+              </div>
+            </div>
+            <div class="stock-briefing-card__divider"></div>
+            <div class="stock-briefing-card__badge">애널리스트 코멘트</div>
+            <div class="stock-briefing-card__description">도널드 트럼프 미국 대통령과 앤서니 앨버니지 호주 총리가 백악관에서 '핵심 광물·희토류의 안정적 공급망 확보를 위한 프레임워크'에 공동 서명했습니다. 양국은 6개월 내 30억 달러 이상을 공동 투자하기로 합의했으며, 이는 중국의 자원 무기화 움직임에 대한 직접적인 대응입니다.</div>
+          </div>
+        </div>
+
+        <div class="ai-question-suggestion">
+          <div class="ai-question-suggestion__title">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.99996 1.66663C11.5471 1.66663 13.0308 2.28121 14.1247 3.37517C15.2187 4.46913 15.8333 5.95286 15.8333 7.49996C15.8333 9.48329 14.8416 11.225 13.3333 12.2833V14.1666C13.3333 14.3876 13.2455 14.5996 13.0892 14.7559C12.9329 14.9122 12.721 15 12.5 15H7.49996C7.27895 15 7.06698 14.9122 6.9107 14.7559C6.75442 14.5996 6.66663 14.3876 6.66663 14.1666V12.2833C5.15829 11.225 4.16663 9.48329 4.16663 7.49996C4.16663 5.95286 4.78121 4.46913 5.87517 3.37517C6.96913 2.28121 8.45286 1.66663 9.99996 1.66663ZM7.49996 17.5V16.6666H12.5V17.5C12.5 17.721 12.4122 17.9329 12.2559 18.0892C12.0996 18.2455 11.8876 18.3333 11.6666 18.3333H8.33329C8.11228 18.3333 7.90032 18.2455 7.74404 18.0892C7.58776 17.9329 7.49996 17.721 7.49996 17.5ZM9.99996 3.33329C8.89489 3.33329 7.83508 3.77228 7.05368 4.55368C6.27228 5.33508 5.83329 6.39489 5.83329 7.49996C5.83329 9.20829 6.85829 10.675 8.33329 11.3166V13.3333H11.6666V11.3166C13.1416 10.675 14.1666 9.20829 14.1666 7.49996C14.1666 6.39489 13.7276 5.33508 12.9462 4.55368C12.1648 3.77228 11.105 3.33329 9.99996 3.33329Z" fill="url(#paint0_linear_1812_3737)"></path>
+              <defs>
+              <linearGradient id="paint0_linear_1812_3737" x1="7.54731" y1="5.33329" x2="12.507" y2="6.37291" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFA600"></stop>
+              <stop offset="1" stop-color="#FACE0B"></stop>
+              </linearGradient>
+              </defs>
+              </svg>
+               AI 추천 질문
+          </div>
+  
+          <div class="ai-question-suggestion__body">
+            <p>
+              <i>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6236 11.6774C18.6236 8.84214 16.3555 6.57397 13.5203 6.57397H10.8977C8.06249 6.57397 5.79431 8.84214 5.79431 11.6774C5.79431 14.5125 7.9916 16.7099 10.7559 16.7808L12.1735 19.0489L13.5911 16.7808C16.3555 16.7808 18.6236 14.5125 18.6236 11.6774ZM12.2444 10.8268C12.6697 10.8268 13.0241 11.1812 13.0241 11.6065C13.0241 12.0318 12.6697 12.3862 12.2444 12.3862C11.8191 12.3862 11.4647 12.0318 11.4647 11.6065C11.4647 11.1812 11.8191 10.8268 12.2444 10.8268ZM9.40921 12.457C8.98392 12.457 8.62953 12.1026 8.62953 11.6774C8.62953 11.2521 8.98392 10.8977 9.40921 10.8977C9.83449 10.8977 10.1889 11.2521 10.1889 11.6774C10.1889 12.1026 9.83449 12.457 9.40921 12.457ZM15.0797 12.457C14.6544 12.457 14.3 12.1026 14.3 11.6774C14.3 11.2521 14.6544 10.8977 15.0797 10.8977C15.5049 10.8977 15.8594 11.2521 15.8594 11.6774C15.8594 12.1026 15.5049 12.457 15.0797 12.457Z" fill="#FF7A00"></path>
+                  </svg>
+              </i>
+               희토류 관련주 투자 시 주의할 점은?
+            </p>
+            <p>
+              <i>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6236 11.6774C18.6236 8.84214 16.3555 6.57397 13.5203 6.57397H10.8977C8.06249 6.57397 5.79431 8.84214 5.79431 11.6774C5.79431 14.5125 7.9916 16.7099 10.7559 16.7808L12.1735 19.0489L13.5911 16.7808C16.3555 16.7808 18.6236 14.5125 18.6236 11.6774ZM12.2444 10.8268C12.6697 10.8268 13.0241 11.1812 13.0241 11.6065C13.0241 12.0318 12.6697 12.3862 12.2444 12.3862C11.8191 12.3862 11.4647 12.0318 11.4647 11.6065C11.4647 11.1812 11.8191 10.8268 12.2444 10.8268ZM9.40921 12.457C8.98392 12.457 8.62953 12.1026 8.62953 11.6774C8.62953 11.2521 8.98392 10.8977 9.40921 10.8977C9.83449 10.8977 10.1889 11.2521 10.1889 11.6774C10.1889 12.1026 9.83449 12.457 9.40921 12.457ZM15.0797 12.457C14.6544 12.457 14.3 12.1026 14.3 11.6774C14.3 11.2521 14.6544 10.8977 15.0797 10.8977C15.5049 10.8977 15.8594 11.2521 15.8594 11.6774C15.8594 12.1026 15.5049 12.457 15.0797 12.457Z" fill="#FF7A00"></path>
+                  </svg>
+              </i>
+               미·호주 동맹이 한국 반도체 산업에 미칠 영향은?
+            </p>
+            <p>
+              <i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.6236 11.6774C18.6236 8.84214 16.3555 6.57397 13.5203 6.57397H10.8977C8.06249 6.57397 5.79431 8.84214 5.79431 11.6774C5.79431 14.5125 7.9916 16.7099 10.7559 16.7808L12.1735 19.0489L13.5911 16.7808C16.3555 16.7808 18.6236 14.5125 18.6236 11.6774ZM12.2444 10.8268C12.6697 10.8268 13.0241 11.1812 13.0241 11.6065C13.0241 12.0318 12.6697 12.3862 12.2444 12.3862C11.8191 12.3862 11.4647 12.0318 11.4647 11.6065C11.4647 11.1812 11.8191 10.8268 12.2444 10.8268ZM9.40921 12.457C8.98392 12.457 8.62953 12.1026 8.62953 11.6774C8.62953 11.2521 8.98392 10.8977 9.40921 10.8977C9.83449 10.8977 10.1889 11.2521 10.1889 11.6774C10.1889 12.1026 9.83449 12.457 9.40921 12.457ZM15.0797 12.457C14.6544 12.457 14.3 12.1026 14.3 11.6774C14.3 11.2521 14.6544 10.8977 15.0797 10.8977C15.5049 10.8977 15.8594 11.2521 15.8594 11.6774C15.8594 12.1026 15.5049 12.457 15.0797 12.457Z" fill="#FF7A00"></path>
+                </svg></i>
+               중국의 희토류 보복 가능성은 어느 정도인가요?
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="layer-popup" id="font-size-popup" aria-hidden="true">
+    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
+    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="글자크기 설정">
+      <div class="layer-popup__content">
+        <div class="font-size-selector">
+          <div class="font-size-selector__header">
+            <div class="font-size-selector__title">글자크기 설정</div>
+            <button class="close-button" type="button" aria-label="닫기">
+              <svg class="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9239 9.29291C11.5333 9.68344 11.5333 10.3166 11.9239 10.7071L15.5814 14.3647C15.7428 14.526 15.8334 14.7449 15.8334 14.973C15.8334 15.4482 15.4482 15.8334 14.9731 15.8334C14.7449 15.8334 14.5261 15.7427 14.3648 15.5814L10.7072 11.9238C10.3167 11.5333 9.6835 11.5333 9.29298 11.9238L5.6354 15.5814C5.47406 15.7427 5.25523 15.8334 5.02706 15.8334C4.55192 15.8334 4.16675 15.4482 4.16675 14.973C4.16675 14.7449 4.25739 14.526 4.41873 14.3647L8.07631 10.7071C8.46683 10.3166 8.46683 9.68344 8.07631 9.29291L4.41873 5.63533C4.25739 5.47399 4.16675 5.25517 4.16675 5.027C4.16675 4.55186 4.55192 4.16669 5.02706 4.16669C5.25523 4.16669 5.47405 4.25733 5.63539 4.41867L9.29297 8.07625C9.6835 8.46677 10.3167 8.46677 10.7072 8.07625L14.3648 4.41867C14.5261 4.25733 14.7449 4.16669 14.9731 4.16669C15.4482 4.16669 15.8334 4.55186 15.8334 5.027C15.8334 5.25517 15.7428 5.47399 15.5814 5.63533L11.9239 9.29291Z" fill="#7B7B7B"/>
+              </svg>
+            </button>
+          </div>
+          <div class="font-size-selector__size-options">
+            <button class="size-option size-option-small" type="button" aria-label="작은 글자 크기">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="23" height="23" stroke="#464646"/>
+                <path d="M17.2107 3V10.3296H20V11.6659H17.2107V21H15.6998V3H17.2107ZM12.7554 4.94376C12.7554 10.0461 10.4697 14.6828 4.8523 17.5782L4 16.3228C8.45521 14.0045 10.8765 10.5422 11.2252 6.28009H4.79419V4.94376H12.7554Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <button class="size-option size-option-medium" type="button" aria-label="보통 글자 크기">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="27" height="27" stroke="#464646"/>
+                <path d="M20.6877 3V11.5512H24V13.1102H20.6877V24H18.8935V3H20.6877ZM15.3971 5.26772C15.3971 11.2205 12.6828 16.6299 6.01211 20.0079L5 18.5433C10.2906 15.8386 13.1659 11.7992 13.5799 6.82677H5.9431V5.26772H15.3971Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <button class="size-option size-option-large" type="button" aria-label="큰 글자 크기">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="31" height="31" stroke="#464646"/>
+                <path d="M23.1646 4V13.7728H27V15.5546H23.1646V28H21.0872V4H23.1646ZM17.0387 6.59168C17.0387 13.3948 13.8959 19.5771 6.17191 23.4376L5 21.7638C11.1259 18.6727 14.4552 14.0562 14.9346 8.37345H6.09201V6.59168H17.0387Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <button class="size-option size-option-xlarge" type="button" aria-label="아주 큰 글자 크기">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="35" height="35" stroke="#464646"/>
+                <path d="M25.1646 6V15.7728H29V17.5546H25.1646V30H23.0872V6H25.1646ZM19.0387 8.59168C19.0387 15.3948 15.8959 21.5771 8.17191 25.4376L7 23.7638C13.1259 20.6727 16.4552 16.0562 16.9346 10.3735H8.09201V8.59168H19.0387Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-popup" id="share-popup" aria-hidden="true">
+    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
+    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="기사 공유">
+      <div class="layer-popup__content">
+        <div class="share-popup">
+          <div class="share-popup__header">
+            <div class="share-popup__title">기사공유</div>
+            <button class="close-button" type="button" aria-label="닫기">
+              <svg class="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9239 9.29291C11.5333 9.68344 11.5333 10.3166 11.9239 10.7071L15.5814 14.3647C15.7428 14.526 15.8334 14.7449 15.8334 14.973C15.8334 15.4482 15.4482 15.8334 14.9731 15.8334C14.7449 15.8334 14.5261 15.7427 14.3648 15.5814L10.7072 11.9238C10.3167 11.5333 9.6835 11.5333 9.29298 11.9238L5.6354 15.5814C5.47406 15.7427 5.25523 15.8334 5.02706 15.8334C4.55192 15.8334 4.16675 15.4482 4.16675 14.973C4.16675 14.7449 4.25739 14.526 4.41873 14.3647L8.07631 10.7071C8.46683 10.3166 8.46683 9.68344 8.07631 9.29291L4.41873 5.63533C4.25739 5.47399 4.16675 5.25517 4.16675 5.027C4.16675 4.55186 4.55192 4.16669 5.02706 4.16669C5.25523 4.16669 5.47405 4.25733 5.63539 4.41867L9.29297 8.07625C9.6835 8.46677 10.3167 8.46677 10.7072 8.07625L14.3648 4.41867C14.5261 4.25733 14.7449 4.16669 14.9731 4.16669C15.4482 4.16669 15.8334 4.55186 15.8334 5.027C15.8334 5.25517 15.7428 5.47399 15.5814 5.63533L11.9239 9.29291Z" fill="#7B7B7B"/>
+              </svg>
+            </button>
+          </div>
+          <div class="share-popup__link">
+            <button class="share-btn size-option-small" type="button" aria-label="공유 버튼">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1178_18434)">
+                <path d="M13.117 26.4814C11.7063 25.0707 11.7063 22.7773 13.117 21.3666L16.4168 18.0668L14.8494 16.4994L11.5496 19.7992C10.4556 20.8932 9.84105 22.3769 9.84105 23.924C9.84105 25.4711 10.4556 26.9548 11.5496 28.0488C12.6436 29.1427 14.1273 29.7573 15.6744 29.7573C17.2215 29.7573 18.7052 29.1427 19.7992 28.0488L23.099 24.7489L21.5316 23.1815L18.2318 26.4814C16.8211 27.892 14.5277 27.892 13.117 26.4814ZM17.3243 23.924L23.924 17.3243L22.274 15.6744L15.6744 22.2741L17.3243 23.924ZM19.7992 11.5496L16.4993 14.8495L18.0668 16.4169L21.3666 13.117C22.7773 11.7064 25.0707 11.7064 26.4813 13.117C27.892 14.5277 27.892 16.8211 26.4813 18.2318L23.1815 21.5316L24.7489 23.099L28.0488 19.7992C29.1427 18.7052 29.7573 17.2215 29.7573 15.6744C29.7573 14.1273 29.1427 12.6436 28.0488 11.5496C26.9548 10.4557 25.4711 9.84108 23.924 9.84108C22.3769 9.84108 20.8931 10.4557 19.7992 11.5496Z" fill="currentColor"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1178_18434">
+                <rect width="28" height="28" fill="white" transform="translate(0 19.799) rotate(-45)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- AI 뉴스 브리핑 -->
+  <div class="bottom-sheet bottom-sheet--ai" id="ai-interest-sheet" role="dialog" aria-modal="true" aria-label="AI 뉴스 브리핑" aria-hidden="true">
+    <div class="bottom-sheet__handle" data-bottom-sheet-dismiss></div>
+    <h2 class="bottom-sheet__title">AI 뉴스 브리핑</h2>
+    <div class="bottom-sheet__body">
+      <ul class="bottom-sheet__list">
+        <li class="bottom-sheet__list-item">설정한 섹션 카테고리를 기준으로 AI가 매일 주요 뉴스를 선별해 브리핑으로 정리해드려요.</li>
+        <li class="bottom-sheet__list-item">설정 전에는 그동안 읽은 뉴스 흐름을 분석해 추천 섹션 3개에 대한 자동 브리핑을 먼저 제공해요.</li>
+        <li class="bottom-sheet__list-item">매일 나에게 꼭 필요한 소식만 골라 효율적으로 뉴스를 소비할 수 있어요.</li>
+      </ul>
+    </div>
+    <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
+  </div>
+
+  
+
+  <div class="toast-tooltip" role="status" aria-live="polite" aria-hidden="true">
+    <div class="toast-tooltip__content">
+      <svg class="toast-tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.99984 1.6665C5.4165 1.6665 1.6665 5.4165 1.6665 9.99984C1.6665 14.5832 5.4165 18.3332 9.99984 18.3332C14.5832 18.3332 18.3332 14.5832 18.3332 9.99984C18.3332 5.4165 14.5832 1.6665 9.99984 1.6665ZM9.99984 16.6665C6.32484 16.6665 3.33317 13.6748 3.33317 9.99984C3.33317 6.32484 6.32484 3.33317 9.99984 3.33317C13.6748 3.33317 16.6665 6.32484 16.6665 9.99984C16.6665 13.6748 13.6748 16.6665 9.99984 16.6665ZM14.4144 6.91026C14.0891 6.58268 13.5596 6.58174 13.2332 6.90817L8.33317 11.8082L6.7629 10.244C6.43794 9.92026 5.91224 9.92076 5.5879 10.2451C5.26312 10.5699 5.26312 11.0965 5.5879 11.4212L7.62606 13.4594C8.01659 13.8499 8.64975 13.8499 9.04028 13.4594L14.4123 8.08734C14.7371 7.76253 14.7381 7.23621 14.4144 6.91026Z" fill="#FF7A00"/>
+      </svg>
+      <div class="toast-tooltip__message">보관함에 추가되었습니다.</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    
+    // 글씨 크기
+    (function () {
+      const fontSizeButton = document.querySelector('.btn-font-size');
+      const popup = document.getElementById('font-size-popup');
+      const popupContent = popup?.querySelector('.layer-popup__content');
+      const popupBackdrop = popup?.querySelector('.layer-popup__backdrop');
+      let selectorLoaded = false;
+
+      const closePopup = () => {
+        if (!popup) return;
+
+        popup.classList.remove('is-active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('layer-popup-open');
+      };
+
+      const attachCloseHandlers = (rootElement) => {
+        const closeButton = rootElement.querySelector('.close-button');
+
+        if (closeButton) {
+          closeButton.addEventListener('click', closePopup);
+        }
+      };
+
+      const reportBody = document.querySelector('.report-body');
+      const fontSizeMap = {
+        small: '13px',
+        medium: '15px',
+        large: '17px',
+        xlarge: '19px',
+      };
+
+      const applyFontSize = (sizeKey) => {
+        if (!reportBody) return;
+        const fontSize = fontSizeMap[sizeKey];
+        if (fontSize) {
+          reportBody.style.fontSize = fontSize;
+        }
+      };
+
+      const attachFontSizeHandlers = (rootElement) => {
+        const sizeOptions = rootElement.querySelectorAll('.size-option');
+
+        sizeOptions.forEach((option) => {
+          const sizeClass = Array.from(option.classList).find((className) =>
+            className.startsWith('size-option-')
+          );
+
+          if (!sizeClass) return;
+
+          const sizeKey = sizeClass.replace('size-option-', '');
+          option.addEventListener('click', () => applyFontSize(sizeKey));
+        });
+      };
+
+      const loadFontSizeSelector = async () => {
+        if (selectorLoaded || !popupContent) {
+          return selectorLoaded;
+        }
+
+        try {
+          const response = await fetch('../COMPONENTS/font_size_selector.html');
+
+          if (!response.ok) {
+            throw new Error('Failed to load font size selector');
+          }
+
+          const htmlText = await response.text();
+          const parsedDocument = new DOMParser().parseFromString(htmlText, 'text/html');
+          const selectorElement = parsedDocument.querySelector('.font-size-selector');
+
+          if (!selectorElement) {
+            throw new Error('Font size selector markup not found');
+          }
+
+          popupContent.innerHTML = '';
+          popupContent.appendChild(selectorElement);
+          attachCloseHandlers(selectorElement);
+          attachFontSizeHandlers(selectorElement);
+          selectorLoaded = true;
+          return true;
+        } catch (error) {
+          console.error('글자 크기 설정 레이어를 불러오는 데 실패했습니다.', error);
+          return false;
+        }
+      };
+
+      const openPopup = async () => {
+        if (!popup) return;
+        const isLoaded = await loadFontSizeSelector();
+
+        if (!isLoaded) return;
+
+        popup.classList.add('is-active');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('layer-popup-open');
+      };
+
+      if (fontSizeButton) {
+        fontSizeButton.addEventListener('click', openPopup);
+      }
+
+      if (popupBackdrop) {
+        popupBackdrop.addEventListener('click', closePopup);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && popup?.classList.contains('is-active')) {
+          closePopup();
+        }
+      });
+    })();
+    
+    // 공유
+    (function () {
+      const shareButton = document.querySelector('.share-news');
+      const popup = document.getElementById('share-popup');
+      const popupBackdrop = popup?.querySelector('.layer-popup__backdrop');
+      const closeButton = popup?.querySelector('.close-button');
+
+      const closePopup = () => {
+        if (!popup) return;
+
+        popup.classList.remove('is-active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('layer-popup-open');
+      };
+
+      const openPopup = () => {
+        if (!popup) return;
+
+        popup.classList.add('is-active');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('layer-popup-open');
+      };
+
+      if (shareButton) {
+        shareButton.addEventListener('click', openPopup);
+      }
+
+      if (popupBackdrop) {
+        popupBackdrop.addEventListener('click', closePopup);
+      }
+
+      if (closeButton) {
+        closeButton.addEventListener('click', closePopup);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && popup?.classList.contains('is-active')) {
+          closePopup();
+        }
+      });
+    })();
+    (function(){
+      //gnb
+      const tabs = document.querySelectorAll('.nav-tab');
+      const sections = document.querySelectorAll('.content-section');
+
+      const resetTabs = () => {
+        tabs.forEach((tab) => tab.classList.remove('active'));
+        sections.forEach((section) => section.classList.remove('is-active'));
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-target');
+          const content = target
+            ? document.querySelector(`.${target}`)
+            : null;
+
+          if (!content) return;
+
+          resetTabs();
+          tab.classList.add('active');
+          content.classList.add('is-active');
+        });
+      });
+    })();
+
+    
+    
+  </script>
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+</html>
