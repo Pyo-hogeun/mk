@@ -1324,6 +1324,26 @@
         <p class="sub-message">AI가 검색 결과에 대한 대화형 응답을 제공합니다.<br>
           하단에는 관련 뉴스 기사가 임베드 되어 있습니다.</p>
       </div>
+      <div class="chatbot__player">
+        <div class="audio-player-bar">
+          <button type="button" class="audio-player-bar__pause-btn" aria-label="일시정지">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="pause">
+              <rect x="7" y="5" width="3" height="14" rx="1.5" fill="white"/>
+              <rect x="14" y="5" width="3" height="14" rx="1.5" fill="white"/>
+            </svg>
+
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="재생" class="play">
+              <path d="M9.53688 6.11815C8.87115 5.69451 8 6.17272 8 6.96181V17.3185C8 18.1076 8.87115 18.5858 9.53688 18.1621L17.6742 12.9838C18.2917 12.5908 18.2917 11.6894 17.6742 11.2965L9.53688 6.11815Z" fill="white"></path>
+            </svg>
+          </button>
+          <div class="audio-player-bar__progress-wrapper"></div>
+          <button type="button" class="audio-player-bar__close-btn" aria-label="닫기">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
 
       <div class="chatbot__body">
         <!-- 추천 검색어 -->

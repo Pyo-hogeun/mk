@@ -84,6 +84,9 @@
         /* 18px */
       }
     }
+    &__player{
+      width: $chat-w;
+    }
 
     &__menu {
       position: absolute;

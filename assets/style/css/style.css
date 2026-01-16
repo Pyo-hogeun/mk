@@ -5332,6 +5332,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 150%;
     /* 18px */
   }
+  .chatbot__player {
+    width: calc(100% - 272px);
+  }
   .chatbot__menu {
     position: absolute;
     inset: 0;
@@ -6532,6 +6535,91 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     color: var(--white);
   }
 }
+.chatbot__player {
+  display: flex;
+  justify-content: center;
+  padding: 10px 15px;
+  background: var(--bg-subtle, #1D1D1D);
+  border-radius: 999px;
+}
+
+.audio-player-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 62px;
+  padding: 0;
+  border-radius: 40px;
+  background-color: var(--bg-default);
+  /* drop shadow */
+  box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+}
+.audio-player-bar__pause-btn {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-left: 5px;
+  border: 0;
+  border-radius: 50%;
+  background: #1A2433;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  flex-shrink: 0;
+}
+.audio-player-bar__pause-btn:hover {
+  opacity: 0.9;
+}
+.audio-player-bar__pause-btn:active {
+  transform: scale(0.95);
+}
+.audio-player-bar__pause-btn svg {
+  width: 24px;
+  height: 24px;
+}
+.audio-player-bar__progress-wrapper {
+  position: absolute;
+  left: 67px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 217px;
+  height: 35px;
+  border-radius: 30px;
+  background: #FFFFFF;
+  z-index: 1;
+}
+.audio-player-bar__close-btn {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: 12px;
+  border: 0;
+  background: transparent;
+  color: #B8C5D6;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  flex-shrink: 0;
+}
+.audio-player-bar__close-btn:hover {
+  opacity: 0.7;
+}
+.audio-player-bar__close-btn:active {
+  transform: scale(0.95);
+}
+.audio-player-bar__close-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
 .voice-popup {
   display: flex;
   padding: var(--spacing-xl, 24px) 12px;
