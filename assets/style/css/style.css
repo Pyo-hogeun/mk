@@ -677,10 +677,10 @@ body.dark {
 }
 .agent-header {
   display: grid;
-  grid-template-columns: 180px 1fr 1fr;
+  grid-template-columns: minmax(0, 250px) 1fr 1fr;
   gap: 10px;
   align-items: center;
-  gap: 36px;
+  gap: 8px;
   justify-content: start;
   flex-wrap: wrap;
   margin: 24px 0;
@@ -3671,10 +3671,10 @@ body.bottom-sheet-open {
     line-height: 150%;
   }
   .interest-stocks-list .container__header {
-    width: 700px;
+    max-width: 700px;
   }
   .interest-stocks-list .content-wrapper {
-    width: 700px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 15px;
@@ -3721,7 +3721,7 @@ body.bottom-sheet-open {
     flex: 1 1 50%;
   }
   .interest-stocks-add {
-    width: 700px;
+    max-width: 700px;
   }
   .interest-stocks-add .search-input {
     background-color: var(--bg-default);
@@ -3861,6 +3861,7 @@ body.bottom-sheet-open {
     font-weight: 400;
     line-height: 150%;
     margin: 0;
+    white-space: nowrap;
   }
   .stock-briefing-item__for-pc__metrics .metric-change-percent {
     display: flex;
@@ -3940,8 +3941,8 @@ body.bottom-sheet-open {
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    border: 1px solid #FF800B;
-    background: #1D1D1D;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--gray-dark), var(--gray-dark)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .stock-briefing-item__for-pc .ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -4222,7 +4223,7 @@ body.bottom-sheet-open {
     align-items: center;
     border-radius: 100px;
     border: 1px solid transparent;
-    background: linear-gradient(var(--surface-default), var(--surface-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--gray-dark), var(--gray-dark)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .stock-briefing-item .ai-badge-text {
     color: var(--white, #FFFFFF);
@@ -4680,7 +4681,6 @@ body.bottom-sheet-open {
   .broadcast__wrapper {
     display: flex;
     gap: 20px;
-    padding: 0 15px;
   }
   .broadcast-section {
     margin-bottom: 20px;
@@ -6733,7 +6733,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 
 @media screen and (min-width: 480px) {
   .fn-buttons {
-    grid: 3/4;
+    grid-column: 3/4;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -7429,6 +7429,24 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border-radius: var(--radius-lg, 12px);
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-subtle, #2F2F2F);
+    overflow-y: auto;
+  }
+  .news-briefing-layout .news-briefing-main::-webkit-scrollbar {
+    height: 8px;
+    /* Chrome / Safari / Edge */
+  }
+  .news-briefing-layout .news-briefing-main::-webkit-scrollbar-track {
+    background: var(--bg-subtle_02);
+    border-radius: 8px;
+  }
+  .news-briefing-layout .news-briefing-main::-webkit-scrollbar-thumb {
+    background: var(--surface-raised);
+    border-radius: 8px;
+  }
+  .news-briefing-layout .news-briefing-main::-webkit-scrollbar {
+    height: 8px;
+    width: 6px;
+    /* Chrome / Safari / Edge */
   }
   .news-briefing-layout .news-briefing-main .status-badge {
     display: flex;
@@ -8306,7 +8324,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 @media screen and (min-width: 480px) {
   .customized-detail {
-    width: 700px;
+    max-width: 700px;
   }
   .customized-detail .report-title .briefing-item__badges {
     margin: 12px 0;
@@ -8423,7 +8441,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-direction: column;
     min-width: 240px;
     min-height: 40px;
-    width: 700px;
+    max-width: 700px;
     height: var(--height-md, 40px);
     color: var(--text-secondary, #7B7B7B);
     text-align: center;
@@ -8893,7 +8911,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 @media screen and (min-width: 480px) {
   .analysis-news {
-    width: 700px;
+    max-width: 700px;
   }
   .analysis-news .report-title .briefing-item__badges {
     margin: 12px 0;
@@ -8926,7 +8944,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .analysis-news .nav-tabs {
     margin-left: auto;
     margin-right: auto;
-    width: 700px;
+    max-width: 700px;
     border-bottom: 1px solid var(--border-default, #464646);
   }
   .analysis-news .nav-tabs .nav-tab {
@@ -12687,7 +12705,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     padding-bottom: 0;
   }
   .storage .container__header {
-    width: 1210px;
+    max-width: 1210px;
+    width: 100%;
     grid-area: header;
   }
   .storage .content-wrapper {
@@ -12884,7 +12903,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     color: var(--text-primary, #FFFFFF);
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
   .storage .content-wrapper {
     padding: 0 15px;
   }
@@ -12948,6 +12967,11 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 16px;
     font-weight: 600;
     line-height: 140%; /* 22.4px */
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1210px) {
+  .storage .content-wrapper .briefing__list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .storage-search {
@@ -13027,7 +13051,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   color: #7B7B7B;
 }
 .storage-search__divider {
-  width: 960px;
   height: 1px;
   background: #464646;
 }
@@ -13253,7 +13276,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border: 1px solid transparent;
-    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--gray-dark), var(--gray-dark)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-agents-grid .agent-card__icon {
     display: flex;
@@ -13312,7 +13335,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-top: 20px;
     position: relative;
     border: 1px solid transparent;
-    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--gray-dark), var(--gray-dark)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-tools-showcase__header {
     display: flex;

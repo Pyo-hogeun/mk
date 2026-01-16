@@ -2,7 +2,7 @@
 @use 'mixin' as *;
 @media screen and (min-width: $mobile) {
   .customized-detail {
-    width: $pcContainerSub;
+    max-width: $pcContainerSub;
     .report-title{
       .briefing-item__badges{
         margin: 12px 0;
@@ -121,7 +121,7 @@
       flex-direction: column;
       min-width: 240px;
       min-height: 40px;
-      width: $pcContainerSub;
+      max-width: $pcContainerSub;
       height: var(--height-md, 40px);
       color: var(--text-secondary, #7B7B7B);
       text-align: center;
