@@ -1,6 +1,6 @@
 @use 'variables' as *;
 @use 'mixin' as *;
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $tablet) {
   .storage{
     .content-wrapper{
       padding: 0 $mobilePadSide;
@@ -71,7 +71,7 @@
     }
   }
 }
-@media screen and (min-width: 800px) and (max-width: $pc){
+@media screen and (min-width: $tablet) and (max-width: $pc){
   .storage .content-wrapper .briefing__list{
     grid-template-columns: repeat(2, 1fr);
   }

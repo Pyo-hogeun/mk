@@ -6,6 +6,7 @@
     .container {
       &__header {
         width: 100%;
+        max-width: $pc;
         color: var(--text-primary);
         .btn-back{
           color: var(--text-primary);
@@ -18,6 +19,9 @@
     }
 
     .for-pc {
+      @media screen and (max-width: $tablet) {
+        display: none !important;
+      }
       max-width: 1210px;
       margin: 0 auto;
 

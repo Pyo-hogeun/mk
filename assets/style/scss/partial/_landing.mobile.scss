@@ -1,7 +1,7 @@
 @use 'variables'as *;
 @use 'mixin'as *;
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $tablet) {
   .landing {
     .container {
       &__header {
@@ -15,6 +15,9 @@
 
     .for-mobile {
       padding: 0 $mobilePadSide;
+      @media screen and (max-width: $tablet) {
+        display: block !important;
+      }
     }
     
     .ai-agent-promo {

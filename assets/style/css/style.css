@@ -175,7 +175,7 @@ body.dark {
     margin-right: auto;
     padding: 0;
   }
-  .for-mobile {
+  .for-mobile:not(.for-tablet) {
     display: none !important;
   }
 }
@@ -13161,6 +13161,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 @media screen and (min-width: 480px) {
   .landing .container__header {
     width: 100%;
+    max-width: 1210px;
     color: var(--text-primary);
   }
   .landing .container__header .btn-back {
@@ -13173,6 +13174,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     max-width: 1210px;
     margin: 0 auto;
   }
+}
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .landing .for-pc {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 480px) {
   .landing .for-pc .ai-agent-promo {
     position: relative;
     display: flex;
@@ -13276,7 +13284,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border: 1px solid transparent;
-    background: linear-gradient(var(--gray-dark), var(--gray-dark)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-agents-grid .agent-card__icon {
     display: flex;
@@ -13335,7 +13343,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-top: 20px;
     position: relative;
     border: 1px solid transparent;
-    background: linear-gradient(var(--gray-dark), var(--gray-dark)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    background: linear-gradient(var(--bg-default), var(--bg-default)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
   }
   .landing .for-pc .ai-tools-showcase__header {
     display: flex;
@@ -13815,7 +13823,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin: 0;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
   .landing .container__header {
     color: var(--text-primary);
   }
@@ -13825,6 +13833,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .landing .for-mobile {
     padding: 0 15px;
   }
+}
+@media screen and (max-width: 800px) and (max-width: 800px) {
+  .landing .for-mobile {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 800px) {
   .landing .ai-agent-promo {
     height: 150px;
     border-radius: var(--radius-lg);

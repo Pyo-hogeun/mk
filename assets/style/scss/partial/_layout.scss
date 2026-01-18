@@ -71,7 +71,7 @@ body{
 
     }
   }
-  .for-mobile{
+  .for-mobile:not(.for-tablet){
     display: none !important;
   }
 }
@@ -79,4 +79,9 @@ body{
   .for-pc{
     display: none !important;
   }
+}
+@media screen and (max-width: $tablet){
+  // .for-tablet{
+  //   display: block !important;
+  // }
 }
