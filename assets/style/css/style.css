@@ -1934,19 +1934,18 @@ body.dark {
   .key-issue-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     align-self: stretch;
   }
   .key-issue-label {
-    width: 151px;
+    flex: 1 1 50%;
     color: var(--text-primary);
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
   }
   .key-issue-badge {
-    display: flex;
-    width: 131px;
+    display: inline-flex;
     padding: 4px 14px;
     justify-content: flex-end;
     align-items: center;
