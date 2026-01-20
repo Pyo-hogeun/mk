@@ -6,6 +6,10 @@
     position: fixed;
     
     inset: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     background-color: var(--bg-default);
     z-index: 2;
     opacity: 0;
@@ -75,6 +79,10 @@
     &__menu {
       position: absolute;
       inset: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
       display: flex;
       justify-content: flex-start;
       background: rgba(0, 0, 0, 0.3);

@@ -5933,6 +5933,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot {
     position: fixed;
     inset: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     background-color: var(--bg-default);
     z-index: 2;
     opacity: 0;
@@ -5996,6 +6000,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .chatbot__menu {
     position: absolute;
     inset: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     display: flex;
     justify-content: flex-start;
     background: rgba(0, 0, 0, 0.3);
@@ -6600,7 +6608,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   width: 217px;
   height: 35px;
   border-radius: 30px;
-  background: #FFFFFF;
+  background: var(--bg-default);
   z-index: 1;
 }
 .audio-player-bar__close-btn {
