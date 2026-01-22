@@ -6197,6 +6197,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     overflow-y: auto;
     padding: 0 15px 120px;
     -webkit-overflow-scrolling: touch;
+    flex: 1 1 auto;
+    height: 0;
+    min-height: 0;
   }
   .chatbot__body .chat-row {
     display: flex;
