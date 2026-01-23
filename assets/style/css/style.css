@@ -5985,24 +5985,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     max-height: 100dvh;
     pointer-events: auto;
   }
-  .chatbot.is-android-app .chatbot__footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--bg-default);
-  }
-  .chatbot.is-android-app .chatbot__body {
-    padding-bottom: 140px;
-  }
-  .chatbot.is-android-app .chatbot__menu.is-open {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-  }
-  .chatbot.is-android-app .chatbot__menu.is-open ~ .chatbot__body {
-    overflow-y: hidden;
-  }
   .chatbot__header {
     position: sticky;
     top: 0;
@@ -6589,6 +6571,23 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     color: var(--white);
   }
 }
+.chatbot.is-android-app {
+  transform: none;
+}
+.chatbot.is-android-app.is-open {
+  transform: none;
+}
+.chatbot.is-android-app .chatbot__footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-default);
+}
+.chatbot.is-android-app .chatbot__menu.is-open ~ .chatbot__body {
+  overflow: hidden;
+}
+
 .chatbot__player {
   display: flex;
   justify-content: center;

@@ -1,0 +1,19 @@
+// 안드로이드 앱: body 스크롤로 변경
+.chatbot.is-android-app {
+  transform: none;
+  &.is-open {
+    transform: none;
+  }
+  .chatbot__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-default);
+  }
+  .chatbot__menu.is-open {
+    & ~ .chatbot__body{
+      overflow: hidden;
+    }
+  }
+}
