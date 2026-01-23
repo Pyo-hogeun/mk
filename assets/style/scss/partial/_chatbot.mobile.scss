@@ -34,6 +34,28 @@
       }
     }
 
+    // 안드로이드 앱: body 스크롤로 변경
+    &.is-android-app {
+      .chatbot__footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--bg-default);
+      }
+      .chatbot__body{
+        padding-bottom: 140px;
+      }
+      .chatbot__menu.is-open {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        & ~ .chatbot__body{
+          overflow-y: hidden;
+        }
+      }
+    }
+
     &__header {
       position: sticky;
       top: 0;
@@ -669,7 +691,6 @@
       }
       
     }
-
   }
   .dark{
     .chatbot{
