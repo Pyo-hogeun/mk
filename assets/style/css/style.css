@@ -7466,21 +7466,21 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .news-briefing-layout {
     display: grid;
-    grid-template-columns: 1fr 318px;
-    grid-template-rows: 1fr 1fr;
-    gap: var(--spacing-md, 12px);
-    height: 256px;
-  }
-  .news-briefing-layout .news-briefing-main {
-    display: flex;
-    grid-row: 1/3;
-    width: 100%;
-    padding: 36px 28px;
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr) minmax(80px, auto);
+    grid-template-areas: "topper topper topper" "sector briefing alram";
+    gap: 30px;
     border-radius: var(--radius-lg, 12px);
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-subtle, #2F2F2F);
+    padding: 36px 28px;
+  }
+  .news-briefing-layout .news-briefing-main {
+    display: flex;
+    grid-area: topper;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
     overflow-y: auto;
   }
   .news-briefing-layout .news-briefing-main::-webkit-scrollbar {
@@ -7537,44 +7537,19 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 150%;
     margin: 0;
   }
-  .news-briefing-layout .news-briefing-main .briefing-create-btn {
-    display: flex;
-    height: var(--height-md, 40px);
-    padding: 0 20px;
-    margin-top: 24px;
-    align-items: center;
-    border-radius: var(--radius-pill, 999px);
-    border: 1px solid var(--white, #FFFFFF);
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--orange-100, #FF7A00);
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 150%;
-    cursor: pointer;
-    transition: opacity 0.2s, transform 0.1s;
-  }
-  .news-briefing-layout .news-briefing-main .briefing-create-btn:hover {
-    opacity: 0.9;
-  }
-  .news-briefing-layout .news-briefing-main .briefing-create-btn:active {
-    transform: scale(0.98);
-  }
   .news-briefing-layout .interest-sector-card {
-    grid-column: 2/3;
-    grid-row: 1/2;
+    grid-area: sector;
   }
   .news-briefing-layout .notification-card {
-    grid-column: 2/3;
-    grid-row: 2/3;
+    grid-area: briefing;
   }
   .news-briefing-layout .interest-sector-card,
   .news-briefing-layout .notification-card {
     display: flex;
-    padding: 20px;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
-    align-self: stretch;
+    gap: 12px;
+    justify-content: space-between;
     border-radius: var(--radius-lg, 12px);
     background: var(--bg-subtle, #2F2F2F);
   }
@@ -7622,7 +7597,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   }
   .news-briefing-layout .notification-card {
     justify-content: space-between;
-    padding: 20px 20px 24px 20px;
   }
   .news-briefing-layout .notification-card .notification-time {
     display: flex;
