@@ -4730,6 +4730,17 @@ body.bottom-sheet-open {
     width: 20px;
     height: 20px;
   }
+  .broadcast-section.expert-analysis .broadcast-item {
+    border: 0;
+  }
+  .broadcast-section.expert-analysis .broadcast-item__content {
+    grid-template-areas: "contents contents" "date date";
+    gap: 4px;
+  }
+  .broadcast-section.expert-analysis .broadcast-item__card {
+    padding: 12px;
+    border: 1px solid var(--border-default, #464646);
+  }
   .broadcast-list.all-list {
     padding: 0;
     gap: 20px;
@@ -4803,14 +4814,13 @@ body.bottom-sheet-open {
     gap: 12px;
     border-radius: 8px;
     background: var(--bg-default, #1D1D1D);
+    border: 1px solid var(--border-default, #464646);
   }
   .broadcast-item__card {
     display: flex;
-    padding: 12px;
     align-items: center;
     gap: 17px;
     border-radius: 8px;
-    border: 1px solid var(--border-default, #464646);
     background: var(--bg-default, #1D1D1D);
   }
   .broadcast-item__thumbnail {
@@ -4823,15 +4833,17 @@ body.bottom-sheet-open {
        object-fit: cover;
   }
   .broadcast-item__content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "badges category" "contents contents" "date date";
+    gap: 12px;
     flex: 1 0 0;
   }
   .broadcast-item__badges {
     display: flex;
     gap: 4px;
     flex-wrap: wrap;
+    grid-area: badges;
   }
   .broadcast-item__badges .badge {
     display: inline-flex;
@@ -4859,7 +4871,18 @@ body.bottom-sheet-open {
     font-weight: 500;
     line-height: 150%; /* 18px */
   }
+  .broadcast-item__category {
+    grid-area: category;
+    text-align: right;
+    color: var(--text-primary, #111111);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    margin: 0;
+  }
   .broadcast-item__title {
+    grid-area: contents;
     color: var(--text-primary, #111111);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 15px;
@@ -4868,6 +4891,7 @@ body.bottom-sheet-open {
     margin: 0;
   }
   .broadcast-item__date {
+    grid-area: date;
     color: var(--text-primary, #111111);
     font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
     font-size: 12px;
@@ -5960,6 +5984,24 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 100dvh;
     max-height: 100dvh;
     pointer-events: auto;
+  }
+  .chatbot.is-android-app .chatbot__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-default);
+  }
+  .chatbot.is-android-app .chatbot__body {
+    padding-bottom: 140px;
+  }
+  .chatbot.is-android-app .chatbot__menu.is-open {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+  }
+  .chatbot.is-android-app .chatbot__menu.is-open ~ .chatbot__body {
+    overflow-y: hidden;
   }
   .chatbot__header {
     position: sticky;

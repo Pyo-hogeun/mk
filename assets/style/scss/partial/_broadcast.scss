@@ -59,6 +59,21 @@
       width: 20px;
       height: 20px;
     }
+    &.expert-analysis{
+      .broadcast-item{
+        border: 0;
+        &__content{
+          grid-template-areas: 
+          "contents contents"
+          "date date";
+          gap: 4px;
+        }
+        &__card{
+          padding: 12px;
+          border: 1px solid var(--border-default, #464646);
+        }
+      }
+    }
   }
   .broadcast-list{
     &.all-list{
@@ -137,14 +152,14 @@
     gap: 12px;
     border-radius: 8px;
     background: var(--bg-default, #1D1D1D);
+    border: 1px solid var(--border-default, #464646);
   
     &__card {
       display: flex;
-      padding: 12px;
+      // padding: 12px;
       align-items: center;
       gap: 17px;
       border-radius: 8px;
-      border: 1px solid var(--border-default, #464646);
       background: var(--bg-default, #1D1D1D);
     }
   
@@ -158,9 +173,13 @@
     }
   
     &__content {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: 
+      "badges category"
+      "contents contents"
+      "date date";
+      gap: 12px;
       flex: 1 0 0;
     }
 
@@ -168,6 +187,7 @@
       display: flex;
       gap: 4px;
       flex-wrap: wrap;
+      grid-area: badges;
       .badge{
         // flex: 1 1 auto;
         display: inline-flex;
@@ -195,8 +215,19 @@
         line-height: 150%; /* 18px */
       }
     }
+    &__category{
+      grid-area: category;
+      text-align: right;
+      color: var(--text-primary, #111111);
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 150%;
+      margin: 0;
+    }
   
     &__title {
+      grid-area: contents;
       color: var(--text-primary, #111111);
       font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
       font-size: 15px;
@@ -206,6 +237,7 @@
     }
   
     &__date {
+      grid-area: date;
       color: var(--text-primary, #111111);
       font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
       font-size: 12px;
