@@ -59,21 +59,7 @@
       width: 20px;
       height: 20px;
     }
-    &.expert-analysis{
-      .broadcast-item{
-        border: 0;
-        &__content{
-          grid-template-areas: 
-          "contents contents"
-          "date date";
-          gap: 4px;
-        }
-        &__card{
-          padding: 12px;
-          border: 1px solid var(--border-default, #464646);
-        }
-      }
-    }
+    
   }
   .broadcast-list{
     &.all-list{
@@ -145,6 +131,31 @@
     }
 
   }
+  .broadcast-section, .broadcast-list{
+    &.expert-analysis{
+      .broadcast-item{
+        &__content{
+          grid-template-areas: 
+          "contents contents"
+          "date date";
+          gap: 4px;
+        }
+        &__card{
+          padding: 12px;
+          border: 1px solid var(--border-default, #464646);
+        }
+        &__title {
+          grid-area: contents;
+          color: var(--text-primary, #111111);
+          font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 150%;
+          margin: 0;
+        }
+      }
+    }
+  }
   .broadcast-item {
     display: flex;
     padding: 12px;
@@ -176,9 +187,7 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-areas: 
-      "badges category"
-      "contents contents"
-      "date date";
+      "badges category";
       gap: 12px;
       flex: 1 0 0;
     }
@@ -222,16 +231,6 @@
       font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 500;
-      line-height: 150%;
-      margin: 0;
-    }
-  
-    &__title {
-      grid-area: contents;
-      color: var(--text-primary, #111111);
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-      font-size: 15px;
-      font-weight: 400;
       line-height: 150%;
       margin: 0;
     }
