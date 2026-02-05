@@ -82,3 +82,8 @@
 @use 'partial/timestamp' as *;
 @use 'partial/broadcast_report.mobile' as *;
 @use 'partial/broadcast_report' as *;
+
+// 경제교육
+@use 'partial/edu_list' as *;
+@use 'partial/edu_list.mobile' as *;
+
