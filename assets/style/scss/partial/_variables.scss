@@ -45,6 +45,12 @@
   --radius-lg: 12px;
   --radius-pill: 999px;
 
+  /* gap (컴포넌트 내부 간격) */
+  /* Mode 1 */
+  /* number */
+  --gap-tight: 4px;
+  --gap-normal: 8px;
+  --gap-loose: 12px;
 
   /* heights */
   --height-sm: 32px;
