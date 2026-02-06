@@ -15755,14 +15755,14 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 150%; /* 18px */
   }
   .my-study .stats-item:nth-child(1) {
-    border-right: 1px solid rgb(224, 224, 224);
-    border-bottom: 1px solid rgb(224, 224, 224);
+    border-right: 1px solid var(--border-default, #464646);
+    border-bottom: 1px solid var(--border-default, #464646);
   }
   .my-study .stats-item:nth-child(2) {
-    border-bottom: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid var(--border-default, #464646);
   }
   .my-study .stats-item:nth-child(3) {
-    border-right: 1px solid rgb(224, 224, 224);
+    border-right: 1px solid var(--border-default, #464646);
   }
   .my-study__divider {
     width: auto;
@@ -15803,6 +15803,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     height: 100%;
     border-radius: var(--radius-sm, 4px);
     overflow: hidden;
+    background: var(--bg-subtle_02);
   }
   .learning-card__thumbnail img {
     width: 100%;
@@ -15839,7 +15840,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: flex;
     gap: 12px;
     padding: 16px;
-    background: var(--white, #FFF);
+    background: var(--bg-default, #1D1D1D);
     border: 1px solid var(--border-default, #E0E0E0);
     border-radius: var(--radius-md, 8px);
   }
@@ -15945,6 +15946,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     cursor: pointer;
     padding: 0;
     flex-shrink: 0;
+    color: var(--text-primary, #212121);
   }
   .term-item__toggle svg {
     width: 24px;
