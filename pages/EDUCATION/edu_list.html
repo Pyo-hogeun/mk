@@ -420,23 +420,20 @@
     })();
 
 
-  </script>
-
-  <script>
-    // Economic terms accordion functionality
+    // 주요용어 accordion functionality
     (() => {
       const termItems = document.querySelectorAll('.term-item');
-
+    
       termItems.forEach(item => {
         const header = item.querySelector('.term-item__header');
         const toggle = item.querySelector('.term-item__toggle');
-
+    
         if (!header || !toggle) return;
-
+    
         header.addEventListener('click', () => {
           const isActive = item.classList.contains('term-item--active');
           const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-
+    
           // Toggle active state
           item.classList.toggle('term-item--active');
           toggle.setAttribute('aria-expanded', !isExpanded);
@@ -444,7 +441,6 @@
       });
     })();
   </script>
-
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>
 </html>

@@ -1,0 +1,533 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+  <div class="container learn-from-news">
+    <div class="report-header">
+      <div class="header-content">
+        <div class="header-top-bar">
+          <button type="button" class="btn-back" aria-label="뒤로가기">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.1467 12.8333C22.699 12.8333 23.1467 13.2811 23.1467 13.8333V14.1667C23.1467 14.719 22.699 15.1667 22.1467 15.1667H9.14675L14.8563 20.8762C15.2468 21.2668 15.2468 21.8999 14.8563 22.2904L14.6139 22.5329C14.2233 22.9234 13.5902 22.9234 13.1996 22.5329L5.37386 14.7071C4.98333 14.3166 4.98333 13.6834 5.37385 13.2929L13.1996 5.46712C13.5902 5.07659 14.2233 5.07659 14.6139 5.46712L14.8563 5.70957C15.2468 6.10009 15.2468 6.73326 14.8563 7.12378L9.14675 12.8333H22.1467Z" fill="white"/>
+            </svg>
+          </button>
+          <div class="header-logo">
+            <svg width="85" height="20" viewBox="0 0 85 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M79.1153 0.800053C79.1153 0.933386 79.1807 1.00005 79.3115 1.00005C79.7692 1.00005 80.1615 1.40005 80.2269 1.93339V19.3334H81.4692C82.45 19.2667 83.1692 18.4667 83.1692 17.4667V0.533386H79.3769C79.1807 0.533386 79.1153 0.66672 79.1153 0.800053ZM17.0654 0.800053C17.0654 0.933386 17.1307 1.00005 17.2615 1.00005C17.7192 1.00005 18.1115 1.40005 18.1115 1.93339V5.13339H16.2807V0.533386H12.5538C12.4231 0.533386 12.3577 0.66672 12.3577 0.733386C12.3577 0.86672 12.4231 0.933386 12.5538 0.933386C13.0115 0.933386 13.4038 1.33339 13.4038 1.86672V19.3334H14.6461C15.5615 19.2667 16.2807 18.4667 16.2154 17.5334V7.26672H18.0461V19.3334H19.4846C20.4 19.3334 20.9884 18.5334 20.9884 17.4667V0.533386H17.1961C17.1307 0.533386 17.0654 0.66672 17.0654 0.800053ZM74.8 0.533386C74.6692 0.533386 74.6038 0.66672 74.6038 0.733386C74.6038 0.86672 74.6692 0.933386 74.8 0.933386C75.2577 0.933386 75.65 1.33339 75.65 1.80005V5.80005H72.7077C72.25 5.80005 72.25 6.00005 72.3807 6.26672L73.2961 7.73339H75.65V19.3334H76.9577C77.873 19.2667 78.5923 18.4667 78.5269 17.5334V0.533386H74.8ZM57.8 0.600053C57.6692 0.600053 57.6038 0.733386 57.6038 0.800053C57.6038 0.933386 57.6692 1.00005 57.8 1.00005C58.323 1.00005 58.7154 1.40005 58.7154 1.93339V2.93339H55.4461C54.9884 2.93339 54.9884 3.13339 55.1192 3.40005L55.9038 4.73339H58.7154V6.13339H55.4461C54.9884 6.13339 54.9884 6.33339 55.1192 6.60005L55.9038 7.93339H58.7154V10.1334H59.9577C61.0038 10.0667 61.7884 9.20005 61.723 8.13339V0.600053H57.8ZM53.8115 0.533386H44.6577C44.2 0.533386 44.2 0.733386 44.3307 1.00005L45.2461 2.53339H51C50.2807 6.26672 46.8807 9.00005 44.2 9.80005C44.0038 9.80005 43.9384 10.0001 43.9384 10.1334C43.9384 10.2667 44.2 10.4001 44.3307 10.4001C48.123 10.5334 53.4846 7.80005 54.6615 1.93339C54.8577 1.06672 54.3346 0.533386 53.8115 0.533386Z" fill="white"/>
+              <path d="M69.7653 9.2667C70.0269 9.73336 72.5769 13.4 73.1 14C73.623 14.6 73.95 14.8 74.0807 14.1334V11.1334C74.1461 10.9334 74.0153 10.7334 73.8192 10.6667C72.6423 9.93336 71.5307 9.00003 70.5499 8.00003C71.4653 6.60003 73.1 3.00003 73.1 1.60003C73.1653 1.0667 72.7076 0.600029 72.1846 0.533362H64.9923C64.5346 0.533362 64.5346 0.733362 64.6653 1.00003L65.6461 2.60003H69.373C69.0461 6.53336 66.5615 11.6 64.0769 13.6C63.8807 13.7334 63.8153 13.8667 63.8807 14.0667C63.9461 14.2 64.1423 14.2 64.4038 14.1334C65.123 13.9334 67.6076 12.2667 69.7653 9.2667ZM5.88458 2.60003H8.49996V11.7334H5.88458V2.60003ZM1.89612 0.800029C1.89612 0.933362 1.9615 1.00003 2.09227 1.00003C2.54996 1.00003 2.94227 1.40003 3.00766 1.93336V11.6667C2.94227 12.8 3.85766 13.8 4.96919 13.8667H9.41535C10.5269 13.8667 11.3769 12.9334 11.3769 11.8667V0.533362H2.09227C1.9615 0.533362 1.89612 0.666695 1.89612 0.800029ZM54.4 17.8667C52.1769 17.8667 50.0846 16.4 50.0846 14.7334C50.0846 13.0667 52.1769 11.8 54.4 11.8C56.623 11.8 58.7153 13.1334 58.7153 14.7334C58.7153 16.3334 56.623 17.8667 54.4 17.8667ZM54.4 9.8667C50.0192 9.8667 47.1423 12.0667 47.1423 14.8C47.1423 17.5334 50.0192 19.8667 54.4 19.8667C58.7807 19.8667 61.6576 17.4667 61.6576 14.8C61.6576 12.1334 58.7807 9.8667 54.4 9.8667ZM37.2692 0.733362C37.2692 0.866695 37.3346 0.933362 37.4653 0.933362C37.923 0.933362 38.3807 1.33336 38.3807 1.80003V9.33336H39.8192C40.8653 9.2667 41.65 8.40003 41.5846 7.33336V0.533362H37.4653C37.3346 0.533362 37.2692 0.600029 37.2692 0.733362ZM29.3577 7.53336C27.7884 7.60003 26.4807 6.33336 26.4153 4.80003C26.5461 3.13336 27.9846 1.93336 29.6192 2.0667C31.0576 2.20003 32.1692 3.33336 32.3 4.80003C32.2346 6.33336 30.9269 7.60003 29.3577 7.53336ZM29.3577 0.133362C25.6307 0.133362 23.4076 2.20003 23.4076 4.73336C23.4076 7.2667 25.6307 9.33336 29.3577 9.33336C33.0846 9.33336 35.3076 7.33336 35.3076 4.80003C35.3076 2.2667 33.0846 0.133362 29.3577 0.133362ZM41.8461 17.2667H30.4692V15.8H39.8192C40.8653 15.7334 41.65 14.8667 41.5846 13.8V10.4H26.7423C26.4153 10.4 26.35 10.6 26.4807 10.8667L27.3961 12.4H38.5115V13.8667H26.4807C26.35 13.8667 26.2846 13.9334 26.2846 14.0667C26.2846 14.2 26.35 14.2667 26.4807 14.2667C27.0038 14.2667 27.3961 14.6667 27.3961 15.2V17.3334C27.3961 18.4667 28.2461 19.3334 29.2923 19.4H41.8461V17.2667Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="header-help-icon"></div>
+        </div>
+
+        <div class="header-body">
+          
+          <h1 class="report-title">
+            <div class="briefing-item__badges">
+              <span class="badge outline"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2095_640)">
+                <path d="M7.72144 5.47437C7.4252 5.4184 7.15243 5.2744 6.93921 5.06128C6.72603 4.8481 6.58215 4.57528 6.52612 4.27905L5.99976 1.49976L5.47437 4.27905C5.41835 4.57532 5.27449 4.84807 5.06128 5.06128C4.84807 5.27449 4.57532 5.41835 4.27905 5.47437L1.49976 5.99976L4.27905 6.52612C4.57528 6.58215 4.8481 6.72603 5.06128 6.93921C5.2744 7.15243 5.4184 7.4252 5.47437 7.72144L5.99976 10.4998L6.52612 7.72144C6.58211 7.42507 6.72594 7.15247 6.93921 6.93921C7.15247 6.72594 7.42507 6.58211 7.72144 6.52612L10.4998 5.99976L7.72144 5.47437ZM11.5007 5.99976C11.5007 6.23305 11.4193 6.45893 11.2703 6.63843C11.1213 6.81778 10.9144 6.93922 10.6853 6.98218L7.90698 7.50854C7.8082 7.52721 7.71733 7.57515 7.64624 7.64624C7.57515 7.71733 7.52721 7.8082 7.50854 7.90698L6.98315 10.6863C6.94007 10.9151 6.81758 11.1215 6.63843 11.2703C6.45893 11.4193 6.23305 11.5007 5.99976 11.5007C5.76647 11.5007 5.54055 11.4193 5.36108 11.2703C5.18201 11.1215 5.06043 10.915 5.01733 10.6863L4.49194 7.90698C4.47331 7.80832 4.42519 7.71729 4.35425 7.64624C4.28325 7.57524 4.19215 7.52726 4.09351 7.50854L1.31421 6.98315V6.98218C1.08524 6.93915 0.878111 6.81767 0.729248 6.63843C0.580356 6.45897 0.498779 6.23295 0.498779 5.99976C0.498831 5.76652 0.580265 5.54053 0.729248 5.36108C0.878129 5.18182 1.08521 5.06035 1.31421 5.01733L4.09351 4.49194C4.19219 4.47324 4.28323 4.42527 4.35425 4.35425C4.42527 4.28323 4.47324 4.19219 4.49194 4.09351L5.01733 1.31421C5.06035 1.08521 5.18182 0.878129 5.36108 0.729248C5.54053 0.580265 5.76652 0.498831 5.99976 0.498779C6.23295 0.498779 6.45897 0.580356 6.63843 0.729248C6.81772 0.87815 6.94016 1.08517 6.98315 1.31421L7.50854 4.09351C7.52726 4.19215 7.57524 4.28325 7.64624 4.35425C7.71729 4.42519 7.80832 4.47331 7.90698 4.49194L10.6863 5.01733H10.6853C10.9144 5.06027 11.1213 5.18176 11.2703 5.36108C11.4193 5.54055 11.5007 5.76647 11.5007 5.99976Z" fill="white"></path>
+                <path d="M9.5 3V1C9.5 0.723858 9.72386 0.5 10 0.5C10.2761 0.5 10.5 0.723858 10.5 1V3C10.5 3.27614 10.2761 3.5 10 3.5C9.72386 3.5 9.5 3.27614 9.5 3Z" fill="white"></path>
+                <path d="M11 1.5C11.2761 1.5 11.5 1.72386 11.5 2C11.5 2.27614 11.2761 2.5 11 2.5H9C8.72386 2.5 8.5 2.27614 8.5 2C8.5 1.72386 8.72386 1.5 9 1.5H11Z" fill="white"></path>
+                <path d="M2.5 10C2.5 9.72386 2.27614 9.5 2 9.5C1.72386 9.5 1.5 9.72386 1.5 10C1.5 10.2761 1.72386 10.5 2 10.5C2.27614 10.5 2.5 10.2761 2.5 10ZM3.5 10C3.5 10.8284 2.82843 11.5 2 11.5C1.17157 11.5 0.5 10.8284 0.5 10C0.5 9.17157 1.17157 8.5 2 8.5C2.82843 8.5 3.5 9.17157 3.5 10Z" fill="white"></path>
+                </g>
+                <defs>
+                <clipPath id="clip0_2095_640">
+                <rect width="12" height="12" fill="white"></rect>
+                </clipPath>
+                </defs>
+                </svg>
+                신문으로 배우는 경제</span>
+            </div>
+            2025년 코스피 전망 ‘상저하고’ 섹터별 차별화 가속… 변동성 확대
+          </h1>
+
+          <div class="report-meta">
+            <div class="report-date">생성 : 2025-12-1</div>
+
+            <div class="header-actions-container">
+              <div class="action-buttons">
+                <button type="button" class="btn-action btn-font-size" aria-label="글자 크기 조절">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.6877 3V11.5512H24V13.1102H20.6877V24H18.8935V3H20.6877ZM15.3971 5.26772C15.3971 11.2205 12.6828 16.6299 6.01211 20.0079L5 18.5433C10.2906 15.8386 13.1659 11.7992 13.5799 6.82677H5.9431V5.26772H15.3971Z" fill="white"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-action save-storage" aria-label="보관함에 추가" aria-pressed="false">
+                  <!-- 추가 전 -->
+                  <svg class="save-storage__icon save-storage__icon--default" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.8334 21L14 18.4567L8.16671 21V5.83333H19.8334M19.8334 3.5H8.16671C7.54787 3.5 6.95438 3.74583 6.51679 4.18342C6.07921 4.621 5.83337 5.21449 5.83337 5.83333V22.9835C5.83337 23.7014 6.56742 24.1854 7.22729 23.9026L14 21L20.7728 23.9026C21.4327 24.1854 22.1667 23.7014 22.1667 22.9835V5.83333C22.1667 4.53833 21.1167 3.5 19.8334 3.5Z" fill="white"/>
+                  </svg>
+
+                  <!-- 추가 후 -->
+                  <svg class="save-storage__icon save-storage__icon--saved" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.8335 3.5H8.16683C7.54799 3.5 6.9545 3.74583 6.51691 4.18342C6.07933 4.621 5.8335 5.21449 5.8335 5.83333V22.9835C5.8335 23.7014 6.56755 24.1854 7.22742 23.9026L14.0002 21L20.7729 23.9026C21.4328 24.1854 22.1668 23.7014 22.1668 22.9835V5.83333C22.1668 4.53833 21.1168 3.5 19.8335 3.5Z" fill="#F0F0F0"/>
+                    </svg>
+                    
+                </button>
+                <button type="button" class="btn-action share-news" aria-label="공유하기">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 18.76C20.1133 18.76 19.32 19.11 18.7133 19.6583L10.395 14.8166C10.4533 14.5483 10.5 14.28 10.5 14C10.5 13.72 10.4533 13.4516 10.395 13.1833L18.62 8.38831C19.25 8.97165 20.0783 9.33331 21 9.33331C22.9367 9.33331 24.5 7.76998 24.5 5.83331C24.5 3.89665 22.9367 2.33331 21 2.33331C19.0633 2.33331 17.5 3.89665 17.5 5.83331C17.5 6.11331 17.5467 6.38165 17.605 6.64998L9.38 11.445C8.75 10.8616 7.92167 10.5 7 10.5C5.06333 10.5 3.5 12.0633 3.5 14C3.5 15.9366 5.06333 17.5 7 17.5C7.92167 17.5 8.75 17.1383 9.38 16.555L17.6867 21.3967C17.6283 21.6416 17.5933 21.8983 17.5933 22.1666C17.5933 24.045 19.1217 25.5616 21 25.5616C22.8783 25.5616 24.4067 24.045 24.4067 22.1666C24.4067 20.2883 22.8783 18.76 21 18.76ZM21 4.66665C21.6417 4.66665 22.1667 5.19165 22.1667 5.83331C22.1667 6.47498 21.6417 6.99998 21 6.99998C20.3583 6.99998 19.8333 6.47498 19.8333 5.83331C19.8333 5.19165 20.3583 4.66665 21 4.66665ZM7 15.1666C6.35833 15.1666 5.83333 14.6416 5.83333 14C5.83333 13.3583 6.35833 12.8333 7 12.8333C7.64167 12.8333 8.16667 13.3583 8.16667 14C8.16667 14.6416 7.64167 15.1666 7 15.1666ZM21 23.3333C20.3583 23.3333 19.8333 22.8083 19.8333 22.1666C19.8333 21.525 20.3583 21 21 21C21.6417 21 22.1667 21.525 22.1667 22.1666C22.1667 22.8083 21.6417 23.3333 21 23.3333Z" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-tabs">
+      <div class="nav-tabs-container">
+        <div class="nav-tab active" data-target="content__detail">
+          <div class="tab-label">상세 내용</div>
+        </div>
+        <div class="nav-tab" data-target="content__study">
+          <div class="tab-label">학습 하기</div>
+        </div>
+        <div class="nav-tab" data-target="content__related">
+          <div class="tab-label">관련 뉴스</div>
+        </div>
+      </div>
+    </nav>
+    <div class="report-body content-wrapper">
+      <div class="content__detail content-section is-active">
+        <div class="detail__wrapper">
+          <div class="customized-review__header">
+            <h3>상세내용 <i class="notice__ai-brief" role="button" tabindex="0" data-bottom-sheet-target="ai-customize-sheet" aria-label="맞춤형 해설">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.2 18C13.2 18.4418 13.5582 18.8 14 18.8C14.4418 18.8 14.8 18.4418 14.8 18C14.8 17.5582 14.4418 17.2 14 17.2C13.5582 17.2 13.2 17.5582 13.2 18ZM14 6C12.9494 6 11.9091 6.20693 10.9385 6.60896C9.96793 7.011 9.08601 7.60028 8.34315 8.34315C6.84285 9.84344 6 11.8783 6 14C6 16.1217 6.84285 18.1566 8.34315 19.6569C9.08601 20.3997 9.96793 20.989 10.9385 21.391C11.9091 21.7931 12.9494 22 14 22C16.1217 22 18.1566 21.1571 19.6569 19.6569C21.1571 18.1566 22 16.1217 22 14C22 12.9494 21.7931 11.9091 21.391 10.9385C20.989 9.96793 20.3997 9.08601 19.6569 8.34315C18.914 7.60028 18.0321 7.011 17.0615 6.60896C16.0909 6.20693 15.0506 6 14 6ZM14 20.4C10.472 20.4 7.6 17.528 7.6 14C7.6 10.472 10.472 7.6 14 7.6C17.528 7.6 20.4 10.472 20.4 14C20.4 17.528 17.528 20.4 14 20.4ZM14 9.2C13.1513 9.2 12.3374 9.53714 11.7373 10.1373C11.3276 10.5469 11.0404 11.0563 10.8995 11.6083C10.7902 12.0364 11.1582 12.4 11.6 12.4C12.0418 12.4 12.3841 12.0206 12.5959 11.6329C12.6683 11.5003 12.7598 11.3774 12.8686 11.2686C13.1687 10.9686 13.5757 10.8 14 10.8C14.4243 10.8 14.8313 10.9686 15.1314 11.2686C15.4314 11.5687 15.6 11.9757 15.6 12.4C15.6 13.8156 13.7214 13.8222 13.2883 15.6055C13.184 16.0349 13.5582 16.4 14 16.4C14.4418 16.4 14.7814 16.0236 14.9738 15.6258C15.5253 14.4853 17.2 14.0707 17.2 12.4C17.2 11.5513 16.8629 10.7374 16.2627 10.1373C15.6626 9.53714 14.8487 9.2 14 9.2Z" fill="#7B7B7B"></path>
+              </svg>
+            </i></h3>
+          </div>
+
+          <div class="origin-article">
+            <img src="https://placehold.co/600x400" alt="섬네일" />
+            <button class="btn-origin">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.75 1.75H12.25V5.25" stroke="white" stroke-width="1.1662" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.83331 8.16667L12.25 1.75" stroke="white" stroke-width="1.1662" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.5 7.58333V11.0833C10.5 11.3928 10.3771 11.6895 10.1583 11.9083C9.9395 12.1271 9.64275 12.25 9.33333 12.25H2.91667C2.60725 12.25 2.3105 12.1271 2.09171 11.9083C1.87292 11.6895 1.75 11.3928 1.75 11.0833V4.66667C1.75 4.35725 1.87292 4.0605 2.09171 3.84171C2.3105 3.62292 2.60725 3.5 2.91667 3.5H6.41667" stroke="white" stroke-width="1.1662" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                원문보기                
+            </button>
+          </div>
+
+          <div class="article">
+            <p>
+              한국은행이 <em>기준금리<span class="super">1)</span></em>를 현행 3.50%로 동결하기로 결정했습니다. 이번 결정은 물가 안정세를 유지하면서도 경제 성장을 지원하기 위한 신중한 접근으로 평가됩니다.
+            </p>
+            <p>
+              전문가들은 이번 <em class="underline">금리 동결<span class="super">2)</span></em>이 예상된 결정이라고 분석했습니다. 최근 소비자물가 상승률이 목표 범위 내에서 관리되고 있으며, 가계 <em>부채<span class="super">3)</span></em>와 부동산 시장의 안정성도 고려된 것으로 보입니다.
+            </p>
+            <p>
+              한국은행 총재는 "현재 경제 상황을 종합적으로 고려할 때 <em>통화정책<span class="super">4)</span></em>의 완화적 기조를 유지하는 것이 적절하다"고 밝혔습니다. 다만 향후 물가 동향과 글로벌 경제 여건을 면밀히 모니터링 하며 정책을 운용할 계획이라고 덧붙였습니다.
+            </p>
+            <p>
+              시장에서는 이번 결정이 <em>예금금리<span class="super">5)</span></em>와 <em>대출금리<span class="super">6)</span></em>에 즉각적인 영향을 미치지는 않을 것으로 전망하고 있습니다. 그러나 중장기적으로는 부동산 시장과 소비 심리에 긍정적인 영향을 줄 수 있다는 분석입니다.
+            </p>
+          </div>
+          <div class="learning-card__tags">
+            <span class="learning-card__tag">#금리</span>
+            <span class="learning-card__tag">#통화정책</span>
+          </div>
+
+          <div class="learn-from-news__divider"></div>
+
+          <div class="key-eco-word">
+            <h4>주요 경제 용어</h4>
+            <div class="sub-text">
+              매일 새롭게 제공되는 경제 용어를 공부 할 수 있습니다.
+            </div>
+
+            <div class="my-study__words">
+              <div class="term-item">
+                <div class="term-item__header">
+                  <h3 class="term-item__title">기준금리</h3>
+                  <button type="button" class="term-item__toggle" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.70251 9.29247C7.09262 8.89958 7.72811 8.89807 8.11961 9.28957L11.2929 12.4628C11.6834 12.8534 12.3166 12.8534 12.7071 12.4628L15.8804 9.28957C16.2719 8.89807 16.9074 8.89958 17.2975 9.29247C17.6857 9.68339 17.6849 10.315 17.2954 10.7046L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2928L6.70461 10.7046C6.31506 10.315 6.31434 9.68339 6.70251 9.29247Z" fill="currentColor"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="term-item__content">
+                  <p class="term-item__description">유동성·신용 경색을 해소하기 위해 중앙은행이 국채·회사채 또는 금융기관의 대출자산 등을 매입하고, 그 대가를 새로 발행한 화폐로 지급하거나, 은행이 중앙은행에 예치한 지급준비금을 감액해 대출여력을 확대하는 등, 자산과 부채를 동시에 확대하는 정책이라고 합니다.</p>
+                </div>
+              </div>
+  
+              <div class="term-item term-item--active">
+                <div class="term-item__header">
+                  <h3 class="term-item__title">기준금리</h3>
+                  <button type="button" class="term-item__toggle" aria-expanded="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.70251 9.29247C7.09262 8.89958 7.72811 8.89807 8.11961 9.28957L11.2929 12.4628C11.6834 12.8534 12.3166 12.8534 12.7071 12.4628L15.8804 9.28957C16.2719 8.89807 16.9074 8.89958 17.2975 9.29247C17.6857 9.68339 17.6849 10.315 17.2954 10.7046L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2928L6.70461 10.7046C6.31506 10.315 6.31434 9.68339 6.70251 9.29247Z" fill="currentColor"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="term-item__content">
+                  <p class="term-item__description">유동성·신용 경색을 해소하기 위해 중앙은행이 국채·회사채 또는 금융기관의 대출자산 등을 매입하고, 그 대가를 새로 발행한 화폐로 지급하거나, 은행이 중앙은행에 예치한 지급준비금을 감액해 대출여력을 확대하는 등, 자산과 부채를 동시에 확대하는 정책이라고 합니다.</p>
+                </div>
+              </div>
+  
+              <div class="term-item">
+                <div class="term-item__header">
+                  <h3 class="term-item__title">기준금리</h3>
+                  <button type="button" class="term-item__toggle" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.70251 9.29247C7.09262 8.89958 7.72811 8.89807 8.11961 9.28957L11.2929 12.4628C11.6834 12.8534 12.3166 12.8534 12.7071 12.4628L15.8804 9.28957C16.2719 8.89807 16.9074 8.89958 17.2975 9.29247C17.6857 9.68339 17.6849 10.315 17.2954 10.7046L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2928L6.70461 10.7046C6.31506 10.315 6.31434 9.68339 6.70251 9.29247Z" fill="currentColor"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="term-item__content">
+                  <p class="term-item__description">유동성·신용 경색을 해소하기 위해 중앙은행이 국채·회사채 또는 금융기관의 대출자산 등을 매입하고, 그 대가를 새로 발행한 화폐로 지급하거나, 은행이 중앙은행에 예치한 지급준비금을 감액해 대출여력을 확대하는 등, 자산과 부채를 동시에 확대하는 정책이라고 합니다.</p>
+                </div>
+              </div>
+  
+              <div class="term-item">
+                <div class="term-item__header">
+                  <h3 class="term-item__title">기준금리</h3>
+                  <button type="button" class="term-item__toggle" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.70251 9.29247C7.09262 8.89958 7.72811 8.89807 8.11961 9.28957L11.2929 12.4628C11.6834 12.8534 12.3166 12.8534 12.7071 12.4628L15.8804 9.28957C16.2719 8.89807 16.9074 8.89958 17.2975 9.29247C17.6857 9.68339 17.6849 10.315 17.2954 10.7046L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2928L6.70461 10.7046C6.31506 10.315 6.31434 9.68339 6.70251 9.29247Z" fill="currentColor"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="term-item__content">
+                  <p class="term-item__description">유동성·신용 경색을 해소하기 위해 중앙은행이 국채·회사채 또는 금융기관의 대출자산 등을 매입하고, 그 대가를 새로 발행한 화폐로 지급하거나, 은행이 중앙은행에 예치한 지급준비금을 감액해 대출여력을 확대하는 등, 자산과 부채를 동시에 확대하는 정책이라고 합니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="content__study content-section"></div>
+      <div class="content__related content-section"></div>
+    </div>
+  </div>
+
+
+  <div class="layer-popup" id="font-size-popup" aria-hidden="true">
+    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
+    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="글자크기 설정">
+      <div class="layer-popup__content">
+        <div class="font-size-selector">
+          <div class="font-size-selector__header">
+            <div class="font-size-selector__title">글자크기 설정</div>
+            <button class="close-button" type="button" aria-label="닫기">
+              <svg class="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9239 9.29291C11.5333 9.68344 11.5333 10.3166 11.9239 10.7071L15.5814 14.3647C15.7428 14.526 15.8334 14.7449 15.8334 14.973C15.8334 15.4482 15.4482 15.8334 14.9731 15.8334C14.7449 15.8334 14.5261 15.7427 14.3648 15.5814L10.7072 11.9238C10.3167 11.5333 9.6835 11.5333 9.29298 11.9238L5.6354 15.5814C5.47406 15.7427 5.25523 15.8334 5.02706 15.8334C4.55192 15.8334 4.16675 15.4482 4.16675 14.973C4.16675 14.7449 4.25739 14.526 4.41873 14.3647L8.07631 10.7071C8.46683 10.3166 8.46683 9.68344 8.07631 9.29291L4.41873 5.63533C4.25739 5.47399 4.16675 5.25517 4.16675 5.027C4.16675 4.55186 4.55192 4.16669 5.02706 4.16669C5.25523 4.16669 5.47405 4.25733 5.63539 4.41867L9.29297 8.07625C9.6835 8.46677 10.3167 8.46677 10.7072 8.07625L14.3648 4.41867C14.5261 4.25733 14.7449 4.16669 14.9731 4.16669C15.4482 4.16669 15.8334 4.55186 15.8334 5.027C15.8334 5.25517 15.7428 5.47399 15.5814 5.63533L11.9239 9.29291Z" fill="#7B7B7B"/>
+              </svg>
+            </button>
+          </div>
+          <div class="font-size-selector__size-options">
+            <button class="size-option size-option-small" type="button" aria-label="작은 글자 크기">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="23" height="23" stroke="#464646"/>
+                <path d="M17.2107 3V10.3296H20V11.6659H17.2107V21H15.6998V3H17.2107ZM12.7554 4.94376C12.7554 10.0461 10.4697 14.6828 4.8523 17.5782L4 16.3228C8.45521 14.0045 10.8765 10.5422 11.2252 6.28009H4.79419V4.94376H12.7554Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <button class="size-option size-option-medium" type="button" aria-label="보통 글자 크기">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="27" height="27" stroke="#464646"/>
+                <path d="M20.6877 3V11.5512H24V13.1102H20.6877V24H18.8935V3H20.6877ZM15.3971 5.26772C15.3971 11.2205 12.6828 16.6299 6.01211 20.0079L5 18.5433C10.2906 15.8386 13.1659 11.7992 13.5799 6.82677H5.9431V5.26772H15.3971Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <button class="size-option size-option-large" type="button" aria-label="큰 글자 크기">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="31" height="31" stroke="#464646"/>
+                <path d="M23.1646 4V13.7728H27V15.5546H23.1646V28H21.0872V4H23.1646ZM17.0387 6.59168C17.0387 13.3948 13.8959 19.5771 6.17191 23.4376L5 21.7638C11.1259 18.6727 14.4552 14.0562 14.9346 8.37345H6.09201V6.59168H17.0387Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <button class="size-option size-option-xlarge" type="button" aria-label="아주 큰 글자 크기">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="35" height="35" stroke="#464646"/>
+                <path d="M25.1646 6V15.7728H29V17.5546H25.1646V30H23.0872V6H25.1646ZM19.0387 8.59168C19.0387 15.3948 15.8959 21.5771 8.17191 25.4376L7 23.7638C13.1259 20.6727 16.4552 16.0562 16.9346 10.3735H8.09201V8.59168H19.0387Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-popup" id="share-popup" aria-hidden="true">
+    <div class="layer-popup__backdrop" data-popup-dismiss="true"></div>
+    <div class="layer-popup__dialog" role="dialog" aria-modal="true" aria-label="기사 공유">
+      <div class="layer-popup__content">
+        <div class="share-popup">
+          <div class="share-popup__header">
+            <div class="share-popup__title">기사공유</div>
+            <button class="close-button" type="button" aria-label="닫기">
+              <svg class="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9239 9.29291C11.5333 9.68344 11.5333 10.3166 11.9239 10.7071L15.5814 14.3647C15.7428 14.526 15.8334 14.7449 15.8334 14.973C15.8334 15.4482 15.4482 15.8334 14.9731 15.8334C14.7449 15.8334 14.5261 15.7427 14.3648 15.5814L10.7072 11.9238C10.3167 11.5333 9.6835 11.5333 9.29298 11.9238L5.6354 15.5814C5.47406 15.7427 5.25523 15.8334 5.02706 15.8334C4.55192 15.8334 4.16675 15.4482 4.16675 14.973C4.16675 14.7449 4.25739 14.526 4.41873 14.3647L8.07631 10.7071C8.46683 10.3166 8.46683 9.68344 8.07631 9.29291L4.41873 5.63533C4.25739 5.47399 4.16675 5.25517 4.16675 5.027C4.16675 4.55186 4.55192 4.16669 5.02706 4.16669C5.25523 4.16669 5.47405 4.25733 5.63539 4.41867L9.29297 8.07625C9.6835 8.46677 10.3167 8.46677 10.7072 8.07625L14.3648 4.41867C14.5261 4.25733 14.7449 4.16669 14.9731 4.16669C15.4482 4.16669 15.8334 4.55186 15.8334 5.027C15.8334 5.25517 15.7428 5.47399 15.5814 5.63533L11.9239 9.29291Z" fill="#7B7B7B"/>
+              </svg>
+            </button>
+          </div>
+          <div class="share-popup__link">
+            <button class="share-btn size-option-small" type="button" aria-label="공유 버튼">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1178_18434)">
+                <path d="M13.117 26.4814C11.7063 25.0707 11.7063 22.7773 13.117 21.3666L16.4168 18.0668L14.8494 16.4994L11.5496 19.7992C10.4556 20.8932 9.84105 22.3769 9.84105 23.924C9.84105 25.4711 10.4556 26.9548 11.5496 28.0488C12.6436 29.1427 14.1273 29.7573 15.6744 29.7573C17.2215 29.7573 18.7052 29.1427 19.7992 28.0488L23.099 24.7489L21.5316 23.1815L18.2318 26.4814C16.8211 27.892 14.5277 27.892 13.117 26.4814ZM17.3243 23.924L23.924 17.3243L22.274 15.6744L15.6744 22.2741L17.3243 23.924ZM19.7992 11.5496L16.4993 14.8495L18.0668 16.4169L21.3666 13.117C22.7773 11.7064 25.0707 11.7064 26.4813 13.117C27.892 14.5277 27.892 16.8211 26.4813 18.2318L23.1815 21.5316L24.7489 23.099L28.0488 19.7992C29.1427 18.7052 29.7573 17.2215 29.7573 15.6744C29.7573 14.1273 29.1427 12.6436 28.0488 11.5496C26.9548 10.4557 25.4711 9.84108 23.924 9.84108C22.3769 9.84108 20.8931 10.4557 19.7992 11.5496Z" fill="currentColor"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1178_18434">
+                <rect width="28" height="28" fill="white" transform="translate(0 19.799) rotate(-45)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- AI 뉴스 브리핑 -->
+  <div class="bottom-sheet bottom-sheet--ai" id="ai-interest-sheet" role="dialog" aria-modal="true" aria-label="AI 뉴스 브리핑" aria-hidden="true">
+    <div class="bottom-sheet__handle" data-bottom-sheet-dismiss></div>
+    <h2 class="bottom-sheet__title">AI 뉴스 브리핑</h2>
+    <div class="bottom-sheet__body">
+      <ul class="bottom-sheet__list">
+        <li class="bottom-sheet__list-item">설정한 섹션 카테고리를 기준으로 AI가 매일 주요 뉴스를 선별해 브리핑으로 정리해드려요.</li>
+        <li class="bottom-sheet__list-item">설정 전에는 그동안 읽은 뉴스 흐름을 분석해 추천 섹션 3개에 대한 자동 브리핑을 먼저 제공해요.</li>
+        <li class="bottom-sheet__list-item">매일 나에게 꼭 필요한 소식만 골라 효율적으로 뉴스를 소비할 수 있어요.</li>
+      </ul>
+    </div>
+    <button class="bottom-sheet__button" type="button" data-bottom-sheet-dismiss>확인</button>
+  </div>
+
+  
+
+  <div class="toast-tooltip" role="status" aria-live="polite" aria-hidden="true">
+    <div class="toast-tooltip__content">
+      <svg class="toast-tooltip__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.99984 1.6665C5.4165 1.6665 1.6665 5.4165 1.6665 9.99984C1.6665 14.5832 5.4165 18.3332 9.99984 18.3332C14.5832 18.3332 18.3332 14.5832 18.3332 9.99984C18.3332 5.4165 14.5832 1.6665 9.99984 1.6665ZM9.99984 16.6665C6.32484 16.6665 3.33317 13.6748 3.33317 9.99984C3.33317 6.32484 6.32484 3.33317 9.99984 3.33317C13.6748 3.33317 16.6665 6.32484 16.6665 9.99984C16.6665 13.6748 13.6748 16.6665 9.99984 16.6665ZM14.4144 6.91026C14.0891 6.58268 13.5596 6.58174 13.2332 6.90817L8.33317 11.8082L6.7629 10.244C6.43794 9.92026 5.91224 9.92076 5.5879 10.2451C5.26312 10.5699 5.26312 11.0965 5.5879 11.4212L7.62606 13.4594C8.01659 13.8499 8.64975 13.8499 9.04028 13.4594L14.4123 8.08734C14.7371 7.76253 14.7381 7.23621 14.4144 6.91026Z" fill="#FF7A00"/>
+      </svg>
+      <div class="toast-tooltip__message">보관함에 추가되었습니다.</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // 보관함 저장
+    (function () {
+      const saveStorageButton = document.querySelector('.save-storage');
+      const toast = document.querySelector('.toast-tooltip');
+      const toastMessage = toast?.querySelector('.toast-tooltip__message');
+      const TOAST_DURATION = 2500;
+      let toastTimer = null;
+
+      const showToast = (message) => {
+        if (!toast || !toastMessage) return;
+
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        toast.setAttribute('aria-hidden', 'false');
+
+        if (toastTimer) {
+          clearTimeout(toastTimer);
+        }
+
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
+          toast.setAttribute('aria-hidden', 'true');
+        }, TOAST_DURATION);
+      };
+
+      const updateButtonState = (isSaved) => {
+        if (!saveStorageButton) return;
+
+        saveStorageButton.classList.toggle('is-saved', isSaved);
+        saveStorageButton.setAttribute('aria-pressed', String(isSaved));
+        saveStorageButton.setAttribute('aria-label', isSaved ? '보관함에서 제거' : '보관함에 추가');
+      };
+
+      const toggleSave = () => {
+        if (!saveStorageButton) return;
+        const isSaved = !saveStorageButton.classList.contains('is-saved');
+        updateButtonState(isSaved);
+        showToast(isSaved ? '보관함에 추가되었습니다.' : '보관함에서 제거되었습니다.');
+      };
+
+      if (saveStorageButton) {
+        updateButtonState(false);
+        saveStorageButton.addEventListener('click', toggleSave);
+      }
+    })();
+    
+    // 글씨 크기
+    (function () {
+      const fontSizeButton = document.querySelector('.btn-font-size');
+      const popup = document.getElementById('font-size-popup');
+      const popupContent = popup?.querySelector('.layer-popup__content');
+      const popupBackdrop = popup?.querySelector('.layer-popup__backdrop');
+      let selectorLoaded = false;
+
+      const closePopup = () => {
+        if (!popup) return;
+
+        popup.classList.remove('is-active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('layer-popup-open');
+      };
+
+      const attachCloseHandlers = (rootElement) => {
+        const closeButton = rootElement.querySelector('.close-button');
+
+        if (closeButton) {
+          closeButton.addEventListener('click', closePopup);
+        }
+      };
+
+      const reportBody = document.querySelector('.report-body');
+      const fontSizeMap = {
+        small: '13px',
+        medium: '15px',
+        large: '17px',
+        xlarge: '19px',
+      };
+
+      const applyFontSize = (sizeKey) => {
+        if (!reportBody) return;
+        const fontSize = fontSizeMap[sizeKey];
+        if (fontSize) {
+          reportBody.style.fontSize = fontSize;
+        }
+      };
+
+      const attachFontSizeHandlers = (rootElement) => {
+        const sizeOptions = rootElement.querySelectorAll('.size-option');
+
+        sizeOptions.forEach((option) => {
+          const sizeClass = Array.from(option.classList).find((className) =>
+            className.startsWith('size-option-')
+          );
+
+          if (!sizeClass) return;
+
+          const sizeKey = sizeClass.replace('size-option-', '');
+          option.addEventListener('click', () => applyFontSize(sizeKey));
+        });
+      };
+
+      const loadFontSizeSelector = async () => {
+        if (selectorLoaded || !popupContent) {
+          return selectorLoaded;
+        }
+
+        try {
+          const response = await fetch('../COMPONENTS/font_size_selector.html');
+
+          if (!response.ok) {
+            throw new Error('Failed to load font size selector');
+          }
+
+          const htmlText = await response.text();
+          const parsedDocument = new DOMParser().parseFromString(htmlText, 'text/html');
+          const selectorElement = parsedDocument.querySelector('.font-size-selector');
+
+          if (!selectorElement) {
+            throw new Error('Font size selector markup not found');
+          }
+
+          popupContent.innerHTML = '';
+          popupContent.appendChild(selectorElement);
+          attachCloseHandlers(selectorElement);
+          attachFontSizeHandlers(selectorElement);
+          selectorLoaded = true;
+          return true;
+        } catch (error) {
+          console.error('글자 크기 설정 레이어를 불러오는 데 실패했습니다.', error);
+          return false;
+        }
+      };
+
+      const openPopup = async () => {
+        if (!popup) return;
+        const isLoaded = await loadFontSizeSelector();
+
+        if (!isLoaded) return;
+
+        popup.classList.add('is-active');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('layer-popup-open');
+      };
+
+      if (fontSizeButton) {
+        fontSizeButton.addEventListener('click', openPopup);
+      }
+
+      if (popupBackdrop) {
+        popupBackdrop.addEventListener('click', closePopup);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && popup?.classList.contains('is-active')) {
+          closePopup();
+        }
+      });
+    })();
+    (function(){
+      //gnb
+      const tabs = document.querySelectorAll('.nav-tab');
+      const sections = document.querySelectorAll('.content-section');
+
+      const resetTabs = () => {
+        tabs.forEach((tab) => tab.classList.remove('active'));
+        sections.forEach((section) => section.classList.remove('is-active'));
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-target');
+          const content = target
+            ? document.querySelector(`.${target}`)
+            : null;
+
+          if (!content) return;
+
+          resetTabs();
+          tab.classList.add('active');
+          content.classList.add('is-active');
+        });
+      });
+    })();
+
+    // 주요용어 accordion functionality
+    (() => {
+      const termItems = document.querySelectorAll('.term-item');
+    
+      termItems.forEach(item => {
+        const header = item.querySelector('.term-item__header');
+        const toggle = item.querySelector('.term-item__toggle');
+    
+        if (!header || !toggle) return;
+    
+        header.addEventListener('click', () => {
+          const isActive = item.classList.contains('term-item--active');
+          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    
+          // Toggle active state
+          item.classList.toggle('term-item--active');
+          toggle.setAttribute('aria-expanded', !isExpanded);
+        });
+      });
+    })();
+
+  </script>
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+</html>
