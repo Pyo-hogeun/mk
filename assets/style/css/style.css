@@ -16911,6 +16911,66 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 150%;
     /* 22.5px */
   }
+  .learn-from-news .related-news__wrapper {
+    padding: 20px 15px 10dvh;
+  }
+  .learn-from-news .related-news__wrapper .news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    align-items: center;
+    border-top: 1px solid var(--border-default);
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-thumb {
+    flex: 0 0 68px;
+    height: 68px;
+    border-radius: 8px;
+    background: var(--bg-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url("../../../assets/images/img-placeholder.png");
+    background-size: cover;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs, 4px);
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-content .news-summary {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: var(--text-primary, #F0F0F0);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-content__footer .date {
+    color: var(--text-disabled, #A1A1A1);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
+  }
 }
 @media screen and (max-width: 480px) {
   .learn-from-news .report-title .briefing-item__badges {
@@ -17458,5 +17518,65 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 400;
     line-height: 150%;
     /* 22.5px */
+  }
+  .learn-from-news .related-news__wrapper {
+    padding: 20px 15px 10dvh;
+  }
+  .learn-from-news .related-news__wrapper .news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    align-items: center;
+    border-top: 1px solid var(--border-default);
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-thumb {
+    flex: 0 0 68px;
+    height: 68px;
+    border-radius: 8px;
+    background: var(--bg-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url("../../../assets/images/img-placeholder.png");
+    background-size: cover;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-thumb img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs, 4px);
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-content .news-summary {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: var(--text-primary, #F0F0F0);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+  }
+  .learn-from-news .related-news__wrapper .news-list .news-list__item a .news-content__footer .date {
+    color: var(--text-disabled, #A1A1A1);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
   }
 }/*# sourceMappingURL=style.css.map */
