@@ -65,50 +65,50 @@
         border-radius: var(--radius-lg, 12px);
         border: 1px solid var(--base-gradation, #FF800B);
         background: var(--bg-subtle, #F9FAFB);
+        .topic-category-badge {
+          display: inline-flex;
+          align-self: flex-start;
+          height: 20px;
+          padding: 0 8px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100px;
+          border: 1px solid var(--base-gradation, #FF800B);
+          background: var(--gray-dark, #1D1D1D);
+      
+          color: var(--white, #FFF);
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 150%; /* 19.5px */
+        }
+      
+        .topic-title {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      
+          color: var(--text-primary, #212121);
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 150%; /* 22.5px */
+        }
+      
+        .topic-date {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      
+          color: var(--text-secondary, #626262);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 150%; /* 21px */
+        }
       }
     
-      .topic-category-badge {
-        display: inline-flex;
-        align-self: flex-start;
-        height: 20px;
-        padding: 0 8px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
-        border: 1px solid var(--base-gradation, #FF800B);
-        background: var(--gray-dark, #1D1D1D);
-    
-        color: var(--white, #FFF);
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 150%; /* 19.5px */
-      }
-    
-      .topic-title {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    
-        color: var(--text-primary, #212121);
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 150%; /* 22.5px */
-      }
-    
-      .topic-date {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    
-        color: var(--text-secondary, #626262);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 150%; /* 21px */
-      }
 
       .btn-refresh-news{
         display: flex;

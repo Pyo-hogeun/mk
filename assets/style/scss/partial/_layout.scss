@@ -52,6 +52,10 @@ body{
         height: 28px;
       }
     }
+    .flex-start{
+      display: flex;
+      gap: 20px;
+    }
     .flex-end{
       min-width: 28px;
     }
