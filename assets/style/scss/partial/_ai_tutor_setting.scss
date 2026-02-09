@@ -1,0 +1,168 @@
+@use 'variables' as *;
+
+.ai-tutor-settings-popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+
+  &.is-active {
+    display: flex;
+  }
+
+  &__dim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 319px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-default, #E0E0E0);
+    background: var(--bg-default, #FFF);
+  }
+
+  .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .settings-title {
+    color: var(--text-primary, #212121);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0;
+  }
+
+  .btn-close {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: var(--text-primary);
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section-label {
+    color: var(--text-secondary, #626262);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .age-selection-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .age-btn {
+    display: inline-flex;
+    flex: 1 0 30%;
+    padding: 6px 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #E0E0E0);
+    background: var(--bg-default, #FFF);
+    cursor: pointer;
+
+    color: var(--text-primary, #212121);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+
+    &:nth-child(4),
+    &:nth-child(5) {
+      grid-column: span 1;
+    }
+
+    &.active {
+      border: 0;
+      background: var(--orange-100, #FF7A00);
+      color: var(--white, #FFF);
+    }
+
+    &:hover:not(.active) {
+      background: var(--bg-subtle, #F9FAFB);
+    }
+  }
+
+  .settings-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-cancel,
+  .btn-save {
+    display: flex;
+    height: 40px;
+    padding: 9px 0;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 8px;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+
+  .btn-cancel {
+    border: 1px solid var(--border-default, #E0E0E0);
+    background: var(--bg-default, #FFF);
+    color: var(--text-primary, #212121);
+
+    &:hover {
+      background: var(--bg-subtle, #F9FAFB);
+    }
+  }
+
+  .btn-save {
+    border: 0;
+    background: var(--orange-100, #FF7A00);
+    color: var(--white, #FFF);
+
+    &:hover {
+      background: #E66D00;
+    }
+  }
+}
+
+body.ai-tutor-settings-open {
+  overflow: hidden;
+}

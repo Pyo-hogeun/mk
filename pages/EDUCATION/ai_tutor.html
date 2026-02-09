@@ -155,10 +155,38 @@
     </div>
   </div>
 
+  <!-- AI Tutor Settings Popup -->
+  <div class="ai-tutor-settings-popup is-active" id="ai-tutor-settings-popup">
+    <div class="ai-tutor-settings-popup__dim"></div>
+    <div class="ai-tutor-settings-popup__dialog">
+      <div class="ai-tutor-settings-popup__content">
+        <div class="settings-header">
+          <h2 class="settings-title">AI튜터 설정</h2>
+          <button type="button" class="btn-close" aria-label="닫기">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.4111 13.2928C16.0206 13.6833 16.0206 14.3165 16.4111 14.707L21.8744 20.1704C22.062 20.3579 22.1673 20.6122 22.1673 20.8775V21.1666C22.1673 21.7189 21.7196 22.1666 21.1673 22.1666H20.8782C20.613 22.1666 20.3586 22.0612 20.1711 21.8737L14.7078 16.4104C14.3172 16.0198 13.6841 16.0198 13.2935 16.4104L7.83021 21.8737C7.64267 22.0612 7.38832 22.1666 7.1231 22.1666H6.83398C6.2817 22.1666 5.83398 21.7189 5.83398 21.1666V20.8775C5.83398 20.6123 5.93934 20.3579 6.12688 20.1704L11.5902 14.707C11.9807 14.3165 11.9807 13.6833 11.5902 13.2928L6.12688 7.82948C5.93934 7.64194 5.83398 7.38759 5.83398 7.12237V6.83325C5.83398 6.28097 6.2817 5.83325 6.83398 5.83325H7.1231C7.38832 5.83325 7.64267 5.93861 7.83021 6.12615L13.2935 11.5895C13.6841 11.98 14.3172 11.98 14.7078 11.5895L20.1711 6.12615C20.3586 5.93861 20.613 5.83325 20.8782 5.83325H21.1673C21.7196 5.83325 22.1673 6.28097 22.1673 6.83325V7.12237C22.1673 7.38759 22.062 7.64194 21.8744 7.82948L16.4111 13.2928Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
 
+        <div class="settings-section">
+          <div class="section-label">나이 구분</div>
+          <div class="age-selection-buttons">
+            <button type="button" class="age-btn active">초등학생</button>
+            <button type="button" class="age-btn">중학생</button>
+            <button type="button" class="age-btn">고등학생</button>
+            <button type="button" class="age-btn">일반인</button>
+            <button type="button" class="age-btn">전문가</button>
+          </div>
+        </div>
 
-
-
+        <div class="settings-actions">
+          <button type="button" class="btn-cancel">취소</button>
+          <button type="button" class="btn-save">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     //Agent Selector Dropdown
@@ -238,6 +266,62 @@
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && dropdown.getAttribute('aria-hidden') === 'false') {
           closeDropdown();
+        }
+      });
+    })();
+
+    // AI Tutor Settings Popup
+    (() => {
+      const settingsBtn = document.querySelector('.btn-setting');
+      const popup = document.getElementById('ai-tutor-settings-popup');
+      const closeBtn = popup?.querySelector('.btn-close');
+      const cancelBtn = popup?.querySelector('.btn-cancel');
+      const saveBtn = popup?.querySelector('.btn-save');
+      const backdrop = popup?.querySelector('.ai-tutor-settings-popup__dim');
+      const ageButtons = popup?.querySelectorAll('.age-btn');
+      const levelTag = document.querySelector('.level-tag');
+
+      if (!popup || !settingsBtn) return;
+
+      const openPopup = () => {
+        popup.classList.add('is-active');
+        document.body.classList.add('ai-tutor-settings-open');
+      };
+
+      const closePopup = () => {
+        popup.classList.remove('is-active');
+        document.body.classList.remove('ai-tutor-settings-open');
+      };
+
+      // Open popup when settings button is clicked
+      settingsBtn.addEventListener('click', openPopup);
+
+      // Close popup handlers
+      closeBtn?.addEventListener('click', closePopup);
+      cancelBtn?.addEventListener('click', closePopup);
+      backdrop?.addEventListener('click', closePopup);
+
+      // Age button selection
+      ageButtons?.forEach(btn => {
+        btn.addEventListener('click', () => {
+          ageButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      // Save button handler
+      saveBtn?.addEventListener('click', () => {
+        const selectedAge = popup.querySelector('.age-btn.active')?.textContent;
+        if (selectedAge && levelTag) {
+          levelTag.textContent = selectedAge;
+        }
+        closePopup();
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('is-active')) {
+          closePopup();
         }
       });
     })();
