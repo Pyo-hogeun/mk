@@ -18287,6 +18287,130 @@ body.ai-tutor-settings-open {
     border-radius: var(--radius-pill, 999px);
     background: var(--orange-10060, rgba(255, 122, 0, 0.6));
   }
+  .tutor-chat__wrapper .quiz-card {
+    display: flex;
+    padding: 20px 16px;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    background: #FFF;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  .tutor-chat__wrapper .quiz-card__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+  }
+  .tutor-chat__wrapper .quiz-card__header .scenario-badge {
+    display: inline-flex;
+    height: 20px;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--gray-dark), var(--gray-dark)) padding-box, linear-gradient(130deg, #FF800B 14.9%, #E44F00 88.94%) border-box;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 150%; /* 19.5px */
+  }
+  .tutor-chat__wrapper .quiz-card__header .scenario-description {
+    align-self: stretch;
+    color: #212121;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+  }
+  .tutor-chat__wrapper .quiz-card .quiz-divider {
+    width: 100%;
+    height: 1px;
+    background: #E0E0E0;
+  }
+  .tutor-chat__wrapper .quiz-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-question {
+    align-self: stretch;
+    color: #212121;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    align-self: stretch;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    background: #F9FAFB;
+    cursor: pointer;
+    position: relative;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option .quiz-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option .radio-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #E0E0E0;
+    background: #FFF;
+    flex-shrink: 0;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option .radio-icon svg {
+    display: none;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option .option-text {
+    flex: 1 0 0;
+    color: #212121;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%; /* 22.5px */
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option.selected {
+    border: 1px solid rgb(255, 122, 0);
+    background: #FFF;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option.selected .radio-icon {
+    border: none;
+    background: transparent;
+  }
+  .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option.selected .radio-icon svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  .tutor-chat__wrapper .quiz-answer {
+    margin: 16px 0;
+    color: var(--text-primary, #212121);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%; /* 22.5px */
+  }
   .tutor-chat__footer {
     position: fixed;
     bottom: 0;
@@ -18530,7 +18654,7 @@ body.ai-tutor-settings-open {
   }
   .tutor-chat__wrapper .chat-message .message-content {
     align-self: stretch;
-    color: #212121;
+    color: var(--text-primary, #212121);
     font-size: 15px;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
@@ -18542,10 +18666,10 @@ body.ai-tutor-settings-open {
     justify-content: center;
     align-items: center;
     border-radius: 999px;
-    background: var(--default, #ffffff);
+    background: var(--bg-default, #ffffff);
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 12px;
-    color: #212121;
+    color: var(--text-primary, #212121);
     text-align: center;
     font-size: 15px;
     font-weight: 600;
@@ -18570,11 +18694,11 @@ body.ai-tutor-settings-open {
     align-items: center;
     gap: 4px;
     border-radius: 999px;
-    border: 1px solid #E0E0E0;
-    background: #FFF;
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-default, #ffffff);
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    color: #212121;
+    color: var(--text-primary, #212121);
     text-align: center;
     font-size: 15px;
     font-weight: 400;
@@ -18582,11 +18706,11 @@ body.ai-tutor-settings-open {
   }
   .tutor-chat__wrapper .question-suggestions .question-button.selected {
     border-radius: 8px;
-    background: #F9FAFB;
+    background: var(--bg-subtle, #2F2F2F);
   }
   .tutor-chat__wrapper .news-intro-text {
     align-self: stretch;
-    color: #212121;
+    color: var(--text-primary, #212121);
     font-size: 15px;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
@@ -18613,9 +18737,9 @@ body.ai-tutor-settings-open {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    border-radius: 12px;
-    border: 1px solid #E0E0E0;
-    background: #F9FAFB;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
     overflow: hidden;
     flex-shrink: 0;
   }
@@ -18634,7 +18758,7 @@ body.ai-tutor-settings-open {
   }
   .tutor-chat__wrapper .news-cards-wrapper .news-card .news-title {
     align-self: stretch;
-    color: #212121;
+    color: var(--text-primary, #212121);
     font-size: 18px;
     font-weight: 700;
     line-height: 140%; /* 25.2px */
@@ -18679,11 +18803,11 @@ body.ai-tutor-settings-open {
     align-items: center;
     gap: 16px;
     align-self: stretch;
-    border-radius: 12px;
-    border: 1px solid #E0E0E0;
-    background: #FFF;
     flex-direction: column;
     margin-bottom: 16px;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-default, #1D1D1D);
   }
   .tutor-chat__wrapper .quiz-card__header {
     display: flex;
@@ -18708,7 +18832,7 @@ body.ai-tutor-settings-open {
   }
   .tutor-chat__wrapper .quiz-card__header .scenario-description {
     align-self: stretch;
-    color: #212121;
+    color: var(--text-primary, #212121);
     font-size: 15px;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
@@ -18727,7 +18851,7 @@ body.ai-tutor-settings-open {
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-question {
     align-self: stretch;
-    color: #212121;
+    color: var(--text-primary, #212121);
     font-size: 15px;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
@@ -18745,11 +18869,13 @@ body.ai-tutor-settings-open {
     align-items: center;
     gap: 8px;
     align-self: stretch;
-    border-radius: 12px;
-    border: 1px solid #E0E0E0;
-    background: #F9FAFB;
+    border: 1px solid var(--border-default, #464646);
     cursor: pointer;
     position: relative;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-default, #464646);
+    opacity: 0.8;
+    background: var(--bg-subtle, #2F2F2F);
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option .quiz-radio {
     position: absolute;
@@ -18763,23 +18889,23 @@ body.ai-tutor-settings-open {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid #E0E0E0;
-    background: #FFF;
     flex-shrink: 0;
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-default, #1D1D1D);
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option .radio-icon svg {
     display: none;
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option .option-text {
     flex: 1 0 0;
-    color: #212121;
+    color: var(--text-primary, #212121);
     font-size: 15px;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option.selected {
-    border: 1px solid rgb(255, 122, 0);
-    background: #FFF;
+    border: 1px solid var(--orange-100, #FF7A00);
+    background: var(--bg-default, #1D1D1D);
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option.selected .radio-icon {
     border: none;
