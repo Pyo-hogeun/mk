@@ -17579,4 +17579,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 500;
     line-height: 150%; /* 18px */
   }
+}
+@media (max-width: 480px) {
+  .tutor__wrapper {
+    padding: 0 15px;
+  }
 }/*# sourceMappingURL=style.css.map */

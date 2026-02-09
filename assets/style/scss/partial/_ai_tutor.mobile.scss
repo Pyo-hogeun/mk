@@ -1,0 +1,10 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
+@media (max-width: $mobile) {
+  .tutor{
+    &__wrapper{
+      padding: 0 $mobilePadSide;
+    }
+  }
+}
