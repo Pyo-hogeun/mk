@@ -1,7 +1,7 @@
 @use 'variables'as *;
 @use 'mixin'as *;
 
-@media (max-width: $mobile) {
+@media (min-width: $mobile) {
   .tutor {
     &__wrapper {
       padding: 0 $mobilePadSide;
@@ -55,13 +55,21 @@
         }
     
       }
+
+      .learning-topic{
+        &__wrapper{
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--gap-loose, 12px);
+          margin-top: 12px;
+        }
+      }
     
       .learning-topic-card {
         display: flex;
         flex-direction: column;
         gap: var(--gap-tight, 4px);
         padding: 12px 20px;
-        margin-top: 12px;
         border-radius: var(--radius-lg, 12px);
         border: 1px solid var(--base-gradation, #FF800B);
         background: var(--bg-subtle, #F9FAFB);
