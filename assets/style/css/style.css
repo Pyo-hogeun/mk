@@ -18744,7 +18744,7 @@ body.ai-tutor-settings-open {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 6px;
-    background-image: url("/assets/images/icon_check.svg");
+    background-image: url("../../images/icon_check.svg");
     background-repeat: no-repeat;
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option__radio {
@@ -19275,7 +19275,7 @@ body.ai-tutor-settings-open {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 6px;
-    background-image: url("/assets/images/icon_check.svg");
+    background-image: url("../../images/icon_check.svg");
     background-repeat: no-repeat;
   }
   .tutor-chat__wrapper .quiz-card__content .quiz-options .quiz-option__radio {
