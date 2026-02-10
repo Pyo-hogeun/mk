@@ -17082,7 +17082,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 6px;
-    background-image: url("/assets/images/icon_check.svg");
+    background-image: url("../../assets/images/icon_check.svg");
     background-repeat: no-repeat;
   }
   .learn-from-news .study__wrapper .quiz-option__radio {
