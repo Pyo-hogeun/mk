@@ -15714,10 +15714,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 182px;
     gap: 24px;
-    height: 182px;
+    height: 190px;
   }
 }
-@media screen and (min-width: 480px) and (max-width: 800px) {
+@media screen and (min-width: 480px) and (max-width: 1210px) {
   .my-study__topper {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -15726,20 +15726,144 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
 }
 @media (min-width: 480px) {
   .my-study__stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    min-width: 595px;
+  }
+  .my-study__divider {
+    width: auto;
+    height: 1px;
+    background: var(--border-default, #E0E0E0);
+    margin: 24px 15px 20px;
+  }
+  .my-study__list {
+    display: flex;
+    flex-direction: column;
+  }
+  .stats-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
+    overflow: hidden;
+    position: relative;
+  }
+  .stats-card__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    position: relative;
+    z-index: 1;
+  }
+  .stats-card__header {
     display: flex;
     align-items: center;
-    background: var(--bg-subtle, #F9FAFB);
-    /* inner shadow */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
-    border-radius: var(--radius-md, 8px);
-    padding: 24px;
+    gap: 8px;
+  }
+  .stats-card__icon {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+  .stats-card__icon--orange {
+    background: #FFEDD5;
+  }
+  .stats-card__icon--yellow {
+    background: #FEF9C3;
+  }
+  .stats-card__icon--red {
+    background: #FFEDD5;
+  }
+  .stats-card__icon--orange-alt {
+    background: #FFEDD5;
+  }
+  .stats-card__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .stats-card__label {
+    flex: 1;
+    color: var(--text-secondary, #7B7B7B);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .stats-card__value-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+  }
+  .stats-card__value {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-primary, #F0F0F0);
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .stats-card__unit {
+    color: var(--text-secondary, #7B7B7B);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    margin-left: 4px;
+  }
+  .stats-card__progress {
+    height: 8px;
+    width: 100px;
+    align-self: center;
+    border-radius: 9999px;
+    background: #F0F0F0;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats-card__progress-bar {
+    height: 8px;
+    border-radius: 9999px;
+    background: var(--orange-100, #FF7A00);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .stats-card__decoration {
+    width: 121px;
+    height: 121px;
+    border-radius: 50%;
+    position: absolute;
+    right: -28px;
+    top: -60px;
+    pointer-events: none;
+  }
+  .stats-card__decoration--orange {
+    background: rgba(255, 122, 0, 0.1);
+  }
+  .stats-card__decoration--yellow {
+    background: rgba(255, 234, 0, 0.1);
+  }
+  .stats-card__decoration--red {
+    background: rgba(255, 0, 0, 0.1);
+  }
+  .stats-card__decoration--orange-alt {
+    background: rgba(255, 166, 0, 0.1);
   }
   .my-study .stats-item {
-    flex: 1 1 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px 5px;
+    padding: 8px 20px;
     gap: 4px;
   }
   .my-study .stats-item__label {
@@ -15748,7 +15872,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     line-height: 150%;
     color: var(--text-secondary, #626262);
     text-align: center;
-    white-space: nowrap;
   }
   .my-study .stats-item__value {
     font-size: 18px;
@@ -15771,6 +15894,16 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 500;
     line-height: 150%; /* 18px */
   }
+  .my-study .stats-item:nth-child(1) {
+    border-right: 1px solid var(--border-default, #464646);
+    border-bottom: 1px solid var(--border-default, #464646);
+  }
+  .my-study .stats-item:nth-child(2) {
+    border-bottom: 1px solid var(--border-default, #464646);
+  }
+  .my-study .stats-item:nth-child(3) {
+    border-right: 1px solid var(--border-default, #464646);
+  }
   .my-study__divider {
     width: auto;
     height: 1px;
@@ -15782,19 +15915,40 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-direction: column;
   }
   .ai-agent-info {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 10px 32px;
+    padding: 24px;
     height: 100%;
-    border-radius: var(--radius-xl, 16px);
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--border-default, #464646);
     background: var(--bg-default, #1D1D1D);
-    border: 1px solid var(--border-subtle, #2D2D2D);
+    /* inner shadow */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
+    overflow: hidden;
+  }
+  .ai-agent-info__decoration {
+    width: 121px;
+    height: 121px;
+    border-radius: 50%;
+    position: absolute;
+    right: -28px;
+    bottom: -57px;
+    pointer-events: none;
+    background: rgba(255, 122, 0, 0.1);
   }
   .ai-agent-info__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex: 0 0 80px;
     width: 80px;
     height: 80px;
+    border-radius: 16px;
+    border: 1px solid var(--orange-100, #FF7A00);
+    background: var(--white, #FFF);
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.05) inset;
   }
   .ai-agent-info__icon svg {
     display: block;
@@ -15805,7 +15959,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
   }
   .ai-agent-info__header {
     display: flex;
@@ -16094,12 +16248,127 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .my-study__stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    background: var(--bg-subtle, #F9FAFB);
-    /* inner shadow */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
-    border-radius: var(--radius-md, 8px);
+    gap: 12px;
+  }
+  .stats-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-subtle, #2F2F2F);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
+    overflow: hidden;
+    position: relative;
+  }
+  .stats-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+    position: relative;
+    z-index: 1;
+  }
+  .stats-card__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .stats-card__icon {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+  .stats-card__icon--orange {
+    background: #FFEDD5;
+  }
+  .stats-card__icon--yellow {
+    background: #FEF9C3;
+  }
+  .stats-card__icon--red {
+    background: #FFEDD5;
+  }
+  .stats-card__icon--orange-alt {
+    background: #FFEDD5;
+  }
+  .stats-card__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .stats-card__label {
+    flex: 1;
+    color: var(--text-secondary, #7B7B7B);
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .stats-card__value-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+  }
+  .stats-card__value {
+    color: var(--text-primary, #F0F0F0);
+    text-align: center;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .stats-card__unit {
+    color: var(--text-secondary, #7B7B7B);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    margin-left: 4px;
+  }
+  .stats-card__progress {
+    height: 8px;
+    align-self: stretch;
+    border-radius: 9999px;
+    background: #F0F0F0;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats-card__progress-bar {
+    height: 8px;
+    border-radius: 9999px;
+    background: var(--orange-100, #FF7A00);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .stats-card__decoration {
+    width: 121px;
+    height: 121px;
+    border-radius: 50%;
+    position: absolute;
+    right: -88px;
+    top: -57px;
+    pointer-events: none;
+  }
+  .stats-card__decoration--orange {
+    background: rgba(255, 122, 0, 0.1);
+  }
+  .stats-card__decoration--yellow {
+    background: rgba(255, 234, 0, 0.1);
+  }
+  .stats-card__decoration--red {
+    background: rgba(255, 0, 0, 0.1);
+  }
+  .stats-card__decoration--orange-alt {
+    background: rgba(255, 166, 0, 0.1);
   }
   .my-study .stats-item {
     display: flex;
