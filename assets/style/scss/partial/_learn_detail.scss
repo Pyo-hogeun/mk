@@ -377,6 +377,39 @@
                 transform: rotate(0deg);
               }
             }
+
+            &__target{
+              display: block;
+              padding: 12px 12px 12px 20px;
+              margin: 12px 0;
+              border-radius: var(--radius-lg, 12px);
+              border: 1px solid var(--border-default, #E0E0E0);
+              background: var(--bg-default, #FFF);
+              ul>li{
+                color: var(--text-secondary, #626262);
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 150%; /* 21px */
+                &:before{
+                  content: '';
+                  display: inline-block;
+                  width: 3px;
+                  height: 3px;
+                  background-color: var(--text-secondary, #626262);
+                  border-radius: 50%;
+                  vertical-align: middle;
+                  margin-right: 7px;
+                }
+              }
+            }
+            &__target-label{
+              color: var(--text-primary, #212121);
+
+              font-size: 15px;
+              font-weight: 600;
+              line-height: 150%; /* 22.5px */
+              margin-bottom: 8px;
+            }
           }
         }
 
