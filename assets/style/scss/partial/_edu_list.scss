@@ -96,7 +96,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 24px;
+    padding: 20px 24px;
     border-radius: 8px;
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-subtle, #2F2F2F);
@@ -291,8 +291,15 @@
     }
 
     &__list {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      gap: 20px;
+      @media screen and (min-width: $pc) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media screen and (max-width: $pc) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
     }
   }
 
@@ -411,10 +418,6 @@
     background: var(--bg-subtle, #F9FAFB);
     border: 1px solid var(--border-default, #E0E0E0);
     border-radius: var(--radius-lg, 12px);
-    margin-bottom: 20px;
-    &:nth-last-child(1){
-      margin-bottom: 0;
-    }
 
     &__topper{
       display: grid;
@@ -529,33 +532,15 @@
     flex-direction: column;
     padding: 20px;
     border-radius: var(--radius-lg, 12px);
-    border: 1px solid var(--border-default, #E0E0E0);
     background: var(--bg-subtle, #F9FAFB);
-    margin-bottom: 12px;
     transition: border-color 0.2s ease;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &--active {
-      border-color: var(--orange-100, #FF7A00);
-
-      .term-item__content {
-        display: block;
-      }
-      .term-item__toggle{
-        svg{
-          transform: rotate(180deg);
-        }
-      }
-    }
-
+    border: 1px solid var(--border-default, #464646);
+    gap: 12px;
     &__header {
       display: flex;
       align-items: center;
       gap: 8px;
-      cursor: pointer;
+      cursor: default;
     }
 
     &__badge {
@@ -583,28 +568,9 @@
     }
 
     &__toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      flex-shrink: 0;
-      color: var(--text-primary, #212121);
-
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-
-    &__content {
       display: none;
-      margin-top: 12px;
     }
+
 
     &__description {
       margin: 0;
@@ -616,6 +582,20 @@
       display: -webkit-box;
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
+    }
+  }
+
+  .my-study{
+    &__words{
+      display: grid;
+      gap: 20px;
+      @media screen and (min-width: $pc) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media screen and (max-width: $pc) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
     }
   }
 }

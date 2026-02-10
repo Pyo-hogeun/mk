@@ -15746,7 +15746,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 24px;
+    padding: 20px 24px;
     border-radius: 8px;
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-subtle, #2F2F2F);
@@ -15911,9 +15911,22 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin: 24px 15px 20px;
   }
   .my-study__list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 20px;
   }
+}
+@media screen and (min-width: 480px) and (min-width: 1210px) {
+  .my-study__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1210px) {
+  .my-study__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (min-width: 480px) {
   .ai-agent-info {
     position: relative;
     display: flex;
@@ -16007,10 +16020,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background: var(--bg-subtle, #F9FAFB);
     border: 1px solid var(--border-default, #E0E0E0);
     border-radius: var(--radius-lg, 12px);
-    margin-bottom: 20px;
-  }
-  .learning-card:nth-last-child(1) {
-    margin-bottom: 0;
   }
   .learning-card__topper {
     display: grid;
@@ -16115,28 +16124,16 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-direction: column;
     padding: 20px;
     border-radius: var(--radius-lg, 12px);
-    border: 1px solid var(--border-default, #E0E0E0);
     background: var(--bg-subtle, #F9FAFB);
-    margin-bottom: 12px;
     transition: border-color 0.2s ease;
-  }
-  .term-item:last-child {
-    margin-bottom: 0;
-  }
-  .term-item--active {
-    border-color: var(--orange-100, #FF7A00);
-  }
-  .term-item--active .term-item__content {
-    display: block;
-  }
-  .term-item--active .term-item__toggle svg {
-    transform: rotate(180deg);
+    border: 1px solid var(--border-default, #464646);
+    gap: 12px;
   }
   .term-item__header {
     display: flex;
     align-items: center;
     gap: 8px;
-    cursor: pointer;
+    cursor: default;
   }
   .term-item__badge {
     display: flex;
@@ -16161,25 +16158,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin: 0;
   }
   .term-item__toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-    color: var(--text-primary, #212121);
-  }
-  .term-item__toggle svg {
-    width: 24px;
-    height: 24px;
-  }
-  .term-item__content {
     display: none;
-    margin-top: 12px;
   }
   .term-item__description {
     margin: 0;
@@ -16191,6 +16170,21 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
+  }
+  .my-study__words {
+    display: grid;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 480px) and (min-width: 1210px) {
+  .my-study__words {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1210px) {
+  .my-study__words {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 @media (max-width: 480px) {
