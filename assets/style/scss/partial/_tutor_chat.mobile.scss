@@ -4,8 +4,28 @@
 @media (max-width: $mobile) {
   .tutor-chat{
     .container__header{
+      position: sticky;
+      top: 0;
+      max-width: none;
       padding-bottom: 15px;
+      padding-top: 24px;
       border-bottom: 1px solid var(--border-default, #464646);
+      background-color: var(--bg-default, #FFF);
+      margin: 0;
+      z-index: 1;
+      h2{
+        line-height: 1;
+      }
+    }
+    .sticky-top{
+      position: sticky;
+      top: 68px;
+      background-color: var(--bg-default, #FFF);
+      background: linear-gradient(180deg, var(--bg-default, #FFF) 80%, transparent);
+      z-index: 1;
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      padding: 24px 15px 0;
     }
     .level-tag {
       display: inline-flex;
@@ -31,7 +51,6 @@
         flex-direction: column;
         gap: var(--gap-tight, 4px);
         padding: 12px 20px;
-        margin-top: 12px;
         border-radius: var(--radius-lg, 12px);
         border: 1px solid var(--base-gradation, #FF800B);
         background: var(--bg-subtle, #F9FAFB);
@@ -410,63 +429,62 @@
 
             .quiz-option {
               display: flex;
-              padding: 12px;
+              width: 100%;
               align-items: center;
               gap: 8px;
-              align-self: stretch;
-              border: 1px solid var(--border-default, #464646);
-              cursor: pointer;
-              position: relative;
-
+              padding: 12px;
               border-radius: var(--radius-lg, 12px);
-              border: 1px solid var(--border-default, #464646);
-              opacity: 0.8;
-              background: var(--bg-subtle, #2F2F2F);
+              border: 1px solid var(--border-default, #E0E0E0);
+              cursor: pointer;
+              transition: all 0.2s ease;
 
-              .quiz-radio {
+              opacity: 0.8;
+              background: var(--bg-subtle, #F9FAFB);
+    
+              &:has(input:checked) {
+                border-color: var(--orange-100, #FF7A00);
+              }
+    
+              &__input {
                 position: absolute;
                 opacity: 0;
                 pointer-events: none;
+    
+                &:checked + .quiz-option__radio {
+                  background-color: var(--bg-default, #FFF);
+                  border: 2px solid var(--orange-100, #FF7A00);
+                  opacity: 1;
+    
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 8px;
+                    height: 6px;
+                    background-image: url('/assets/images/icon_check.svg');
+                    background-repeat: no-repeat;
+                  }
+                }
               }
-
-              .radio-icon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+    
+              &__radio {
+                position: relative;
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
+                border: 1px solid var(--border-default, #E0E0E0);
                 flex-shrink: 0;
-                border: 1px solid var(--border-default, #464646);
-                background: var(--bg-default, #1D1D1D);
-
-                svg {
-                  display: none;
-                }
+                transition: all 0.2s ease;
               }
-
-              .option-text {
-                flex: 1 0 0;
+    
+              &__label {
+                flex: 1;
                 color: var(--text-primary, #212121);
                 font-size: 15px;
                 font-weight: 400;
-                line-height: 150%; /* 22.5px */
-              }
-
-              &.selected {
-                border: 1px solid var(--orange-100, #FF7A00);
-                background: var(--bg-default, #1D1D1D);
-
-                .radio-icon {
-                  border: none;
-                  background: transparent;
-
-                  svg {
-                    display: block;
-                    width: 24px;
-                    height: 24px;
-                  }
-                }
+                line-height: 150%;
               }
             }
           }
