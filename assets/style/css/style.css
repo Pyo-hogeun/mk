@@ -18310,8 +18310,7 @@ body.ai-tutor-settings-open {
   .tutor-chat .sticky-top {
     position: sticky;
     top: 68px;
-    background-color: var(--bg-default, #FFF);
-    background: linear-gradient(180deg, var(--bg-default, #FFF) 80%, transparent);
+    background: linear-gradient(180deg, var(--bg-default, #FFF) 95%, transparent);
     z-index: 1;
     width: calc(100% + 30px);
     margin-left: -15px;
@@ -18555,7 +18554,6 @@ body.ai-tutor-settings-open {
   .tutor-chat__wrapper .news-cards-wrapper {
     display: flex;
     width: 100%;
-    align-items: flex-start;
     gap: 8px;
     flex-wrap: wrap;
   }
