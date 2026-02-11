@@ -133,16 +133,13 @@
           border-radius: var(--radius-lg, 12px);
           background: var(--bg-subtle, #F9FAFB);
           cursor: pointer;
-          border: 1px solid transparent;
+          border: 1px solid var(--border-default, #E0E0E0);
           background: var(--bg-subtle, #F9FAFB);
           &__label {
             color: var(--text-primary, #212121);
             font-size: 13px;
             font-weight: 600;
             line-height: 150%; /* 19.5px */
-          }
-          &.is-active{
-            border: 1px solid var(--border-default, #E0E0E0);
           }
         }
       }

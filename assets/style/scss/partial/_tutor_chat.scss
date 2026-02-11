@@ -139,16 +139,13 @@
           background: var(--bg-subtle, #F9FAFB);
           cursor: pointer;
           background: var(--bg-subtle, #F9FAFB);
-          border: 1px solid transparent;
+          border: 1px solid var(--border-default, #E0E0E0);
           &__label {
             color: var(--text-primary, #212121);
             font-size: 13px;
             font-weight: 600;
             line-height: 150%;
             /* 19.5px */
-          }
-          &.is-active{
-            border: 1px solid var(--border-default, #E0E0E0);
           }
         }
       }

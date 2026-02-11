@@ -17992,6 +17992,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 600;
     line-height: 150%; /* 22.5px */
+    flex-grow: 1;
   }
   .tutor__wrapper .topic-date {
     display: -webkit-box;
@@ -18112,6 +18113,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 600;
     line-height: 150%; /* 22.5px */
+    flex-grow: 1;
   }
   .tutor__wrapper .learning-topic-card .topic-date {
     display: -webkit-box;
@@ -18416,7 +18418,7 @@ body.ai-tutor-settings-open {
     background: var(--bg-subtle, #F9FAFB);
     cursor: pointer;
     background: var(--bg-subtle, #F9FAFB);
-    border: 1px solid transparent;
+    border: 1px solid var(--border-default, #E0E0E0);
   }
   .tutor-chat__wrapper .chat-buttons .chat-button__label {
     color: var(--text-primary, #212121);
@@ -18424,9 +18426,6 @@ body.ai-tutor-settings-open {
     font-weight: 600;
     line-height: 150%;
     /* 19.5px */
-  }
-  .tutor-chat__wrapper .chat-buttons .chat-button.is-active {
-    border: 1px solid var(--border-default, #E0E0E0);
   }
   .tutor-chat__wrapper .chat-divider {
     display: flex;
@@ -19147,7 +19146,7 @@ body.ai-tutor-settings-open {
     border-radius: var(--radius-lg, 12px);
     background: var(--bg-subtle, #F9FAFB);
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 1px solid var(--border-default, #E0E0E0);
     background: var(--bg-subtle, #F9FAFB);
   }
   .tutor-chat__wrapper .chat-buttons .chat-button__label {
@@ -19155,9 +19154,6 @@ body.ai-tutor-settings-open {
     font-size: 13px;
     font-weight: 600;
     line-height: 150%; /* 19.5px */
-  }
-  .tutor-chat__wrapper .chat-buttons .chat-button.is-active {
-    border: 1px solid var(--border-default, #E0E0E0);
   }
   .tutor-chat__wrapper .chat-divider {
     display: flex;
