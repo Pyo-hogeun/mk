@@ -87,6 +87,11 @@
           /* 22.5px */
         }
 
+        .topic-footer{
+          display: flex;
+          justify-content: space-between;
+        }
+
         .topic-date {
           display: -webkit-box;
           -webkit-box-orient: vertical;
@@ -99,6 +104,20 @@
           font-weight: 400;
           line-height: 150%;
           /* 21px */
+        }
+        .btn-origin{
+          display: inline-flex;
+          height: 20px;
+          padding: 4px 8px;
+          align-items: center;
+          gap: 7px;
+          border: 0;
+          border-radius: 999px;
+          background: rgba(0, 0, 0, 0.60);
+          color: #FFF;
+          font-size: 9px;
+          font-weight: 600;
+          line-height: 150%; /* 12.768px */
         }
       }
 

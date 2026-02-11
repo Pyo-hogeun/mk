@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../assets/style/css/admin.css">
+</head>
+
+<body>
+  <main class="flex-1 p-6 overflow-auto">
+    <div class="space-y-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-newspaper w-6 h-6 text-accent">
+            <path
+              d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2">
+            </path>
+            <path d="M18 14h-8"></path>
+            <path d="M15 18h-5"></path>
+            <path d="M10 6h8v4h-8V6Z"></path>
+          </svg>
+          <div>
+            <h1 class="text-2xl font-bold">뉴스 에이전트 프롬프트</h1>
+            <p class="text-muted-foreground mt-1">프롬프트 관리 및 버전 제어</p>
+          </div>
+        </div>
+        <button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"><svg
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-plus w-4 h-4 mr-2">
+            <path d="M5 12h14"></path>
+            <path d="M12 5v14"></path>
+          </svg>새 프롬프트</button>
+      </div>
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-4 flex flex-col">
+          <div class="bg-card border border-border rounded-lg flex flex-col h-[650px]">
+            <div class="p-4 border-b border-border flex-shrink-0">
+              <div class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-9"
+                  placeholder="프롬프트 검색..." value="">
+              </div>
+            </div>
+            <div dir="ltr" class="relative overflow-hidden flex-1"
+              style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;">
+              <style>
+                [data-radix-scroll-area-viewport] {
+                  scrollbar-width: none;
+                  -ms-overflow-style: none;
+                  -webkit-overflow-scrolling: touch;
+                }
+
+                [data-radix-scroll-area-viewport]::-webkit-scrollbar {
+                  display: none
+                }
+              </style>
+              <div data-radix-scroll-area-viewport="" class="h-full w-full rounded-[inherit]"
+                style="overflow: hidden scroll;">
+                <div style="min-width: 100%; display: table;">
+                  <div class="p-2">
+                    <div data-state="open">
+                      <div class="rounded-lg border mb-2 transition-colors border-accent bg-accent/5">
+                        <div class="flex items-center">
+                          <button class="p-3 pr-0 flex-shrink-0" type="button" aria-controls="radix-:rl:"
+                            aria-expanded="true" data-state="open">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4 text-muted-foreground">
+                              <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                          </button>
+                          <button class="flex-1 flex items-center gap-3 p-3 pl-2 text-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-file-text w-4 h-4 flex-shrink-0 text-accent">
+                              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                              <path d="M10 9H8"></path>
+                              <path d="M16 13H8"></path>
+                              <path d="M16 17H8"></path>
+                            </svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="font-medium truncate text-sm text-accent">뉴스 브리핑 3분 1인</p>
+                            </div>
+                            <span class="text-xs text-muted-foreground flex-shrink-0">v2.3</span>
+                          </button>
+                        </div>
+                        <div data-state="open" id="radix-:rl:"
+                          style="--radix-collapsible-content-height: 64px; --radix-collapsible-content-width: 716px;">
+                          <div class="px-3 pb-3 pt-0 ml-7 space-y-2">
+                            <p class="text-xs text-muted-foreground">3분 분량, 1인 앵커 형식의 뉴스 브리핑 생성</p>
+                            <div class="flex items-center justify-between">
+                              <span class="text-xs text-muted-foreground">2026-01-30 15:30</span>
+                              <div class="flex items-center gap-1">
+                                <button
+                                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs"
+                                  title="제목/설명 편집">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-pencil w-3 h-3">
+                                    <path
+                                      d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z">
+                                    </path>
+                                    <path d="m15 5 4 4"></path>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-eye w-3 h-3 mr-1">
+                                    <path
+                                      d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                                    </path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                  </svg>
+                                  미리보기</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-state="open">
+                      <div class="rounded-lg border mb-2 transition-colors border-border hover:border-accent/50">
+                        <div class="flex items-center">
+                          <button class="p-3 pr-0 flex-shrink-0" type="button" aria-controls="radix-:rm:"
+                            aria-expanded="true" data-state="open">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4 text-muted-foreground">
+                              <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                          </button>
+                          <button class="flex-1 flex items-center gap-3 p-3 pl-2 text-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-file-text w-4 h-4 flex-shrink-0 text-muted-foreground">
+                              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                              <path d="M10 9H8"></path>
+                              <path d="M16 13H8"></path>
+                              <path d="M16 17H8"></path>
+                            </svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="font-medium truncate text-sm">뉴스 브리핑 3분 2인</p>
+                            </div>
+                            <span class="text-xs text-muted-foreground flex-shrink-0">v1.8</span>
+                          </button>
+                        </div>
+                        <div data-state="open" id="radix-:rm:"
+                          style="--radix-collapsible-content-height: 64px; --radix-collapsible-content-width: 716px;">
+                          <div class="px-3 pb-3 pt-0 ml-7 space-y-2">
+                            <p class="text-xs text-muted-foreground">3분 분량, 2인 앵커 대화 형식의 뉴스 브리핑 생성</p>
+                            <div class="flex items-center justify-between">
+                              <span class="text-xs text-muted-foreground">2026-01-29 14:20</span>
+                              <div class="flex items-center gap-1">
+                                <button
+                                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs"
+                                  title="제목/설명 편집">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-pencil w-3 h-3">
+                                    <path
+                                      d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z">
+                                    </path>
+                                    <path d="m15 5 4 4"></path>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-eye w-3 h-3 mr-1">
+                                    <path
+                                      d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                                    </path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                  </svg>
+                                  미리보기</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-state="closed">
+                      <div class="rounded-lg border mb-2 transition-colors border-border hover:border-accent/50">
+                        <div class="flex items-center">
+                          <button class="p-3 pr-0 flex-shrink-0" type="button" aria-controls="radix-:rn:"
+                            aria-expanded="false" data-state="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-chevron-right w-4 h-4 text-muted-foreground">
+                              <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                          </button>
+                          <button class="flex-1 flex items-center gap-3 p-3 pl-2 text-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-file-text w-4 h-4 flex-shrink-0 text-muted-foreground">
+                              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                              <path d="M10 9H8"></path>
+                              <path d="M16 13H8"></path>
+                              <path d="M16 17H8"></path>
+                            </svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="font-medium truncate text-sm">뉴스 브리핑 7분 1인</p>
+                            </div>
+                            <span class="text-xs text-muted-foreground flex-shrink-0">v2.1</span>
+                          </button>
+                        </div>
+                        <div data-state="closed" id="radix-:rn:" hidden="" style=""></div>
+                      </div>
+                    </div>
+                    <div data-state="closed">
+                      <div class="rounded-lg border mb-2 transition-colors border-border hover:border-accent/50">
+                        <div class="flex items-center">
+                          <button class="p-3 pr-0 flex-shrink-0" type="button" aria-controls="radix-:ro:"
+                            aria-expanded="false" data-state="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-chevron-right w-4 h-4 text-muted-foreground">
+                              <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                          </button>
+                          <button class="flex-1 flex items-center gap-3 p-3 pl-2 text-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-file-text w-4 h-4 flex-shrink-0 text-muted-foreground">
+                              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                              <path d="M10 9H8"></path>
+                              <path d="M16 13H8"></path>
+                              <path d="M16 17H8"></path>
+                            </svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="font-medium truncate text-sm">뉴스 브리핑 7분 2인</p>
+                            </div>
+                            <span class="text-xs text-muted-foreground flex-shrink-0">v1.5</span>
+                          </button>
+                        </div>
+                        <div data-state="closed" id="radix-:ro:" hidden="" style=""></div>
+                      </div>
+                    </div>
+                    <div data-state="closed">
+                      <div class="rounded-lg border mb-2 transition-colors border-border hover:border-accent/50">
+                        <div class="flex items-center">
+                          <button class="p-3 pr-0 flex-shrink-0" type="button" aria-controls="radix-:rp:"
+                            aria-expanded="false" data-state="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-chevron-right w-4 h-4 text-muted-foreground">
+                              <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                          </button>
+                          <button class="flex-1 flex items-center gap-3 p-3 pl-2 text-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-file-text w-4 h-4 flex-shrink-0 text-muted-foreground">
+                              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                              <path d="M10 9H8"></path>
+                              <path d="M16 13H8"></path>
+                              <path d="M16 17H8"></path>
+                            </svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="font-medium truncate text-sm">실시간 트렌드 분석</p>
+                            </div>
+                            <span class="text-xs text-muted-foreground flex-shrink-0">v1.5</span>
+                          </button>
+                        </div>
+                        <div data-state="closed" id="radix-:rp:" hidden="" style=""></div>
+                      </div>
+                    </div>
+                    <div data-state="closed">
+                      <div class="rounded-lg border mb-2 transition-colors border-border hover:border-accent/50">
+                        <div class="flex items-center">
+                          <button class="p-3 pr-0 flex-shrink-0" type="button" aria-controls="radix-:rq:"
+                            aria-expanded="false" data-state="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-chevron-right w-4 h-4 text-muted-foreground">
+                              <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                          </button>
+                          <button class="flex-1 flex items-center gap-3 p-3 pl-2 text-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-file-text w-4 h-4 flex-shrink-0 text-muted-foreground">
+                              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                              <path d="M10 9H8"></path>
+                              <path d="M16 13H8"></path>
+                              <path d="M16 17H8"></path>
+                            </svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="font-medium truncate text-sm">AI 해설</p>
+                            </div>
+                            <span class="text-xs text-muted-foreground flex-shrink-0">v3.1</span>
+                          </button>
+                        </div>
+                        <div data-state="closed" id="radix-:rq:" hidden="" style=""></div>
+                      </div>
+                    </div>
+                    <div data-state="closed">
+                      <div class="rounded-lg border mb-2 transition-colors border-border hover:border-accent/50">
+                        <div class="flex items-center">
+                          <button class="p-3 pr-0 flex-shrink-0" type="button" aria-controls="radix-:rr:"
+                            aria-expanded="false" data-state="closed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="lucide lucide-chevron-right w-4 h-4 text-muted-foreground">
+                              <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                          </button>
+                          <button class="flex-1 flex items-center gap-3 p-3 pl-2 text-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-file-text w-4 h-4 flex-shrink-0 text-muted-foreground">
+                              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                              <path d="M10 9H8"></path>
+                              <path d="M16 13H8"></path>
+                              <path d="M16 17H8"></path>
+                            </svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="font-medium truncate text-sm">뉴스 요약</p>
+                            </div>
+                            <span class="text-xs text-muted-foreground flex-shrink-0">v2.0</span>
+                          </button>
+                        </div>
+                        <div data-state="closed" id="radix-:rr:" hidden="" style=""></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-8 flex flex-col">
+          <div class="bg-card border border-border rounded-lg flex flex-col h-[650px]">
+            <div class="p-4 border-b border-border flex items-center justify-between">
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold truncate">뉴스 브리핑 3분 1인</h3>
+                <p class="text-sm text-muted-foreground truncate">3분 분량, 1인 앵커 형식의 뉴스 브리핑 생성</p>
+              </div>
+              <div class="flex items-center gap-2 ml-4 flex-shrink-0">
+                <span class="text-xs text-muted-foreground">v2.3</span>
+                <button
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-history w-4 h-4 mr-2">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                    <path d="M3 3v5h5"></path>
+                    <path d="M12 7v5l4 2"></path>
+                  </svg>버전</button>
+              </div>
+            </div>
+            <div class="p-4 flex-1 overflow-hidden flex flex-col">
+              <div class="space-y-4 flex-1 flex flex-col">
+                <div class="flex items-center justify-between flex-shrink-0">
+                  <span class="text-sm font-medium">프롬프트 미리보기</span>
+                  <span class="text-xs text-muted-foreground">v2.3 · 현재 버전</span>
+                </div>
+                <textarea
+                  class="flex min-h-[80px] w-full rounded-md border border-input px-3 py-2 ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1 font-mono text-sm bg-muted/30"
+                  readonly="">당신은 뉴스 브리핑 전문가입니다.
+    
+                    3분 분량, 1인 앵커 형식으로 뉴스 브리핑을 작성해주세요:
+                    1. 핵심 뉴스 3개 선정
+                    2. 각 뉴스별 30초 분량 스크립트
+                    3. 오늘의 키워드 추출
+    
+                    기사 목록:
+                    {{articles}}
+    
+                    응답 형식:
+                    - 오프닝 멘트 (10초)
+                    - 뉴스 1 (30초)
+                    - 뉴스 2 (30초)
+                    - 뉴스 3 (30초)
+                    - 클로징 멘트 (10초)</textarea>
+                <div class="flex justify-end gap-2">
+                  <button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-pencil w-4 h-4 mr-2">
+                      <path
+                        d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z">
+                      </path>
+                      <path d="m15 5 4 4"></path>
+                    </svg>수정</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
