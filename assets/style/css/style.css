@@ -18613,6 +18613,7 @@ body.ai-tutor-settings-open {
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-grow: 1;
   }
   .tutor-chat__wrapper .news-cards-wrapper .news-card .news-date {
     color: #626262;
@@ -19323,6 +19324,7 @@ body.ai-tutor-settings-open {
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-grow: 1;
   }
   .tutor-chat__wrapper .news-cards-wrapper .news-card .news-date {
     color: #626262;
