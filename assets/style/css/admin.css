@@ -209,15 +209,17 @@ h1 {
 .prompt-item:hover {
   border: 1px solid hsl(var(--accent) / .5);
 }
-.prompt-item.is-expanded{
+.prompt-item.is-selected{
   border-color: hsl(var(--accent));
   background-color: hsl(var(--accent) / .05);
+}
+.prompt-item.is-expanded{
 }
 .prompt-item.is-expanded .prompt-item__content{
   display: block;
   padding-left: 25px;
 }
-.prompt-item.is-expanded .prompt-item__header .label{
+.prompt-item.is-selected .prompt-item__header .label{
   color: hsl(var(--accent));
 }
 .prompt-item__content .bottom{

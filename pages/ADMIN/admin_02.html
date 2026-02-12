@@ -61,7 +61,7 @@
                   </svg>
                 </span>
               </button>
-              <button type="button" class="item-row">
+              <button type="button" class="item-row" aria-selected="false">
                 <span class="doc-icon">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 2H7C5.9 2 5 2.9 5 4V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V7L14 2Z"
@@ -105,7 +105,7 @@
                   </svg>
                 </span>
               </button>
-              <button type="button" class="item-row">
+              <button type="button" class="item-row" aria-selected="false">
                 <span class="doc-icon">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 2H7C5.9 2 5 2.9 5 4V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V7L14 2Z"
@@ -149,7 +149,7 @@
                   </svg>
                 </span>
               </button>
-              <button type="button" class="item-row">
+              <button type="button" class="item-row" aria-selected="false">
                 <span class="doc-icon">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 2H7C5.9 2 5 2.9 5 4V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V7L14 2Z"
@@ -193,7 +193,7 @@
                   </svg>
                 </span>
               </button>
-              <button type="button" class="item-row">
+              <button type="button" class="item-row" aria-selected="false">
                 <span class="doc-icon">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 2H7C5.9 2 5 2.9 5 4V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V7L14 2Z"
@@ -254,6 +254,19 @@
         if (!promptItem) return;
         const isExpanded = promptItem.classList.toggle('is-expanded');
         toggleButton.setAttribute('aria-expanded', String(isExpanded));
+      });
+    });
+    document.querySelectorAll('.item-row').forEach((itemRow) => {
+      itemRow.addEventListener('click', () => {
+        const promptItem = itemRow.closest('.prompt-item');
+        const list = document.querySelectorAll('.prompt-item');
+        list.forEach((item)=>{
+          item.classList.remove('is-selected');
+        })
+        if (!promptItem) return;
+        promptItem.classList.add('is-expanded');
+        const isSelected = promptItem.classList.add('is-selected');
+        itemRow.setAttribute('aria-selected', String(isSelected));
       });
     });
   </script>
