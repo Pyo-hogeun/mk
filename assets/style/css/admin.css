@@ -186,13 +186,6 @@ h1 {
 
 .prompt-item {
   margin-bottom: 10px;
-}
-.prompt-item:hover .item-row{
-  border: 1px solid hsl(var(--accent) / .5) 
-}
-
-.item-row {
-  width: 100%;
   border: 1px solid hsl(var(--border));
   border-radius: 10px;
   background: #fff;
@@ -201,8 +194,38 @@ h1 {
   align-items: center;
   padding: 8px 14px;
   gap: 12px;
+}
+
+.prompt-item:hover {
+  border: 1px solid hsl(var(--accent) / .5);
+}
+
+.item-row {
+  flex: 1;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  padding: 0;
   color: inherit;
   text-align: left;
+}
+
+.chevron-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.prompt-item.is-expanded .chevron {
+  transform: translateY(-1px) rotate(90deg);
 }
 
 .chevron {
