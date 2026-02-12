@@ -16748,7 +16748,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
-    padding-left: 5px;
+    padding-left: 18px;
+    text-indent: -13px;
   }
   .learn-from-news .study__wrapper .point-list ul > li:before {
     content: "";
@@ -17393,7 +17394,8 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
-    padding-left: 5px;
+    padding-left: 18px;
+    text-indent: -13px;
   }
   .learn-from-news .study__wrapper .point-list ul > li:before {
     content: "";
@@ -19771,6 +19773,9 @@ body.ai-tutor-settings-open {
     position: absolute;
     right: 12px;
     top: 20px;
+  }
+  .storage-tutor .content-wrapper .briefing-item__title {
+    flex-grow: 1;
   }
   .storage-tutor .content-wrapper .btn-more {
     display: flex;
