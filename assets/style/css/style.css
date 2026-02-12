@@ -15733,7 +15733,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    min-width: 595px;
+    min-width: 460px;
   }
   .my-study__divider {
     width: auto;
@@ -15802,6 +15802,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
+    white-space: nowrap;
   }
   .stats-card__value-wrapper {
     display: flex;
@@ -16076,6 +16077,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     background: var(--bg-default, #1D1D1D);
     border: 1px solid var(--border-default, #E0E0E0);
     border-radius: var(--radius-md, 8px);
+    height: 76px;
   }
   .learning-card__ai-badge {
     display: inline-flex;
