@@ -287,7 +287,6 @@
         display: flex;
         width: calc(100% + $mobilePadSide);
         padding-right: $mobilePadSide;
-        align-items: flex-start;
         gap: 8px;
         align-self: stretch;
         overflow-x: auto;
