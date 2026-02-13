@@ -18548,11 +18548,13 @@ body.ai-tutor-settings-open {
     /* 22.5px */
   }
   .tutor-chat__wrapper .question-suggestions .question-button.selected {
+    align-self: flex-end;
     border-radius: 8px;
     background: var(--bg-subtle, #2F2F2F);
     box-shadow: none;
   }
   .tutor-chat__wrapper .question-suggestions .question-button + .timestamp {
+    text-align: right;
     margin-top: -8px;
   }
   .tutor-chat__wrapper .news-intro-text {
@@ -19276,11 +19278,13 @@ body.ai-tutor-settings-open {
     line-height: 150%; /* 22.5px */
   }
   .tutor-chat__wrapper .question-suggestions .question-button.selected {
+    align-self: flex-end;
     border-radius: 8px;
     background: var(--bg-subtle, #2F2F2F);
     box-shadow: none;
   }
   .tutor-chat__wrapper .question-suggestions .question-button + .timestamp {
+    text-align: right;
     margin-top: -8px;
   }
   .tutor-chat__wrapper .news-intro-text {

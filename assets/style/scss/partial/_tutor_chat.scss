@@ -275,11 +275,13 @@
           /* 22.5px */
 
           &.selected {
+            align-self: flex-end;
             border-radius: 8px;
             background: var(--bg-subtle, #2F2F2F);
             box-shadow: none;
           }
           & + .timestamp{
+            text-align: right;
             margin-top: -8px;
           }
         }
