@@ -18523,7 +18523,7 @@ body.ai-tutor-settings-open {
   .tutor-chat__wrapper .question-suggestions {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 12px;
     align-self: stretch;
     margin-bottom: 16px;
@@ -18550,6 +18550,10 @@ body.ai-tutor-settings-open {
   .tutor-chat__wrapper .question-suggestions .question-button.selected {
     border-radius: 8px;
     background: var(--bg-subtle, #2F2F2F);
+    box-shadow: none;
+  }
+  .tutor-chat__wrapper .question-suggestions .question-button + .timestamp {
+    margin-top: -8px;
   }
   .tutor-chat__wrapper .news-intro-text {
     align-self: stretch;
@@ -19248,7 +19252,7 @@ body.ai-tutor-settings-open {
   .tutor-chat__wrapper .question-suggestions {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 12px;
     align-self: stretch;
     margin-bottom: 16px;
@@ -19274,6 +19278,10 @@ body.ai-tutor-settings-open {
   .tutor-chat__wrapper .question-suggestions .question-button.selected {
     border-radius: 8px;
     background: var(--bg-subtle, #2F2F2F);
+    box-shadow: none;
+  }
+  .tutor-chat__wrapper .question-suggestions .question-button + .timestamp {
+    margin-top: -8px;
   }
   .tutor-chat__wrapper .news-intro-text {
     align-self: stretch;
