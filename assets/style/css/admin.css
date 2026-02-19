@@ -64,8 +64,11 @@ body {
 
 .admin-page {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   padding: 32px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .page-header {
@@ -73,6 +76,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 28px;
+  flex-shrink: 0;
 }
 
 .title-wrap {
@@ -130,8 +134,8 @@ h1 {
   display: grid;
   grid-template-columns: 32% 1fr;
   gap: 26px;
-  height: calc(100vh - 142px);
-  min-height: 700px;
+  height: 100%;
+  min-height: 0;
 }
 
 .prompt-panel,
@@ -139,7 +143,8 @@ h1 {
   border: 1px solid hsl(var(--border));
   border-radius: 12px;
   background: var(--panel);
-  
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .prompt-panel {
@@ -182,7 +187,7 @@ h1 {
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow: auto;
+  overflow: visible;
 }
 
 .prompt-item {
