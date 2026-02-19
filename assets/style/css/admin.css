@@ -148,14 +148,18 @@ h1 {
 }
 
 .prompt-panel {
-  padding: 18px;
   display: flex;
   flex-direction: column;
 }
 
 .search-box {
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: var(--panel, #FFF);
   margin-bottom: 18px;
+  padding: 18px 18px 0;
+  z-index: 1;
+  
 }
 
 .search-box svg {
@@ -163,8 +167,8 @@ h1 {
   width: 17px;
   height: 17px;
   color: #9a8f8a;
-  left: 14px;
-  top: 50%;
+  left: 28px;
+  top: calc(50% + 8px);
   transform: translateY(-50%);
 }
 
@@ -185,7 +189,7 @@ h1 {
 
 .prompt-list {
   margin: 0;
-  padding: 0;
+  padding: 0 18px 18px;
   list-style: none;
   overflow: visible;
 }
@@ -340,6 +344,9 @@ h1 {
   align-items: center;
   padding: 16px;
   border-bottom: 1px solid hsl(var(--border));
+  position: sticky;
+  top: 0;
+  background: var(--panel, #FFF);
 }
 .history-card__header .action{
   display: flex;
