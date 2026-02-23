@@ -16130,15 +16130,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     border: 1px solid var(--border-default, #464646);
     gap: 12px;
   }
-  .term-item--active {
-    border-color: var(--orange-100, #FF7A00);
-  }
-  .term-item--active .term-item__content {
-    display: block;
-  }
-  .term-item--active .term-item__toggle svg {
-    transform: rotate(180deg);
-  }
   .term-item__header {
     display: flex;
     align-items: center;
@@ -16168,24 +16159,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin: 0;
   }
   .term-item__toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-    color: var(--text-primary, #212121);
-  }
-  .term-item__toggle svg {
-    width: 24px;
-    height: 24px;
+    display: none;
   }
   .term-item__content {
-    display: none;
     margin-top: 12px;
   }
   .term-item__description {
@@ -16202,6 +16178,52 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .my-study__words {
     display: grid;
     gap: 20px;
+  }
+}
+@media screen and (min-width: 480px) and (min-width: 1210px) {
+  .my-study__words.today-study {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1210px) {
+  .my-study__words.today-study {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (min-width: 480px) {
+  .key-eco-word .my-study__words {
+    gap: 12px;
+  }
+  .key-eco-word .my-study__words .term-item--active {
+    border-color: var(--orange-100, #FF7A00);
+  }
+  .key-eco-word .my-study__words .term-item--active .term-item__content {
+    display: block;
+  }
+  .key-eco-word .my-study__words .term-item--active .term-item__toggle svg {
+    transform: rotate(180deg);
+  }
+  .key-eco-word .my-study__words .term-item__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    color: var(--text-primary, #212121);
+  }
+  .key-eco-word .my-study__words .term-item__toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+  .key-eco-word .my-study__words .term-item__content {
+    display: none;
+    margin-top: 12px;
   }
 }
 @media (max-width: 480px) {

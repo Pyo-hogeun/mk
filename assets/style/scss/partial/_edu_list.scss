@@ -533,18 +533,18 @@
     transition: border-color 0.2s ease;
     border: 1px solid var(--border-default, #464646);
     gap: 12px;
-    &--active {
-      border-color: var(--orange-100, #FF7A00);
+    // &--active {
+    //   border-color: var(--orange-100, #FF7A00);
 
-      .term-item__content {
-        display: block;
-      }
-      .term-item__toggle{
-        svg{
-          transform: rotate(180deg);
-        }
-      }
-    }
+    //   .term-item__content {
+    //     display: block;
+    //   }
+    //   .term-item__toggle{
+    //     svg{
+    //       transform: rotate(180deg);
+    //     }
+    //   }
+    // }
     &__header {
       display: flex;
       align-items: center;
@@ -577,26 +577,27 @@
     }
 
     &__toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      flex-shrink: 0;
-      color: var(--text-primary, #212121);
+      display: none;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // width: 24px;
+      // height: 24px;
+      // background: transparent;
+      // border: none;
+      // cursor: pointer;
+      // padding: 0;
+      // flex-shrink: 0;
+      // color: var(--text-primary, #212121);
 
-      svg {
-        width: 24px;
-        height: 24px;
-      }
+      // svg {
+      //   width: 24px;
+      //   height: 24px;
+      // }
     }
 
     &__content {
-      display: none;
+      // display: none;
       margin-top: 12px;
     }
 
@@ -618,6 +619,60 @@
     &__words{
       display: grid;
       gap: 20px;
+
+      &.today-study{
+        @media screen and (min-width: $pc) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (max-width: $pc) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+      }
+
+    }
+  }
+
+  .key-eco-word{
+    .my-study__words{
+      gap: 12px;
+      .term-item{
+        &--active {
+          border-color: var(--orange-100, #FF7A00);
+    
+          .term-item__content {
+            display: block;
+          }
+          .term-item__toggle{
+            svg{
+              transform: rotate(180deg);
+            }
+          }
+        }
+        &__toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          flex-shrink: 0;
+          color: var(--text-primary, #212121);
+    
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+        &__content {
+          display: none;
+          margin-top: 12px;
+        }
+      }
+
     }
   }
 }
