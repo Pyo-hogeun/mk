@@ -41,7 +41,46 @@
 
     <div class="filter-bar">
       <div class="prefix">
-
+        <div class="category-dropdown">
+          <button type="button" class="category-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="category-dropdown__selected">전체 카테고리</span>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul class="category-dropdown__menu" role="listbox" aria-label="카테고리 선택" hidden>
+            <li role="option" aria-selected="true">
+              <button type="button" class="category-dropdown__option is-active" data-value="전체 카테고리">
+                <span class="check" aria-hidden="true">✓</span>
+                <span>전체 카테고리</span>
+              </button>
+            </li>
+            <li role="option" aria-selected="false">
+              <button type="button" class="category-dropdown__option" data-value="브리핑">
+                <span class="check" aria-hidden="true">✓</span>
+                <span>브리핑</span>
+              </button>
+            </li>
+            <li role="option" aria-selected="false">
+              <button type="button" class="category-dropdown__option" data-value="분석">
+                <span class="check" aria-hidden="true">✓</span>
+                <span>분석</span>
+              </button>
+            </li>
+            <li role="option" aria-selected="false">
+              <button type="button" class="category-dropdown__option" data-value="해설">
+                <span class="check" aria-hidden="true">✓</span>
+                <span>해설</span>
+              </button>
+            </li>
+            <li role="option" aria-selected="false">
+              <button type="button" class="category-dropdown__option" data-value="요약">
+                <span class="check" aria-hidden="true">✓</span>
+                <span>요약</span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="suffix">
         <div class="search-box">
@@ -447,6 +486,41 @@
         itemRow.setAttribute('aria-selected', String(isSelected));
       });
     });
+
+    const categoryDropdown = document.querySelector('.category-dropdown');
+    const categoryToggle = categoryDropdown?.querySelector('.category-dropdown__toggle');
+    const categoryMenu = categoryDropdown?.querySelector('.category-dropdown__menu');
+    const categorySelected = categoryDropdown?.querySelector('.category-dropdown__selected');
+
+    if (categoryDropdown && categoryToggle && categoryMenu && categorySelected) {
+      categoryToggle.addEventListener('click', () => {
+        const isExpanded = categoryToggle.getAttribute('aria-expanded') === 'true';
+        categoryToggle.setAttribute('aria-expanded', String(!isExpanded));
+        categoryMenu.hidden = isExpanded;
+      });
+
+      categoryMenu.querySelectorAll('.category-dropdown__option').forEach((optionButton) => {
+        optionButton.addEventListener('click', () => {
+          categoryMenu.querySelectorAll('.category-dropdown__option').forEach((button) => {
+            button.classList.remove('is-active');
+            button.closest('[role="option"]')?.setAttribute('aria-selected', 'false');
+          });
+
+          optionButton.classList.add('is-active');
+          optionButton.closest('[role="option"]')?.setAttribute('aria-selected', 'true');
+          categorySelected.textContent = optionButton.dataset.value || '';
+          categoryToggle.setAttribute('aria-expanded', 'false');
+          categoryMenu.hidden = true;
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!categoryDropdown.contains(event.target)) {
+          categoryToggle.setAttribute('aria-expanded', 'false');
+          categoryMenu.hidden = true;
+        }
+      });
+    }
   </script>
 
 </body>
