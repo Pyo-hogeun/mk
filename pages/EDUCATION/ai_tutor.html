@@ -104,7 +104,27 @@
               </i>
             </div>
 
-            <div class="level-tag">초등학생</div>
+            <div class="level-selector-wrapper">
+              <button class="level-selector" type="button" aria-label="난이도" aria-expanded="false" aria-controls="level-selector-dropdown">
+                <span class="level-selector__text">학습 난이도 : 초등학생</span>
+                <svg class="level-selector__icon" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.936678 0.950012C1.45683 0.42617 2.30415 0.424146 2.82615 0.946147L7.05719 5.17719C7.57789 5.69789 8.42211 5.69789 8.94281 5.17719L13.1739 0.946146C13.6959 0.424145 14.5432 0.42617 15.0633 0.950012C15.5809 1.47124 15.5799 2.31342 15.0605 2.83282L8.94281 8.95053C8.42211 9.47122 7.57789 9.47122 7.05719 8.95052L0.939483 2.83282C0.420084 2.31342 0.419118 1.47124 0.936678 0.950012Z" fill="white"/>
+                </svg>
+              </button>
+
+              <!-- level Selector Dropdown -->
+              <div class="level-selector-dropdown" id="level-selector-dropdown" role="listbox" aria-label="난이도 선택" aria-hidden="true">
+                <button class="level-option" role="option" aria-selected="false" data-step="초등학생">
+                  <span class="level-label">초등학생</span>
+                </button>
+                <button class="level-option" role="option" aria-selected="false" data-step="고등학생">
+                  <span class="level-label">고등학생</span>
+                </button>
+                <button class="level-option" role="option" aria-selected="false" data-step="성인">
+                  <span class="level-label">성인</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           <div class="tutor__description">
@@ -267,6 +287,52 @@
         if (e.key === 'Escape' && dropdown.getAttribute('aria-hidden') === 'false') {
           closeDropdown();
         }
+      });
+    })();
+
+    // Level Selector Dropdown
+    (() => {
+      const levelBtn = document.querySelector('.level-selector');
+      const levelDropdown = document.getElementById('level-selector-dropdown');
+      const levelOptions = document.querySelectorAll('.level-option');
+      const levelTag = document.querySelector('.level-tag');
+
+      if (!levelBtn || !levelDropdown) return;
+
+      const closeLevelDropdown = () => {
+        levelDropdown.setAttribute('aria-hidden', 'true');
+        levelBtn.setAttribute('aria-expanded', 'false');
+      };
+
+      levelBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = levelDropdown.getAttribute('aria-hidden') === 'false';
+        levelDropdown.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+        levelBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      });
+
+      levelOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+          const level = option.dataset.step;
+          levelOptions.forEach(o => o.setAttribute('aria-selected', 'false'));
+          option.setAttribute('aria-selected', 'true');
+
+          const textEl = levelBtn.querySelector('.level-selector__text');
+          if (textEl) textEl.textContent = '학습 난이도 : ' + level;
+          if (levelTag) levelTag.textContent = level;
+
+          closeLevelDropdown();
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!levelDropdown.contains(e.target) && !levelBtn.contains(e.target)) {
+          closeLevelDropdown();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLevelDropdown();
       });
     })();
 

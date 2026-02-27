@@ -6,22 +6,101 @@
     &__wrapper {
       padding: 0 $mobilePadSide;
 
-      .level-tag {
-        display: inline-flex;
-        height: 22px;
-        padding: 0 10px;
-        justify-content: center;
+      .my-study__header {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        border-radius: 4px;
-        border: 1px solid var(--border-default, #E0E0E0);
-        background: var(--bg, #2F2F2F);
+        gap: 8px;
+        margin-bottom: 4px;
+      }
 
-        color: var(--white, #FFF);
-        font-size: 12px;
+      .level-selector-wrapper {
+        position: relative;
+        display: inline-flex;
+      }
+
+      .level-selector {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px 13px;
+        border-radius: 5px;
+        border: 1px solid var(--border-default, #E0E0E0);
+        background: var(--orange-100, #FF7A00);
+        cursor: pointer;
+
+        &__text {
+          color: var(--white, #FFF);
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 150%;
+          white-space: nowrap;
+        }
+
+        &__icon {
+          flex-shrink: 0;
+          transition: transform 0.2s;
+        }
+
+        &[aria-expanded="true"] .level-selector__icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      .level-selector-dropdown {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        z-index: 20;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        border-radius: var(--radius-sm, 4px);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border: 1px solid var(--border-default, #E0E0E0);
+        background: var(--bg-default, #FFF);
+
+        &[aria-hidden="false"] {
+          display: flex;
+        }
+      }
+
+      .level-option {
+        display: flex;
+        padding: 5px 16px;
+        align-items: center;
+        border: none;
+        border-bottom: 1px solid var(--border-default, #E0E0E0);
+        background: var(--bg-default, #FFF);
+        cursor: pointer;
+        transition: background 0.15s;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background: var(--bg-subtle, #F9FAFB);
+        }
+
+        &[aria-selected="true"] {
+          background: var(--orange-100, #FF7A00);
+
+          .level-label {
+            color: var(--white, #FFF);
+          }
+        }
+      }
+
+      .level-label {
+        color: var(--text-primary, #212121);
+        font-size: 14px;
         font-weight: 500;
         line-height: 150%;
-        /* 18px */
       }
+
       .notice-card {
         display: flex;
         align-items: center;
