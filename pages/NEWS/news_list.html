@@ -143,6 +143,11 @@
                   <div class="summary-column__header">
                     <span class="summary-column__dot summary-column__dot--culture"></span>
                     <span class="summary-column__label">Culture</span>
+                    <span class="arrow">
+                      <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.290598 0.295517C0.680712 -0.0973647 1.3162 -0.0988827 1.7077 0.292618L4.88098 3.4659C5.27151 3.85643 5.90467 3.85643 6.2952 3.4659L9.46848 0.292617C9.85998 -0.0988831 10.4955 -0.0973646 10.8856 0.295517C11.2738 0.68644 11.273 1.31807 10.8835 1.70762L6.2952 6.2959C5.90467 6.68643 5.27151 6.68643 4.88098 6.2959L0.292701 1.70762C-0.0968475 1.31807 -0.0975722 0.68644 0.290598 0.295517Z" fill="currentColor"/>
+                      </svg>
+                    </span>
                   </div>
                   <ul class="summary-column__list">
                     <li class="summary-column__item">
@@ -160,6 +165,11 @@
                   <div class="summary-column__header">
                     <span class="summary-column__dot summary-column__dot--sports"></span>
                     <span class="summary-column__label">Sports</span>
+                    <span class="arrow">
+                      <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.290598 0.295517C0.680712 -0.0973647 1.3162 -0.0988827 1.7077 0.292618L4.88098 3.4659C5.27151 3.85643 5.90467 3.85643 6.2952 3.4659L9.46848 0.292617C9.85998 -0.0988831 10.4955 -0.0973646 10.8856 0.295517C11.2738 0.68644 11.273 1.31807 10.8835 1.70762L6.2952 6.2959C5.90467 6.68643 5.27151 6.68643 4.88098 6.2959L0.292701 1.70762C-0.0968475 1.31807 -0.0975722 0.68644 0.290598 0.295517Z" fill="currentColor"/>
+                      </svg>
+                    </span>
                   </div>
                   <ul class="summary-column__list">
                     <li class="summary-column__item">
@@ -822,7 +832,100 @@
         minuteDownButton?.addEventListener('click', () => shiftSelection(dialConfigs.minute, 1));
       }
     })();
-   
+
+    // 카테고리 요약 모바일 아코디언
+    (() => {
+      const mobileQuery = window.matchMedia('(max-width: 480px)');
+      const summaryColumns = Array.from(document.querySelectorAll('.category-summary-columns .summary-column'));
+
+      if (!summaryColumns.length) return;
+
+      const setExpandedState = (column, isExpanded) => {
+        const header = column.querySelector('.summary-column__header');
+        const list = column.querySelector('.summary-column__list');
+        const arrow = header?.querySelector('.arrow');
+
+        if (!header || !list) return;
+
+        column.classList.toggle('is-open', isExpanded);
+        list.classList.toggle('is-open', isExpanded);
+        header.setAttribute('aria-expanded', String(isExpanded));
+
+        if (arrow) {
+          arrow.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      };
+
+      const applyDesktopState = () => {
+        summaryColumns.forEach((column) => {
+          const header = column.querySelector('.summary-column__header');
+          const list = column.querySelector('.summary-column__list');
+          const arrow = header?.querySelector('.arrow');
+
+          column.classList.remove('is-open');
+          list?.classList.remove('is-open');
+          header?.removeAttribute('role');
+          header?.removeAttribute('tabindex');
+          header?.removeAttribute('aria-expanded');
+
+          if (arrow) {
+            arrow.style.display = 'none';
+            arrow.style.marginLeft = 'auto';
+            arrow.style.transition = 'transform 0.2s ease';
+            arrow.style.transform = 'rotate(0deg)';
+          }
+        });
+      };
+
+      const applyMobileState = () => {
+        summaryColumns.forEach((column, index) => {
+          const header = column.querySelector('.summary-column__header');
+          const arrow = header?.querySelector('.arrow');
+
+          header?.setAttribute('role', 'button');
+          header?.setAttribute('tabindex', '0');
+
+          if (arrow) {
+            arrow.style.display = 'inline-flex';
+            arrow.style.marginLeft = 'auto';
+            arrow.style.transition = 'transform 0.2s ease';
+          }
+
+          setExpandedState(column, index === 0);
+        });
+      };
+
+      const handleColumnToggle = (column) => {
+        if (!mobileQuery.matches) return;
+
+        const isOpen = column.classList.contains('is-open');
+        summaryColumns.forEach((item) => setExpandedState(item, item === column ? !isOpen : false));
+      };
+
+      summaryColumns.forEach((column) => {
+        const header = column.querySelector('.summary-column__header');
+        if (!header) return;
+
+        header.addEventListener('click', () => handleColumnToggle(column));
+        header.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          handleColumnToggle(column);
+        });
+      });
+
+      const syncMode = () => {
+        if (mobileQuery.matches) {
+          applyMobileState();
+          return;
+        }
+        applyDesktopState();
+      };
+
+      syncMode();
+      mobileQuery.addEventListener('change', syncMode);
+    })();
+
 
     //Agent Selector Dropdown
     (() => {
