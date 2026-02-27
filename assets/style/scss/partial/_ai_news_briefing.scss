@@ -45,6 +45,9 @@
       font-size: 15px;
       font-weight: 400;
       line-height: 23px;
+      svg{
+        vertical-align: middle;
+      }
     }
 
     &__settings {
@@ -273,6 +276,296 @@
           }
         }
       }
+    }
+  }
+
+  /* 카테고리별 이슈 핵심 요약 */
+  .category-issue-summary {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-top: 24px;
+  }
+
+  .category-summary-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    background: #F9FAFB;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    align-self: stretch;
+
+    &__title {
+      color: #0F172A;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      padding-bottom: 32px;
+    }
+  }
+
+  .category-summary-columns {
+    display: flex;
+    gap: 32px;
+    flex: 1;
+  }
+
+  .summary-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    &__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px 0 rgba(255, 107, 0, 0.20);
+
+      &--international {
+        background: linear-gradient(45deg, #60A5FA 0%, #2563EB 100%);
+      }
+      &--culture {
+        background: linear-gradient(45deg, #C084FC 0%, #9333EA 100%);
+      }
+      &--sports {
+        background: linear-gradient(45deg, #34D399 0%, #059669 100%);
+      }
+    }
+
+    &__label {
+      margin-left: 12px;
+      color: #334155;
+      font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 16.5px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+  .summary-item {
+    &__bullet {
+      color: #FF6B00;
+      font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22.75px;
+      flex-shrink: 0;
+    }
+
+    &__text {
+      color: #475569;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22.75px;
+    }
+  }
+
+  .category-summary-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 319px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  .update-alert-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    background: #F9FAFB;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+    &__label {
+      color: #64748B;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__time-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &__schedule {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__schedule-line {
+      color: #1E293B;
+      font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+    }
+
+    &__schedule-time {
+      color: #1E293B;
+      font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+
+  .summary-toggle {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    border-radius: 9999px;
+    background: #CBD5E1;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &__thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 9999px;
+      background: #FFF;
+      border: 1px solid #FFF;
+      transition: left 0.2s ease;
+    }
+
+    &--on {
+      background: #FF6B00;
+
+      .summary-toggle__thumb {
+        left: calc(100% - 22px);
+      }
+    }
+  }
+
+  .briefing-link-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex: 1;
+    padding: 24px;
+    margin-top: 24px;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    background: #F9FAFB;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+    &__meta {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    &__duration {
+      color: #64748B;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 19px;
+    }
+
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 12px 19px;
+      border-radius: 14px;
+      background: #FF6B00;
+      box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.10), 0 2px 5px -2px rgba(0, 0, 0, 0.10);
+      border: none;
+      color: #FFF;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .briefing-cta-banner {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 17px;
+
+    &__label {
+      color: #334155;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 19.5px;
+    }
+
+    &__btn {
+      display: flex;
+      align-items: center;
+      padding: 6px 12px;
+      margin-left: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 107, 0, 0.40);
+      background: #FFF;
+      box-shadow: 0 2px 8px 0 rgba(255, 107, 0, 0.10);
+      cursor: pointer;
+      gap: 6px;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    &__btn-text {
+      color: #FF6B00;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 16.5px;
     }
   }
 
