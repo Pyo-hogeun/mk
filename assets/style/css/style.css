@@ -7536,6 +7536,28 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 700;
     line-height: 16.5px;
   }
+}
+@media screen and (min-width: 480px) and (max-width: 1210px) {
+  .category-issue-summary {
+    flex-direction: column;
+  }
+  .category-summary-sidebar {
+    width: auto;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .category-summary-sidebar > div {
+    flex: 1 1 50%;
+  }
+  .category-summary-sidebar .update-alert-card__schedule {
+    flex-direction: row;
+    align-items: center;
+  }
+  .category-summary-sidebar .briefing-link-card {
+    margin-top: 0;
+  }
+}
+@media (min-width: 480px) {
   .briefing-tag {
     display: flex;
     justify-content: center;
@@ -7808,7 +7830,6 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
   .summary-column__header {
     display: flex;
     align-items: center;
-    padding-bottom: 12px;
   }
   .summary-column__dot {
     width: 10px;
@@ -7845,8 +7866,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-direction: column;
     gap: 12px;
     list-style: none;
-    padding: 0;
+    padding: 12px 0 0;
     margin: 0;
+    border-top: 1px solid #E2E8F0;
   }
   .summary-column__item {
     display: flex;

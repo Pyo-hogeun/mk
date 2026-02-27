@@ -847,8 +847,8 @@
 
         if (!header || !list) return;
 
-        column.classList.toggle('is-open', isExpanded);
-        list.classList.toggle('is-open', isExpanded);
+        column.classList.toggle('is-open');
+        list.classList.toggle('is-open');
         header.setAttribute('aria-expanded', String(isExpanded));
 
         if (arrow) {
@@ -899,7 +899,8 @@
         if (!mobileQuery.matches) return;
 
         const isOpen = column.classList.contains('is-open');
-        summaryColumns.forEach((item) => setExpandedState(item, item === column ? !isOpen : false));
+        // summaryColumns.forEach((item) => setExpandedState(item, item === column ? !isOpen : false));
+        setExpandedState(column, !isOpen);
       };
 
       summaryColumns.forEach((column) => {
@@ -922,7 +923,7 @@
         applyDesktopState();
       };
 
-      syncMode();
+      // syncMode();
       mobileQuery.addEventListener('change', syncMode);
     })();
 

@@ -285,6 +285,7 @@
     gap: 24px;
     align-items: flex-start;
     margin-top: 24px;
+    
   }
 
   .category-summary-card {
@@ -566,6 +567,27 @@
       font-size: 11px;
       font-weight: 700;
       line-height: 16.5px;
+    }
+  }
+
+  @media screen and (max-width: $pc) {
+    .category-issue-summary {
+      flex-direction: column;
+    }
+    .category-summary-sidebar{
+      width: auto;
+      flex-direction: row;
+      gap: 20px;
+      & > div{
+        flex: 1 1 50%;
+      }
+      .update-alert-card__schedule{
+        flex-direction: row;
+        align-items: center;
+      }
+      .briefing-link-card{
+        margin-top: 0;
+      }
     }
   }
 
