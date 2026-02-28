@@ -1450,6 +1450,7 @@ body.dark {
   }
   .briefing-grid .card {
     border: 0;
+    padding: 24px var(--spacing-md);
   }
   .stock-header-info .industry-issue-card__name {
     justify-self: stretch;

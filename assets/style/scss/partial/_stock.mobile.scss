@@ -68,6 +68,7 @@
     grid-template-columns: 1fr;
     .card{
       border: 0;
+      padding: 24px var(--spacing-md);
     }
   }
   .stock-header-info{
