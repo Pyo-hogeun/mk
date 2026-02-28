@@ -58,4 +58,22 @@
   .stock-issue-card {
     width: 212px;
   }
+  .briefing-grid {
+    padding: 0 $mobilePadSide;
+  }
+  
+}
+@media screen and (max-width: $pc){
+  .briefing-grid {
+    grid-template-columns: 1fr;
+    .card{
+      border: 0;
+    }
+  }
+  .stock-header-info{
+    .industry-issue-card__name{
+      justify-self: stretch;
+      flex: 1 1 100%;
+    }
+  }
 }

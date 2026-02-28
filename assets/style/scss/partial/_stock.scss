@@ -593,3 +593,189 @@
   font-weight: 600;
   line-height: 150%;
 }
+
+// Briefing grid & industry issues card
+.briefing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  
+
+  .card {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border-default, #e0e0e0);
+    background: var(--bg-subtle, #F9FAFB);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+.card__heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__title {
+  color: var(--text-primary, #111111);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.industry-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.industry-issue-card {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-default, #e0e0e0);
+  background: var(--bg-default, #FFF);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__name {
+    color: var(--text-primary, #111111);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #FF6B00;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16.5px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+.issue-check-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #ECFDF5;
+  align-self: flex-start;
+
+  &__label {
+    color: #059669;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+}
+
+.issue-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    color: var(--text-secondary, #7B7B7B);;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 17px;
+  }
+}
+
+.industry-stock-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.stock-issue-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stock-header-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stock-price-badge {
+  display: inline-flex;
+  padding: 4px 8px;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--surface-default, #f2f2f2);
+  color: var(--text-secondary, #626262);
+  font-family: Inter, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.stock-change-badge {
+  display: inline-flex;
+  padding: 4px 8px;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--surface-default, #f2f2f2);
+  font-family: Inter, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  white-space: nowrap;
+
+  &--up {
+    color: #F84040;
+  }
+
+  &--down {
+    color: #2E86DE;
+  }
+}
+
+.industry-stock-tag {
+  display: inline-flex;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  color: #FFF;
+  font-family: Inter, -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 15px;
+  white-space: nowrap;
+
+  &--up {
+    background: #F84040;
+  }
+
+  &--down {
+    background: #2E86DE;
+  }
+}
