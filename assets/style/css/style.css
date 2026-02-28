@@ -7513,6 +7513,9 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     padding-bottom: 12px;
     border-bottom: 1px solid #E2E8F0;
   }
+  .summary-column__header .arrow {
+    display: none;
+  }
   .summary-column__dot {
     width: 10px;
     height: 10px;

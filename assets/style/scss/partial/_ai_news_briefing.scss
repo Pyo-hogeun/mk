@@ -325,6 +325,9 @@
       align-items: center;
       padding-bottom: 12px;
       border-bottom: 1px solid #E2E8F0;
+      .arrow{
+        display: none;
+      }
     }
 
     &__dot {
