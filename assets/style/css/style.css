@@ -7332,13 +7332,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-shrink: 0;
     box-shadow: 0 0 10px 0 rgba(255, 107, 0, 0.2);
   }
-  .summary-column__dot--international {
+  .summary-column__dot--blue {
     background: linear-gradient(45deg, #60A5FA 0%, #2563EB 100%);
   }
-  .summary-column__dot--culture {
+  .summary-column__dot--violet {
     background: linear-gradient(45deg, #C084FC 0%, #9333EA 100%);
   }
-  .summary-column__dot--sports {
+  .summary-column__dot--green {
     background: linear-gradient(45deg, #34D399 0%, #059669 100%);
   }
   .summary-column__label {
@@ -7838,13 +7838,13 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-shrink: 0;
     box-shadow: 0 0 10px 0 rgba(255, 107, 0, 0.2);
   }
-  .summary-column__dot--international {
+  .summary-column__dot--blue {
     background: linear-gradient(45deg, #60A5FA 0%, #2563EB 100%);
   }
-  .summary-column__dot--culture {
+  .summary-column__dot--violet {
     background: linear-gradient(45deg, #C084FC 0%, #9333EA 100%);
   }
-  .summary-column__dot--sports {
+  .summary-column__dot--green {
     background: linear-gradient(45deg, #34D399 0%, #059669 100%);
   }
   .summary-column__label {
