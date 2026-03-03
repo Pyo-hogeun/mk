@@ -19438,18 +19438,19 @@ body.ai-tutor-settings-open {
   }
   .tutor-chat__wrapper .question-suggestions .question-button {
     display: flex;
-    height: 40px;
+    min-height: 40px;
+    max-width: 80%;
     padding: 8px 20px;
     justify-content: center;
     align-items: center;
     gap: 4px;
-    border-radius: 999px;
+    border-radius: 20px;
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-default, #FFF);
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     color: var(--text-primary, #212121);
-    text-align: center;
+    text-align: left;
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
@@ -20168,18 +20169,19 @@ body.ai-tutor-settings-open {
   }
   .tutor-chat__wrapper .question-suggestions .question-button {
     display: flex;
-    height: 40px;
+    min-height: 40px;
+    max-width: 80%;
     padding: 8px 20px;
     justify-content: center;
     align-items: center;
     gap: 4px;
-    border-radius: 999px;
+    border-radius: 20px;
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-default, #ffffff);
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     color: var(--text-primary, #212121);
-    text-align: center;
+    text-align: left;
     font-size: 15px;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
