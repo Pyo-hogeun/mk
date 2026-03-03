@@ -19,9 +19,12 @@
         position: relative;
         display: inline-flex;
       }
-
+      
       .level-selector {
-        display: inline-flex;
+        display: flex;
+        width: 155px;
+        flex: 1 1 0;
+        justify-content: space-between;
         align-items: center;
         gap: 10px;
         padding: 5px 13px;

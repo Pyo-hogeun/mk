@@ -10,9 +10,12 @@
         position: relative;
         display: inline-flex;
       }
-
+      
       .level-selector {
-        display: inline-flex;
+        display: flex;
+        width: 195px;
+        flex: 1 1 0;
+        justify-content: space-between;
         align-items: center;
         height: 30px;
         gap: 10px;

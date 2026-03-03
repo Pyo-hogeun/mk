@@ -18694,7 +18694,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: inline-flex;
   }
   .tutor__wrapper .level-selector {
-    display: inline-flex;
+    display: flex;
+    width: 195px;
+    flex: 1 1 0;
+    justify-content: space-between;
     align-items: center;
     height: 30px;
     gap: 10px;
@@ -18893,7 +18896,10 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     display: inline-flex;
   }
   .tutor__wrapper .level-selector {
-    display: inline-flex;
+    display: flex;
+    width: 155px;
+    flex: 1 1 0;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     padding: 5px 13px;
