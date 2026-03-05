@@ -337,14 +337,23 @@
       flex-shrink: 0;
       box-shadow: 0 0 10px 0 rgba(255, 107, 0, 0.20);
 
-      &--blue {
-        background: linear-gradient(45deg, #60A5FA 0%, #2563EB 100%);
+      &--SCIENCE {
+        background: #0097A7;
       }
-      &--violet {
-        background: linear-gradient(45deg, #C084FC 0%, #9333EA 100%);
+      &--POLITICS {
+        background: #4527A0;
       }
-      &--green {
-        background: linear-gradient(45deg, #34D399 0%, #059669 100%);
+      &--ECONOMY {
+        background: #FF8F00;
+      }
+      &--BUSINESS {
+        background: #1A237E;
+      }
+      &--SOCIETY {
+        background: #00796B;
+      }
+      &--STOCK {
+        background: #D32F2F;
       }
     }
 

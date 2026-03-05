@@ -7524,14 +7524,23 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-shrink: 0;
     box-shadow: 0 0 10px 0 rgba(255, 107, 0, 0.2);
   }
-  .summary-column__dot--blue {
-    background: linear-gradient(45deg, #60A5FA 0%, #2563EB 100%);
+  .summary-column__dot--SCIENCE {
+    background: #0097A7;
   }
-  .summary-column__dot--violet {
-    background: linear-gradient(45deg, #C084FC 0%, #9333EA 100%);
+  .summary-column__dot--POLITICS {
+    background: #4527A0;
   }
-  .summary-column__dot--green {
-    background: linear-gradient(45deg, #34D399 0%, #059669 100%);
+  .summary-column__dot--ECONOMY {
+    background: #FF8F00;
+  }
+  .summary-column__dot--BUSINESS {
+    background: #1A237E;
+  }
+  .summary-column__dot--SOCIETY {
+    background: #00796B;
+  }
+  .summary-column__dot--STOCK {
+    background: #D32F2F;
   }
   .summary-column__label {
     margin-left: 12px;
@@ -8030,14 +8039,23 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     flex-shrink: 0;
     box-shadow: 0 0 10px 0 rgba(255, 107, 0, 0.2);
   }
-  .summary-column__dot--blue {
-    background: linear-gradient(45deg, #60A5FA 0%, #2563EB 100%);
+  .summary-column__dot--SCIENCE {
+    background: #0097A7;
   }
-  .summary-column__dot--violet {
-    background: linear-gradient(45deg, #C084FC 0%, #9333EA 100%);
+  .summary-column__dot--POLITICS {
+    background: #4527A0;
   }
-  .summary-column__dot--green {
-    background: linear-gradient(45deg, #34D399 0%, #059669 100%);
+  .summary-column__dot--ECONOMY {
+    background: #FF8F00;
+  }
+  .summary-column__dot--BUSINESS {
+    background: #1A237E;
+  }
+  .summary-column__dot--SOCIETY {
+    background: #00796B;
+  }
+  .summary-column__dot--STOCK {
+    background: #D32F2F;
   }
   .summary-column__label {
     flex: 1 0 0;
