@@ -91,6 +91,9 @@
           line-height: 150%;
           /* 22.5px */
         }
+        .topic-toggle{
+          color: var(--text-primary, #212121);
+        }
 
         .topic-footer{
           display: flex;

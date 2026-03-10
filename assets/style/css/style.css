@@ -19303,6 +19303,9 @@ body.ai-tutor-settings-open {
     line-height: 150%;
     /* 22.5px */
   }
+  .tutor-chat__wrapper .learning-topic-card .topic-toggle {
+    color: var(--text-primary, #212121);
+  }
   .tutor-chat__wrapper .learning-topic-card .topic-footer {
     display: flex;
     justify-content: space-between;
@@ -20067,6 +20070,9 @@ body.ai-tutor-settings-open {
     font-size: 15px;
     font-weight: 600;
     line-height: 150%; /* 22.5px */
+  }
+  .tutor-chat__wrapper .learning-topic-card .topic-toggle {
+    color: var(--text-primary, #212121);
   }
   .tutor-chat__wrapper .learning-topic-card .topic-footer {
     display: flex;
