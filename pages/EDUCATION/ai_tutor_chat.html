@@ -27,10 +27,19 @@
     </div>
 
     <div class="tutor-chat__wrapper">
-      <div class="sticky-top">
+      <div class="sticky-top is-open">
         <div class="learning-topic-card">
-          <div class="topic-category-badge">경제</div>
-          <div class="topic-title">전세는 왜 점점 사라지고 월세가 늘어날까요?</div>
+          <div class="topic-topper">
+            <div class="topic-title">
+              <div class="topic-category-badge">경제</div>
+              전세는 왜 점점 사라지고 월세가 늘어날까요? 전세는 왜 점점 사라지고 월세가 늘어날까요? 전세는 왜 점점 사라지고 월세가 늘어날까요?
+            </div>
+            <div class="topic-toggle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.2975 8.71276C16.9074 8.31987 16.2719 8.31836 15.8804 8.70986L12.7071 11.8831C12.3166 12.2737 11.6834 12.2737 11.2929 11.8831L8.11961 8.70986C7.72811 8.31836 7.09262 8.31987 6.70251 8.71276C6.31434 9.10368 6.31506 9.73531 6.70461 10.1249L11.2929 14.7131C11.6834 15.1037 12.3166 15.1037 12.7071 14.7131L17.2954 10.1249C17.6849 9.73531 17.6857 9.10368 17.2975 8.71276Z" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
           <div class="topic-footer">
             <div class="topic-date">2025.10.22</div>
   
@@ -272,7 +281,14 @@
     </div>
 
   </div>
- 
+
+  <script>
+    const $topAccordion = document.querySelector('.sticky-top');
+    const $accToggle = $topAccordion.querySelector('.topic-topper');
+    $accToggle.addEventListener('click', function(e){
+      $topAccordion.classList.toggle('is-open')
+    })
+  </script>
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>
 </html>
