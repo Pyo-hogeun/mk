@@ -19278,6 +19278,10 @@ body.ai-tutor-settings-open {
     border: 1px solid var(--base-gradation, #FF800B);
     background: var(--bg-subtle, #F9FAFB);
   }
+  .tutor-chat__wrapper .learning-topic-card .topic-topper {
+    display: flex;
+    gap: 4px;
+  }
   .tutor-chat__wrapper .learning-topic-card .topic-category-badge {
     display: inline-flex;
     align-self: flex-start;
@@ -19295,6 +19299,7 @@ body.ai-tutor-settings-open {
     /* 19.5px */
   }
   .tutor-chat__wrapper .learning-topic-card .topic-title {
+    flex: 1 1 auto;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -19309,6 +19314,10 @@ body.ai-tutor-settings-open {
   .tutor-chat__wrapper .learning-topic-card .topic-footer {
     display: flex;
     justify-content: space-between;
+    opacity: 0;
+    height: 0;
+    transition: all;
+    transition-duration: opacity 0.1s;
   }
   .tutor-chat__wrapper .learning-topic-card .topic-date {
     display: -webkit-box;
@@ -19341,6 +19350,10 @@ body.ai-tutor-settings-open {
     justify-content: space-between;
     gap: 12px;
     margin-top: 12px;
+    opacity: 0;
+    height: 0;
+    transition: all ease-in;
+    transition-duration: 0.2s;
   }
   .tutor-chat__wrapper .chat-buttons .chat-button {
     display: flex;
@@ -19362,6 +19375,20 @@ body.ai-tutor-settings-open {
     font-weight: 600;
     line-height: 150%;
     /* 19.5px */
+  }
+  .tutor-chat__wrapper .is-open .topic-title {
+    -webkit-line-clamp: 2;
+  }
+  .tutor-chat__wrapper .is-open .topic-toggle svg {
+    transform: rotate(180deg);
+  }
+  .tutor-chat__wrapper .is-open .topic-footer {
+    height: 21px;
+    opacity: 1;
+  }
+  .tutor-chat__wrapper .is-open .chat-buttons {
+    opacity: 1;
+    height: 78px;
   }
   .tutor-chat__wrapper .chat-divider {
     display: flex;
