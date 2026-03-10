@@ -32,6 +32,14 @@
         font-weight: 400;
         line-height: 150%; /* 21px */
       }
+      .btn-origin{
+        display: flex;
+        padding: 7px 12px;
+        border-radius: var(--radius-pill, 999px);
+        border: 0;
+        background: rgba(0, 0, 0, 0.60);
+        color: #FFFFFF;
+      }
     }
 
     &__title {
