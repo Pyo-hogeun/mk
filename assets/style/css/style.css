@@ -19358,16 +19358,9 @@ body.ai-tutor-settings-open {
     line-height: 150%;
     /* 22.5px */
   }
-  .tutor-chat__wrapper .learning-topic-card .topic-toggle {
-    color: var(--text-primary, #212121);
-  }
   .tutor-chat__wrapper .learning-topic-card .topic-footer {
     display: flex;
     justify-content: space-between;
-    opacity: 0;
-    height: 0;
-    transition: all;
-    transition-duration: opacity 0.1s;
   }
   .tutor-chat__wrapper .learning-topic-card .topic-date {
     display: -webkit-box;
@@ -19412,7 +19405,7 @@ body.ai-tutor-settings-open {
     align-items: center;
     gap: var(--gap-tight, 4px);
     flex: 1 0 0;
-    padding: 12px 20px;
+    padding: 0 20px;
     border-radius: var(--radius-lg, 12px);
     background: var(--bg-subtle, #F9FAFB);
     cursor: pointer;
@@ -19426,23 +19419,16 @@ body.ai-tutor-settings-open {
     line-height: 150%;
     /* 19.5px */
   }
-  .tutor-chat__wrapper .is-open .topic-title {
-    -webkit-line-clamp: 2;
-  }
-  .tutor-chat__wrapper .is-open .topic-toggle svg {
-    transform: rotate(180deg);
-  }
-  .tutor-chat__wrapper .is-open .topic-footer {
-    height: 21px;
-    opacity: 1;
-  }
   .tutor-chat__wrapper .is-open .chat-buttons {
     opacity: 1;
     height: 78px;
   }
+  .tutor-chat__wrapper .is-open .chat-buttons .chat-button {
+    padding: 12px 20px;
+  }
   .tutor-chat__wrapper .chat-divider {
     display: flex;
-    margin: 24px 0;
+    margin: 12px 0 24px 0;
     gap: 12px;
     align-items: center;
   }
@@ -19457,7 +19443,14 @@ body.ai-tutor-settings-open {
     font-size: 12px;
     font-weight: 500;
     line-height: 150%;
+    cursor: pointer;
     /* 18px */
+  }
+  .tutor-chat__wrapper .topic-toggle {
+    color: var(--text-primary, #212121);
+  }
+  .tutor-chat__wrapper .topic-toggle.is-open svg {
+    transform: rotate(180deg);
   }
   .tutor-chat__wrapper .chat-message {
     display: flex;
@@ -20118,7 +20111,7 @@ body.ai-tutor-settings-open {
     flex: 1 1 auto;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--text-primary, #212121);
@@ -20126,16 +20119,9 @@ body.ai-tutor-settings-open {
     font-weight: 600;
     line-height: 150%; /* 22.5px */
   }
-  .tutor-chat__wrapper .learning-topic-card .topic-toggle {
-    color: var(--text-primary, #212121);
-  }
   .tutor-chat__wrapper .learning-topic-card .topic-footer {
     display: flex;
     justify-content: space-between;
-    opacity: 0;
-    height: 0;
-    transition: all;
-    transition-duration: opacity 0.1s;
   }
   .tutor-chat__wrapper .learning-topic-card .topic-date {
     display: -webkit-box;
@@ -20179,7 +20165,7 @@ body.ai-tutor-settings-open {
     align-items: center;
     gap: var(--gap-tight, 4px);
     flex: 1 0 0;
-    padding: 12px 20px;
+    padding: 0 20px;
     border-radius: var(--radius-lg, 12px);
     background: var(--bg-subtle, #F9FAFB);
     cursor: pointer;
@@ -20192,23 +20178,16 @@ body.ai-tutor-settings-open {
     font-weight: 600;
     line-height: 150%; /* 19.5px */
   }
-  .tutor-chat__wrapper .is-open .topic-title {
-    -webkit-line-clamp: 2;
-  }
-  .tutor-chat__wrapper .is-open .topic-toggle svg {
-    transform: rotate(180deg);
-  }
-  .tutor-chat__wrapper .is-open .topic-footer {
-    height: 21px;
-    opacity: 1;
-  }
   .tutor-chat__wrapper .is-open .chat-buttons {
     opacity: 1;
     height: 78px;
   }
+  .tutor-chat__wrapper .is-open .chat-buttons .chat-button {
+    padding: 12px 20px;
+  }
   .tutor-chat__wrapper .chat-divider {
     display: flex;
-    margin: 24px 0;
+    margin: 12px 0;
     gap: 12px;
     align-items: center;
   }
@@ -20223,6 +20202,12 @@ body.ai-tutor-settings-open {
     font-size: 12px;
     font-weight: 500;
     line-height: 150%; /* 18px */
+  }
+  .tutor-chat__wrapper .topic-toggle {
+    color: var(--text-primary, #212121);
+  }
+  .tutor-chat__wrapper .topic-toggle.is-open svg {
+    transform: rotate(180deg);
   }
   .tutor-chat__wrapper .chat-message {
     display: flex;
