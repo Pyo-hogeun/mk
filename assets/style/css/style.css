@@ -17045,63 +17045,123 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-weight: 400;
     line-height: 23px;
   }
+  .my-study__topper {
+    display: grid;
+    gap: 12px;
+  }
   .my-study__stats-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .ai-agent-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    height: 100%;
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--border-default, #464646);
+    background: var(--bg-default, #1D1D1D);
+    /* inner shadow */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
+    overflow: hidden;
+  }
+  .ai-agent-info__decoration {
+    width: 121px;
+    height: 121px;
+    border-radius: 50%;
+    position: absolute;
+    right: -28px;
+    bottom: -57px;
+    pointer-events: none;
+    background: rgba(255, 122, 0, 0.1);
+  }
+  .ai-agent-info__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 80px;
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    border: 1px solid var(--orange-100, #FF7A00);
+    background: var(--white, #FFF);
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.05) inset;
+  }
+  .ai-agent-info__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ai-agent-info__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .ai-agent-info__title {
+    margin: 0;
+    color: var(--text-primary, #F0F0F0);
+    /* Heading/H4 */
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+    white-space: nowrap;
+  }
+  .ai-agent-info__badge {
+    display: inline-flex;
+    color: var(--white, #FFF);
+    /* Caption/SM */
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    display: inline-flex;
+    padding: 2px 8px;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 4px;
+    background: var(--orange-100, #FF7A00);
+    white-space: nowrap;
+  }
+  .ai-agent-info__description {
+    margin: 0;
+    color: var(--text-primary, #F0F0F0);
+    /* Body/SS */
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
   }
   .stats-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 24px;
     border-radius: 8px;
     border: 1px solid var(--border-default, #464646);
     background: var(--bg-subtle, #2F2F2F);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset;
     overflow: hidden;
     position: relative;
+    height: 67px;
   }
   .stats-card__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 12px;
+    gap: 2px;
     align-self: stretch;
     position: relative;
     z-index: 1;
   }
   .stats-card__header {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    width: 100%;
   }
   .stats-card__icon {
-    display: flex;
-    width: 28px;
-    height: 28px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 9999px;
-    flex-shrink: 0;
-  }
-  .stats-card__icon--orange {
-    background: #FFEDD5;
-  }
-  .stats-card__icon--yellow {
-    background: #FEF9C3;
-  }
-  .stats-card__icon--red {
-    background: #FFEDD5;
-  }
-  .stats-card__icon--orange-alt {
-    background: #FFEDD5;
-  }
-  .stats-card__icon svg {
-    width: 16px;
-    height: 16px;
+    display: none;
   }
   .stats-card__label {
     flex: 1;
@@ -17110,12 +17170,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
+    text-align: center;
   }
   .stats-card__value-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    align-items: center;
     align-self: stretch;
   }
   .stats-card__value {
@@ -17134,12 +17194,7 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     margin-left: 4px;
   }
   .stats-card__progress {
-    height: 8px;
-    align-self: stretch;
-    border-radius: 9999px;
-    background: #F0F0F0;
-    position: relative;
-    overflow: hidden;
+    display: none;
   }
   .stats-card__progress-bar {
     height: 8px;
@@ -17150,12 +17205,12 @@ body.dark .chatbot-floating .chatbot-bubble .bubble-text {
     top: 0;
   }
   .stats-card__decoration {
-    width: 121px;
-    height: 121px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     position: absolute;
-    right: -88px;
-    top: -57px;
+    right: -8px;
+    top: -8px;
     pointer-events: none;
   }
   .stats-card__decoration--orange {
